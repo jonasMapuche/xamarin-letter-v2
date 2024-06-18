@@ -1,0 +1,60 @@
+﻿using CRUD.Models;
+using MongoDB.Driver;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace CRUD.Services
+{
+    public class ArticleService
+    {
+        public static string ConnectionArticle { get; set; }
+        public static string ConnectionNoten { get; set; }
+        public static string ConnectionMalware { get; set; }
+        public static string DatabaseName { get; set; }
+        public static string CollectionArticle { get; set; }
+
+        private readonly IMongoCollection<Preceito> _articlesCollection;
+
+        public ArticleService(string connection)
+        {
+            MongoClient mongoClient;
+            switch (connection)
+            {
+                case "noten":
+                    mongoClient = new MongoClient(ConnectionNoten);
+                    break;
+                case "malware":
+                    mongoClient = new MongoClient(ConnectionMalware);
+                    break;
+                default:
+                    mongoClient = new MongoClient(ConnectionArticle);
+                    break;
+            }
+            var mongoDatabase = mongoClient.GetDatabase(DatabaseName);
+            IMongoCollection<Preceito> ConfigurationValue = mongoDatabase.GetCollection<Preceito>(CollectionArticle);
+
+            _articlesCollection = ConfigurationValue;
+        }
+
+        public async Task<List<Preceito>> GetAsync() =>
+            await _articlesCollection.Find(_ => true).ToListAsync();
+
+        public async Task<Preceito> GetAsync(string id) =>
+            await _articlesCollection.Find(index => index.Id == id).FirstOrDefaultAsync();
+
+        public async Task<Preceito> GetSentenceSimpleAsync(string name) =>
+            await _articlesCollection.Find(index => index.nome == name).FirstOrDefaultAsync();
+
+        public async Task CreateAsync(Preceito preceito) =>
+            await _articlesCollection.InsertOneAsync(preceito);
+
+        public async Task UpdateAsync(Preceito preceito) =>
+            await _articlesCollection.ReplaceOneAsync(index => index.Id == preceito.Id, preceito);
+
+        public async Task RemoveAsync(string id) =>
+            await _articlesCollection.DeleteOneAsync(index => index.Id == id);
+
+    }
+}

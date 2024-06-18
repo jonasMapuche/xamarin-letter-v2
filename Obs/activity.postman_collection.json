@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "a2f7433e-359f-4f2c-8909-3037c227bfb4",
+		"name": "activity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7120479"
+	},
+	"item": [
+		{
+			"name": "stomach | acitvity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.stomach.com.br:8889/artless/all",
+					"protocol": "http",
+					"host": [
+						"www",
+						"stomach",
+						"com",
+						"br"
+					],
+					"port": "8889",
+					"path": [
+						"artless",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activity | hello world",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8889/activity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activity | boxe base",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"export\": \"15/08/2023\",\r\n    \"framework\": [\r\n        \"power\",\r\n        \"math\"\r\n    ],\r\n    \"list\": [\r\n        {\r\n            \"name\": \"watts\",\r\n            \"check\": true,\r\n            \"description\": \"watts = volts * amps\"\r\n        },\r\n        {\r\n            \"name\": \"volts\",\r\n            \"check\": true,\r\n            \"description\": \"volts = watts / amps\"\r\n        },\r\n        {\r\n            \"name\": \"amps\",\r\n            \"check\": true,\r\n            \"description\": \"amps = watts / volts\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8889/activity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activity | boxe defense",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"export\": \"23/08/2022\",\r\n    \"framework\": [\r\n        \"boxe\",\r\n        \"defense\"\r\n    ],\r\n    \"list\": [\r\n        {\r\n            \"name\": \"guarda e bloqueio\",\r\n            \"check\": true,\r\n            \"description\": \"Seus punhos e antebraços são sua melhor defesa contra qualquer golpe de seu oponente. Basta erguer as mãos até encobrirem o rosto. Alguns lutadores usam o bloqueio parcial, onde uma das mãos fica mais aberta e pronta para realizar um contra-ataque rápido e eficiente.\"\r\n        },\r\n        {\r\n            \"name\": \"esquiva\",\r\n            \"check\": true,\r\n            \"description\": \"Seja rápido na sua defesa. Principalmente ao se esquivar. Um passo atrás e os golpes rápidos pegam apenas o vento, uma girada basta para o golpe passar a raspar a sua cabeça, porém, é o momento favorecedor para um contra-ataque.\"\r\n        },\r\n        {\r\n            \"name\": \"clinch\",\r\n            \"check\": true,\r\n            \"description\": \"Aproxime-se do adversário, perto o bastante para abraçá-lo e tirar a força de seus golpes ao te atingirem e reduzir a velocidade dele. Nessa tática o juiz tende a intervir para separar os lutadores.\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8889/activity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activity | boxe blow",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"export\": \"23/08/2022\",\r\n    \"framework\": [\r\n        \"boxe\",\r\n        \"blow\"\r\n    ],\r\n    \"list\": [\r\n        {\r\n            \"name\": \"jab\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe reto e frontal, dado com a mão da frente da guarda de boxe (vê imagem abaixo), com a intenção de afastar e manter uma certa um distância, considerada segura, do adversário. Não é um golpe realizado com muita potência, porém, caso o adversário já esteja debilito, um Jab certeiro pode levar a um nocaute.\"\r\n        },\r\n        {\r\n            \"name\": \"direto\",\r\n            \"check\": true,\r\n            \"description\": \"É um soco reto dado com a mão de trás da guarda de boxe (vê imagem abaixo) e aplicado frontalmente no adversário com muita potência. Você o aplica com força com intenção de derrubar (nocautear) o oponente.\"\r\n        },\r\n        {\r\n            \"name\": \"gancho\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe feito de baixo para cima na diagonal, que geralmente funciona por ser curto, rápido e potente, podendo quebrar a defesa do oponente pelos lados.\"\r\n        },\r\n        {\r\n            \"name\": \"uppercut\",\r\n            \"check\": true,\r\n            \"description\": \"Este golpe é realizado sentido baixo para cima na vertical, afim de acertar o queixo do rival, mas, pode também pode ser aplicado como uma quebra de barreira.\"\r\n        },\r\n        {\r\n            \"name\": \"cruzado\",\r\n            \"check\": true,\r\n            \"description\": \"É como o golpe lateral com movimento horizontal, com o objetivo de atingir a lateral da cabeça com intensidade de força. Para realizá-lo, flexione o braço de modo a acertar a lateral do rosto do adversário.\"\r\n        },\r\n        {\r\n            \"name\": \"swing\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe cruzado feito em diagonal e de cima para baixo com a intenção de acertar a cabeça do oponente. É preciso dar uma passada lateral com a perna da frente e soltar o golpe gol a mão de trás.\"\r\n        },\r\n        {\r\n            \"name\": \"overhand\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe cruzado feito em diagonal e de cima para baixo com a intenção de acertar a cabeça do oponente. É preciso dar uma passada lateral com a perna da frente e soltar o golpe gol a mão de trás.\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8889/activity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activity | get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.stomach.com.br:8889/activity/all",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stomach",
+						"com",
+						"br"
+					],
+					"port": "8889",
+					"path": [
+						"activity",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "malware | hello world",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8889/malware",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"malware"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "malware | encoder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"export\": \"01/07/2022\",\r\n    \"framework\": [\r\n        \"msfvenom\",\r\n        \"encoder\"\r\n    ],\r\n    \"list\": [\r\n        {\r\n            \"name\": \"cmd/echo\",\r\n            \"rank\": \"good\",\r\n            \"description\": \"Echo Command Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"cmd/generic_sh\",\r\n            \"rank\": \"manual\",\r\n            \"description\": \"Generic Shell Variable Substitution Command Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"cmd/ifs\",\r\n            \"rank\": \"low\",\r\n            \"description\": \"Bourne ${IFS} Substitution Command Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"cmd/perl\",\r\n            \"rank\": \"normal\",\r\n            \"description\": \"Perl Command Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"cmd/powershell_base64\",\r\n            \"rank\": \"excellent\",\r\n            \"description\": \"Powershell Base64 Command Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"cmd/printf_php_mq\",\r\n            \"rank\": \"manual\",\r\n            \"description\": \"printf(1) via PHP magic_quotes Utility Command Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"generic/eicar\",\r\n            \"rank\": \"manual\",\r\n            \"description\": \"The EICAR Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"generic/none\",\r\n            \"rank\": \"normal\",\r\n            \"description\": \"The 'none' Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"mipsbe/byte_xori\",\r\n            \"rank\": \"normal\",\r\n            \"description\": \"Byte XORi Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"mipsbe/longxor\",\r\n            \"rank\": \"normal\",\r\n            \"description\": \"XOR Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"mipsle/byte_xori\",\r\n            \"rank\": \"normal\",\r\n            \"description\": \"Byte XORi Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"mipsle/longxor\",\r\n            \"rank\": \"normal\",\r\n            \"description\": \"XOR Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"php/base64\",\r\n            \"rank\": \"great\",\r\n            \"description\": \"PHP Base64 Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"ppc/longxor\",\r\n            \"rank\": \"normal\",\r\n            \"description\": \"PPC LongXOR Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"ppc/longxor_tag\",\r\n            \"rank\": \"normal\",\r\n            \"description\": \"PPC LongXOR Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"ruby/base64\",\r\n            \"rank\": \"great\",\r\n            \"description\": \"Ruby Base64 Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"sparc/longxor_tag\",\r\n            \"rank\": \"normal\",\r\n            \"description\": \"SPARC DWORD XOR Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x64/xor\",\r\n            \"rank\": \"normal\",\r\n            \"description\": \"XOR Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x64/xor_context\",\r\n            \"rank\": \"normal\",\r\n            \"description\": \"Hostname-based Context Keyed Payload Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x64/xor_dynamic\",\r\n            \"rank\": \"normal\",\r\n            \"description\": \"Dynamic key XOR Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x64/zutto_dekiru\",\r\n            \"rank\": \"manual\",\r\n            \"description\": \"Zutto Dekiru\"\r\n        },\r\n        {\r\n            \"name\": \"x86/add_sub\",\r\n            \"rank\": \"manual\",\r\n            \"description\": \"Add/Sub Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x86/alpha_mixed\",\r\n            \"rank\": \"low\",\r\n            \"description\": \"Alpha2 Alphanumeric Mixedcase Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x86/alpha_upper\",\r\n            \"rank\": \"low\",\r\n            \"description\": \"Alpha2 Alphanumeric Uppercase Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x86/avoid_underscore_tolower\",\r\n            \"rank\": \"manual\",\r\n            \"description\": \"Avoid underscore/tolower\"\r\n        },\r\n        {\r\n            \"name\": \"x86/avoid_utf8_tolower\",\r\n            \"rank\": \"manual\",\r\n            \"description\": \"Avoid UTF8/tolower\"\r\n        },\r\n        {\r\n            \"name\": \"x86/bloxor\",\r\n            \"rank\": \"manual\",\r\n            \"description\": \"BloXor - A Metamorphic Block Based XOR Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x86/bmp_polyglot\",\r\n            \"rank\": \"manual\",\r\n            \"description\": \"BMP Polyglot\"\r\n        },\r\n        {\r\n            \"name\": \"x86/call4_dword_xor\",\r\n            \"rank\": \"normal\",\r\n            \"description\": \"Call+4 Dword XOR Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x86/context_cpuid\",\r\n            \"rank\": \"manual\",\r\n            \"description\": \"CPUID-based Context Keyed Payload Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x86/context_stat\",\r\n            \"rank\": \"manual\",\r\n            \"description\": \"stat(2)-based Context Keyed Payload Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x86/context_time\",\r\n            \"rank\": \"manual\",\r\n            \"description\": \"time(2)-based Context Keyed Payload Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x86/countdown\",\r\n            \"rank\": \"normal\",\r\n            \"description\": \"Single-byte XOR Countdown Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x86/fnstenv_mov\",\r\n            \"rank\": \"normal\",\r\n            \"description\": \"Variable-length Fnstenv/mov Dword XOR Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x86/jmp_call_additive\",\r\n            \"rank\": \"normal\",\r\n            \"description\": \"Jump/Call XOR Additive Feedback Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x86/nonalpha\",\r\n            \"rank\": \"low\",\r\n            \"description\": \"Non-Alpha Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x86/nonupper\",\r\n            \"rank\": \"low\",\r\n            \"description\": \"Non-Upper Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x86/opt_sub\",\r\n            \"rank\": \"manual\",\r\n            \"description\": \"Sub Encoder (optimised)\"\r\n        },\r\n        {\r\n            \"name\": \"x86/service\",\r\n            \"rank\": \"manual\",\r\n            \"description\": \"Register Service\"\r\n        },\r\n        {\r\n            \"name\": \"x86/shikata_ga_nai\",\r\n            \"rank\": \"excellent\",\r\n            \"description\": \"Polymorphic XOR Additive Feedback Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x86/single_static_bit\",\r\n            \"rank\": \"manual\",\r\n            \"description\": \"Single Static Bit\"\r\n        },\r\n        {\r\n            \"name\": \"x86/unicode_mixed\",\r\n            \"rank\": \"manual\",\r\n            \"description\": \"Alpha2 Alphanumeric Unicode Mixedcase Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x86/unicode_upper\",\r\n            \"rank\": \"manual\",\r\n            \"description\": \"Alpha2 Alphanumeric Unicode Uppercase Encoder\"\r\n        },\r\n        {\r\n            \"name\": \"x86/xor_dynamic\",\r\n            \"rank\": \"normal\",\r\n            \"description\": \"Dynamic key XOR Encoder\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8889/malware",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"malware"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "malware | get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8889/malware/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"malware",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "artless| hello world",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8889/artless",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"artless"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "artless| get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8889/artless/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"artless",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "artless | 1700 à 1799 ~ 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"time_line\": \"02/05/2022\",\r\n    \"framework\": \"american\",\r\n    \"list\": [\r\n        {\r\n            \"name\": [\r\n                \"Gerra dos Mascates\",\r\n                \"1710\",\r\n                \"1711\",\r\n                \"Gerra dos Mascates 1710 a 1711\",\r\n                \"historia da américa 1700 à 1799\"\r\n            ],\r\n            \"date_in\": \"01/01/1710\",\r\n            \"date_out\": \"31/12/1711\",\r\n            \"check\": true,\r\n            \"description\": \"A Guerra dos Mascates foi uma rebelião de caráter nativista, ocorrida em Pernambuco entre os anos de 1710 e 1711, que envolveu as cidades de Olinda e Recife.\"\r\n        },\r\n        {\r\n            \"name\": [\r\n                \"Gerra dos Emboabas\",\r\n                \"1707\",\r\n                \"1708\",\r\n                \"1709\",\r\n                \"Gerra dos Emboabas 1707 a 1709\"\r\n            ],\r\n            \"date_in\": \"01/01/1707\",\r\n            \"date_out\": \"31/12/1709\",\r\n            \"check\": true,\r\n            \"description\": \"A Guerra dos Emboabas foi um conflito pela posse de jazidas de ouro na região de Minas Gerais. Ocorreu entre os anos de 1707 e 1709.\"\r\n        },\r\n        {\r\n            \"name\": [\r\n                \"Revolta de Felipe dos Santos\",\r\n                \"1720\",\r\n                \"Revolta de Felipe dos Santos 1720\"\r\n            ],\r\n            \"date_in\": \"01/01/1720\",\r\n            \"date_out\": \"31/12/1720\",\r\n            \"check\": true,\r\n            \"description\": \"Também conhecida como Revolta de Vila Rica, este movimento nativista ocorreu no ano de 1720, na região das Minas Gerais, durante o período do Ciclo do Ouro.\"\r\n        },\r\n        {\r\n            \"name\": [\r\n                \"Tiradentes é executado\",\r\n                \"1792\",\r\n                \"Tiradentes é executado 1792\"\r\n            ],\r\n            \"date_in\": \"01/01/1792\",\r\n            \"date_out\": \"31/12/1792\",\r\n            \"check\": true,\r\n            \"description\": \"Tiradentes é executado em 1792.\"\r\n        },\r\n        {\r\n            \"name\": [\r\n                \"Revolta dos Alfaiates\",\r\n                \"1798\",\r\n                \"1799\",\r\n                \"Revolta dos Alfaiates 1798 a 1799\"\r\n            ],\r\n            \"date_in\": \"01/01/1798\",\r\n            \"date_out\": \"31/12/1799\",\r\n            \"check\": true,\r\n            \"description\": \"A Revolta dos Alfaiates foi um movimento emancipacionista, que ocorreu na Bahia entre 1798 e 1799.\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8889/artless",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"artless"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

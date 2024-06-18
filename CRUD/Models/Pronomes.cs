@@ -1,0 +1,17 @@
+﻿using SQLite;
+using System;
+
+namespace CRUD.Models
+{
+    public class Pronomes
+    {
+        [PrimaryKey, AutoIncrement]
+        public int id { get; set; }
+        public String name { get; set; }
+        public String language { get; set; }
+        public String type { get; set; }
+        public String number { get; set; }
+        public String person { get; set; }
+        public String gender { get; set; }
+    }
+}

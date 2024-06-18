@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_main"
+    android:id="@+id/cor_lay_main">
+
+    <androidx.core.widget.NestedScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/net_scr_main" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_marginTop="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout_first">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/layout_language_1">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/ic_number_1"
+                    android:id="@+id/floating_behind_1" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/layout_spread_1" >
+                    
+                    <TableRow
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ic_background_output"
+                        android:layout_marginBottom="2dp"
+                        android:id="@+id/table_language_1_1">
+                        
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_pronoun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_1_1"/>
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_verb"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_1_2"/>
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_noun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_1_3"/>
+
+                    </TableRow>
+                    
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/layout_language_2">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/ic_number_2"
+                    android:id="@+id/floating_behind_2" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/layout_spread_2" >
+                    
+                    <TableRow
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ic_background_output"
+                        android:layout_marginBottom="2dp"
+                        android:id="@+id/table_language_2_1">
+                        
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_pronoun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_2_1"/>
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_verb"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_2_2"/>
+
+                       <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_noun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_2_3"/>
+
+                    </TableRow>
+                    
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/layout_language_3">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/ic_number_3"
+                    android:id="@+id/floating_behind_3" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/layout_spread_3" >
+                    
+                    <TableRow
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ic_background_output"
+                        android:layout_marginBottom="2dp"
+                        android:id="@+id/table_language_3_1">
+                        
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_pronoun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_3_1"/>
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_verb"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_3_2"/>
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_noun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_3_3"/>
+
+                    </TableRow>
+                    
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/layout_language_4">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/ic_number_4"
+                    android:id="@+id/floating_behind_4" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/layout_spread_4" >
+                    
+                    <TableRow
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ic_background_output"
+                        android:layout_marginBottom="2dp"
+                        android:id="@+id/table_language_4_1">
+                        
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_pronoun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_4_1"/>
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_verb"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_4_2"/>
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_noun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_4_3"/>
+
+                    </TableRow>
+                    
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/layout_language_5">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/ic_number_5"
+                    android:id="@+id/floating_behind_5" />
+            
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/layout_spread_5" >
+                    
+                    <TableRow
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ic_background_output"
+                        android:layout_marginBottom="2dp"
+                        android:id="@+id/table_language_5_1">
+                        
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_pronoun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_5_1"/>
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_verb"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_5_2"/>
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_noun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_5_3"/>
+
+                    </TableRow>
+                    
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/layout_language_6">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/ic_number_6"
+                    android:id="@+id/floating_behind_6" />
+            
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/layout_spread_6" >
+                    
+                    <TableRow
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ic_background_output"
+                        android:layout_marginBottom="2dp"
+                        android:id="@+id/table_language_6_1">
+                        
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_pronoun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_6_1"/>
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_verb"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_6_2"/>
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_noun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_6_3"/>
+
+                    </TableRow>
+                    
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/layout_language_7">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/ic_number_7"
+                    android:id="@+id/floating_behind_7" />
+            
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/layout_spread_7" >
+                    
+                    <TableRow
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ic_background_output"
+                        android:layout_marginBottom="2dp"
+                        android:id="@+id/table_language_7_1">
+                        
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_pronoun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_7_1"/>
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_verb"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_7_2"/>
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_noun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_7_3"/>
+
+                    </TableRow>
+                    
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/layout_language_8">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/ic_number_8"
+                    android:id="@+id/floating_behind_8" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/layout_spread_8" >
+                    
+                    <TableRow
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ic_background_output"
+                        android:layout_marginBottom="2dp"
+                        android:id="@+id/table_language_8_1">
+                        
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_pronoun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_8_1"/>
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_verb"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_8_2"/>
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_noun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_8_3"/>
+
+                    </TableRow>
+                    
+                </LinearLayout>                  
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/layout_language_9">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/ic_number_9"
+                    android:id="@+id/floating_behind_9" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/layout_spread_9" >
+                    
+                    <TableRow
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ic_background_output"
+                        android:layout_marginBottom="2dp"
+                        android:id="@+id/table_language_9_1">
+                        
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_pronoun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_9_1"/>
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_verb"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_9_2"/>
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/bot_noun"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/txt_viw_box_9_3"/>
+
+                    </TableRow>
+                    
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    
+    </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginLeft="@dimen/fab_left_left"
+        android:layout_marginBottom="@dimen/fab_left_bottom"
+        app:srcCompat="@drawable/ic_left"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginLeft="@dimen/fab_right_left"
+        android:layout_marginBottom="@dimen/fab_right_bottom"
+        app:srcCompat="@drawable/ic_right"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@drawable/ic_icon"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

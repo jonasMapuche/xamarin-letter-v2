@@ -1,0 +1,1661 @@
+{
+	"info": {
+		"_postman_id": "00656481-fcf6-43d6-95d2-409c750ca823",
+		"name": "stomach",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7120479"
+	},
+	"item": [
+		{
+			"name": "recipe | hello world",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/recipe",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bot | hello world",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8885",
+					"host": [
+						"localhost"
+					],
+					"port": "8885"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bot | echo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Hi!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "api.stomach.com.br:8885",
+					"host": [
+						"api",
+						"stomach",
+						"com",
+						"br"
+					],
+					"port": "8885"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bot | go",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1, \r\n    \"sender\": 2, \r\n    \"message\": \"play power.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8885/Go",
+					"host": [
+						"localhost"
+					],
+					"port": "8885",
+					"path": [
+						"Go"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | hello world | Raspberry",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.stomach.com.br:8080/spring/recipe",
+					"host": [
+						"api",
+						"stomach",
+						"com",
+						"br"
+					],
+					"port": "8080",
+					"path": [
+						"spring",
+						"recipe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | get all periodic table",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/recipe/factor",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe",
+						"factor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | get all valence",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/recipe/valence",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe",
+						"valence"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | get all valence | Raspberry",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "api.stomach.com.br:8080/spring/recipe/valence",
+					"host": [
+						"api",
+						"stomach",
+						"com",
+						"br"
+					],
+					"port": "8080",
+					"path": [
+						"spring",
+						"recipe",
+						"valence"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | get periodic table",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/recipe/factor/Cl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe",
+						"factor",
+						"Cl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | get valence",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/recipe/valence/4f",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe",
+						"valence",
+						"4f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | get level valence",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/recipe/level/Cl",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe",
+						"level",
+						"Cl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | get elemento",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/recipe/element/O",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe",
+						"element",
+						"O"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | get equation",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8080/recipe/equation/C",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe",
+						"equation",
+						"C"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | get multiplier",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/recipe/multiplier/C",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe",
+						"multiplier",
+						"C"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | save periodic table",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"initial\": \"Uuo\",\r\n        \"number\": 118,\r\n        \"state\": \"L\",\r\n        \"family\": \"G\",\r\n        \"name\": \"Ununóctio\",\r\n        \"mass\": 293\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/recipe/factor",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe",
+						"factor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | save NaHCO3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": [\r\n        \"bicarbonato de sódio\"\r\n    ],\r\n    \"initial\": \"NaHCO3\",\r\n    \"type\": \"sal ácido\",\r\n    \"element\": [\r\n        {\r\n            \"name\": \"Na\",\r\n            \"multiplier\": 1,\r\n            \"amount\": 1,\r\n            \"valence\": 0\r\n        },\r\n        {\r\n            \"name\": \"H\",\r\n            \"multiplier\": 1,\r\n            \"amount\": 1,\r\n            \"valence\": 0\r\n        },\r\n        {\r\n            \"name\": \"C\",\r\n            \"multiplier\": 1,\r\n            \"amount\": 1,\r\n            \"valence\": 0\r\n        },\r\n        {\r\n            \"name\": \"O\",\r\n            \"multiplier\": 1,\r\n            \"amount\": 3,\r\n            \"valence\": 0\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/recipe/equation",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe",
+						"equation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | get NaHCO3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/equation/NaHCO3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"equation",
+						"NaHCO3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | Hello world!",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | save HClO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": [\r\n        \"ácido hipocloroso\",\r\n        \"água sanitária\",\r\n        \"cloro líquido\"\r\n    ],\r\n    \"initial\": \"HClO\",\r\n    \"type\": \"oxiácido\",\r\n    \"element\": [\r\n        {\r\n            \"name\": \"H\",\r\n            \"multiplier\": 1,\r\n            \"amount\": 1,\r\n            \"valence\": 0\r\n        },\r\n        {\r\n            \"name\": \"Cl\",\r\n            \"multiplier\": 1,\r\n            \"amount\": 1,\r\n            \"valence\": 0\r\n        },\r\n        {\r\n            \"name\": \"O\",\r\n            \"multiplier\": 1,\r\n            \"amount\": 1,\r\n            \"valence\": 0\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/recipe/equation",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe",
+						"equation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | save OH-",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": [\r\n        \"hidroxila\",\r\n        \"hidroxilo\",\r\n        \"oxidrila\"\r\n    ],\r\n    \"initial\": \"OH-\",\r\n    \"type\": \"base\",\r\n    \"element\": [\r\n        {\r\n            \"name\": \"H\",\r\n            \"multiplier\": 1,\r\n            \"amount\": 1,\r\n            \"valence\": 0\r\n        },\r\n        {\r\n            \"name\": \"O\",\r\n            \"multiplier\": 1,\r\n            \"amount\": 1,\r\n            \"valence\": -1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/recipe/equation",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe",
+						"equation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | save H+",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": [\r\n        \"hídron\"\r\n    ],\r\n    \"initial\": \"H+\",\r\n    \"type\": \"ácido\",\r\n    \"element\": [\r\n        {\r\n            \"name\": \"H\",\r\n            \"multiplier\": 1,\r\n            \"amount\": 1,\r\n            \"valence\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/recipe/equation",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe",
+						"equation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recipe | save valence",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"initial\": \"7p\",\r\n        \"maximun\": 6,\r\n        \"order\": 19,\r\n        \"level\": \"Q\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/recipe/valence",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe",
+						"valence"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letter | Hello world!",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44392/Letter",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"Letter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letter | get all letter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:44392/Letter/content",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"Letter",
+						"content"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letter | get all pronoun",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44392/Letter/pronoun",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"Letter",
+						"pronoun"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letter | get sentence simple",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44353/Letter/sentence/simple/lesson 2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44353",
+					"path": [
+						"Letter",
+						"sentence",
+						"simple",
+						"lesson 2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letter | save lesson",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"lesson 1000\",\r\n    \"conteudo\": {\r\n        \"substantivo\": [\r\n            \"blow\",\r\n            \"power\",\r\n            \"amperes\",\r\n            \"speed\",\r\n            \"jab\",\r\n            \"crawl\",\r\n            \"uppercut\",\r\n            \"lift coefficient\"\r\n        ],\r\n        \"pronome\": [\r\n            \"\"\r\n        ],\r\n        \"artigo\": [\r\n            \"\"\r\n        ],\r\n        \"verbo\": [\r\n            \"execute\",\r\n            \"select\",\r\n            \"see\",\r\n            \"view\"\r\n        ],\r\n        \"preposicao\": [\r\n            \"\"\r\n        ],\r\n        \"adverbio\": [\r\n            \"\"\r\n        ],\r\n        \"adjetivo\": [\r\n            \"\"\r\n        ],\r\n        \"interjeicao\": [\r\n            \"\"\r\n        ],\r\n        \"numeral\": [\r\n            \"\"\r\n        ],\r\n        \"conjuncao\": [\r\n            \"\"\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44392/Letter",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"Letter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letter | save lesson Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"lezione 23\",\r\n    \"conteudo\": {\r\n        \"substantivo\": [\r\n            \"appartamento\",\r\n            \"centro commerciale\",\r\n            \"ufficio\",\r\n            \"entrata\",\r\n            \"parcheggio\",\r\n            \"piscina\",\r\n            \"reception\",\r\n            \"supermercato\",\r\n            \"lavoro\",\r\n            \"professione\",\r\n            \"studio\",\r\n            \"treno\",\r\n            \"autobus\",\r\n            \"ospedale\",\r\n            \"medico\",\r\n            \"giornalista\",\r\n            \"centro\",\r\n            \"hotel\",\r\n            \"piazza\",\r\n            \"parco\",\r\n            \"banca\",\r\n            \"casa\",\r\n            \"alle\",\r\n            \"strada\",\r\n            \"martedì\",\r\n            \"lunedì\"\r\n        ],\r\n        \"pronome\": [\r\n            \"\"\r\n        ],\r\n        \"pronome pessoal\": [\r\n            \"io\",\r\n            \"tu\",\r\n            \"lui\",\r\n            \"lei\",\r\n            \"Lei\",\r\n            \"noi\",\r\n            \"voi\",\r\n            \"loro\",\r\n            \"nel\",\r\n            \"nello\",\r\n            \"nella\",\r\n            \"nell'\",\r\n            \"nei\",\r\n            \"negli\",\r\n            \"nelle\",\r\n            \"sul\",\r\n            \"sullo\",\r\n            \"sulla\",\r\n            \"sull'\",\r\n            \"sui\",\r\n            \"sugli\",\r\n            \"sulle\",\r\n            \"con me\",\r\n            \"con te\"\r\n        ],\r\n        \"pronome possessivo\": [\r\n            \"\"\r\n        ],\r\n        \"pronome demonstrativo\": [\r\n            \"\"\r\n        ],\r\n        \"pronome interrogativo\": [\r\n            \"dove\",\r\n            \"che\"\r\n        ],\r\n        \"pronome relativo\": [\r\n            \"dove\"\r\n        ],\r\n        \"pronome indefinido\": [\r\n            \"\"\r\n        ],\r\n        \"artigo\": [\r\n            \"il\",\r\n            \"lo\",\r\n            \"la\",\r\n            \"l'\",\r\n            \"i\",\r\n            \"gli\",\r\n            \"le\"\r\n        ],\r\n        \"verbo\": [\r\n            \"esco\",\r\n            \"esci\",\r\n            \"esce\",\r\n            \"usciamo\",\r\n            \"uscite\",\r\n            \"escono\",\r\n            \"uscire\",\r\n            \"entro\",\r\n            \"entri\",\r\n            \"entra\",\r\n            \"entriamo\",\r\n            \"entrate\",\r\n            \"entrano\",\r\n            \"entrare\",\r\n            \"sono\",\r\n            \"lavoro\",\r\n            \"fai\",\r\n            \"vado\"\r\n        ],\r\n        \"preposicao\": [\r\n            \"mentre\",\r\n            \"per\",\r\n            \"in\",\r\n            \"su\",\r\n            \"di\",\r\n            \"al\"\r\n        ],\r\n        \"adverbio\": [\r\n            \"\"\r\n        ],\r\n        \"adverbio de tempo\": [\r\n            \"\"\r\n        ],\r\n        \"adverbio de lugar\": [\r\n            \"\"\r\n        ],\r\n        \"adverbio de modo\": [\r\n            \"\"\r\n        ],\r\n        \"adverbio de intensidade\": [\r\n            \"mentre\"\r\n        ],\r\n        \"adverbio de afirmação\": [\r\n            \"per forza\"\r\n        ],\r\n        \"adverbio de negação\": [\r\n            \"\"\r\n        ],\r\n        \"adverbio de dúvida\": [\r\n            \"\"\r\n        ],\r\n        \"adjetivo\": [\r\n            \"\"\r\n        ],\r\n        \"interjeicao\": [\r\n            \"\"\r\n        ],\r\n        \"numeral\": [\r\n            \"otto\",\r\n            \"nove\"\r\n        ],\r\n        \"conjuncao\": [\r\n            \"mentre\"\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44392/Letter",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"Letter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letter | save pronoun personal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"sie\",\r\n    \"linguagem\": \"deutsch\",\r\n    \"tipo\": [\r\n        \"pessoal\"\r\n    ],\r\n    \"numero\": [\r\n        \"plural\"\r\n    ],\r\n    \"pessoa\": [\r\n        3\r\n    ],\r\n    \"genero\": [\r\n        \"masculino\",\r\n        \"feminino\",\r\n        \"neutro\"\r\n    ],\r\n    \"contexto\": [\r\n        \"masculino\",\r\n        \"feminino\",\r\n        \"neutro\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44392/Letter/Pronoun",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"Letter",
+						"Pronoun"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letter | save pronoun object",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"te\",\r\n    \"linguagem\": \"português\",\r\n    \"tipo\": [\r\n        \"objeto\"\r\n    ],\r\n    \"numero\": [\r\n        \"singular\"\r\n    ],\r\n    \"pessoa\": [\r\n        2\r\n    ],\r\n    \"genero\": [\r\n        \"masculino\",\r\n        \"feminino\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44392/Letter/Pronoun",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"Letter",
+						"Pronoun"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letter | save pronoun handling",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Sie\",    \r\n    \"linguagem\": \"deutsch\",\r\n    \"tipo\": [\r\n        \"tratamento\"\r\n    ],\r\n    \"numero\": [\r\n        \"singular\",\r\n        \"plural\"\r\n    ],\r\n    \"pessoa\": [\r\n        3\r\n    ],\r\n    \"genero\": [\r\n        \"masculino\",\r\n        \"feminino\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44392/Letter/Pronoun",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"Letter",
+						"Pronoun"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letter | save pronoun demonstrative",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"diese\",    \r\n    \"linguagem\": \"deutsch\",\r\n    \"tipo\": [\r\n        \"demonstrativo\"\r\n    ],\r\n    \"numero\": [\r\n        \"singular\",\r\n        \"plural\"\r\n    ],\r\n    \"pessoa\": [\r\n        1,\r\n        2,\r\n        3\r\n    ],\r\n    \"genero\": [\r\n        \"masculino\",\r\n        \"feminino\"\r\n    ],\r\n    \"contexto\": [\r\n        \"plural\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44392/Letter/Pronoun",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"Letter",
+						"Pronoun"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letter | save pronoun possessive",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"loro\",\r\n    \"linguagem\": \"italiano\",\r\n    \"tipo\": [\r\n        \"possessivo\"\r\n    ],\r\n    \"numero\": [\r\n        \"plural\"\r\n    ],\r\n    \"pessoa\": [\r\n        3\r\n    ],\r\n    \"genero\": [\r\n        \"masculino\",\r\n        \"feminino\"\r\n    ],\r\n    \"contexto\": [\r\n        \"masculino\",\r\n        \"feminino\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44392/Letter/Pronoun",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"Letter",
+						"Pronoun"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letter | save pronoun interrogative",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"welche\",\r\n    \"linguagem\": \"deutsch\",\r\n    \"tipo\": [\r\n        \"interrogativo\",\r\n        \"nominativo\"\r\n    ],\r\n    \"numero\": [\r\n        \"plural\"\r\n    ],\r\n    \"pessoa\": [\r\n        1,\r\n        2,\r\n        3\r\n    ],\r\n    \"genero\": [\r\n        \"masculino\",\r\n        \"feminino\",\r\n        \"neutro\"\r\n    ],\r\n    \"contexto\": [\r\n        \"plural\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44392/Letter/Pronoun",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"Letter",
+						"Pronoun"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letter | save pronoun relative",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"welcher\",\r\n    \"linguagem\": \"deutsch\",\r\n    \"tipo\": [\r\n        \"relative\",\r\n        \"acusativo\"\r\n    ],\r\n    \"numero\": [\r\n        \"singular\"\r\n    ],\r\n    \"pessoa\": [\r\n        1,\r\n        2,\r\n        3\r\n    ],\r\n    \"genero\": [\r\n        \"masculino\",\r\n        \"feminino\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44392/Letter/Pronoun",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"Letter",
+						"Pronoun"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letter | save pronoun undefined",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"einige\",\r\n    \"linguagem\": \"deutsch\",\r\n    \"tipo\": [\r\n        \"indefinido\"\r\n    ],\r\n    \"numero\": [\r\n        \"plural\"\r\n    ],\r\n    \"pessoa\": [\r\n        1,\r\n        2,\r\n        3\r\n    ],\r\n    \"genero\": [\r\n        \"masculino\",\r\n        \"feminino\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44392/Letter/Pronoun",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"Letter",
+						"Pronoun"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letter | save article defined",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"un\",\r\n    \"linguagem\": \"italiano\",\r\n    \"tipo\": [\r\n        \"definido\"\r\n    ],\r\n    \"numero\": [\r\n        \"plural\"\r\n    ],\r\n    \"genero\": [\r\n        \"masculino\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44392/Letter/Article",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"Letter",
+						"Article"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letter | save article undefined",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"delle\",\r\n    \"linguagem\": \"italiano\",\r\n    \"tipo\": [\r\n        \"indefinido\"\r\n    ],\r\n    \"numero\": [\r\n        \"plural\"\r\n    ],\r\n    \"genero\": [\r\n        \"feminino\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44392/Letter/Article",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"Letter",
+						"Article"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "letter | save sqlite",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44392/Letter/SQLite",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44392",
+					"path": [
+						"Letter",
+						"SQLite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postman | create repository",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"blog\",\r\n        \"auto_init\": true,\r\n        \"private\": true,\r\n        \"gitignore_template\": \"nanoc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/user/repos",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"user",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postman | create release",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tag_name\": \"v1.0.0\",\r\n    \"target_commitish\": \"main\",\r\n    \"name\": \"v1.0.0\",\r\n    \"body\": \"Description of the release\",\r\n    \"draft\": false,\r\n    \"prerelease\": false,\r\n    \"generate_release_notes\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/jonasmapuche/blog/releases",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"jonasmapuche",
+						"blog",
+						"releases"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "noten | save note",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"letra\": [\r\n        {\r\n            \"sigla\": \"C\",\r\n            \"nome\": \"Do\",\r\n            \"acidente\": \"\",\r\n            \"posicao\": \"inferior\",\r\n            \"linha\": true,\r\n            \"ordem\": 1\r\n        }\r\n    ],\r\n    \"nivel\": 4,\r\n    \"frequencia\": 261.626\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44353/Song/add",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44353",
+					"path": [
+						"Song",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chord | save chord",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"letra\": [\r\n        {\r\n            \"sigla\": \"A\",\r\n            \"nome\": \"Lá\",\r\n            \"acidente\": \"\",\r\n            \"constrita\": true,\r\n            \"casa\": 2,\r\n            \"frequencia\": 220,\r\n            \"oitava\": 3\r\n        },\r\n        {\r\n            \"sigla\": \"A\",\r\n            \"nome\": \"Fá\",\r\n            \"acidente\": \"Sustenido\",\r\n            \"constrita\": true,\r\n            \"casa\": 2,\r\n            \"frequencia\": 369.994,\r\n            \"oitava\": 4\r\n        },\r\n        {\r\n            \"sigla\": \"D\",\r\n            \"nome\": \"Ré\",\r\n            \"acidente\": \"\",\r\n            \"constrita\": true,\r\n            \"casa\": 3,\r\n            \"frequencia\": 293.665,\r\n            \"oitava\": 4\r\n        }\r\n    ],\r\n    \"sigla\": \"D\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44326/Chord/add",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44326",
+					"path": [
+						"Chord",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chord | hello world",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44326/Chord",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44326",
+					"path": [
+						"Chord"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chord | get all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44326/Chord/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44326",
+					"path": [
+						"Chord",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activity | hello world",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://api.stomach.com.br:8889/activity",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stomach",
+						"com",
+						"br"
+					],
+					"port": "8889",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activity | get all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://api.stomach.com.br:8889/activity/all",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stomach",
+						"com",
+						"br"
+					],
+					"port": "8889",
+					"path": [
+						"activity",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activity | save",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"export\": \"15/08/2023\",\r\n    \"framework\": [\r\n        \"power\",\r\n        \"math\"\r\n    ],\r\n    \"list\": [\r\n        {\r\n            \"name\": \"watts\",\r\n            \"check\": true,\r\n            \"description\": \"watts = volts * amps\"\r\n        },\r\n        {\r\n            \"name\": \"volts\",\r\n            \"check\": true,\r\n            \"description\": \"volts = watts / amps\"\r\n        },\r\n        {\r\n            \"name\": \"amps\",\r\n            \"check\": true,\r\n            \"description\": \"amps = watts / volts\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.stomach.com.br:8889/activity",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stomach",
+						"com",
+						"br"
+					],
+					"port": "8889",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activity | save lift",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": [\r\n        \"lift\",\r\n        \"sustentação\"\r\n    ],\r\n    \"date\": \"23/04/2024\",\r\n    \"initial\": \"L\",\r\n    \"description\": \"A sustentação é função da densidade do ar (densidade dividida por dois), do coeficiente de sustentação, da área da asa e da velocidade de voo elevada ao quadrado, e seu símbolo é 'L'.\",\r\n    \"equation\": [\r\n        {\r\n            \"name\": [\r\n                \"half\",\r\n                \"one division two\"\r\n            ],\r\n            \"initial\": \"1/2\",\r\n            \"prefix\": \"\",\r\n            \"signal\": \"plus\",\r\n            \"sequence\": 1,\r\n            \"description\": \"One split two.\"\r\n        },\r\n        {\r\n            \"name\": [\r\n                \"air density\"\r\n            ],\r\n            \"initial\": \"p\",\r\n            \"prefix\": \"\",\r\n            \"signal\": \"times\",\r\n            \"sequence\": 2,\r\n            \"description\": \"The density of air or atmospheric density, denoted ρ, is the mass per unit volume of Earth's atmosphere.\"\r\n        },\r\n        {\r\n            \"name\": [\r\n                \"speed\"\r\n            ],\r\n            \"initial\": \"V^2\",\r\n            \"prefix\": \"p\",\r\n            \"signal\": \"times\",\r\n            \"sequence\": 3,\r\n            \"description\": \"Speed is defined as. The rate of change of position of an object in any direction. Speed is measured as the ratio of distance to the time in which the distance was covered.\"\r\n        },\r\n        {\r\n            \"name\": [\r\n                \"wing field\"\r\n            ],\r\n            \"initial\": \"S\",\r\n            \"prefix\": \"V^2\",\r\n            \"signal\": \"times\",\r\n            \"sequence\": 4,\r\n            \"description\": \"Area of its wing.\"\r\n        },\r\n        {\r\n            \"name\": [\r\n                \"lift coefficient\"\r\n            ],\r\n            \"initial\": \"CL\",\r\n            \"prefix\": \"S\",\r\n            \"signal\": \"times\",\r\n            \"sequence\": 5,\r\n            \"description\": \"It is a number that indicates the ability of an airfoil to produce lift.\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8889/activity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activity | save power",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": [\r\n        \"watts\",\r\n        \"power\"\r\n    ],\r\n    \"date\": \"23/04/2024\",\r\n    \"initial\": \"W\",\r\n    \"description\": \"The watt is a measure of the rate of energy transfer over a unit of time, with one watt equal to one joule (J) per second: W = J/s. A joule is the standard unit of energy or work in the SI standard, which defines the joule in terms of kilograms, meters and seconds: J = kg∙m2∙s-2.\",\r\n    \"equation\": [\r\n        {\r\n            \"name\": [\r\n                \"amperes\"\r\n            ],\r\n            \"initial\": \"i\",\r\n            \"prefix\": \"\",\r\n            \"signal\": \"plus\",\r\n            \"sequence\": 1,\r\n            \"description\": \"A amperagem é uma unidade de medida de corrente elétrica.\"\r\n        },\r\n        {\r\n            \"name\": [\r\n                \"volts\"\r\n            ],\r\n            \"initial\": \"V\",\r\n            \"prefix\": \"i\",\r\n            \"signal\": \"times\",\r\n            \"sequence\": 2,\r\n            \"description\": \"The SI unit of electromotive force, the difference of potential that would drive one ampere of current against one ohm resistance.\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8889/activity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activity | get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": [\r\n        \"air density\"\r\n    ],\r\n    \"date\": \"23/04/2024\",\r\n    \"formula\": {\r\n        \"name\": [\r\n            \"lift\"\r\n        ],\r\n        \"initial\": \"L\",\r\n        \"description\": \"A sustentação é função da densidade do ar (densidade dividida por dois), do coeficiente de sustentação, da área da asa e da velocidade de voo elevada ao quadrado, e seu símbolo é 'L'.\"\r\n    },\r\n    \"equation\": {\r\n        \"initial\": \"p\",\r\n        \"prefix\": \"\",\r\n        \"signal\": \"times\",\r\n        \"sequence\": 2,\r\n        \"description\": \"The density of air or atmospheric density, denoted ρ, is the mass per unit volume of Earth's atmosphere.\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.stomach.com.br:8889/activity",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stomach",
+						"com",
+						"br"
+					],
+					"port": "8889",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "malware | save",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"boxe 3\",\r\n    \"export\": \"23/08/2022\",\r\n    \"framework\": \"blow\",\r\n    \"list\": [\r\n        {\r\n            \"name\": \"jab\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe reto e frontal, dado com a mão da frente da guarda de boxe (vê imagem abaixo), com a intenção de afastar e manter uma certa um distância, considerada segura, do adversário. Não é um golpe realizado com muita potência, porém, caso o adversário já esteja debilito, um Jab certeiro pode levar a um nocaute.\"\r\n        },\r\n        {\r\n            \"name\": \"direto\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um soco reto dado com a mão de trás da guarda de boxe (vê imagem abaixo) e aplicado frontalmente no adversário com muita potência. Você o aplica com força com intenção de derrubar (nocautear) o oponente.\"\r\n        },\r\n        {\r\n            \"name\": \"gancho\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe feito de baixo para cima na diagonal, que geralmente funciona por ser curto, rápido e potente, podendo quebrar a defesa do oponente pelos lados.\"\r\n        },\r\n        {\r\n            \"name\": \"uppercut\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"Este golpe é realizado sentido baixo para cima na vertical, afim de acertar o queixo do rival, mas, pode também pode ser aplicado como uma quebra de barreira.\"\r\n        },\r\n        {\r\n            \"name\": \"cruzado\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É como o golpe lateral com movimento horizontal, com o objetivo de atingir a lateral da cabeça com intensidade de força. Para realizá-lo, flexione o braço de modo a acertar a lateral do rosto do adversário.\"\r\n        },\r\n        {\r\n            \"name\": \"swing\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe cruzado feito em diagonal e de cima para baixo com a intenção de acertar a cabeça do oponente. É preciso dar uma passada lateral com a perna da frente e soltar o golpe gol a mão de trás.\"\r\n        },\r\n        {\r\n            \"name\": \"overhand\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe cruzado feito em diagonal e de cima para baixo com a intenção de acertar a cabeça do oponente. É preciso dar uma passada lateral com a perna da frente e soltar o golpe gol a mão de trás.\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.0.4:8889/malware",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"4"
+					],
+					"port": "8889",
+					"path": [
+						"malware"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "malware | get framework",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"boxe 3\",\r\n    \"export\": \"23/08/2022\",\r\n    \"framework\": \"blow\",\r\n    \"list\": [\r\n        {\r\n            \"name\": \"jab\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe reto e frontal, dado com a mão da frente da guarda de boxe (vê imagem abaixo), com a intenção de afastar e manter uma certa um distância, considerada segura, do adversário. Não é um golpe realizado com muita potência, porém, caso o adversário já esteja debilito, um Jab certeiro pode levar a um nocaute.\"\r\n        },\r\n        {\r\n            \"name\": \"direto\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um soco reto dado com a mão de trás da guarda de boxe (vê imagem abaixo) e aplicado frontalmente no adversário com muita potência. Você o aplica com força com intenção de derrubar (nocautear) o oponente.\"\r\n        },\r\n        {\r\n            \"name\": \"gancho\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe feito de baixo para cima na diagonal, que geralmente funciona por ser curto, rápido e potente, podendo quebrar a defesa do oponente pelos lados.\"\r\n        },\r\n        {\r\n            \"name\": \"uppercut\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"Este golpe é realizado sentido baixo para cima na vertical, afim de acertar o queixo do rival, mas, pode também pode ser aplicado como uma quebra de barreira.\"\r\n        },\r\n        {\r\n            \"name\": \"cruzado\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É como o golpe lateral com movimento horizontal, com o objetivo de atingir a lateral da cabeça com intensidade de força. Para realizá-lo, flexione o braço de modo a acertar a lateral do rosto do adversário.\"\r\n        },\r\n        {\r\n            \"name\": \"swing\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe cruzado feito em diagonal e de cima para baixo com a intenção de acertar a cabeça do oponente. É preciso dar uma passada lateral com a perna da frente e soltar o golpe gol a mão de trás.\"\r\n        },\r\n        {\r\n            \"name\": \"overhand\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe cruzado feito em diagonal e de cima para baixo com a intenção de acertar a cabeça do oponente. É preciso dar uma passada lateral com a perna da frente e soltar o golpe gol a mão de trás.\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8889/malware/framework/blow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"malware",
+						"framework",
+						"blow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "malware | get name",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"boxe 3\",\r\n    \"export\": \"23/08/2022\",\r\n    \"framework\": \"blow\",\r\n    \"list\": [\r\n        {\r\n            \"name\": \"jab\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe reto e frontal, dado com a mão da frente da guarda de boxe (vê imagem abaixo), com a intenção de afastar e manter uma certa um distância, considerada segura, do adversário. Não é um golpe realizado com muita potência, porém, caso o adversário já esteja debilito, um Jab certeiro pode levar a um nocaute.\"\r\n        },\r\n        {\r\n            \"name\": \"direto\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um soco reto dado com a mão de trás da guarda de boxe (vê imagem abaixo) e aplicado frontalmente no adversário com muita potência. Você o aplica com força com intenção de derrubar (nocautear) o oponente.\"\r\n        },\r\n        {\r\n            \"name\": \"gancho\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe feito de baixo para cima na diagonal, que geralmente funciona por ser curto, rápido e potente, podendo quebrar a defesa do oponente pelos lados.\"\r\n        },\r\n        {\r\n            \"name\": \"uppercut\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"Este golpe é realizado sentido baixo para cima na vertical, afim de acertar o queixo do rival, mas, pode também pode ser aplicado como uma quebra de barreira.\"\r\n        },\r\n        {\r\n            \"name\": \"cruzado\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É como o golpe lateral com movimento horizontal, com o objetivo de atingir a lateral da cabeça com intensidade de força. Para realizá-lo, flexione o braço de modo a acertar a lateral do rosto do adversário.\"\r\n        },\r\n        {\r\n            \"name\": \"swing\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe cruzado feito em diagonal e de cima para baixo com a intenção de acertar a cabeça do oponente. É preciso dar uma passada lateral com a perna da frente e soltar o golpe gol a mão de trás.\"\r\n        },\r\n        {\r\n            \"name\": \"overhand\",\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe cruzado feito em diagonal e de cima para baixo com a intenção de acertar a cabeça do oponente. É preciso dar uma passada lateral com a perna da frente e soltar o golpe gol a mão de trás.\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8889/malware/name/jab",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"malware",
+						"name",
+						"jab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activity | save | Raspberry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"boxe 5\",\r\n    \"export\": \"23/08/2022\",\r\n    \"framework\": \"blow\",\r\n    \"list\": [\r\n        {\r\n            \"name\": [\r\n                \"jab\"\r\n            ],\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe reto e frontal, dado com a mão da frente da guarda de boxe (vê imagem abaixo), com a intenção de afastar e manter uma certa um distância, considerada segura, do adversário. Não é um golpe realizado com muita potência, porém, caso o adversário já esteja debilito, um Jab certeiro pode levar a um nocaute.\"\r\n        },\r\n        {\r\n            \"name\": [\r\n                \"direto\"\r\n            ],\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um soco reto dado com a mão de trás da guarda de boxe (vê imagem abaixo) e aplicado frontalmente no adversário com muita potência. Você o aplica com força com intenção de derrubar (nocautear) o oponente.\"\r\n        },\r\n        {\r\n            \"name\": [\r\n                \"gancho\"\r\n            ],\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe feito de baixo para cima na diagonal, que geralmente funciona por ser curto, rápido e potente, podendo quebrar a defesa do oponente pelos lados.\"\r\n        },\r\n        {\r\n            \"name\": [\r\n                \"uppercut\"\r\n            ],\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"Este golpe é realizado sentido baixo para cima na vertical, afim de acertar o queixo do rival, mas, pode também pode ser aplicado como uma quebra de barreira.\"\r\n        },\r\n        {\r\n            \"name\": [\r\n                \"cruzado\"\r\n            ],\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É como o golpe lateral com movimento horizontal, com o objetivo de atingir a lateral da cabeça com intensidade de força. Para realizá-lo, flexione o braço de modo a acertar a lateral do rosto do adversário.\"\r\n        },\r\n        {\r\n            \"name\": [\r\n                \"swing\"\r\n            ],\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe cruzado feito em diagonal e de cima para baixo com a intenção de acertar a cabeça do oponente. É preciso dar uma passada lateral com a perna da frente e soltar o golpe gol a mão de trás.\"\r\n        },\r\n        {\r\n            \"name\": [\r\n                \"overhand\"\r\n            ],\r\n            \"rank\": \"manual\",\r\n            \"check\": true,\r\n            \"description\": \"É um golpe cruzado feito em diagonal e de cima para baixo com a intenção de acertar a cabeça do oponente. É preciso dar uma passada lateral com a perna da frente e soltar o golpe gol a mão de trás.\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.stomach.com.br:3000/save",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stomach",
+						"com",
+						"br"
+					],
+					"port": "3000",
+					"path": [
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activity | boxe white ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"volts\": 20000,\r\n    \"coulomb\": 0.00000000000000000016,\r\n    \"sequence\": [\r\n        {\r\n            \"mass\": 70.00,\r\n            \"healt\": 0.84,\r\n            \"temperature\": 37,\r\n            \"time\": 300\r\n        },\r\n        {\r\n            \"mass\": 70.00,\r\n            \"healt\": 0.84,\r\n            \"temperature\": 37,\r\n            \"time\": 600\r\n        },\r\n        {\r\n            \"mass\": 70.00,\r\n            \"healt\": 0.84,\r\n            \"temperature\": 37,\r\n            \"time\": 300\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/boxe/white",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"boxe",
+						"white"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activity | boxe white  | Raspberry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"volts\": 20000,\r\n    \"coulomb\": 0.00000000000000000016,\r\n    \"sequence\": [\r\n        {\r\n            \"mass\": 70.00,\r\n            \"healt\": 0.84,\r\n            \"temperature\": 37,\r\n            \"time\": 300\r\n        },\r\n        {\r\n            \"mass\": 70.00,\r\n            \"healt\": 0.84,\r\n            \"temperature\": 37,\r\n            \"time\": 600\r\n        },\r\n        {\r\n            \"mass\": 70.00,\r\n            \"healt\": 0.84,\r\n            \"temperature\": 37,\r\n            \"time\": 300\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.stomach.com.br:3000/boxe/white",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stomach",
+						"com",
+						"br"
+					],
+					"port": "3000",
+					"path": [
+						"boxe",
+						"white"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activity | boxe white => exit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"volts\": 20000,\r\n    \"coulomb\": 0.00000000000000000016,\r\n    \"sequence\": [\r\n        {\r\n            \"malware\": [\r\n                {\r\n                    \"name\": \"destro\",\r\n                    \"rank\": \"manual\",\r\n                    \"check\": true,\r\n                    \"description\": \"É usada por lutadores destros, ou seja, lutadores que usam a mãe direita como a “mão forte”. A base de destro é feito a colocar o pé esquerdo à frente do corpo e a recuar do pé direito.\"\r\n                },\r\n                {\r\n                    \"name\": \"jab\",\r\n                    \"rank\": \"manual\",\r\n                    \"check\": true,\r\n                    \"description\": \"É um golpe reto e frontal, dado com a mão da frente da guarda de boxe (vê imagem abaixo), com a intenção de afastar e manter uma certa um distância, considerada segura, do adversário. Não é um golpe realizado com muita potência, porém, caso o adversário já esteja debilito, um Jab certeiro pode levar a um nocaute.\"\r\n                },\r\n                {\r\n                    \"name\": \"direto\",\r\n                    \"rank\": \"manual\",\r\n                    \"check\": true,\r\n                    \"description\": \"É um soco reto dado com a mão de trás da guarda de boxe (vê imagem abaixo) e aplicado frontalmente no adversário com muita potência. Você o aplica com força com intenção de derrubar (nocautear) o oponente.\"\r\n                }\r\n            ],\r\n            \"resistence\": {\r\n                \"sensible_healt\": 0.0,\r\n                \"heat_capacity\": 0.0\r\n            }\r\n        },\r\n        {\r\n            \"malware\": [\r\n                {\r\n                    \"name\": \"destro\",\r\n                    \"rank\": \"manual\",\r\n                    \"check\": true,\r\n                    \"description\": \"É usada por lutadores destros, ou seja, lutadores que usam a mãe direita como a “mão forte”. A base de destro é feito a colocar o pé esquerdo à frente do corpo e a recuar do pé direito.\"\r\n                },\r\n                {\r\n                    \"name\": \"jab\",\r\n                    \"rank\": \"manual\",\r\n                    \"check\": true,\r\n                    \"description\": \"É um golpe reto e frontal, dado com a mão da frente da guarda de boxe (vê imagem abaixo), com a intenção de afastar e manter uma certa um distância, considerada segura, do adversário. Não é um golpe realizado com muita potência, porém, caso o adversário já esteja debilito, um Jab certeiro pode levar a um nocaute.\"\r\n                },\r\n                {\r\n                    \"name\": \"direto\",\r\n                    \"rank\": \"manual\",\r\n                    \"check\": true,\r\n                    \"description\": \"É um soco reto dado com a mão de trás da guarda de boxe (vê imagem abaixo) e aplicado frontalmente no adversário com muita potência. Você o aplica com força com intenção de derrubar (nocautear) o oponente.\"\r\n                },\r\n                {\r\n                    \"name\": \"gancho\",\r\n                    \"rank\": \"manual\",\r\n                    \"check\": true,\r\n                    \"description\": \"É um golpe feito de baixo para cima na diagonal, que geralmente funciona por ser curto, rápido e potente, podendo quebrar a defesa do oponente pelos lados.\"\r\n                }\r\n            ],\r\n            \"resistence\": {\r\n                \"sensible_healt\": 0.0,\r\n                \"heat_capacity\": 0.0\r\n            }\r\n        },\r\n        {\r\n            \"malware\": [\r\n                {\r\n                    \"name\": \"destro\",\r\n                    \"rank\": \"manual\",\r\n                    \"check\": true,\r\n                    \"description\": \"É usada por lutadores destros, ou seja, lutadores que usam a mãe direita como a “mão forte”. A base de destro é feito a colocar o pé esquerdo à frente do corpo e a recuar do pé direito.\"\r\n                },\r\n                {\r\n                    \"name\": \"jab\",\r\n                    \"rank\": \"manual\",\r\n                    \"check\": true,\r\n                    \"description\": \"É um golpe reto e frontal, dado com a mão da frente da guarda de boxe (vê imagem abaixo), com a intenção de afastar e manter uma certa um distância, considerada segura, do adversário. Não é um golpe realizado com muita potência, porém, caso o adversário já esteja debilito, um Jab certeiro pode levar a um nocaute.\"\r\n                },\r\n                {\r\n                    \"name\": \"direto\",\r\n                    \"rank\": \"manual\",\r\n                    \"check\": true,\r\n                    \"description\": \"É um soco reto dado com a mão de trás da guarda de boxe (vê imagem abaixo) e aplicado frontalmente no adversário com muita potência. Você o aplica com força com intenção de derrubar (nocautear) o oponente.\"\r\n                },\r\n                {\r\n                    \"name\": \"gancho\",\r\n                    \"rank\": \"manual\",\r\n                    \"check\": true,\r\n                    \"description\": \"É um golpe feito de baixo para cima na diagonal, que geralmente funciona por ser curto, rápido e potente, podendo quebrar a defesa do oponente pelos lados.\"\r\n                },\r\n                {\r\n                    \"name\": \"uppercut\",\r\n                    \"rank\": \"manual\",\r\n                    \"check\": true,\r\n                    \"description\": \"Este golpe é realizado sentido baixo para cima na vertical, afim de acertar o queixo do rival, mas, pode também pode ser aplicado como uma quebra de barreira.\"\r\n                }\r\n            ],\r\n            \"resistence\": {\r\n                \"sensible_healt\": 0.0,\r\n                \"heat_capacity\": 0.0\r\n            }\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/boxe/white",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"boxe",
+						"white"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://servicodados.ibge.gov.br/api/v2/cnae/subclasses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://servicodados.ibge.gov.br/api/v2/cnae/subclasses",
+					"protocol": "https",
+					"host": [
+						"servicodados",
+						"ibge",
+						"gov",
+						"br"
+					],
+					"path": [
+						"api",
+						"v2",
+						"cnae",
+						"subclasses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "OWNER",
+			"value": "{owner}"
+		}
+	]
+}
