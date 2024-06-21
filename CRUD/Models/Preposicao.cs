@@ -10,6 +10,6 @@ namespace CRUD.Models
         public String name { get; set; }
         public String lesson { get; set; }
         public String language { get; set; }
-    }
+    } 
 }
  
