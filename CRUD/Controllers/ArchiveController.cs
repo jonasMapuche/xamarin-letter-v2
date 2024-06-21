@@ -12,6 +12,8 @@ namespace CRUD.Controllers
     {
         public static readonly SQLiteService _sQLiteService = new SQLiteService();
         public static readonly LetterService _lettersService = new LetterService("letter");
+        public static readonly PronounService _pronounsService = new PronounService("pronoun");
+        public static readonly ArticleService _articlesService = new ArticleService("article");
 
         [HttpGet("")]
         public async Task<ActionResult> Get()
@@ -46,7 +48,9 @@ namespace CRUD.Controllers
         public async Task<IActionResult> SQLite()
         {
             List<Aula> aula = await _lettersService.GetAsync();
-            await _sQLiteService.CreateAsync(aula);
+            List<Estoutro> pronome = await _pronounsService.GetAsync();
+            List<Preceito> artigo = await _articlesService.GetAsync();
+            await _sQLiteService.CreateAsync(aula, pronome);
             return Ok("SQLite build with ten word class.");
         }
 

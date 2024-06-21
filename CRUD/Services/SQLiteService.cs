@@ -26,9 +26,11 @@ namespace CRUD.Services
             Database.CreateTableAsync<Numeral>().Wait();
             Database.CreateTableAsync<Conjuncao>().Wait();
             Database.CreateTableAsync<Interjeicao>().Wait();
+            Database.CreateTableAsync<Pronomes>().Wait();
+            Database.CreateTableAsync<Artigos>().Wait();
         }
 
-        public async Task CreateAsync(List<Aula> aula)
+        public async Task CreateAsync(List<Aula> aula, List<Estoutro> estoutro, List<Preceito> preceito)
         {
             await Substantivo(aula);
             await Verbo(aula);
@@ -40,6 +42,8 @@ namespace CRUD.Services
             await Numeral(aula);
             await Conjuncao(aula);
             await Interjeicao(aula);
+            await Pronomes(estoutro);
+            await Artigos(preceito);
         }
 
         private async Task Substantivo(List<Aula> aula)
@@ -91,7 +95,7 @@ namespace CRUD.Services
                     item.name = index2;
                     item.lesson = index.nome;
                     item.language = Language.Lesson(index.nome);
-                    if (item.name!="") pronome.Add(item);
+                    if (item.name != "") pronome.Add(item);
                 }
                 );
             }
@@ -230,6 +234,78 @@ namespace CRUD.Services
             }
             );
             await Database.InsertAllAsync(interjeicao);
+        }
+
+        private async Task Pronomes(List<Estoutro> estrouto)
+        {
+            List<Pronomes> pronomes = new List<Pronomes>();
+            estrouto.ForEach(in_pronoun =>
+            {
+                in_pronoun.tipo.ForEach(in_tipo =>
+                {
+                    in_pronoun.contento.ForEach(in_content =>
+                    {
+                        in_content.pessoa.ForEach(in_person =>
+                        {
+                            in_content.numero.ForEach(in_number =>
+                            {
+                                in_content.genero.ForEach(in_gender =>
+                                {
+                                    in_content.contexto.ForEach(in_context =>
+                                    {
+                                        Pronomes item = new Pronomes();
+                                        item.name = in_pronoun.nome;
+                                        item.language = in_pronoun.linguagem;
+                                        item.type = in_tipo;
+                                        item.person = in_person;
+                                        item.number = in_number;
+                                        item.gender = in_gender;
+                                        item.context = in_context;
+                                        pronomes.Add(item);
+                                    }
+                                    );
+                                }
+                                );
+                            }
+                            );
+                        }
+                        );
+                    }
+                    );
+                }
+                );
+            }
+            );
+            await Database.InsertAllAsync(pronomes);
+        }
+
+        private async Task Artigos(List<Preceito> preceito)
+        {
+            List<Artigos> artigos = new List<Artigos>();
+            preceito.ForEach(in_preceito =>
+            {
+                in_preceito.tipo.ForEach(in_type =>
+                {
+                    in_preceito.numero.ForEach(in_number =>
+                    {
+                        in_preceito.genero.ForEach(in_gender =>
+                        {
+                            Artigos item = new Artigos();
+                            item.name = in_preceito.nome;
+                            item.language = in_preceito.linguagem;
+                            item.type = in_type;
+                            item.number = in_number;
+                            item.gender = in_gender;
+                            artigos.Add(item);
+                        }
+                        );
+                    }
+                    );
+                }
+                );
+            }
+            );
+            await Database.InsertAllAsync(artigos);
         }
     }
 }

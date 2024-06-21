@@ -11,7 +11,8 @@ namespace CRUD.Models
         public String language { get; set; }
         public String type { get; set; }
         public String number { get; set; }
-        public String person { get; set; }
+        public int person { get; set; }
         public String gender { get; set; }
+        public string context { get; set; }
     }
 }
