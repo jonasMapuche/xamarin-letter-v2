@@ -27,7 +27,7 @@ namespace CRUD.Services
                     mongoClient = new MongoClient(ConnectionPronoun);
                     break;
                 default:
-                    mongoClient = new MongoClient(ConnectionArticle);
+                    mongoClient = new MongoClient(ConnectionPreposition);
                     break;
             }
             var mongoDatabase = mongoClient.GetDatabase(DatabaseName);

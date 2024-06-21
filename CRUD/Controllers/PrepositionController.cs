@@ -11,6 +11,8 @@ namespace CRUD.Controllers
     public class PrepositionController : ControllerBase
     {
         public static readonly PrepositionService _prepositionsService = new PrepositionService("preposition");
+        public static readonly PrepositionService _prepositionsService2 = new PrepositionService("article");
+        public static readonly PrepositionService _prepositionsService3 = new PrepositionService("pronoun");
 
         [HttpGet("")]
         public async Task<ActionResult> Get()
@@ -20,10 +22,12 @@ namespace CRUD.Controllers
         }
 
         [HttpPost("")]
-        public async Task<IActionResult> Preposition(Juncao junaco)
+        public async Task<IActionResult> Preposition(Juncao juncao)
         {
-            await _prepositionsService.CreateAsync(junaco);
-            return CreatedAtAction(nameof(Get), new { id = junaco.Id }, junaco);
+            await _prepositionsService.CreateAsync(juncao);
+            await _prepositionsService2.CreateAsync(juncao);
+            await _prepositionsService3.CreateAsync(juncao);
+            return CreatedAtAction(nameof(Get), new { id = juncao.Id }, juncao);
         }
 
         [HttpGet("all")]

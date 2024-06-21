@@ -43,6 +43,11 @@ namespace CRUD
             ArticleService.ConnectionMalware = Configuration.GetConnectionString("ConnectionMalware");
             ArticleService.DatabaseName = Configuration.GetConnectionString("DatabaseName");
             ArticleService.CollectionArticle = Configuration.GetConnectionString("CollectionArticle");
+            PrepositionService.ConnectionPreposition = Configuration.GetConnectionString("ConnectionPreposition");
+            PrepositionService.ConnectionArticle = Configuration.GetConnectionString("ConnectionArticle");
+            PrepositionService.ConnectionPronoun = Configuration.GetConnectionString("ConnectionPronoun");
+            PrepositionService.DatabaseName = Configuration.GetConnectionString("DatabaseName");
+            PrepositionService.CollectionPreposition = Configuration.GetConnectionString("CollectionPreposition");
 
         }
 

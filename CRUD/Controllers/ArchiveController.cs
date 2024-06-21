@@ -14,7 +14,7 @@ namespace CRUD.Controllers
         public static readonly LetterService _lettersService = new LetterService("letter");
         public static readonly PronounService _pronounsService = new PronounService("pronoun");
         public static readonly ArticleService _articlesService = new ArticleService("article");
-        //public static readonly PrepositionService _prepositionsService = new PrepositionService("preposition");
+        public static readonly PrepositionService _prepositionsService = new PrepositionService("preposition");
 
         [HttpGet("")]
         public async Task<ActionResult> Get()
