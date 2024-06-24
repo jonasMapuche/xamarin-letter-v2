@@ -28,9 +28,10 @@ namespace CRUD.Services
             Database.CreateTableAsync<Interjeicao>().Wait();
             Database.CreateTableAsync<Pronomes>().Wait();
             Database.CreateTableAsync<Artigos>().Wait();
+            Database.CreateTableAsync<Preposicoes>().Wait();
         }
 
-        public async Task CreateAsync(List<Aula> aula, List<Estoutro> estoutro, List<Preceito> preceito)
+        public async Task CreateAsync(List<Aula> aula, List<Estoutro> estoutro, List<Preceito> preceito, List<Juncao> juncao)
         {
             await Substantivo(aula);
             await Verbo(aula);
@@ -44,6 +45,7 @@ namespace CRUD.Services
             await Interjeicao(aula);
             await Pronomes(estoutro);
             await Artigos(preceito);
+            await Preposicoes(juncao);
         }
 
         private async Task Substantivo(List<Aula> aula)
@@ -307,5 +309,24 @@ namespace CRUD.Services
             );
             await Database.InsertAllAsync(artigos);
         }
+
+        private async Task Preposicoes(List<Juncao> juncao)
+        {
+            List<Preposicoes> preposicoes = new List<Preposicoes>();
+            juncao.ForEach(in_juncao =>
+            {
+                in_juncao.tipo.ForEach(in_type =>
+                {
+                    Preposicoes item = new Preposicoes();
+                    item.name = in_juncao.nome;
+                    item.language = in_juncao.linguagem;
+                    item.type = in_type;
+                    preposicoes.Add(item);
+                }
+                );
+            }
+            );
+            await Database.InsertAllAsync(preposicoes);
+        }
     }
-}
+    }

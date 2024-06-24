@@ -51,8 +51,8 @@ namespace CRUD.Controllers
             List<Aula> aula = await _lettersService.GetAsync();
             List<Estoutro> pronome = await _pronounsService.GetAsync();
             List<Preceito> artigo = await _articlesService.GetAsync();
-            //List<Juncao> preposicao = await _prepositionsService.GetAsync();
-            await _sQLiteService.CreateAsync(aula, pronome, artigo);
+            List<Juncao> preposicao = await _prepositionsService.GetAsync();
+            await _sQLiteService.CreateAsync(aula, pronome, artigo, preposicao);
             return Ok("SQLite build with ten word class.");
         }
 
