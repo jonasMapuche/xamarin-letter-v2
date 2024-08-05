@@ -48,6 +48,16 @@ namespace CRUD
             PrepositionService.ConnectionPronoun = Configuration.GetConnectionString("ConnectionPronoun");
             PrepositionService.DatabaseName = Configuration.GetConnectionString("DatabaseName");
             PrepositionService.CollectionPreposition = Configuration.GetConnectionString("CollectionPreposition");
+            ConjunctionService.ConnectionConjunction = Configuration.GetConnectionString("ConnectionConjunction");
+            ConjunctionService.ConnectionPreposition = Configuration.GetConnectionString("ConnectionPreposition");
+            ConjunctionService.ConnectionValence = Configuration.GetConnectionString("ConnectionValence");
+            ConjunctionService.DatabaseName = Configuration.GetConnectionString("DatabaseName");
+            ConjunctionService.CollectionConjunction = Configuration.GetConnectionString("CollectionConjunction");
+            AdverbService.ConnectionAdverb = Configuration.GetConnectionString("ConnectionAdverb");
+            AdverbService.ConnectionPeriodic = Configuration.GetConnectionString("ConnectionPeriodic");
+            AdverbService.ConnectionActivity = Configuration.GetConnectionString("ConnectionActivity");
+            AdverbService.DatabaseName = Configuration.GetConnectionString("DatabaseName");
+            AdverbService.CollectionAdverb = Configuration.GetConnectionString("CollectionAdverb");
 
         }
 
