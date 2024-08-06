@@ -11,6 +11,7 @@ namespace CRUD.Services
     public class SQLiteService
     {
         static SQLiteAsyncConnection Database;
+        public string PathSQLite;
 
         public SQLiteService()
         {
@@ -29,9 +30,12 @@ namespace CRUD.Services
             Database.CreateTableAsync<Pronomes>().Wait();
             Database.CreateTableAsync<Artigos>().Wait();
             Database.CreateTableAsync<Preposicoes>().Wait();
+            Database.CreateTableAsync<Conjuncoes>().Wait();
+            Database.CreateTableAsync<Adverbios>().Wait();
+            PathSQLite = DataBasePach;
         }
 
-        public async Task CreateAsync(List<Aula> aula, List<Estoutro> estoutro, List<Preceito> preceito, List<Juncao> juncao)
+        public async Task CreateAsync(List<Aula> aula, List<Estoutro> estoutro, List<Preceito> preceito, List<Juncao> juncao, List<Ligacao> ligacao, List<Modificador> modificador)
         {
             await Substantivo(aula);
             await Verbo(aula);
@@ -46,6 +50,8 @@ namespace CRUD.Services
             await Pronomes(estoutro);
             await Artigos(preceito);
             await Preposicoes(juncao);
+            await Conjuncoes(ligacao);
+            await Adverbios(modificador);
         }
 
         private async Task Substantivo(List<Aula> aula)
@@ -328,5 +334,44 @@ namespace CRUD.Services
             );
             await Database.InsertAllAsync(preposicoes);
         }
+
+        private async Task Conjuncoes(List<Ligacao> ligacao)
+        {
+            List<Conjuncoes> conjuncoes = new List<Conjuncoes>();
+            ligacao.ForEach(in_ligacao =>
+            {
+                in_ligacao.tipo.ForEach(in_type =>
+                {
+                    Conjuncoes item = new Conjuncoes();
+                    item.name = in_ligacao.nome;
+                    item.language = in_ligacao.linguagem;
+                    item.type = in_type;
+                    conjuncoes.Add(item);
+                }
+                );
+            }
+            );
+            await Database.InsertAllAsync(conjuncoes);
+        }
+
+        private async Task Adverbios(List<Modificador> modificador)
+        {
+            List<Adverbios> adverbios = new List<Adverbios>();
+            modificador.ForEach(in_modificador =>
+            {
+                in_modificador.tipo.ForEach(in_type =>
+                {
+                    Adverbios item = new Adverbios();
+                    item.name = in_modificador.nome;
+                    item.language = in_modificador.linguagem;
+                    item.type = in_type;
+                    adverbios.Add(item);
+                }
+                );
+            }
+            );
+            await Database.InsertAllAsync(adverbios);
+        }
+
     }
-    }
+}

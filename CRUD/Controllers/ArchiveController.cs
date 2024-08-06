@@ -2,6 +2,7 @@
 using CRUD.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace CRUD.Controllers
@@ -10,11 +11,13 @@ namespace CRUD.Controllers
     [Route("[controller]")]
     public class ArchiveController : ControllerBase
     {
-        public static readonly SQLiteService _sQLiteService = new SQLiteService();
+        public static readonly SQLiteService _SQLiteService = new SQLiteService();
         public static readonly LetterService _lettersService = new LetterService("letter");
         public static readonly PronounService _pronounsService = new PronounService("pronoun");
         public static readonly ArticleService _articlesService = new ArticleService("article");
         public static readonly PrepositionService _prepositionsService = new PrepositionService("preposition");
+        public static readonly ConjunctionService _conjunctionsService = new ConjunctionService("conjunction");
+        public static readonly AdverbService _adverbsService = new AdverbService("adverb");
 
         [HttpGet("")]
         public async Task<ActionResult> Get()
@@ -52,8 +55,13 @@ namespace CRUD.Controllers
             List<Estoutro> pronome = await _pronounsService.GetAsync();
             List<Preceito> artigo = await _articlesService.GetAsync();
             List<Juncao> preposicao = await _prepositionsService.GetAsync();
-            await _sQLiteService.CreateAsync(aula, pronome, artigo, preposicao);
-            return Ok("SQLite build with ten word class.");
+            List<Ligacao> conjunction = await _conjunctionsService.GetAsync();
+            List<Modificador> adverb = await _adverbsService.GetAsync();
+            await _SQLiteService.CreateAsync(aula, pronome, artigo, preposicao, conjunction, adverb);
+            Message message = new Message();
+            message.text = "SQLite build with ten word class.";
+            message.path = _SQLiteService.PathSQLite;
+            return Ok(message);
         }
 
     }
