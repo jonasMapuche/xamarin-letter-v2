@@ -58,6 +58,11 @@ namespace CRUD
             AdverbService.ConnectionActivity = Configuration.GetConnectionString("ConnectionActivity");
             AdverbService.DatabaseName = Configuration.GetConnectionString("DatabaseName");
             AdverbService.CollectionAdverb = Configuration.GetConnectionString("CollectionAdverb");
+            NumeralService.ConnectionNumeral = Configuration.GetConnectionString("ConnectionNumeral");
+            NumeralService.ConnectionPeriodic = Configuration.GetConnectionString("ConnectionPeriodic");
+            NumeralService.ConnectionActivity = Configuration.GetConnectionString("ConnectionActivity");
+            NumeralService.DatabaseName = Configuration.GetConnectionString("DatabaseName");
+            NumeralService.CollectionNumeral = Configuration.GetConnectionString("CollectionNumeral");
 
         }
 

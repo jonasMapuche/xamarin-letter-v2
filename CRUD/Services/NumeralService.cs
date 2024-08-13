@@ -1,21 +1,23 @@
 ﻿using CRUD.Models;
 using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace CRUD.Services
 {
-    public class AdverbService
+    public class NumeralService
     {
-        public static string ConnectionAdverb { get; set; }
+        public static string ConnectionNumeral { get; set; }
         public static string ConnectionPeriodic { get; set; }
         public static string ConnectionActivity { get; set; }
         public static string DatabaseName { get; set; }
-        public static string CollectionAdverb { get; set; }
+        public static string CollectionNumeral { get; set; }
 
-        private readonly IMongoCollection<Modificador> _adverbsCollection;
+        private readonly IMongoCollection<Algarismo> _adverbsCollection;
 
-        public AdverbService(string connection)
+        public NumeralService(string connection)
         {
             MongoClient mongoClient;
             switch (connection)
@@ -27,29 +29,29 @@ namespace CRUD.Services
                     mongoClient = new MongoClient(ConnectionPeriodic);
                     break;
                 default:
-                    mongoClient = new MongoClient(ConnectionAdverb);
+                    mongoClient = new MongoClient(ConnectionNumeral);
                     break;
             }
             var mongoDatabase = mongoClient.GetDatabase(DatabaseName);
-            IMongoCollection<Modificador> ConfigurationValue = mongoDatabase.GetCollection<Modificador>(CollectionAdverb);
+            IMongoCollection<Algarismo> ConfigurationValue = mongoDatabase.GetCollection<Algarismo>(CollectionNumeral);
 
             _adverbsCollection = ConfigurationValue;
         }
 
-        public async Task<List<Modificador>> GetAsync() =>
+        public async Task<List<Algarismo>> GetAsync() =>
             await _adverbsCollection.Find(_ => true).ToListAsync();
 
-        public async Task<Modificador> GetAsync(string id) =>
+        public async Task<Algarismo> GetAsync(string id) =>
             await _adverbsCollection.Find(index => index.Id == id).FirstOrDefaultAsync();
 
-        public async Task<Modificador> GetSentenceSimpleAsync(string name) =>
+        public async Task<Algarismo> GetSentenceSimpleAsync(string name) =>
             await _adverbsCollection.Find(index => index.nome == name).FirstOrDefaultAsync();
 
-        public async Task CreateAsync(Modificador modificador) =>
-            await _adverbsCollection.InsertOneAsync(modificador);
+        public async Task CreateAsync(Algarismo algarismo) =>
+            await _adverbsCollection.InsertOneAsync(algarismo);
 
-        public async Task UpdateAsync(Modificador modificador) =>
-            await _adverbsCollection.ReplaceOneAsync(index => index.Id == modificador.Id, modificador);
+        public async Task UpdateAsync(Algarismo algarismo) =>
+            await _adverbsCollection.ReplaceOneAsync(index => index.Id == algarismo.Id, algarismo);
 
         public async Task RemoveAsync(string id) =>
             await _adverbsCollection.DeleteOneAsync(index => index.Id == id);
