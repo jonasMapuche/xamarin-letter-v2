@@ -32,10 +32,11 @@ namespace CRUD.Services
             Database.CreateTableAsync<Preposicoes>().Wait();
             Database.CreateTableAsync<Conjuncoes>().Wait();
             Database.CreateTableAsync<Adverbios>().Wait();
+            Database.CreateTableAsync<Numerais>().Wait();
             PathSQLite = DataBasePach;
         }
 
-        public async Task CreateAsync(List<Aula> aula, List<Estoutro> estoutro, List<Preceito> preceito, List<Juncao> juncao, List<Ligacao> ligacao, List<Modificador> modificador)
+        public async Task CreateAsync(List<Aula> aula, List<Estoutro> estoutro, List<Preceito> preceito, List<Juncao> juncao, List<Ligacao> ligacao, List<Modificador> modificador, List<Algarismo> algarismo)
         {
             await Substantivo(aula);
             await Verbo(aula);
@@ -52,6 +53,7 @@ namespace CRUD.Services
             await Preposicoes(juncao);
             await Conjuncoes(ligacao);
             await Adverbios(modificador);
+            await Numerais(algarismo);
         }
 
         private async Task Substantivo(List<Aula> aula)
@@ -371,6 +373,26 @@ namespace CRUD.Services
             }
             );
             await Database.InsertAllAsync(adverbios);
+        }
+
+        private async Task Numerais(List<Algarismo> algarismo)
+        {
+            List<Numerais> numerais = new List<Numerais>();
+            algarismo.ForEach(in_algarismo =>
+            {
+                in_algarismo.tipo.ForEach(in_type =>
+                {
+                    Numerais item = new Numerais();
+                    item.name = in_algarismo.nome;
+                    item.initial = in_algarismo.sigla;
+                    item.language = in_algarismo.linguagem;
+                    item.type = in_type;
+                    numerais.Add(item);
+                }
+                );
+            }
+            );
+            await Database.InsertAllAsync(numerais);
         }
 
     }
