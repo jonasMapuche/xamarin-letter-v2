@@ -1,0 +1,17 @@
+﻿using System.Collections.Generic;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
+namespace CRUD.Models
+{
+    public class EstoutroModel
+    {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string? Id { get; set; }
+        public string nome { get; set; }
+        public string linguagem { get; set; }
+        public List<string> tipo { get; set; }
+        public List<ContentoModel> contento { get; set; }
+    }
+}

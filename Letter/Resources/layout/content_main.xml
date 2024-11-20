@@ -35,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:clickable="true"
-                    app:srcCompat="@drawable/ic_number_1"
+                    app:srcCompat="@drawable/ic_pause"
                     android:id="@+id/floating_behind_1" />
 
                 <LinearLayout
@@ -101,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:clickable="true"
-                    app:srcCompat="@drawable/ic_number_2"
+                    app:srcCompat="@drawable/ic_pause"
                     android:id="@+id/floating_behind_2" />
 
                 <LinearLayout
@@ -167,7 +167,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:clickable="true"
-                    app:srcCompat="@drawable/ic_number_3"
+                    app:srcCompat="@drawable/ic_pause"
                     android:id="@+id/floating_behind_3" />
 
                 <LinearLayout
@@ -233,7 +233,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:clickable="true"
-                    app:srcCompat="@drawable/ic_number_4"
+                    app:srcCompat="@drawable/ic_pause"
                     android:id="@+id/floating_behind_4" />
 
                 <LinearLayout
@@ -298,7 +298,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:clickable="true"
-                    app:srcCompat="@drawable/ic_number_5"
+                    app:srcCompat="@drawable/ic_pause"
                     android:id="@+id/floating_behind_5" />
             
                 <LinearLayout
@@ -352,6 +352,7 @@
                 </LinearLayout>
 
             </LinearLayout>
+            <!--
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -616,10 +617,19 @@
                 </LinearLayout>
 
             </LinearLayout>
-
+            -->
         </LinearLayout>
     
     </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginLeft="@dimen/fab_up_left"
+        android:layout_marginBottom="@dimen/fab_up_bottom"
+        app:srcCompat="@drawable/ic_up"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_left"
@@ -638,6 +648,15 @@
         android:layout_marginLeft="@dimen/fab_right_left"
         android:layout_marginBottom="@dimen/fab_right_bottom"
         app:srcCompat="@drawable/ic_right"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginLeft="@dimen/fab_down_left"
+        android:layout_marginBottom="@dimen/fab_down_bottom"
+        app:srcCompat="@drawable/ic_down"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
