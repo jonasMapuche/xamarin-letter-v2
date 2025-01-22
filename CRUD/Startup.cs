@@ -63,6 +63,11 @@ namespace CRUD
             NumeralService.ConnectionActivity = Configuration.GetConnectionString("ConnectionActivity");
             NumeralService.DatabaseName = Configuration.GetConnectionString("DatabaseName");
             NumeralService.CollectionNumeral = Configuration.GetConnectionString("CollectionNumeral");
+            VerbService.ConnectionVerb = Configuration.GetConnectionString("ConnectionVerb");
+            VerbService.ConnectionConjunction = Configuration.GetConnectionString("ConnectionConjunction");
+            VerbService.ConnectionValence = Configuration.GetConnectionString("ConnectionValence");
+            VerbService.DatabaseName = Configuration.GetConnectionString("DatabaseName");
+            VerbService.CollectionVerb = Configuration.GetConnectionString("CollectionVerb");
 
         }
 

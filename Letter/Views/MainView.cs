@@ -1,21 +1,14 @@
 ﻿using Android.App;
 using Android.Content;
-using Android.Runtime;
-using Android.Speech.Tts;
 using Android.Widget;
 using CRUD.Models;
 using Google.Android.Material.FloatingActionButton;
-using Java.Interop;
 using Letter.Models;
 using Letter.ViewsModels;
 using Nito.AsyncEx;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Speech.Synthesis;
-using System.Threading.Tasks;
-using static Android.Renderscripts.Sampler;
-using static AndroidX.RecyclerView.Widget.RecyclerView;
 
 namespace Letter.Views
 {
@@ -60,24 +53,14 @@ namespace Letter.Views
 
         private List<EstoutroModel> _pronoun_english;
 
-        public IntPtr Handle => throw new NotImplementedException();
-
-        public int JniIdentityHashCode => throw new NotImplementedException();
-
-        public JniObjectReference PeerReference => throw new NotImplementedException();
-
-        public JniPeerMembers JniPeerMembers => throw new NotImplementedException();
-
-        public JniManagedPeerStates JniManagedPeerState => throw new NotImplementedException();
-
         public MainView(Context context)
         {
 //---
-            _lesson_english = _mainViewModel.GetLessonSimple("english");
-            _lesson_deutsch = _mainViewModel.GetLessonSimple("deutsch");
-            _lesson_italiano = _mainViewModel.GetLessonSimple("italiano");
-            _lesson_francais = _mainViewModel.GetLessonSimple("français");
-            _lesson_espanol = _mainViewModel.GetLessonSimple("espanõl");
+            _lesson_english = _mainViewModel.GetLessonSimple("english").Distinct().ToList();
+            _lesson_deutsch = _mainViewModel.GetLessonSimple("deutsch").Distinct().ToList();
+            _lesson_italiano = _mainViewModel.GetLessonSimple("italiano").Distinct().ToList();
+            _lesson_francais = _mainViewModel.GetLessonSimple("français").Distinct().ToList();
+            _lesson_espanol = _mainViewModel.GetLessonSimple("espanõl").Distinct().ToList();
 //---
             _english_verb = null;
             _english_noun = null;
@@ -92,10 +75,7 @@ namespace Letter.Views
             //---
             _pronoun_english = _mainViewModel.GetPronoun("english");
 //---
-            //var _speaker;
-            //var _speech = new TextToSpeech(Application.Context, this);
-            //_speech.Speak("Ola Ola Ola", QueueMode.Add, null, null);
-            //---
+
             NextEnglish(context);
             NextDeutsch(context);
             NextItaliano(context);
@@ -116,15 +96,9 @@ namespace Letter.Views
             fab_down.Click += FabDownClick;
 //---
             FloatingActionButton fab_pause1 = (FloatingActionButton)((Activity)context).FindViewById(Resource.Id.floating_behind_1);
-            //fab_pause1.Click += FabPause1Click;
-            fab_pause1.Click += async (sender, e) =>
-            {
-                //await TextToSpeech.SpeakAsync("Primeiro Texto");
-                using SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer();
-                speechSynthesizer.SpeakAsync("I'm excited to try text to speech");
-            };
-                //---
-                FloatingActionButton fab_pause2 = (FloatingActionButton)((Activity)context).FindViewById(Resource.Id.floating_behind_2);
+            fab_pause1.Click += FabPause1Click;
+            //---
+            FloatingActionButton fab_pause2 = (FloatingActionButton)((Activity)context).FindViewById(Resource.Id.floating_behind_2);
             fab_pause2.Click += FabPause2Click;
 //---
             FloatingActionButton fab_pause3 = (FloatingActionButton)((Activity)context).FindViewById(Resource.Id.floating_behind_3);
@@ -255,27 +229,26 @@ namespace Letter.Views
             {
 //---
                 TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_2);
-                int value_verb = _english.conteudo.verbo.IndexOf(_english_verb) - 1;
+                int value_verb = _english.conteudo.verbo.Distinct().ToList().IndexOf(_english_verb) - 1;
                 if (value_verb == -1) value_verb = 0;
                 if (_english.conteudo.verbo.Count != 0)
                 {
-                    if (value_verb == _english.conteudo.verbo.Count) value_verb = _english.conteudo.verbo.IndexOf(_english_verb);
+                    if (value_verb == _english.conteudo.verbo.Distinct().ToList().Count) value_verb = _english.conteudo.verbo.Distinct().ToList().IndexOf(_english_verb);
                     _english_verb = _english.conteudo.verbo[value_verb];
                     text_verb.Text = _english_verb;
                 }
 //---
                 TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_3);
-                int value_noun = _english.conteudo.substantivo.IndexOf(_english_noun) - 1;
+                int value_noun = _english.conteudo.substantivo.Distinct().ToList().IndexOf(_english_noun) - 1;
                 if (value_noun == -1) value_noun = 0;
                 if (_english.conteudo.substantivo.Count != 0)
                 {
-                    if (value_noun == _english.conteudo.substantivo.Count) value_noun = _english.conteudo.substantivo.IndexOf(_english_noun);
+                    if (value_noun == _english.conteudo.substantivo.Distinct().ToList().Count) value_noun = _english.conteudo.substantivo.Distinct().ToList().IndexOf(_english_noun);
                     _english_noun = _english.conteudo.substantivo[value_noun];
                     text_noun.Text = _english_noun;
                 }
                 //---
                 //TextView text_pronoun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_1);
-
            
             }
 }
@@ -334,21 +307,21 @@ namespace Letter.Views
             {
 //---
                 TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_2);
-                int value_verb = _english.conteudo.verbo.IndexOf(_english_verb) + 1;
+                int value_verb = _english.conteudo.verbo.Distinct().ToList().IndexOf(_english_verb) + 1;
                 if (value_verb == -1) value_verb = 0;
                 if (_english.conteudo.verbo.Count != 0)
                 {
-                    if (value_verb == _english.conteudo.verbo.Count) value_verb = _english.conteudo.verbo.IndexOf(_english_verb);
+                    if (value_verb == _english.conteudo.verbo.Distinct().ToList().Count) value_verb = _english.conteudo.verbo.Distinct().ToList().IndexOf(_english_verb);
                     _english_verb = _english.conteudo.verbo[value_verb];
                     text_verb.Text = _english_verb;
                 }
 //---
                 TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_3);
-                int value_noun = _english.conteudo.substantivo.IndexOf(_english_noun) + 1;
+                int value_noun = _english.conteudo.substantivo.Distinct().ToList().IndexOf(_english_noun) + 1;
                 if (value_noun == -1) value_noun = 0;
                 if (_english.conteudo.substantivo.Count != 0)
                 {
-                    if (value_noun == _english.conteudo.substantivo.Count) value_noun = _english.conteudo.substantivo.IndexOf(_english_noun);
+                    if (value_noun == _english.conteudo.substantivo.Distinct().ToList().Count) value_noun = _english.conteudo.substantivo.Distinct().ToList().IndexOf(_english_noun);
                     _english_noun = _english.conteudo.substantivo[value_noun];
                     text_noun.Text = _english_noun;
                 }
@@ -361,21 +334,21 @@ namespace Letter.Views
             {
                 //---
                 TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_2_2);
-                int value_verb = _deutsch.conteudo.verbo.IndexOf(_deutsch_verb) - 1;
+                int value_verb = _deutsch.conteudo.verbo.Distinct().ToList().IndexOf(_deutsch_verb) - 1;
                 if (value_verb == -1) value_verb = 0;
                 if (_deutsch.conteudo.verbo.Count != 0)
                 {
-                    if (value_verb == _deutsch.conteudo.verbo.Count) value_verb = _deutsch.conteudo.verbo.IndexOf(_deutsch_verb);
+                    if (value_verb == _deutsch.conteudo.verbo.Distinct().ToList().Count) value_verb = _deutsch.conteudo.verbo.Distinct().ToList().IndexOf(_deutsch_verb);
                     _deutsch_verb = _deutsch.conteudo.verbo[value_verb];
                     text_verb.Text = _deutsch_verb;
                 }
                 //---
                 TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_2_3);
-                int value_noun = _deutsch.conteudo.substantivo.IndexOf(_deutsch_noun) - 1;
+                int value_noun = _deutsch.conteudo.substantivo.Distinct().ToList().IndexOf(_deutsch_noun) - 1;
                 if (value_noun == -1) value_noun = 0;
                 if (_deutsch.conteudo.substantivo.Count != 0)
                 {
-                    if (value_noun == _deutsch.conteudo.substantivo.Count) value_noun = _deutsch.conteudo.substantivo.IndexOf(_deutsch_noun);
+                    if (value_noun == _deutsch.conteudo.substantivo.Distinct().ToList().Count) value_noun = _deutsch.conteudo.substantivo.Distinct().ToList().IndexOf(_deutsch_noun);
                     _deutsch_noun = _deutsch.conteudo.substantivo[value_noun];
                     text_noun.Text = _deutsch_noun;
                 }
@@ -438,21 +411,21 @@ namespace Letter.Views
             {
                 //---
                 TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_2_2);
-                int value_verb = _deutsch.conteudo.verbo.IndexOf(_deutsch_verb) + 1;
+                int value_verb = _deutsch.conteudo.verbo.Distinct().ToList().IndexOf(_deutsch_verb) + 1;
                 if (value_verb == -1) value_verb = 0;
                 if (_deutsch.conteudo.verbo.Count != 0)
                 {
-                    if (value_verb == _deutsch.conteudo.verbo.Count) value_verb = _deutsch.conteudo.verbo.IndexOf(_deutsch_verb);
+                    if (value_verb == _deutsch.conteudo.verbo.Distinct().ToList().Count) value_verb = _deutsch.conteudo.verbo.Distinct().ToList().IndexOf(_deutsch_verb);
                     _deutsch_verb = _deutsch.conteudo.verbo[value_verb];
                     text_verb.Text = _deutsch_verb;
                 }
                 //---
                 TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_2_3);
-                int value_noun = _deutsch.conteudo.substantivo.IndexOf(_deutsch_noun) + 1;
+                int value_noun = _deutsch.conteudo.substantivo.Distinct().ToList().IndexOf(_deutsch_noun) + 1;
                 if (value_noun == -1) value_noun = 0;
                 if (_deutsch.conteudo.substantivo.Count != 0)
                 {
-                    if (value_noun == _deutsch.conteudo.substantivo.Count) value_noun = _deutsch.conteudo.substantivo.IndexOf(_deutsch_noun);
+                    if (value_noun == _deutsch.conteudo.substantivo.Distinct().ToList().Count) value_noun = _deutsch.conteudo.substantivo.IndexOf(_deutsch_noun);
                     _deutsch_noun = _deutsch.conteudo.substantivo[value_noun];
                     text_noun.Text = _deutsch_noun;
                 }
@@ -465,21 +438,21 @@ namespace Letter.Views
             {
                 //---
                 TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_3_2);
-                int value_verb = _italiano.conteudo.verbo.IndexOf(_italiano_verb) - 1;
+                int value_verb = _italiano.conteudo.verbo.Distinct().ToList().IndexOf(_italiano_verb) - 1;
                 if (value_verb == -1) value_verb = 0;
                 if (_italiano.conteudo.verbo.Count != 0)
                 {
-                    if (value_verb == _english.conteudo.verbo.Count) value_verb = _italiano.conteudo.verbo.IndexOf(_italiano_verb);
+                    if (value_verb == _english.conteudo.verbo.Distinct().ToList().Count) value_verb = _italiano.conteudo.verbo.Distinct().ToList().IndexOf(_italiano_verb);
                     _italiano_verb = _italiano.conteudo.verbo[value_verb];
                     text_verb.Text = _italiano_verb;
                 }
                 //---
                 TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_3_3);
-                int value_noun = _italiano.conteudo.substantivo.IndexOf(_italiano_noun) - 1;
+                int value_noun = _italiano.conteudo.substantivo.Distinct().ToList().IndexOf(_italiano_noun) - 1;
                 if (value_noun == -1) value_noun = 0;
                 if (_italiano.conteudo.substantivo.Count != 0)
                 {
-                    if (value_noun == _italiano.conteudo.substantivo.Count) value_noun = _italiano.conteudo.substantivo.IndexOf(_italiano_noun);
+                    if (value_noun == _italiano.conteudo.substantivo.Distinct().ToList().Count) value_noun = _italiano.conteudo.substantivo.Distinct().ToList().IndexOf(_italiano_noun);
                     _italiano_noun = _italiano.conteudo.substantivo[value_noun];
                     text_noun.Text = _italiano_noun;
                 }
@@ -542,21 +515,21 @@ namespace Letter.Views
             {
                 //---
                 TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_3_2);
-                int value_verb = _italiano.conteudo.verbo.IndexOf(_italiano_verb) + 1;
+                int value_verb = _italiano.conteudo.verbo.Distinct().ToList().IndexOf(_italiano_verb) + 1;
                 if (value_verb == -1) value_verb = 0;
                 if (_italiano.conteudo.verbo.Count != 0)
                 {
-                    if (value_verb == _italiano.conteudo.verbo.Count) value_verb = _italiano.conteudo.verbo.IndexOf(_italiano_verb);
+                    if (value_verb == _italiano.conteudo.verbo.Distinct().ToList().Count) value_verb = _italiano.conteudo.verbo.Distinct().ToList().IndexOf(_italiano_verb);
                     _italiano_verb = _italiano.conteudo.verbo[value_verb];
                     text_verb.Text = _italiano_verb;
                 }
                 //---
                 TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_3_3);
-                int value_noun = _italiano.conteudo.substantivo.IndexOf(_italiano_noun) + 1;
+                int value_noun = _italiano.conteudo.substantivo.Distinct().ToList().IndexOf(_italiano_noun) + 1;
                 if (value_noun == -1) value_noun = 0;
                 if (_italiano.conteudo.substantivo.Count != 0)
                 {
-                    if (value_noun == _italiano.conteudo.substantivo.Count) value_noun = _italiano.conteudo.substantivo.IndexOf(_italiano_noun);
+                    if (value_noun == _italiano.conteudo.substantivo.Distinct().ToList().Count) value_noun = _italiano.conteudo.substantivo.Distinct().ToList().IndexOf(_italiano_noun);
                     _italiano_noun = _italiano.conteudo.substantivo[value_noun];
                     text_noun.Text = _italiano_noun;
                 }
@@ -569,21 +542,21 @@ namespace Letter.Views
             {
                 //---
                 TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_4_2);
-                int value_verb = _francais.conteudo.verbo.IndexOf(_francais_verb) - 1;
+                int value_verb = _francais.conteudo.verbo.Distinct().ToList().IndexOf(_francais_verb) - 1;
                 if (value_verb == -1) value_verb = 0;
                 if (_francais.conteudo.verbo.Count != 0)
                 {
-                    if (value_verb == _francais.conteudo.verbo.Count) value_verb = _francais.conteudo.verbo.IndexOf(_francais_verb);
+                    if (value_verb == _francais.conteudo.verbo.Distinct().ToList().Count) value_verb = _francais.conteudo.verbo.Distinct().ToList().IndexOf(_francais_verb);
                     _francais_verb = _francais.conteudo.verbo[value_verb];
                     text_verb.Text = _francais_verb;
                 }
                 //---
                 TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_4_3);
-                int value_noun = _francais.conteudo.substantivo.IndexOf(_francais_noun) - 1;
+                int value_noun = _francais.conteudo.substantivo.Distinct().ToList().IndexOf(_francais_noun) - 1;
                 if (value_noun == -1) value_noun = 0;
                 if (_francais.conteudo.substantivo.Count != 0)
                 {
-                    if (value_noun == _francais.conteudo.substantivo.Count) value_noun = _francais.conteudo.substantivo.IndexOf(_francais_noun);
+                    if (value_noun == _francais.conteudo.substantivo.Distinct().ToList().Count) value_noun = _francais.conteudo.substantivo.Distinct().ToList().IndexOf(_francais_noun);
                     _francais_noun = _francais.conteudo.substantivo[value_noun];
                     text_noun.Text = _francais_noun;
                 }
@@ -646,19 +619,19 @@ namespace Letter.Views
             {
                 //---
                 TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_4_2);
-                int value_verb = _francais.conteudo.verbo.IndexOf(_francais_verb) + 1;
+                int value_verb = _francais.conteudo.verbo.Distinct().ToList().IndexOf(_francais_verb) + 1;
                 if (_francais.conteudo.verbo.Count != 0)
                 {
-                    if (value_verb == _francais.conteudo.verbo.Count) value_verb = _francais.conteudo.verbo.IndexOf(_francais_verb);
+                    if (value_verb == _francais.conteudo.verbo.Distinct().ToList().Count) value_verb = _francais.conteudo.verbo.Distinct().ToList().IndexOf(_francais_verb);
                     _francais_verb = _francais.conteudo.verbo[value_verb];
                     text_verb.Text = _francais_verb;
                 }
                 //---
                 TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_4_3);
-                int value_noun = _francais.conteudo.substantivo.IndexOf(_francais_noun) + 1;
+                int value_noun = _francais.conteudo.substantivo.Distinct().ToList().IndexOf(_francais_noun) + 1;
                 if (_francais.conteudo.substantivo.Count != 0)
                 {
-                    if (value_noun == _francais.conteudo.substantivo.Count) value_noun = _francais.conteudo.substantivo.IndexOf(_francais_noun);
+                    if (value_noun == _francais.conteudo.substantivo.Distinct().ToList().Count) value_noun = _francais.conteudo.substantivo.Distinct().ToList().IndexOf(_francais_noun);
                     _francais_noun = _francais.conteudo.substantivo[value_noun];
                     text_noun.Text = _francais_noun;
                 }
@@ -671,21 +644,21 @@ namespace Letter.Views
             {
                 //---
                 TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_5_2);
-                int value_verb = _espanol.conteudo.verbo.IndexOf(_espanol_verb) - 1;
+                int value_verb = _espanol.conteudo.verbo.Distinct().ToList().IndexOf(_espanol_verb) - 1;
                 if (value_verb == -1) value_verb = 0;
                 if (_espanol.conteudo.verbo.Count != 0)
                 {
-                    if (value_verb == _espanol.conteudo.verbo.Count) value_verb = _espanol.conteudo.verbo.IndexOf(_espanol_verb);
+                    if (value_verb == _espanol.conteudo.verbo.Distinct().ToList().Count) value_verb = _espanol.conteudo.verbo.Distinct().ToList().IndexOf(_espanol_verb);
                     _espanol_verb = _espanol.conteudo.verbo[value_verb];
                     text_verb.Text = _espanol_verb;
                 }
                 //---
                 TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_5_3);
-                int value_noun = _espanol.conteudo.substantivo.IndexOf(_espanol_noun) - 1;
+                int value_noun = _espanol.conteudo.substantivo.Distinct().ToList().IndexOf(_espanol_noun) - 1;
                 if (value_noun == -1) value_noun = 0;
                 if (_espanol.conteudo.substantivo.Count != 0)
                 {
-                    if (value_noun == _espanol.conteudo.substantivo.Count) value_noun = _espanol.conteudo.substantivo.IndexOf(_espanol_noun);
+                    if (value_noun == _espanol.conteudo.substantivo.Distinct().ToList().Count) value_noun = _espanol.conteudo.substantivo.Distinct().ToList().IndexOf(_espanol_noun);
                     _espanol_noun = _espanol.conteudo.substantivo[value_noun];
                     text_noun.Text = _espanol_noun;
                 }
@@ -748,21 +721,21 @@ namespace Letter.Views
             {
                 //---
                 TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_5_2);
-                int value_verb = _espanol.conteudo.verbo.IndexOf(_espanol_verb) + 1;
+                int value_verb = _espanol.conteudo.verbo.Distinct().ToList().IndexOf(_espanol_verb) + 1;
                 if (value_verb == -1) value_verb = 0;
                 if (_espanol.conteudo.verbo.Count != 0)
                 {
-                    if (value_verb == _espanol.conteudo.verbo.Count) value_verb = _espanol.conteudo.verbo.IndexOf(_espanol_verb);
+                    if (value_verb == _espanol.conteudo.verbo.Distinct().ToList().Count) value_verb = _espanol.conteudo.verbo.Distinct().ToList().IndexOf(_espanol_verb);
                     _espanol_verb = _espanol.conteudo.verbo[value_verb];
                     text_verb.Text = _espanol_verb;
                 }
                 //---
                 TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_5_3);
-                int value_noun = _espanol.conteudo.substantivo.IndexOf(_espanol_noun) + 1;
+                int value_noun = _espanol.conteudo.substantivo.Distinct().ToList().IndexOf(_espanol_noun) + 1;
                 if (value_noun == -1) value_noun = 0;
                 if (_espanol.conteudo.substantivo.Count != 0)
                 {
-                    if (value_noun == _espanol.conteudo.substantivo.Count) value_noun = _espanol.conteudo.substantivo.IndexOf(_espanol_noun);
+                    if (value_noun == _espanol.conteudo.substantivo.Distinct().ToList().Count) value_noun = _espanol.conteudo.substantivo.Distinct().ToList().IndexOf(_espanol_noun);
                     _espanol_noun = _espanol.conteudo.substantivo[value_noun];
                     text_noun.Text = _espanol_noun;
                 }
@@ -778,7 +751,8 @@ namespace Letter.Views
             for (int i = 0; pronoun.Count > i; i++)
             {
 //---
-                bool value = await _mainViewModel.AgreePronome(pronoun[i].nome, _english_verb, "english");
+                ResponseModel value = await _mainViewModel.AgreePronome(pronoun[i].nome, _english_verb, "english");
+/*
                 if (value)
                 {
 //---
@@ -786,54 +760,11 @@ namespace Letter.Views
                     text_pronoun.Text = pronoun[i].nome;
                     break;
                 }
+*/
             }
 
         }
 
-        public void OnInit([GeneratedEnum] OperationResult status)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SetJniIdentityHashCode(int value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SetPeerReference(JniObjectReference reference)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SetJniManagedPeerState(JniManagedPeerStates value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UnregisterFromRuntime()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DisposeUnlessReferenced()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Disposed()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Finalized()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
     }
 
 }

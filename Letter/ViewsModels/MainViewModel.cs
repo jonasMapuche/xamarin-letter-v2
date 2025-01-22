@@ -1,6 +1,7 @@
 ﻿using CRUD.Models;
 using Letter.Models;
 using Letter.ViewModel;
+using MongoDB.Driver;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -53,7 +54,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public async Task<bool> AgreePronome(string pronoun, string verb, string language)
+        public async Task<ResponseModel> AgreePronome(string pronoun, string verb, string language)
         {
             try
             {
@@ -69,14 +70,14 @@ namespace Letter.ViewsModels
                 using HttpResponseMessage response = await client.PostAsync(url, data);
                 response.EnsureSuccessStatusCode();
                 var result = await response.Content.ReadAsStringAsync();
-//---
+                //---
                 ResponseModel request = new ResponseModel();
                 request = JsonConvert.DeserializeObject<ResponseModel>(result);
-                return request.Word[0].Term == "true" ? true : false;
+                return request;
             }
             catch (Exception)
             {
-                return false;
+                return null;
                 throw;
             }
         }

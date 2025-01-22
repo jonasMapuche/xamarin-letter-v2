@@ -6,6 +6,5 @@ namespace Letter.Models
     {
         public string Kind { get; set; }
         public List<WordModel> Word { get; set; }
-        public int Sender { get; set; }
     }
 }
