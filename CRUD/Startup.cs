@@ -68,7 +68,11 @@ namespace CRUD
             VerbService.ConnectionValence = Configuration.GetConnectionString("ConnectionValence");
             VerbService.DatabaseName = Configuration.GetConnectionString("DatabaseName");
             VerbService.CollectionVerb = Configuration.GetConnectionString("CollectionVerb");
-
+            AuxiliaryService.ConnectionAuxiliary = Configuration.GetConnectionString("ConnectionAuxiliary");
+            AuxiliaryService.ConnectionNumeral = Configuration.GetConnectionString("ConnectionNumeral");
+            AuxiliaryService.ConnectionPronoun = Configuration.GetConnectionString("ConnectionPronoun");
+            AuxiliaryService.DatabaseName = Configuration.GetConnectionString("DatabaseName");
+            AuxiliaryService.CollectionAuxiliary = Configuration.GetConnectionString("CollectionAuxiliary");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

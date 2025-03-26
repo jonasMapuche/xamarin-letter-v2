@@ -1,0 +1,59 @@
+﻿using CRUD.Models;
+using MongoDB.Driver;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace CRUD.Services
+{
+    public class AuxiliaryService
+    {
+        public static string ConnectionAuxiliary { get; set; }
+        public static string ConnectionPronoun { get; set; }
+        public static string ConnectionNumeral { get; set; }
+        public static string DatabaseName { get; set; }
+        public static string CollectionAuxiliary { get; set; }
+
+        private readonly IMongoCollection<Assistant> _auxiliarysCollection;
+
+        public AuxiliaryService(string connection)
+        {
+            MongoClient mongoClient;
+            switch (connection)
+            {
+                case "numeral":
+                    mongoClient = new MongoClient(ConnectionNumeral);
+                    break;
+                case "pronoun":
+                    mongoClient = new MongoClient(ConnectionPronoun);
+                    break;
+                default:
+                    mongoClient = new MongoClient(ConnectionAuxiliary);
+                    break;
+            }
+            var mongoDatabase = mongoClient.GetDatabase(DatabaseName);
+            IMongoCollection<Assistant> ConfigurationValue = mongoDatabase.GetCollection<Assistant>(CollectionAuxiliary);
+
+            _auxiliarysCollection = ConfigurationValue;
+        }
+
+        public async Task<List<Assistant>> GetAsync() =>
+            await _auxiliarysCollection.Find(_ => true).ToListAsync();
+
+        public async Task<Assistant> GetAsync(string id) =>
+            await _auxiliarysCollection.Find(index => index.Id == id).FirstOrDefaultAsync();
+
+        public async Task<Assistant> GetSentenceSimpleAsync(string name) =>
+            await _auxiliarysCollection.Find(index => index.nome == name).FirstOrDefaultAsync();
+
+        public async Task CreateAsync(Assistant assistent) =>
+            await _auxiliarysCollection.InsertOneAsync(assistent);
+
+        public async Task UpdateAsync(Assistant assistent) =>
+            await _auxiliarysCollection.ReplaceOneAsync(index => index.Id == assistent.Id, assistent);
+
+        public async Task RemoveAsync(string id) =>
+            await _auxiliarysCollection.DeleteOneAsync(index => index.Id == id);
+
+
+    }
+}
