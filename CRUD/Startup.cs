@@ -73,6 +73,12 @@ namespace CRUD
             AuxiliaryService.ConnectionPronoun = Configuration.GetConnectionString("ConnectionPronoun");
             AuxiliaryService.DatabaseName = Configuration.GetConnectionString("DatabaseName");
             AuxiliaryService.CollectionAuxiliary = Configuration.GetConnectionString("CollectionAuxiliary");
+            SentenceService.ConnectionSentence = Configuration.GetConnectionString("ConnectionSentence");
+            SentenceService.ConnectionVerb = Configuration.GetConnectionString("ConnectionVerb");
+            SentenceService.ConnectionChord = Configuration.GetConnectionString("ConnectionChord");
+            SentenceService.DatabaseName = Configuration.GetConnectionString("DatabaseName");
+            SentenceService.CollectionSentence = Configuration.GetConnectionString("CollectionSentence");
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

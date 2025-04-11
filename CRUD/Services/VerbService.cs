@@ -45,6 +45,9 @@ namespace CRUD.Services
         public async Task<Elocucao> GetSentenceSimpleAsync(string name) =>
             await _verbsCollection.Find(index => index.nome == name).FirstOrDefaultAsync();
 
+        public async Task<List<Elocucao>> GetLanguageAsync(string language) =>
+            await _verbsCollection.Find(index => index.linguagem == language).ToListAsync();
+
         public async Task CreateAsync(Elocucao elocucao) =>
             await _verbsCollection.InsertOneAsync(elocucao);
 

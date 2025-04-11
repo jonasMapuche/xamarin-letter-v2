@@ -33,10 +33,11 @@ namespace CRUD.Services
             Database.CreateTableAsync<Conjuncoes>().Wait();
             Database.CreateTableAsync<Adverbios>().Wait();
             Database.CreateTableAsync<Numerais>().Wait();
+            Database.CreateTableAsync<Verbos>().Wait();
             PathSQLite = DataBasePach;
         }
 
-        public async Task CreateAsync(List<Aula> aula, List<Estoutro> estoutro, List<Preceito> preceito, List<Juncao> juncao, List<Ligacao> ligacao, List<Modificador> modificador, List<Algarismo> algarismo)
+        public async Task CreateAsync(List<Aula> aula, List<Estoutro> estoutro, List<Preceito> preceito, List<Juncao> juncao, List<Ligacao> ligacao, List<Modificador> modificador, List<Algarismo> algarismo, List<Elocucao> elocucao)
         {
             await Substantivo(aula);
             await Verbo(aula);
@@ -54,6 +55,7 @@ namespace CRUD.Services
             await Conjuncoes(ligacao);
             await Adverbios(modificador);
             await Numerais(algarismo);
+            await Verbos(elocucao);
         }
 
         private async Task Substantivo(List<Aula> aula)
@@ -393,6 +395,31 @@ namespace CRUD.Services
             }
             );
             await Database.InsertAllAsync(numerais);
+        }
+
+        private async Task Verbos(List<Elocucao> elocucao)
+        {
+            List<Verbos> verbos = new List<Verbos>();
+            elocucao.ForEach(in_elocucao =>
+            {
+                in_elocucao.teor.ForEach(in_teor =>
+                {
+                    in_teor.modo.ForEach(in_modo =>
+                    {
+                        in_teor.pronome.ForEach(in_pronome =>
+                        {
+                            Verbos item = new Verbos();
+                            item.name = in_elocucao.nome;
+                            item.language = in_elocucao.linguagem;
+                            item.model = in_elocucao.modelo;
+                            item.mode = in_modo;
+                            item.pronoun = in_pronome;
+                            verbos.Add(item);
+                        });
+                    });
+                });
+            });
+            await Database.InsertAllAsync(verbos);
         }
 
     }

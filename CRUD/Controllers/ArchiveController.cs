@@ -19,6 +19,7 @@ namespace CRUD.Controllers
         public static readonly ConjunctionService _conjunctionsService = new ConjunctionService("conjunction");
         public static readonly AdverbService _adverbsService = new AdverbService("adverb");
         public static readonly NumeralService _numeralsService = new NumeralService("numeral");
+        public static readonly VerbService _verbsService = new VerbService("verb");
 
         [HttpGet("")]
         public async Task<ActionResult> Get()
@@ -59,7 +60,8 @@ namespace CRUD.Controllers
             List<Ligacao> conjunction = await _conjunctionsService.GetAsync();
             List<Modificador> adverb = await _adverbsService.GetAsync();
             List<Algarismo> numeral = await _numeralsService.GetAsync();
-            await _SQLiteService.CreateAsync(aula, pronome, artigo, preposicao, conjunction, adverb, numeral);
+            List<Elocucao> verbo = await _verbsService.GetAsync();
+            await _SQLiteService.CreateAsync(aula, pronome, artigo, preposicao, conjunction, adverb, numeral, verbo);
             Message message = new Message();
             message.text = "SQLite build with ten word class.";
             message.path = _SQLiteService.PathSQLite;
