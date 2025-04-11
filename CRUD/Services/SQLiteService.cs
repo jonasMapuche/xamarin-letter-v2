@@ -34,10 +34,12 @@ namespace CRUD.Services
             Database.CreateTableAsync<Adverbios>().Wait();
             Database.CreateTableAsync<Numerais>().Wait();
             Database.CreateTableAsync<Verbos>().Wait();
+            Database.CreateTableAsync<Auxiliares>().Wait();
+            Database.CreateTableAsync<Sentencas>().Wait();
             PathSQLite = DataBasePach;
         }
 
-        public async Task CreateAsync(List<Aula> aula, List<Estoutro> estoutro, List<Preceito> preceito, List<Juncao> juncao, List<Ligacao> ligacao, List<Modificador> modificador, List<Algarismo> algarismo, List<Elocucao> elocucao)
+        public async Task CreateAsync(List<Aula> aula, List<Estoutro> estoutro, List<Preceito> preceito, List<Juncao> juncao, List<Ligacao> ligacao, List<Modificador> modificador, List<Algarismo> algarismo, List<Elocucao> elocucao, List<Assistant> assistant, List<Ditado> ditado)
         {
             await Substantivo(aula);
             await Verbo(aula);
@@ -56,6 +58,8 @@ namespace CRUD.Services
             await Adverbios(modificador);
             await Numerais(algarismo);
             await Verbos(elocucao);
+            await Auxiliares(assistant);
+            await Sentencas(ditado);
         }
 
         private async Task Substantivo(List<Aula> aula)
@@ -420,6 +424,55 @@ namespace CRUD.Services
                 });
             });
             await Database.InsertAllAsync(verbos);
+        }
+
+        private async Task Auxiliares(List<Assistant> assistant)
+        {
+            List<Auxiliares> auxiliares = new List<Auxiliares>();
+            assistant.ForEach(in_auxiliar =>
+            {
+                in_auxiliar.tematica.ForEach(in_tematica =>
+                {
+                    in_tematica.modo.ForEach(in_modo =>
+                    {
+                        in_tematica.prefixo.ForEach(in_prefixo =>
+                        {
+                            in_tematica.preverbo.ForEach(in_preverbo =>
+                            {
+                                in_tematica.premodo.ForEach(in_premodo =>
+                                {
+                                    Auxiliares item = new Auxiliares();
+                                    item.name = in_auxiliar.nome;
+                                    item.language = in_auxiliar.linguagem;
+                                    item.mode = in_modo;
+                                    item.prefix = in_prefixo;
+                                    item.preverb = in_preverbo;
+                                    item.premode = in_premodo;
+                                    auxiliares.Add(item);
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+            await Database.InsertAllAsync(auxiliares);
+        }
+
+        private async Task Sentencas(List<Ditado> ditado)
+        {
+            List<Sentencas> sentencas = new List<Sentencas>();
+            ditado.ForEach(in_ditado =>
+            {
+                in_ditado.repouso.ForEach(in_repouso =>
+                {
+                    Sentencas item = new Sentencas();
+                    item.impulse = in_ditado.impulso;
+                    item.language = in_ditado.linguagem;
+                    item.rest = in_repouso;
+                    sentencas.Add(item);
+                });
+            });
+            await Database.InsertAllAsync(sentencas);
         }
 
     }
