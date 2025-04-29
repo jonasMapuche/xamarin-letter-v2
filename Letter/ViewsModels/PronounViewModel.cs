@@ -1,5 +1,4 @@
-﻿using CRUD.Models;
-using Letter.Models;
+﻿using Letter.Models;
 using MongoDB.Driver;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +10,7 @@ namespace Letter.ViewModel
     {
         private static string ConnectionName { get; set; }
         private static string DatabaseName { get; set; }
-        private static string CollectionLetter { get; set; }
+        private static string CollectionPronoun { get; set; }
 
         private readonly IMongoCollection<EstoutroModel> _pronounsCollection;
 
@@ -19,11 +18,11 @@ namespace Letter.ViewModel
         {
             ConnectionName = "mongodb://labrouste:freedown@ac-4droh61-shard-00-00.trwpuy0.mongodb.net:27017,ac-4droh61-shard-00-01.trwpuy0.mongodb.net:27017,ac-4droh61-shard-00-02.trwpuy0.mongodb.net:27017/?ssl=true&replicaSet=atlas-xrl9qi-shard-0&authSource=admin&retryWrites=true&w=majority&appName=clusterpronoun";
             DatabaseName = "stomach";
-            CollectionLetter = "pronoun";
+            CollectionPronoun = "pronoun";
 
             var mongoClient = new MongoClient(ConnectionName);
             var mongoDatabase = mongoClient.GetDatabase(DatabaseName);
-            IMongoCollection<EstoutroModel> ConfigurationValue = mongoDatabase.GetCollection<EstoutroModel>(CollectionLetter);
+            IMongoCollection<EstoutroModel> ConfigurationValue = mongoDatabase.GetCollection<EstoutroModel>(CollectionPronoun);
 
             _pronounsCollection = ConfigurationValue;
         }

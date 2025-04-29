@@ -1,6 +1,5 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
 
 namespace Letter.Models
 {
@@ -8,7 +7,7 @@ namespace Letter.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public string? Id { get; set; }
         public string nome { get; set; }
         public string linguagem { get; set; }
         public bool licao { get; set; }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CRUD.Models
+namespace Letter.Models
 {
     public class ContentoModel
     {

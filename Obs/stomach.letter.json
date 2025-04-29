@@ -1,0 +1,9118 @@
+[{
+  "_id": {
+    "$oid": "6670df775973a2e5afd01560"
+  },
+  "nome": "lektion 17",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 17,
+  "conteudo": {
+    "substantivo": [
+      "der Bruder",
+      "die U-Bahn",
+      "der Bus",
+      "der Zug",
+      "das Flugzeug",
+      "die Straßen-Bahn",
+      "die S-Bahn",
+      "die U-Bahn",
+      "das Glas",
+      "die Tasse",
+      "der Kellner",
+      "die Kellnerin",
+      "der Imbiss",
+      "das Restaurant",
+      "die Bar",
+      "Woche",
+      "Monat",
+      "Jahr",
+      "W-Frage",
+      "Satzfrage",
+      "Aussagesatz",
+      "die Kinder",
+      "Deutschland",
+      "der Vater",
+      "das Auto"
+    ],
+    "pronome": [
+      "wann",
+      "ich",
+      "du",
+      "er",
+      "sie",
+      "wir",
+      "was",
+      "wer",
+      "wie"
+    ],
+    "artigo": [
+      "die",
+      "der",
+      "das",
+      "den"
+    ],
+    "verbo": [
+      "nehmen",
+      "bringen",
+      "nehme",
+      "nimmst",
+      "nimmt",
+      "nehmt",
+      "bringe",
+      "bringst",
+      "bringt",
+      "fragen",
+      "will"
+    ],
+    "preposicao": [
+      "pro"
+    ],
+    "adverbio": [
+      "nie",
+      "immer",
+      "oft",
+      "wann",
+      "etwas"
+    ],
+    "adjetivo": [
+      ""
+    ],
+    "interjeicao": [
+      "wie oft"
+    ],
+    "numeral": [
+      "viermal",
+      "fünfmal"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e023d06d2a935f88ec92"
+  },
+  "nome": "lezione 3",
+  "linguagem": "italiano",
+  "licao": true,
+  "titulo": "lezione",
+  "ordem": 3,
+  "conteudo": {
+    "substantivo": [
+      "articolo",
+      "diario",
+      "giornale",
+      "libro",
+      "racconto",
+      "storia",
+      "studio",
+      "ricerca",
+      "paragrafo",
+      "testo",
+      "lettera",
+      "tema",
+      "tesi",
+      "rivista",
+      "frase",
+      "enciclopedia",
+      "riassunto",
+      "cartolina",
+      "un",
+      "una",
+      "tocca"
+    ],
+    "pronome": [
+      "io",
+      "tu",
+      "lui",
+      "lei",
+      "Lei",
+      "noi",
+      "voi",
+      "loro"
+    ],
+    "artigo": [
+      "un",
+      "una",
+      "il"
+    ],
+    "verbo": [
+      "leggere",
+      "leggo",
+      "leggi",
+      "legge",
+      "leggiamo",
+      "leggete",
+      "leggono",
+      "scrivere",
+      "scrivo",
+      "scrivi",
+      "scrive",
+      "scriviamo",
+      "scrivete",
+      "scrivono",
+      "tocca"
+    ],
+    "preposicao": [
+      "in"
+    ],
+    "adverbio": [
+      "sì",
+      "no",
+      "un",
+      "una",
+      "sicuramente",
+      "adesso"
+    ],
+    "adjetivo": [
+      "un",
+      "una"
+    ],
+    "interjeicao": [
+      "vero",
+      "sicuramente",
+      "adesso",
+      "tocca a te",
+      "tocca a me"
+    ],
+    "numeral": [
+      "un"
+    ],
+    "conjuncao": [
+      "adesso"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e25fd06d2a935f88ecac"
+  },
+  "nome": "lesson 21",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 21,
+  "conteudo": {
+    "substantivo": [
+      "pear",
+      "strawberry",
+      "papaya",
+      "watermelon",
+      "melon",
+      "pineapple",
+      "banana",
+      "grape",
+      "fruit",
+      "snack",
+      "language",
+      "freeway",
+      "curious"
+    ],
+    "pronome": [
+      "why"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "live",
+      "start"
+    ],
+    "preposicao": [
+      "from"
+    ],
+    "adverbio": [
+      "near",
+      "far"
+    ],
+    "adjetivo": [
+      "near",
+      "far",
+      "curious"
+    ],
+    "interjeicao": [
+      "to have breakfast",
+      "to have lunch",
+      "to have dinner",
+      "to have a snack"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "because"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e334d06d2a935f88ecbc"
+  },
+  "nome": "lesson 51",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 51,
+  "conteudo": {
+    "substantivo": [
+      "boyfriend",
+      "girlfriend",
+      "man",
+      "woman",
+      "meal",
+      "news",
+      "story",
+      "novel",
+      "detective",
+      "journalist",
+      "writer",
+      "executive",
+      "whole",
+      "couch",
+      "problem",
+      "check",
+      "checkbook",
+      "help",
+      "conference room",
+      "conference call",
+      "everybody",
+      "everyone"
+    ],
+    "pronome": [
+      "whole",
+      "everybody",
+      "everyone"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "finish",
+      "finished",
+      "come",
+      "came",
+      "drink",
+      "drank",
+      "eat",
+      "ate",
+      "can",
+      "aren't",
+      "isn't",
+      "can't",
+      "care",
+      "give"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "together",
+      "whole",
+      "not",
+      "everybody",
+      "everyone"
+    ],
+    "adjetivo": [
+      "single",
+      "married",
+      "rich",
+      "poor",
+      "light",
+      "pretty",
+      "glad",
+      "upset",
+      "busy",
+      "tired",
+      "wise",
+      "sick",
+      "healthy",
+      "together",
+      "whole",
+      "myself",
+      "yourself",
+      "himself",
+      "herself",
+      "itself",
+      "ourselves",
+      "yourselves",
+      "themselves",
+      "everybody",
+      "everyone"
+    ],
+    "interjeicao": [
+      "but me"
+    ],
+    "numeral": [
+      "part-time",
+      "full-time",
+      "first time",
+      "this timve"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "667200df1129a235a0c45380"
+  },
+  "nome": "lesson 77",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 77,
+  "conteudo": {
+    "substantivo": [
+      "jello",
+      "pudding",
+      "toaster",
+      "jar",
+      "channel",
+      "TV set",
+      "live",
+      "medicine cabinet",
+      "aspirin",
+      "dental floss",
+      "swab",
+      "razor",
+      "toothbrush",
+      "saving cream",
+      "nurse",
+      "cartoon",
+      "dishwasher",
+      "amusement park",
+      "way out"
+    ],
+    "pronome": [
+      "there are",
+      "there aren't",
+      "there were",
+      "there weren't",
+      "are there",
+      "were there",
+      "aren't there",
+      "weren't there"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "love",
+      "loved",
+      "loves",
+      "dance",
+      "danced",
+      "dances",
+      "send",
+      "sent",
+      "sends",
+      "watch",
+      "watched",
+      "watches",
+      "send back",
+      "happen",
+      "go on",
+      "explain",
+      "forget",
+      "find out",
+      "go wrong",
+      "meet",
+      "show",
+      "bring",
+      "brought",
+      "do",
+      "did",
+      "forget",
+      "forgot",
+      "give",
+      "gave",
+      "tleave",
+      "left",
+      "pay",
+      "paid",
+      "put",
+      "put",
+      "see",
+      "saw",
+      "sing",
+      "sang",
+      "stand",
+      "stood",
+      "take",
+      "took",
+      "think",
+      "thought"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      ""
+    ],
+    "adjetivo": [
+      "live",
+      "close"
+    ],
+    "interjeicao": [
+      "watch out",
+      "take it easy"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6672012f1129a235a0c45386"
+  },
+  "nome": "lesson 65",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 65,
+  "conteudo": {
+    "substantivo": [
+      "sleeve",
+      "collar",
+      "glasses",
+      "flavor",
+      "vanilla",
+      "garden",
+      "gardener",
+      "experience",
+      "gentleman",
+      "lady",
+      "college",
+      "university",
+      "student",
+      "hat",
+      "sock",
+      "tooth",
+      "foot",
+      "person",
+      "people",
+      "child",
+      "children",
+      "man",
+      "men",
+      "woman",
+      "women",
+      "ladies",
+      "feet",
+      "teeth",
+      "box",
+      "boxes",
+      "Mr.",
+      "Mrs.",
+      "Ma'am",
+      "Sir",
+      "sweety",
+      "honey"
+    ],
+    "pronome": [
+      "I",
+      "she",
+      "he",
+      "it"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "take",
+      "took",
+      "clean",
+      "cleaned",
+      "use",
+      "used",
+      "hurry",
+      "was",
+      "wasn't",
+      "dream"
+    ],
+    "preposicao": [
+      "outside"
+    ],
+    "adverbio": [
+      "not",
+      "as",
+      "outside"
+    ],
+    "adjetivo": [
+      "different",
+      "hurry up"
+    ],
+    "interjeicao": [
+      "as you know",
+      "garden party",
+      "to long for",
+      "outside"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "as"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6672013f1129a235a0c45387"
+  },
+  "nome": "lesson 63",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 63,
+  "conteudo": {
+    "substantivo": [
+      "song",
+      "singer",
+      "desk",
+      "drawer",
+      "eraser",
+      "glue",
+      "ruler",
+      "pencil",
+      "pencil holder",
+      "pencil case",
+      "mechanical pencil",
+      "lead pencil",
+      "bill",
+      "receipt",
+      "cafeteria",
+      "account",
+      "choir",
+      "broke",
+      "light"
+    ],
+    "pronome": [
+      ""
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "learn",
+      "learned",
+      "sing",
+      "sang",
+      "wait",
+      "waited",
+      "will"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "under",
+      "behind",
+      "light"
+    ],
+    "adjetivo": [
+      "chilly",
+      "heavy",
+      "light"
+    ],
+    "interjeicao": [
+      "every other day",
+      "light",
+      "by the way"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670df4c5973a2e5afd0155e"
+  },
+  "nome": "lektion 21",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 210,
+  "conteudo": {
+    "substantivo": [
+      "der Basketball",
+      "der Fußball",
+      "der Handball",
+      "das Tennis",
+      "der Volleyball",
+      "die Flöte",
+      "die Geige",
+      "die Gitarre",
+      "possessivpronomen",
+      "nominativ",
+      "plural",
+      "die Mutter",
+      "das Hause",
+      "der Sohn"
+    ],
+    "pronome": [
+      "unser",
+      "eure",
+      "unsere",
+      "euer",
+      "ihr",
+      "ihre",
+      "ich",
+      "wo",
+      "Sie",
+      "meine",
+      "du",
+      "ihr"
+    ],
+    "artigo": [
+      "der",
+      "das",
+      "die"
+    ],
+    "verbo": [
+      "spielen",
+      "mörgen",
+      "spiele",
+      "spielst",
+      "spielt",
+      "mag",
+      "magst",
+      "mögt",
+      "isst",
+      "ist"
+    ],
+    "preposicao": [
+      "mit",
+      "im",
+      "zu"
+    ],
+    "adverbio": [
+      "manchmal",
+      "nicht"
+    ],
+    "adjetivo": [
+      "blöd",
+      "doof",
+      "prima",
+      "super",
+      "sehr gut",
+      "aber",
+      "gut"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "und",
+      "aber"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e0dad06d2a935f88ec9f"
+  },
+  "nome": "leçon 5",
+  "linguagem": "français",
+  "licao": true,
+  "titulo": "leçon",
+  "ordem": 5,
+  "conteudo": {
+    "substantivo": [
+      "eau",
+      "jus",
+      "café",
+      "thé",
+      "vin",
+      "bière",
+      "pain",
+      "fromage",
+      "fruit",
+      "léçume",
+      "viande",
+      "chez",
+      "casa",
+      "futeball",
+      "match",
+      "stade",
+      "parc",
+      "pharmacie",
+      "médicin",
+      "hôpital",
+      "clamain"
+    ],
+    "pronome": [
+      "vos",
+      "votre",
+      "son",
+      "sa",
+      "ses",
+      "moi",
+      "toi",
+      "vous",
+      "nous",
+      "ils",
+      "elles"
+    ],
+    "artigo": [
+      "le",
+      "la",
+      "l'"
+    ],
+    "verbo": [
+      "manger",
+      "boire",
+      "aller",
+      "dormir"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      ""
+    ],
+    "adjetivo": [
+      ""
+    ],
+    "interjeicao": [
+      "non merci",
+      "benvenu",
+      "benvenue",
+      "enchanté"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e1e2d06d2a935f88eca4"
+  },
+  "nome": "lesson 5",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 5,
+  "conteudo": {
+    "substantivo": [
+      "book",
+      "car",
+      "house",
+      "game",
+      "husband",
+      "wife",
+      "apple",
+      "orange",
+      "breakfast",
+      "lunch",
+      "dinner"
+    ],
+    "pronome": [
+      "same",
+      "I",
+      "where"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "sleep",
+      "like",
+      "know",
+      "fell",
+      "spell",
+      "go",
+      "am"
+    ],
+    "preposicao": [
+      "or",
+      "for",
+      "this"
+    ],
+    "adverbio": [
+      "yes",
+      "no",
+      "all",
+      "where"
+    ],
+    "adjetivo": [
+      "big",
+      "small",
+      "new",
+      "old",
+      "all"
+    ],
+    "interjeicao": [
+      "for breakfast",
+      "for lunch",
+      "for dinner",
+      "every day",
+      "with me"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e318d06d2a935f88ecba"
+  },
+  "nome": "lesson 47",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 47,
+  "conteudo": {
+    "substantivo": [
+      "customer",
+      "price",
+      "cards",
+      "chess",
+      "electric guitar",
+      "drums",
+      "party",
+      "kitchen",
+      "bedroom",
+      "leisure",
+      "mail",
+      "library",
+      "gas station",
+      "supermarket",
+      "bakery",
+      "grocery store",
+      "snack bar",
+      "line",
+      "some",
+      "any",
+      "January",
+      "February",
+      "Match",
+      "April",
+      "June",
+      "July",
+      "August",
+      "Setember",
+      "October",
+      "November",
+      "December",
+      "cowboy",
+      "rope",
+      "hand",
+      "victory",
+      "pian"
+    ],
+    "pronome": [
+      "some",
+      "any"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "read",
+      "read",
+      "write",
+      "wrote",
+      "say",
+      "said",
+      "stay",
+      "stayed",
+      "learn",
+      "learned",
+      "believe",
+      "dream",
+      "feel",
+      "get tough",
+      "give up",
+      "grow up",
+      "ponder",
+      "think"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "just",
+      "too",
+      "also"
+    ],
+    "adjetivo": [
+      "fast",
+      "slowly",
+      "quickly",
+      "short",
+      "long",
+      "orvertime"
+    ],
+    "interjeicao": [
+      "me too",
+      "to take a nap",
+      "whatever"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "just"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6672003b1129a235a0c45370"
+  },
+  "nome": "lesson 109",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 109,
+  "conteudo": {
+    "substantivo": [
+      "pet",
+      "airmail",
+      "mess",
+      "ordeer",
+      "season",
+      "spring",
+      "summer",
+      "fall",
+      "winter",
+      "leaf",
+      "natural sciences",
+      "gem",
+      "jewels",
+      "lifestyle"
+    ],
+    "pronome": [
+      "neither"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "receive",
+      "received",
+      "receives",
+      "decide",
+      "decided",
+      "decides",
+      "order",
+      "ordered",
+      "orders",
+      "mail",
+      "mailed",
+      "mails",
+      "display"
+    ],
+    "preposicao": [
+      "since"
+    ],
+    "adverbio": [
+      "right before",
+      "right after",
+      "right back",
+      "since",
+      "neither"
+    ],
+    "adjetivo": [
+      "usual",
+      "unusual",
+      "ordinary",
+      "neither",
+      "amazing"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "since",
+      "neither"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670dfdf5973a2e5afd01567"
+  },
+  "nome": "lektion 3",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 3,
+  "conteudo": {
+    "substantivo": [
+      "Deutsch",
+      "Englisch",
+      "Französisch",
+      "Holländisch",
+      "Italienisch",
+      "Japanisch",
+      "Portugiesisch",
+      "Spanisch",
+      "morgen",
+      "morgens",
+      "nachmittags",
+      "abends",
+      "sehr",
+      "viel",
+      "sprachen",
+      "bisschen",
+      "hause",
+      "etwas"
+    ],
+    "pronome": [
+      "sehr",
+      "viel",
+      "er",
+      "sie",
+      "es",
+      "welch",
+      "bisschen",
+      "etwas"
+    ],
+    "artigo": [
+      "ein"
+    ],
+    "verbo": [
+      "lernen",
+      "sprechen",
+      "lerne",
+      "lernst",
+      "spreche",
+      "sprichst",
+      "spricht"
+    ],
+    "preposicao": [
+      "zu"
+    ],
+    "adverbio": [
+      "auch",
+      "nur",
+      "sehr",
+      "viel",
+      "ein bisschen",
+      "etwas"
+    ],
+    "adjetivo": [
+      ""
+    ],
+    "interjeicao": [
+      "auch",
+      "Entschuldigen"
+    ],
+    "numeral": [
+      "auch"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e1edd06d2a935f88eca5"
+  },
+  "nome": "lesson 7",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 7,
+  "conteudo": {
+    "substantivo": [
+      "office",
+      "movies",
+      "park",
+      "church",
+      "downtown",
+      "boss",
+      "mananger",
+      "neighbor",
+      "parents",
+      "name",
+      "day",
+      "week"
+    ],
+    "pronome": [
+      "what",
+      "how"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "want",
+      "go"
+    ],
+    "preposicao": [
+      "to",
+      "to the",
+      "in",
+      "in the",
+      "that"
+    ],
+    "adverbio": [
+      "what",
+      "how",
+      "tomorrow"
+    ],
+    "adjetivo": [
+      ""
+    ],
+    "interjeicao": [
+      "last name",
+      "so long"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e21cd06d2a935f88eca9"
+  },
+  "nome": "lesson 15",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 15,
+  "conteudo": {
+    "substantivo": [
+      "grandfather",
+      "grandmother",
+      "grandparents",
+      "grandson",
+      "granddaughter",
+      "grandchildren",
+      "cousin",
+      "relative",
+      "beach",
+      "cookie",
+      "cake",
+      "popcorn",
+      "slice",
+      "piece",
+      "teens"
+    ],
+    "pronome": [
+      ""
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "help",
+      "know",
+      "count"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "more"
+    ],
+    "adjetivo": [
+      ""
+    ],
+    "interjeicao": [
+      "how many",
+      "about"
+    ],
+    "numeral": [
+      "twenty",
+      "twenty-one",
+      "twenty-two",
+      "twenty-three",
+      "twenty-four",
+      "twenty-five",
+      "twenty-six",
+      "twenty-seven",
+      "twenty-eight",
+      "twenty-nine",
+      "thirty",
+      "fourty",
+      "fifty",
+      "seventy",
+      "eighty",
+      "ninety",
+      "one hundred",
+      "two hundred",
+      "one thousand"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e290d06d2a935f88ecb0"
+  },
+  "nome": "lesson 29",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 29,
+  "conteudo": {
+    "substantivo": [
+      "watch",
+      "clock",
+      "truck",
+      "shuttle",
+      "airport",
+      "parking lot",
+      "restaurant",
+      "sandwich",
+      "snack bar",
+      "waiter",
+      "waitress",
+      "motorcycle",
+      "train",
+      "subway",
+      "trolley",
+      "foot",
+      "tear"
+    ],
+    "pronome": [
+      "how much",
+      "all"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "finish",
+      "try",
+      "be",
+      "dream",
+      "sleep",
+      "will"
+    ],
+    "preposicao": [
+      "by",
+      "on"
+    ],
+    "adverbio": [
+      "during",
+      "all right",
+      "late",
+      "too",
+      "so",
+      "all"
+    ],
+    "adjetivo": [
+      "nice",
+      "little",
+      "sad",
+      "all"
+    ],
+    "interjeicao": [
+      "all day long",
+      "all night long"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e29cd06d2a935f88ecb1"
+  },
+  "nome": "lesson 31",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 31,
+  "conteudo": {
+    "substantivo": [
+      "English",
+      "Portuguese",
+      "Chinese",
+      "Japanese",
+      "Italian",
+      "German",
+      "French",
+      "Spanish",
+      "brother",
+      "sister",
+      "father",
+      "mother",
+      "parents",
+      "coffee",
+      "milk",
+      "chocolate",
+      "tea",
+      "water",
+      "juice",
+      "soda",
+      "soft drink",
+      "green tea",
+      "fish",
+      "meat",
+      "pancakes",
+      "syrup",
+      "cereal",
+      "toast",
+      "jam",
+      "jelly",
+      "peanut butter",
+      "today"
+    ],
+    "pronome": [
+      "I",
+      "you",
+      "my",
+      "your",
+      "don't",
+      "doesn't",
+      "do",
+      "does"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "drink",
+      "drinks",
+      "eat",
+      "eats",
+      "speak",
+      "speaks",
+      "talk",
+      "talks",
+      "need",
+      "needs"
+    ],
+    "preposicao": [
+      "with",
+      "and"
+    ],
+    "adverbio": [
+      "now",
+      "today",
+      "only",
+      "not"
+    ],
+    "adjetivo": [
+      ""
+    ],
+    "interjeicao": [
+      "thank you",
+      "thanks",
+      "you're welcome",
+      "please",
+      "in the morning",
+      "in the afternoon",
+      "in the evening",
+      "at night",
+      "every day"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e2b4d06d2a935f88ecb3"
+  },
+  "nome": "lesson 33",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 33,
+  "conteudo": {
+    "substantivo": [
+      "movies",
+      "school",
+      "store",
+      "house",
+      "home",
+      "church",
+      "downtown",
+      "playground",
+      "restroon",
+      "men's room",
+      "ladie's room",
+      "teacher",
+      "manager",
+      "iced",
+      "convenience store",
+      "roommate",
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "pronome": [
+      "we"
+    ],
+    "artigo": [
+      "the"
+    ],
+    "verbo": [
+      "like",
+      "likes",
+      "go",
+      "goes",
+      "help",
+      "helps",
+      "sleep",
+      "sleeps"
+    ],
+    "preposicao": [
+      "to",
+      "the",
+      "to the",
+      "in",
+      "in the",
+      "or",
+      "at"
+    ],
+    "adverbio": [
+      "together",
+      "out"
+    ],
+    "adjetivo": [
+      "cold",
+      "hot",
+      "together"
+    ],
+    "interjeicao": [
+      "very much",
+      "with me",
+      "weekend",
+      "see you later",
+      "see you tomorrow",
+      "see you",
+      "so long",
+      "out"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6672009f1129a235a0c4537a"
+  },
+  "nome": "lesson 89",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 89,
+  "conteudo": {
+    "substantivo": [
+      "tablecloth",
+      "mug",
+      "straw",
+      "toothpick",
+      "toothpick holder",
+      "coffee table",
+      "fork",
+      "knife",
+      "silverware",
+      "can opener",
+      "radio",
+      "gas tank",
+      "trunk",
+      "brake",
+      "accelerator",
+      "clutch",
+      "wheel",
+      "steering wheel",
+      "tire",
+      "spare tire",
+      "garbage can",
+      "garbage",
+      "moment",
+      "pain",
+      "trouble",
+      "heart",
+      "free",
+      "doubt"
+    ],
+    "pronome": [
+      "must",
+      "should",
+      "could",
+      "would",
+      "mustn't",
+      "shouldn't",
+      "couldn't",
+      "wouldn't",
+      "he",
+      "she",
+      "they",
+      "we",
+      "I",
+      "you",
+      "'d"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "must",
+      "should",
+      "could",
+      "would",
+      "prepare",
+      "bring",
+      "brought",
+      "do",
+      "did",
+      "forget",
+      "forgot",
+      "give",
+      "gave",
+      "leave",
+      "left",
+      "pay",
+      "paid",
+      "put",
+      "run",
+      "ran",
+      "see",
+      "saw",
+      "sing",
+      "sang",
+      "stand",
+      "stood",
+      "take",
+      "took",
+      "think",
+      "thought"
+    ],
+    "preposicao": [
+      "not"
+    ],
+    "adverbio": [
+      "too late",
+      "perhaps",
+      "maybe"
+    ],
+    "adjetivo": [
+      "free"
+    ],
+    "interjeicao": [
+      "to set the table",
+      "it's over",
+      "I'm sure",
+      "over the internet",
+      "It's up to you",
+      "too late"
+    ],
+    "numeral": [
+      "once again"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6672016a1129a235a0c45388"
+  },
+  "nome": "lesson 61",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 61,
+  "conteudo": {
+    "substantivo": [
+      "internet",
+      "virus",
+      "paper",
+      "newsstand",
+      "nightstand",
+      "Brasilian",
+      "American",
+      "weather",
+      "snow",
+      "rain",
+      "flog",
+      "cloud",
+      "sun",
+      "important",
+      "someone"
+    ],
+    "pronome": [
+      "same",
+      "someone"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "do",
+      "did",
+      "pay",
+      "paid",
+      "put",
+      "put",
+      "going to",
+      "access",
+      "care",
+      "call",
+      "let"
+    ],
+    "preposicao": [
+      "on"
+    ],
+    "adverbio": [
+      "same",
+      "finally"
+    ],
+    "adjetivo": [
+      "slow",
+      "beautiful",
+      "ready",
+      "forgetful",
+      "great",
+      "foggy",
+      "rainy",
+      "sunny",
+      "beautiful",
+      "pretty",
+      "special",
+      "important"
+    ],
+    "interjeicao": [
+      "to go to bed"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670dfeb5973a2e5afd01568"
+  },
+  "nome": "lektion 2",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 2,
+  "conteudo": {
+    "substantivo": [
+      "Amerika",
+      "Brasilien",
+      "Deutschland",
+      "England",
+      "Frankreich",
+      "Italien",
+      "Japan",
+      "Spanien",
+      "Berlin",
+      "Boon",
+      "Frankfurt",
+      "Hamburg",
+      "Hannover",
+      "Köln",
+      "München",
+      "Stuttgart",
+      "gut"
+    ],
+    "pronome": [
+      "wo",
+      "woher",
+      "du"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "kommen",
+      "wohnen",
+      "buchstabieren",
+      "komme",
+      "kommst",
+      "wohne",
+      "wohnst"
+    ],
+    "preposicao": [
+      "aus",
+      "in"
+    ],
+    "adverbio": [
+      "aber",
+      "dort",
+      "heir",
+      "ja",
+      "nein",
+      "wo",
+      "woher",
+      "gut",
+      "nicht"
+    ],
+    "adjetivo": [
+      ""
+    ],
+    "interjeicao": [
+      "bis bald",
+      "bis morgen",
+      "gut",
+      "dir"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "aber"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670dff85973a2e5afd01569"
+  },
+  "nome": "lektion 1",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 1,
+  "conteudo": {
+    "substantivo": [
+      "Anna",
+      "Astrid",
+      "Ingrid",
+      "Johann",
+      "Klaus",
+      "Martina",
+      "Michael",
+      "Peter",
+      "Frau Schmidt",
+      "Herr Fischer",
+      "Amerikaner",
+      "Americanerin",
+      "Brasilianer",
+      "Brasilianerin",
+      "Deutscher",
+      "Deutsche",
+      "Franzose",
+      "Französin",
+      "Italiner",
+      "Italianerin",
+      "Japaner",
+      "Japanerin",
+      "Spanier",
+      "Spanierin",
+      "Arzt",
+      "Ärztin",
+      "Ingenieur",
+      "Ingenieurin",
+      "Lehrer",
+      "Lehrerin",
+      "Programmierer",
+      "Programmiererin",
+      "Rechtsanwalt",
+      "Rechstanwältin",
+      "Sekretär",
+      "Sekretärin",
+      "Student",
+      "Studentin",
+      "Unternehmer",
+      "Unternehmerin",
+      "Verkäufer",
+      "Verkäuferin",
+      "vorname",
+      "nachname",
+      "tschüs",
+      "danke",
+      "guten morgen",
+      "guten tag",
+      "guten abend",
+      "guten nacht",
+      "veben",
+      "ausdrücke",
+      "grammatik"
+    ],
+    "pronome": [
+      "was",
+      "wie",
+      "ich",
+      "Sie",
+      "das",
+      "wer",
+      "bitte",
+      "mein"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "einßen",
+      "sein",
+      "ist",
+      "sind",
+      "bin",
+      "einße"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "bitte"
+    ],
+    "adjetivo": [
+      ""
+    ],
+    "interjeicao": [
+      "hallo",
+      "tschüs",
+      "auf wiedersehen"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "und",
+      "order"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e02ed06d2a935f88ec93"
+  },
+  "nome": "lezione 5",
+  "linguagem": "italiano",
+  "licao": true,
+  "titulo": "lezione",
+  "ordem": 5,
+  "conteudo": {
+    "substantivo": [
+      "acqua",
+      "bicchiere",
+      "caffè",
+      "cappuccino",
+      "cornetto",
+      "frutta",
+      "uova",
+      "latte",
+      "panino",
+      "succo",
+      "tiramisù",
+      "torta",
+      "zucchero",
+      "savoiardi",
+      "sa",
+      "dolce",
+      "origem",
+      "secolo",
+      "ingredienti",
+      "mascarpone",
+      "cacao",
+      "ricetta",
+      "base",
+      "strato",
+      "fine"
+    ],
+    "pronome": [
+      "io",
+      "tu",
+      "lei",
+      "lui",
+      "Lei",
+      "noi",
+      "voi",
+      "loro",
+      "la",
+      "le",
+      "gli",
+      "i",
+      "il",
+      "lo",
+      "mi",
+      "che"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "mangiare",
+      "mangi",
+      "mangia",
+      "mangiamo",
+      "mangiate",
+      "mangiano",
+      "bere",
+      "bevo",
+      "bevi",
+      "beve",
+      "beviamo",
+      "bevete",
+      "bevono",
+      "ascoltare",
+      "completare",
+      "preparare",
+      "mettere",
+      "coprire"
+    ],
+    "preposicao": [
+      "alla"
+    ],
+    "adverbio": [
+      "magari"
+    ],
+    "adjetivo": [
+      "tipico",
+      "fine"
+    ],
+    "interjeicao": [
+      "mi sa che",
+      "tu che cosa"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e0cad06d2a935f88ec9e"
+  },
+  "nome": "leçon 2",
+  "linguagem": "français",
+  "licao": true,
+  "titulo": "leçon",
+  "ordem": 2,
+  "conteudo": {
+    "substantivo": [
+      "gérant",
+      "entreprise",
+      "ordinatuer",
+      "allemand",
+      "allemande",
+      "japonais",
+      "japonaise",
+      "italien",
+      "italiene",
+      "sur",
+      "matin",
+      "aprês-midi",
+      "soir",
+      "nuit",
+      "jour",
+      "pardon"
+    ],
+    "pronome": [
+      "il",
+      "elle",
+      "on",
+      "demoiselle",
+      "dame",
+      "Monsieur",
+      "M.",
+      "Madame",
+      "Mme",
+      "Mademoiselle",
+      "Mlle"
+    ],
+    "artigo": [
+      "le",
+      "la",
+      "l'",
+      "les"
+    ],
+    "verbo": [
+      "avoir besoin",
+      "aimer",
+      "saluer",
+      "travailler"
+    ],
+    "preposicao": [
+      "dans"
+    ],
+    "adverbio": [
+      "plus",
+      "moins",
+      "ici",
+      "là"
+    ],
+    "adjetivo": [
+      ""
+    ],
+    "interjeicao": [
+      "au revoir",
+      "à bientôt",
+      "à plus tard",
+      "excuse-moi",
+      "excusez-moi",
+      "pardon"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "dans",
+      "mais"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e1a8d06d2a935f88eca1"
+  },
+  "nome": "lesson 1",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 1,
+  "conteudo": {
+    "substantivo": [
+      "coffee",
+      "tea",
+      "milk",
+      "juice",
+      "water",
+      "soda",
+      "fish",
+      "meat",
+      "cheese",
+      "ham",
+      "bread"
+    ],
+    "pronome": [
+      "I",
+      "you"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "drink",
+      "eat",
+      "to drink",
+      "to eat"
+    ],
+    "preposicao": [
+      "and"
+    ],
+    "adverbio": [
+      ""
+    ],
+    "adjetivo": [
+      ""
+    ],
+    "interjeicao": [
+      "thank you",
+      "thanks",
+      "please",
+      "hi",
+      "hello",
+      "goodbye"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e253d06d2a935f88ecab"
+  },
+  "nome": "lesson 19",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 19,
+  "conteudo": {
+    "substantivo": [
+      "window",
+      "door",
+      "room",
+      "bedroom",
+      "bathroom",
+      "kitchen",
+      "flower",
+      "tree",
+      "pie",
+      "ice",
+      "food"
+    ],
+    "pronome": [
+      "he",
+      "she",
+      "it"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "open",
+      "close"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "more"
+    ],
+    "adjetivo": [
+      "hot",
+      "cold"
+    ],
+    "interjeicao": [
+      "this morning",
+      "this afternoon",
+      "tonight",
+      "tomorrow morning",
+      "e-mail box"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e326d06d2a935f88ecbb"
+  },
+  "nome": "lesson 49",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 49,
+  "conteudo": {
+    "substantivo": [
+      "dad",
+      "mon",
+      "cousin",
+      "furniture",
+      "television",
+      "blinds",
+      "flower",
+      "present",
+      "sawdwich",
+      "ice cream",
+      "popsicle",
+      "clothers",
+      "skirt",
+      "dress",
+      "blouse",
+      "pants",
+      "shirt",
+      "shoes",
+      "toy",
+      "Christimas",
+      "name",
+      "nickname",
+      "last name",
+      "clock",
+      "watch",
+      "ticket",
+      "thirsty",
+      "hungry",
+      "hurry"
+    ],
+    "pronome": [
+      "everything"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "do",
+      "did",
+      "want",
+      "wanted",
+      "try",
+      "tried",
+      "start",
+      "started",
+      "wait",
+      "waited",
+      "am",
+      "are",
+      "is",
+      "be"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "almost"
+    ],
+    "adjetivo": [
+      "nice",
+      "happy",
+      "sad",
+      "bored",
+      "quiet",
+      "cool",
+      "sold out"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671fff41129a235a0c4536d"
+  },
+  "nome": "lesson 115",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 115,
+  "conteudo": {
+    "substantivo": [
+      "flight",
+      "passenger",
+      "darling",
+      "honey",
+      "sweetheart",
+      "surprise",
+      "director",
+      "program",
+      "channel",
+      "substitute",
+      "communication",
+      "means",
+      "runway",
+      "boarding pass",
+      "first aid",
+      "flight attendant",
+      "satellite dish",
+      "happiness",
+      "most"
+    ],
+    "pronome": [
+      ""
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "follow",
+      "followed",
+      "follows",
+      "fly",
+      "flew",
+      "flown",
+      "flies",
+      "cancel",
+      "canceled",
+      "cancels",
+      "shout",
+      "shouted",
+      "shouts",
+      "board",
+      "get lost",
+      "be",
+      "spend"
+    ],
+    "preposicao": [
+      "around"
+    ],
+    "adverbio": [
+      "means",
+      "around"
+    ],
+    "adjetivo": [
+      "sweetheart",
+      "means",
+      "honest"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "667200821129a235a0c45377"
+  },
+  "nome": "lesson 95",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 95,
+  "conteudo": {
+    "substantivo": [
+      "supervisor",
+      "machine",
+      "statement",
+      "reaction",
+      "round",
+      "square",
+      "wood",
+      "plastic",
+      "fabric",
+      "plan",
+      "wool",
+      "mind"
+    ],
+    "pronome": [
+      "mine"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "happen",
+      "happened",
+      "happens",
+      "meet",
+      "met",
+      "become",
+      "became",
+      "becames",
+      "correct",
+      "corrected",
+      "corrects",
+      "apply for",
+      "get",
+      "be",
+      "go",
+      "print",
+      "change",
+      "explain",
+      "decide",
+      "there couud be",
+      "begin",
+      "began",
+      "bring",
+      "brought",
+      "do",
+      "did",
+      "forget",
+      "forgot",
+      "give",
+      "gave",
+      "leave",
+      "left",
+      "meet",
+      "met",
+      "pay",
+      "paid",
+      "put",
+      "put",
+      "run",
+      "ran",
+      "see",
+      "saw",
+      "send",
+      "sang",
+      "stand",
+      "stood",
+      "take",
+      "took",
+      "teach",
+      "taught",
+      "think",
+      "thought"
+    ],
+    "preposicao": [
+      "out of"
+    ],
+    "adverbio": [
+      "by chance"
+    ],
+    "adjetivo": [
+      "angry",
+      "funny",
+      "round",
+      "square",
+      "triagular",
+      "glad",
+      "angry"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "667200f71129a235a0c45382"
+  },
+  "nome": "lesson 73",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 73,
+  "conteudo": {
+    "substantivo": [
+      "phone",
+      "phone book",
+      "phone booth",
+      "faver",
+      "ad",
+      "public",
+      "private",
+      "building",
+      "square",
+      "belt",
+      "buckle",
+      "pair",
+      "solution",
+      "father-in-law",
+      "mother-in-law",
+      "brother-in-law",
+      "sister-in-law",
+      "son-in-law",
+      "daughter-in-law",
+      "point of view"
+    ],
+    "pronome": [
+      ""
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "to walk",
+      "walked",
+      "walkes",
+      "to invite",
+      "invited",
+      "invites",
+      "to call",
+      "called",
+      "calls",
+      "will",
+      "to put on",
+      "won't",
+      "'ll",
+      "to feel",
+      "to age",
+      "to search"
+    ],
+    "preposicao": [
+      "than"
+    ],
+    "adverbio": [
+      "through",
+      "not",
+      "forever"
+    ],
+    "adjetivo": [
+      "private",
+      "pair",
+      "older",
+      "beauty",
+      "power",
+      "afraid"
+    ],
+    "interjeicao": [
+      "what's the matter"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "than"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e04cd06d2a935f88ec96"
+  },
+  "nome": "lezione 11",
+  "linguagem": "italiano",
+  "licao": true,
+  "titulo": "lezione",
+  "ordem": 11,
+  "conteudo": {
+    "substantivo": [
+      "banca",
+      "albergo",
+      "centro",
+      "chiesa",
+      "cinema",
+      "ospedale",
+      "parco",
+      "piazza",
+      "film",
+      "ultimo",
+      "sabato",
+      "domenica",
+      "Italia",
+      "Lisbona",
+      "Madrid",
+      "Berlino",
+      "Inghilterra",
+      "giovedì",
+      "Spagna",
+      "martedì",
+      "domenica",
+      "italiano",
+      "spagnolo",
+      "San Paolo",
+      "Milano",
+      "vinerdì",
+      "Roma",
+      "Barcellona",
+      "Londra",
+      "mercoledì",
+      "Parigi",
+      "genio",
+      "Brasile",
+      "salati",
+      "brasiliano",
+      "Germania",
+      "casa",
+      "farina",
+      "noce moscada",
+      "burro",
+      "parmigiano",
+      "ripieno",
+      "tutta"
+    ],
+    "pronome": [
+      "io",
+      "tu",
+      "lei",
+      "lui",
+      "Lei",
+      "noi",
+      "voi",
+      "loro",
+      "da me",
+      "da te",
+      "da lui",
+      "da lei",
+      "da noi",
+      "da voi",
+      "da loro",
+      "con voi",
+      "con te",
+      "mi"
+    ],
+    "artigo": [
+      "la",
+      "il",
+      "i'",
+      "lo",
+      "gli",
+      "le",
+      "i",
+      "un"
+    ],
+    "verbo": [
+      "andare",
+      "vado",
+      "vai",
+      "va",
+      "andiamo",
+      "andate",
+      "vanno",
+      "venire",
+      "vengo",
+      "vieni",
+      "viene",
+      "veniamo",
+      "venite",
+      "vengono",
+      "bevo",
+      "mangi",
+      "preferisco",
+      "sono"
+    ],
+    "preposicao": [
+      "da",
+      "a",
+      "dal",
+      "dallo",
+      "dalla",
+      "dall'",
+      "dai",
+      "dagli",
+      "dalle",
+      "al",
+      "allo",
+      "alla",
+      "all'",
+      "ai",
+      "agli",
+      "alle"
+    ],
+    "adverbio": [
+      "come",
+      "non",
+      "no"
+    ],
+    "adjetivo": [
+      "ultimo",
+      "ripiena"
+    ],
+    "interjeicao": [
+      "va a genio"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e071d06d2a935f88ec99"
+  },
+  "nome": "lezione 17",
+  "linguagem": "italiano",
+  "licao": true,
+  "titulo": "lezione",
+  "ordem": 17,
+  "conteudo": {
+    "substantivo": [
+      "bagno",
+      "camera",
+      "cantina",
+      "cortile",
+      "cucina",
+      "casa",
+      "garage",
+      "lavanderia",
+      "sala de pranzo",
+      "salotto",
+      "soffitta",
+      "davanti",
+      "amica",
+      "borsa",
+      "scarpe",
+      "vestiti",
+      "libro",
+      "itiliana",
+      "francesi",
+      "inglese",
+      "rivista",
+      "libri",
+      "tedesco"
+    ],
+    "pronome": [
+      "io",
+      "tu",
+      "lui",
+      "lei",
+      "Lei",
+      "noi",
+      "voi",
+      "loro",
+      "nella",
+      "mio",
+      "mia",
+      "miei",
+      "mie",
+      "tuo",
+      "tua",
+      "tuoi",
+      "tue",
+      "suo",
+      "sua",
+      "suoi",
+      "sue",
+      "nostro",
+      "nostra",
+      "nostri",
+      "nostre",
+      "vostro",
+      "vostra",
+      "vostri",
+      "vostre",
+      "loro",
+      "è"
+    ],
+    "artigo": [
+      "la",
+      "il",
+      "i",
+      "le"
+    ],
+    "verbo": [
+      "ci sono",
+      "ci sei",
+      "c'è",
+      "ci siamo",
+      "ci siete",
+      "ci sono",
+      "esserci",
+      "manco",
+      "manchi",
+      "manca",
+      "manchiamo",
+      "mancate",
+      "mancano",
+      "mancare",
+      "è"
+    ],
+    "preposicao": [
+      "alla",
+      "in",
+      "a"
+    ],
+    "adverbio": [
+      ""
+    ],
+    "adjetivo": [
+      "grande"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      "due",
+      "un"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670dfb15973a2e5afd01563"
+  },
+  "nome": "lektion 11",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 11,
+  "conteudo": {
+    "substantivo": [
+      "das Auto",
+      "das Fahrrad",
+      "das Geld",
+      "das Haus",
+      "der Hund",
+      "die Katze",
+      "die Kinder",
+      "der Kurs",
+      "die Prüfung",
+      "der Test",
+      "der Unterricht",
+      "die Wohnung",
+      "die Zeit",
+      "Deutschkurs"
+    ],
+    "pronome": [
+      "ich",
+      "du",
+      "er",
+      "sie",
+      "ihr"
+    ],
+    "artigo": [
+      "den",
+      "die",
+      "der",
+      "das"
+    ],
+    "verbo": [
+      "machem",
+      "haben",
+      "machst",
+      "mache",
+      "machcht",
+      "habe",
+      "hast",
+      "hat"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      ""
+    ],
+    "adjetivo": [
+      "gern"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671dffdd06d2a935f88ec90"
+  },
+  "nome": "lezione 1",
+  "linguagem": "italiano",
+  "licao": true,
+  "titulo": "lezione",
+  "ordem": 1,
+  "conteudo": {
+    "substantivo": [
+      "italiano",
+      "brasiliano",
+      "tedesco",
+      "francese",
+      "anni",
+      "buongiorno",
+      "buonasera",
+      "inglese",
+      "benvenuto",
+      "italia"
+    ],
+    "pronome": [
+      "io",
+      "tu",
+      "lui",
+      "lei",
+      "Lei",
+      "noi",
+      "voi",
+      "loro"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "sono",
+      "sei",
+      "è",
+      "siamo",
+      "siete",
+      "sono",
+      "ho",
+      "hai",
+      "ha",
+      "abbiamo",
+      "avete",
+      "hanno",
+      "essere",
+      "avere"
+    ],
+    "preposicao": [
+      "di"
+    ],
+    "adverbio": [
+      "dove"
+    ],
+    "adjetivo": [
+      "benvenuto",
+      "buonasera",
+      "buongiorno",
+      ""
+    ],
+    "interjeicao": [
+      "ciao",
+      "arrivederci"
+    ],
+    "numeral": [
+      "uno",
+      "due",
+      "tre",
+      "quattro",
+      "cinque",
+      "sei",
+      "sette",
+      "otto",
+      "nove",
+      "deici",
+      "undici",
+      "dodici",
+      "tredici",
+      "quattordici",
+      "quindici",
+      "sedici",
+      "diciassette",
+      "diciotto",
+      "diciannove",
+      "vent"
+    ],
+    "conjuncao": [
+      "e"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e1d6d06d2a935f88eca3"
+  },
+  "nome": "lesson 3",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 3,
+  "conteudo": {
+    "substantivo": [
+      "teacher",
+      "school",
+      "home",
+      "store",
+      "bank",
+      "soccer",
+      "tennis",
+      "volleyball",
+      "basketball",
+      "chess",
+      "piano",
+      "guitar",
+      "violin"
+    ],
+    "pronome": [
+      "sir",
+      "ma'am",
+      "the"
+    ],
+    "artigo": [
+      "the"
+    ],
+    "verbo": [
+      "work",
+      "play"
+    ],
+    "preposicao": [
+      "at",
+      "the",
+      "but"
+    ],
+    "adverbio": [
+      "only",
+      "there",
+      "here"
+    ],
+    "adjetivo": [
+      "alone"
+    ],
+    "interjeicao": [
+      "excuse me",
+      "sorry",
+      "you're welcome"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670dee55973a2e5afd01559"
+  },
+  "nome": "lektion 31",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 31,
+  "conteudo": {
+    "substantivo": [
+      "der Neffe",
+      "die Nichte",
+      "der Himmel",
+      "der Regen",
+      "die Sonne",
+      "das Wetter",
+      "heute",
+      "personalpronomen",
+      "nominativ",
+      "akkusativ",
+      "lust"
+    ],
+    "pronome": [
+      "mich",
+      "dich",
+      "ich",
+      "uns",
+      "euch",
+      "ihr",
+      "du",
+      "wir",
+      "es",
+      "er",
+      "deine",
+      "sie",
+      "Sie",
+      "ihre",
+      "mein",
+      "meine",
+      "dein"
+    ],
+    "artigo": [
+      "die",
+      "das",
+      "der"
+    ],
+    "verbo": [
+      "besuchen",
+      "treffen",
+      "kann",
+      "kannst",
+      "muss",
+      "will",
+      "mag",
+      "verstehen",
+      "ist",
+      "kann",
+      "wollen",
+      "besucht",
+      "müssen",
+      "bleiben",
+      "möchten",
+      "können",
+      "machen",
+      "besuche",
+      "treffe",
+      "trifftst",
+      "trifft",
+      "haben",
+      "spielen",
+      "muss"
+    ],
+    "preposicao": [
+      "und",
+      "oder",
+      "man",
+      "am",
+      "in",
+      "aber"
+    ],
+    "adverbio": [
+      "heiß",
+      "glücklicherweise",
+      "leider",
+      "nicht",
+      "auch"
+    ],
+    "adjetivo": [
+      "fisch",
+      "kalt",
+      "helß",
+      "kühl",
+      "regnerisch",
+      "schwach",
+      "sonnig",
+      "stark",
+      "warm",
+      "wolkig"
+    ],
+    "interjeicao": [
+      "lust haben",
+      "nächste Woche",
+      "nächsten Monat",
+      "nächstes Jahr"
+    ],
+    "numeral": [
+      "ein"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670df1b5973a2e5afd0155d"
+  },
+  "nome": "lektion 23",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 23,
+  "conteudo": {
+    "substantivo": [
+      "der Cousin",
+      "die Kusine",
+      "der Junge",
+      "das Mädchen",
+      "der Onkel",
+      "die Tante",
+      "der Nachbar",
+      "die Nachbarin",
+      "die Familie",
+      "der Freund",
+      "die Freundin",
+      "Mal",
+      "main",
+      "nominativ",
+      "akkusativ",
+      "die Mutter",
+      "jeden",
+      "heute"
+    ],
+    "pronome": [
+      "mein",
+      "meinen",
+      "deine",
+      "seinen",
+      "ihre",
+      "seine",
+      "unseren",
+      "unsere",
+      "eure",
+      "ihr",
+      "ihren",
+      "wir",
+      "Sie",
+      "Er",
+      "ich",
+      "sie",
+      "wann",
+      "wer",
+      "wen"
+    ],
+    "artigo": [
+      "die",
+      "der",
+      "das"
+    ],
+    "verbo": [
+      "treffen",
+      "besuchen",
+      "treffe",
+      "triffst",
+      "trifft",
+      "trefft",
+      "besuche",
+      "besuchst",
+      "besucht",
+      "wollen",
+      "will"
+    ],
+    "preposicao": [
+      "am"
+    ],
+    "adverbio": [
+      "oft",
+      "heute"
+    ],
+    "adjetivo": [
+      "Mal",
+      "main"
+    ],
+    "interjeicao": [
+      "dieses Mal",
+      "nächstes Mal",
+      "jeden tag"
+    ],
+    "numeral": [
+      "Mal",
+      "ein"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e063d06d2a935f88ec98"
+  },
+  "nome": "lezione 15",
+  "linguagem": "italiano",
+  "licao": true,
+  "titulo": "lezione",
+  "ordem": 15,
+  "conteudo": {
+    "substantivo": [
+      "borsa",
+      "camicia",
+      "calze",
+      "giacca",
+      "maglietta",
+      "gonna",
+      "negozio",
+      "orologio",
+      "pantolini",
+      "scarpe",
+      "vestiti",
+      "zucchero",
+      "libri",
+      "tema",
+      "legge",
+      "frase",
+      "anni",
+      "treno",
+      "macchina",
+      "Italia",
+      "Brasilie",
+      "brasiliani",
+      "inglesi",
+      "italiani",
+      "ricerche",
+      "riviste",
+      "Milano",
+      "aereo"
+    ],
+    "pronome": [
+      "io",
+      "tu",
+      "lui",
+      "lei",
+      "Lei",
+      "noi",
+      "voi",
+      "loro",
+      "del",
+      "dello",
+      "della",
+      "dell'",
+      "dei",
+      "degli",
+      "delle",
+      "quanti",
+      "quando",
+      "quanti",
+      "quanto",
+      "quanti"
+    ],
+    "artigo": [
+      "un",
+      "la",
+      "le",
+      "il",
+      "I'",
+      "i",
+      "un",
+      "una",
+      "deis"
+    ],
+    "verbo": [
+      "vendo",
+      "vendi",
+      "vende",
+      "vendiamo",
+      "vendete",
+      "vendono",
+      "vendere",
+      "compro",
+      "compri",
+      "compra",
+      "compriamo",
+      "comprate",
+      "comprano",
+      "comprare",
+      "hai",
+      "viaggi",
+      "viggiare",
+      "preferisci",
+      "usare",
+      "usi",
+      "leggere"
+    ],
+    "preposicao": [
+      "di",
+      "in",
+      "e",
+      "da",
+      "a"
+    ],
+    "adverbio": [
+      "o"
+    ],
+    "adjetivo": [
+      ""
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      "paio"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e2fed06d2a935f88ecb8"
+  },
+  "nome": "lesson 43",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 43,
+  "conteudo": {
+    "substantivo": [
+      "food",
+      "rice",
+      "beans",
+      "salad",
+      "French fries",
+      "potato",
+      "pasta",
+      "steak",
+      "baked",
+      "grilled",
+      "cooked",
+      "dessert",
+      "sausage",
+      "roll",
+      "oatmate",
+      "sweetener",
+      "birthday",
+      "pineapple",
+      "grape",
+      "pear",
+      "strawberry",
+      "pie",
+      "piece",
+      "ice",
+      "movie",
+      "brown sugar",
+      "little",
+      "Law",
+      "assistant",
+      "hospital",
+      "court",
+      "manager"
+    ],
+    "pronome": [
+      "all",
+      "did",
+      "didn't"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "take",
+      "took",
+      "like",
+      "liked",
+      "go",
+      "went",
+      "know",
+      "knew",
+      "talk",
+      "talked",
+      "did"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "all",
+      "yesterday",
+      "didn't",
+      "not"
+    ],
+    "adjetivo": [
+      "all",
+      "last",
+      "rare",
+      "medium",
+      "well done"
+    ],
+    "interjeicao": [
+      "chocolate chips",
+      "scrambled eggs",
+      "boiled eggs",
+      "a lot",
+      "a lot off"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "667200771129a235a0c45376"
+  },
+  "nome": "lesson 97",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 97,
+  "conteudo": {
+    "substantivo": [
+      "fight",
+      "several",
+      "couple",
+      "soap opera",
+      "pillow",
+      "pollowcase",
+      "sheet",
+      "blanket",
+      "reservation",
+      "credit card",
+      "class",
+      "coache fare",
+      "British",
+      "economy",
+      "paw",
+      "tail",
+      "skin",
+      "furfeather",
+      "jaw",
+      "wild",
+      "better",
+      "letter",
+      "matter",
+      "butter",
+      "litter",
+      "waiter",
+      "winter",
+      "printer",
+      "plenty",
+      "town"
+    ],
+    "pronome": [
+      "is",
+      "isn't",
+      "are",
+      "aren't",
+      "was",
+      "wasn't",
+      "were",
+      "weren't"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "find",
+      "found",
+      "finds",
+      "lose",
+      "lost",
+      "loses",
+      "wake up",
+      "woke up",
+      "prepare",
+      "prepared",
+      "prepares",
+      "find out",
+      "look for",
+      "write",
+      "turn",
+      "get",
+      "block"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "however",
+      "by the way",
+      "better",
+      "later",
+      "plenty",
+      "exactly"
+    ],
+    "adjetivo": [
+      "upset",
+      "mad",
+      "furry",
+      "better",
+      "bitter",
+      "wanted",
+      "plenty",
+      "rented",
+      "painted",
+      "invented",
+      "intended",
+      "welcome"
+    ],
+    "interjeicao": [
+      "by the way"
+    ],
+    "numeral": [
+      "each other",
+      "twenty",
+      "seventy"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6672011f1129a235a0c45385"
+  },
+  "nome": "lesson 67",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 67,
+  "conteudo": {
+    "substantivo": [
+      "another",
+      "notebook",
+      "message",
+      "life",
+      "Switzerland",
+      "Sweden",
+      "refrigerator",
+      "laptop",
+      "printer",
+      "everybody",
+      "daytime"
+    ],
+    "pronome": [
+      "everybody",
+      "you",
+      "we",
+      "thet"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "think",
+      "thought",
+      "thinks",
+      "bring",
+      "brought",
+      "brings",
+      "leave",
+      "left",
+      "leaves",
+      "were",
+      "weren't",
+      "camp",
+      "hike",
+      "rest"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "away",
+      "everybody",
+      "not"
+    ],
+    "adjetivo": [
+      "wonderful",
+      "interested",
+      "warm",
+      "frozen",
+      "away",
+      "everybody"
+    ],
+    "interjeicao": [
+      "to go away",
+      "I think so",
+      "I don't think so"
+    ],
+    "numeral": [
+      "both"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e204d06d2a935f88eca7"
+  },
+  "nome": "lesson 11",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 11,
+  "conteudo": {
+    "substantivo": [
+      "family",
+      "city",
+      "mail",
+      "rice",
+      "beens",
+      "potato",
+      "chicken",
+      "turkey",
+      "pork",
+      "steak",
+      "French fries",
+      "vegetables",
+      "pasta"
+    ],
+    "pronome": [
+      "when",
+      "many"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "need",
+      "prefer",
+      "be",
+      "wanna",
+      "do"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "when",
+      "many"
+    ],
+    "adjetivo": [
+      "many"
+    ],
+    "interjeicao": [
+      "very much",
+      "a little",
+      "sometimes",
+      "rare",
+      "medium",
+      "well done"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e23cd06d2a935f88ecaa"
+  },
+  "nome": "lesson 17",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 17,
+  "conteudo": {
+    "substantivo": [
+      "newspaper",
+      "magazine",
+      "letter",
+      "e-mail",
+      "boy",
+      "girl",
+      "boyfriend",
+      "girlfriend",
+      "dad",
+      "mon",
+      "kid",
+      "toy",
+      "bed",
+      "moon",
+      "midnight",
+      "o'clock"
+    ],
+    "pronome": [
+      "many",
+      "very",
+      "much",
+      "very much",
+      "so much"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "read",
+      "write",
+      "love"
+    ],
+    "preposicao": [
+      "until",
+      "by"
+    ],
+    "adverbio": [
+      "many",
+      "until",
+      "by",
+      "really",
+      "very",
+      "much",
+      "very much",
+      "so much"
+    ],
+    "adjetivo": [
+      "many",
+      "very",
+      "much",
+      "very much",
+      "so much"
+    ],
+    "interjeicao": [
+      "what time",
+      "to get up",
+      "to go to bed",
+      "have you ever"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e2cdd06d2a935f88ecb5"
+  },
+  "nome": "lesson 37",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 37,
+  "conteudo": {
+    "substantivo": [
+      "boss",
+      "waiter",
+      "waitress",
+      "newspaper",
+      "magazine",
+      "letter",
+      "mail",
+      "post office",
+      "postcard",
+      "card",
+      "postman",
+      "mailman",
+      "apartment",
+      "month",
+      "animal",
+      "chicken",
+      "pork",
+      "turkey",
+      "Thanksgiving",
+      "holiday",
+      "bike",
+      "bicycle",
+      "motorcycle",
+      "e-mail account"
+    ],
+    "pronome": [
+      "how",
+      "as",
+      "why",
+      "his",
+      "hes"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "prefer",
+      "prefers",
+      "know",
+      "knows",
+      "read",
+      "reads",
+      "write",
+      "writes",
+      "work"
+    ],
+    "preposicao": [
+      "how",
+      "as",
+      "by"
+    ],
+    "adverbio": [
+      "here",
+      "there",
+      "kind"
+    ],
+    "adjetivo": [
+      "kind"
+    ],
+    "interjeicao": [
+      "how",
+      "as",
+      "this morning",
+      "this afternoon",
+      "tonight",
+      "tomorrow morning",
+      "tomorrow night"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "because"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "667200261129a235a0c4536e"
+  },
+  "nome": "lesson 113",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 113,
+  "conteudo": {
+    "substantivo": [
+      "bartender",
+      "counter",
+      "death",
+      "attention",
+      "inflation",
+      "van",
+      "compact",
+      "sedan",
+      "mile",
+      "mileage",
+      "insurance",
+      "chance",
+      "charge",
+      "crash",
+      "prom",
+      "dance",
+      "senior prom",
+      "case",
+      "bus",
+      "kiss",
+      "miss",
+      "nurse",
+      "horse",
+      "less",
+      "mess",
+      "yes",
+      "gas",
+      "sauce",
+      "grass",
+      "boss",
+      "house",
+      "mouse",
+      "blouse"
+    ],
+    "pronome": [
+      ""
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "spend",
+      "spent",
+      "spends",
+      "rent",
+      "rented",
+      "rents",
+      "cross",
+      "crossed",
+      "crosses",
+      "die",
+      "died",
+      "dies",
+      "miss",
+      "graduate",
+      "sound",
+      "choose",
+      "become",
+      "became",
+      "begin",
+      "began",
+      "bring",
+      "brought",
+      "cost",
+      "cost",
+      "do",
+      "did",
+      "fall",
+      "fell",
+      "feel",
+      "felt",
+      "find",
+      "found",
+      "forget",
+      "forgot",
+      "give",
+      "gave",
+      "hear",
+      "heard",
+      "hide",
+      "hid",
+      "leave",
+      "left",
+      "lose",
+      "lost",
+      "meet",
+      "met",
+      "pay",
+      "paid",
+      "put",
+      "put",
+      "run",
+      "ran",
+      "say",
+      "said",
+      "see",
+      "saw",
+      "send",
+      "sent",
+      "sing",
+      "sang",
+      "sit",
+      "sat",
+      "spend",
+      "spent",
+      "stand",
+      "stood",
+      "take",
+      "took",
+      "teach",
+      "taught",
+      "tell",
+      "told",
+      "think",
+      "thought",
+      "wake up",
+      "woke up"
+    ],
+    "preposicao": [
+      "less",
+      "else"
+    ],
+    "adverbio": [
+      "anyway",
+      "smaller",
+      "less",
+      "yes",
+      "since"
+    ],
+    "adjetivo": [
+      "curious",
+      "alive",
+      "dead",
+      "compact",
+      "additional",
+      "unlimited",
+      "limited",
+      "hotter",
+      "bigger",
+      "small",
+      "big",
+      "hot",
+      "good",
+      "better",
+      "bad",
+      "worse",
+      "young",
+      "beautiful",
+      "expensive",
+      "important",
+      "difficult",
+      "less",
+      "loose",
+      "tense"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "than",
+      "since",
+      "else"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6672004f1129a235a0c45372"
+  },
+  "nome": "lesson 103",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 105,
+  "conteudo": {
+    "substantivo": [
+      "medicine",
+      "type",
+      "personal",
+      "certain",
+      "supply",
+      "dusty",
+      "vacancy",
+      "cough",
+      "mirror",
+      "junk mail",
+      "look",
+      "book",
+      "hook",
+      "cook",
+      "foot",
+      "hood",
+      "moon",
+      "spoon",
+      "roon",
+      "broom",
+      "balloon",
+      "tune",
+      "June",
+      "accent",
+      "Business",
+      "Economy"
+    ],
+    "pronome": [
+      "certain"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "cost",
+      "cost",
+      "costs",
+      "trust",
+      "trusted",
+      "trust",
+      "cough",
+      "coughed",
+      "coughs",
+      "sneeze",
+      "sneezed",
+      "sneezes",
+      "collect",
+      "check in",
+      "check out",
+      "took",
+      "put",
+      "the attend"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "certain",
+      "properly",
+      "therefore",
+      "soon"
+    ],
+    "adjetivo": [
+      "certain",
+      "dusty",
+      "proper",
+      "vacant",
+      "good"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      "noon"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6672005a1129a235a0c45373"
+  },
+  "nome": "lesson 103",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 103,
+  "conteudo": {
+    "substantivo": [
+      "overseas",
+      "abroad",
+      "probability",
+      "grade",
+      "voice",
+      "secrets",
+      "smile",
+      "laugh",
+      "feelling"
+    ],
+    "pronome": [
+      ""
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "say",
+      "said",
+      "says",
+      "tell",
+      "told",
+      "tells",
+      "notice",
+      "noticed",
+      "notices",
+      "feel",
+      "felt",
+      "feels",
+      "back up",
+      "forward",
+      "hide",
+      "confess"
+    ],
+    "preposicao": [
+      "excited",
+      "nervous",
+      "upon",
+      "whoever",
+      "instead of"
+    ],
+    "adverbio": [
+      "probably",
+      "on time",
+      "in time",
+      "proud"
+    ],
+    "adjetivo": [
+      "whatever"
+    ],
+    "interjeicao": [
+      "besides",
+      "my goodness"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "besides",
+      "whenever"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "667200a91129a235a0c4537b"
+  },
+  "nome": "lesson 87",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 87,
+  "conteudo": {
+    "substantivo": [
+      "interest",
+      "banck",
+      "account",
+      "savings account",
+      "bank teller",
+      "ATM",
+      "checkbook",
+      "engagement",
+      "date",
+      "flat",
+      "outlet",
+      "outlet store",
+      "light swich",
+      "cooler",
+      "finace",
+      "fiancee",
+      "ship",
+      "boat",
+      "yatch",
+      "sea",
+      "novel",
+      "practice",
+      "season",
+      "football",
+      "sheep",
+      "mush",
+      "cash",
+      "shoe",
+      "sheet",
+      "shop",
+      "chat",
+      "cheap",
+      "much",
+      "watch",
+      "cacth",
+      "witch",
+      "cheat",
+      "chop",
+      "chip"
+    ],
+    "pronome": [
+      "would",
+      "wouldn't"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "would",
+      "wouldn't",
+      "date",
+      "burn",
+      "chew"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "rarely",
+      "much"
+    ],
+    "adjetivo": [
+      "chash",
+      "much"
+    ],
+    "interjeicao": [
+      "to have a date",
+      "to get engaged",
+      "by the way"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "although"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670df0e5973a2e5afd0155c"
+  },
+  "nome": "lektion 25",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 25,
+  "conteudo": {
+    "substantivo": [
+      "das Telefon",
+      "das Handz",
+      "der Computer",
+      "das Notebook",
+      "der Schlüssel",
+      "das Ticket",
+      "das Midikament",
+      "die Tablette",
+      "die Freiheit",
+      "der Urlaub",
+      "die Ferien",
+      "uhrzeit",
+      "Uhr",
+      "die Kinder"
+    ],
+    "pronome": [
+      "ich",
+      "meine",
+      "wie",
+      "sie",
+      "er",
+      "du",
+      "Sie",
+      "wir",
+      "mein",
+      "eure",
+      "ihre",
+      "ihr",
+      "man",
+      "es"
+    ],
+    "artigo": [
+      "die",
+      "der",
+      "das"
+    ],
+    "verbo": [
+      "können",
+      "brauchen",
+      "kann",
+      "kannst",
+      "könnt",
+      "ist",
+      "treffen",
+      "hören",
+      "verstehen",
+      "machen",
+      "spielen",
+      "besuchen",
+      "sprechen",
+      "brauche",
+      "brauchst",
+      "braucht",
+      "haben",
+      "arbeiten"
+    ],
+    "preposicao": [
+      "zu"
+    ],
+    "adverbio": [
+      ""
+    ],
+    "adjetivo": [
+      "schlecht",
+      "viel",
+      "spät"
+    ],
+    "interjeicao": [
+      "die Feizet"
+    ],
+    "numeral": [
+      "ein",
+      "einen"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670dfa65973a2e5afd01562"
+  },
+  "nome": "lektion 13",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 13,
+  "conteudo": {
+    "substantivo": [
+      "der Kaffee",
+      "der Tee",
+      "das Brot",
+      "die Marmelade",
+      "der Käse",
+      "das Pläztchen",
+      "der Kuchen",
+      "das Obst",
+      "die Butter",
+      "der Salat",
+      "das Gemüse",
+      "die Kartoffel",
+      "der Apfel",
+      "das Fleisch",
+      "das Hähnchen",
+      "der Fisch",
+      "die Wurst",
+      "die Karotte",
+      "der Schinken",
+      "das Wasser",
+      "dar Wasser",
+      "das Bier",
+      "der Wein",
+      "die Milch",
+      "die Cola",
+      "der Saft",
+      "der Orangensaft",
+      "der Apfelsaft",
+      "das Eis",
+      "die Süßigkeiten",
+      "der Reis",
+      "die Bohnen",
+      "das Abendbrot",
+      "ahnung"
+    ],
+    "pronome": [
+      "als",
+      "ich",
+      "du",
+      "er",
+      "sie",
+      "wir",
+      "es",
+      "wo",
+      "was",
+      "keine"
+    ],
+    "artigo": [
+      "das",
+      "den",
+      "die"
+    ],
+    "verbo": [
+      "essen",
+      "trinken",
+      "esse",
+      "isst",
+      "esst",
+      "trinke",
+      "trinkst",
+      "trinkt",
+      "schmecken",
+      "schmecke",
+      "bin",
+      "ist",
+      "sind",
+      "seid",
+      "bist",
+      "wollen"
+    ],
+    "preposicao": [
+      "zum"
+    ],
+    "adverbio": [
+      "helte",
+      "oft",
+      "sher",
+      "keine"
+    ],
+    "adjetivo": [
+      "gesund",
+      "lecker",
+      "gesund"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "zum",
+      "und"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e1c9d06d2a935f88eca2"
+  },
+  "nome": "lesson 2",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 2,
+  "conteudo": {
+    "substantivo": [
+      "father",
+      "mother",
+      "brother",
+      "sister",
+      "child",
+      "daughter",
+      "son",
+      "children",
+      "friend",
+      "Portuguese",
+      "English",
+      "French",
+      "Spanish",
+      "cup",
+      "glass",
+      "a"
+    ],
+    "pronome": [
+      "my",
+      "your",
+      "a"
+    ],
+    "artigo": [
+      "a"
+    ],
+    "verbo": [
+      "to speak",
+      "to study"
+    ],
+    "preposicao": [
+      "with",
+      "of"
+    ],
+    "adverbio": [
+      "today",
+      "now"
+    ],
+    "adjetivo": [
+      "a"
+    ],
+    "interjeicao": [
+      "good morning",
+      "good afternoon",
+      "good evening",
+      "good night"
+    ],
+    "numeral": [
+      "a"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e26ed06d2a935f88ecad"
+  },
+  "nome": "lesson 23",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 23,
+  "conteudo": {
+    "substantivo": [
+      "month",
+      "year",
+      "thing",
+      "party",
+      "vacation",
+      "Christimas",
+      "Easter",
+      "China",
+      "Germany",
+      "France",
+      "Spain",
+      "England",
+      "blue",
+      "red",
+      "yellow",
+      "black",
+      "white",
+      "green",
+      "orange",
+      "pink",
+      "gray",
+      "brown",
+      "purple",
+      "ground",
+      "violet",
+      "indigo",
+      "color",
+      "rainwbow",
+      "rain",
+      "beauty"
+    ],
+    "pronome": [
+      "I",
+      "you",
+      "he",
+      "she",
+      "it",
+      "we",
+      "you",
+      "they"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "come",
+      "stay",
+      "fall",
+      "help",
+      "say",
+      "see"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "before",
+      "after",
+      "down"
+    ],
+    "adjetivo": [
+      "good",
+      "bad",
+      "next"
+    ],
+    "interjeicao": [
+      "very well",
+      "on vacation",
+      "this time",
+      "next time"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671ffe11129a235a0c4536c"
+  },
+  "nome": "lesson 117",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 117,
+  "conteudo": {
+    "substantivo": [
+      "grin",
+      "look",
+      "pale",
+      "face",
+      "sunburn",
+      "suntan",
+      "million",
+      "millionaire",
+      "taxi",
+      "cab",
+      "fare",
+      "jet",
+      "carpet",
+      "premiere",
+      "sidewalk",
+      "star-plaques",
+      "stage performer",
+      "site"
+    ],
+    "pronome": [
+      ""
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "build",
+      "built",
+      "builds",
+      "belong",
+      "belonged",
+      "belongs",
+      "erase",
+      "erased",
+      "erases",
+      "hold",
+      "held",
+      "holds",
+      "get scared",
+      "get on",
+      "get off",
+      "hold on",
+      "honor",
+      "contribute",
+      "miss"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      ""
+    ],
+    "adjetivo": [
+      "million",
+      "scared",
+      "private",
+      "known",
+      "worldwide"
+    ],
+    "interjeicao": [
+      "let me see",
+      "let me know"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "667200ec1129a235a0c45381"
+  },
+  "nome": "lesson 75",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 75,
+  "conteudo": {
+    "substantivo": [
+      "employee",
+      "employer",
+      "porter",
+      "bucher",
+      "milkman",
+      "suitcase",
+      "briefcase",
+      "backpack",
+      "question",
+      "answer",
+      "gate",
+      "picture",
+      "camera",
+      "album",
+      "key",
+      "key chain",
+      "lock",
+      "locksmith",
+      "padlock",
+      "seat",
+      "text",
+      "digital",
+      "furniture",
+      "appliance",
+      "jewelry",
+      "department store",
+      "sale",
+      "most"
+    ],
+    "pronome": [
+      "there is",
+      "there isn't",
+      "is there",
+      "there was",
+      "there wasn't",
+      "was there"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "ask",
+      "asked",
+      "askes",
+      "lock",
+      "locked",
+      "locks",
+      "answer",
+      "answered",
+      "awswers",
+      "stand up",
+      "stood up",
+      "stands up",
+      "take pictures",
+      "offer",
+      "specialize"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "certainly",
+      "fortunately",
+      "unfortunately"
+    ],
+    "adjetivo": [
+      "particular",
+      "innovative"
+    ],
+    "interjeicao": [
+      "to answer the phone"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "on the other hand"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e057d06d2a935f88ec97"
+  },
+  "nome": "lezione 13",
+  "linguagem": "italiano",
+  "licao": true,
+  "titulo": "lezione",
+  "ordem": 13,
+  "conteudo": {
+    "substantivo": [
+      "aereo",
+      "autobus",
+      "macchina",
+      "metropolitana",
+      "piede",
+      "tram",
+      "treno",
+      "nave",
+      "martedì",
+      "Brasile",
+      "Italia",
+      "albergo"
+    ],
+    "pronome": [
+      "io",
+      "tu",
+      "lui",
+      "lei",
+      "Lei",
+      "noi",
+      "voi",
+      "loro",
+      "con me",
+      "con loro",
+      "quando",
+      "come",
+      "quando",
+      "come",
+      "ogni"
+    ],
+    "artigo": [
+      "il",
+      "la",
+      "I'"
+    ],
+    "verbo": [
+      "viaggio",
+      "viaggi",
+      "viaggia",
+      "viaggiamo",
+      "viaggiate",
+      "viggiano",
+      "viggiare",
+      "usare",
+      "uso",
+      "usi",
+      "usa",
+      "usiamo",
+      "usate",
+      "usano",
+      "preferiamo",
+      "preferite",
+      "siete",
+      "vado",
+      "andare",
+      "venire",
+      "preferire",
+      "capire",
+      "partire"
+    ],
+    "preposicao": [
+      "in",
+      "a",
+      "per"
+    ],
+    "adverbio": [
+      "sempre",
+      "tanto"
+    ],
+    "adjetivo": [
+      "poco",
+      "fra poco"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      "quaranta",
+      "quarantuno",
+      "cinquanta",
+      "sessanta",
+      "ottanta",
+      "novanta",
+      "cento"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e285d06d2a935f88ecaf"
+  },
+  "nome": "lesson 27",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 27,
+  "conteudo": {
+    "substantivo": [
+      "homework",
+      "class",
+      "classroom",
+      "company",
+      "factory",
+      "doctor",
+      "dentist",
+      "meeting",
+      "dollar",
+      "disher",
+      "computer",
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wendnesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "favor"
+    ],
+    "pronome": [
+      ""
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "do",
+      "make"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "almost",
+      "always",
+      "never",
+      "during"
+    ],
+    "adjetivo": [
+      ""
+    ],
+    "interjeicao": [
+      "how much",
+      "do me a favor",
+      "to make the bed"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e341d06d2a935f88ecbd"
+  },
+  "nome": "lesson 53",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 53,
+  "conteudo": {
+    "substantivo": [
+      "bottle",
+      "can",
+      "straw",
+      "box",
+      "packege",
+      "bag",
+      "peach",
+      "cookie",
+      "adress",
+      "block",
+      "streat",
+      "middle",
+      "road",
+      "hour",
+      "own",
+      "owner",
+      "people",
+      "foreign",
+      "foreigner",
+      "kid",
+      "grandpa",
+      "grandma",
+      "grandfather",
+      "grandmother",
+      "grandparents",
+      "grandson",
+      "granddaughter",
+      "grandchildren",
+      "continent",
+      "Asia",
+      "Africa",
+      "North America",
+      "South America",
+      "Antartica",
+      "Europe",
+      "Australia",
+      "health",
+      "up",
+      "down",
+      "left",
+      "rigth"
+    ],
+    "pronome": [
+      "if",
+      "something",
+      "anything",
+      "rigth",
+      "everything"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "have",
+      "had",
+      "speak",
+      "spoke",
+      "visit",
+      "visited",
+      "help",
+      "helped",
+      "drive",
+      "drove",
+      "studyng",
+      "sleeping",
+      "helping",
+      "writing",
+      "starting",
+      "going",
+      "finishing",
+      "closing",
+      "see",
+      "work"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "middle",
+      "nothig",
+      "anymore",
+      "so",
+      "close to",
+      "rigth",
+      "going on"
+    ],
+    "adjetivo": [
+      "middle",
+      "ago",
+      "own",
+      "light",
+      "rigth"
+    ],
+    "interjeicao": [
+      "already",
+      "upside down",
+      "feelling fine"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "while",
+      "if",
+      "right now",
+      "so far"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "667200301129a235a0c4536f"
+  },
+  "nome": "lesson 111",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 111,
+  "conteudo": {
+    "substantivo": [
+      "wave",
+      "sea",
+      "tide",
+      "danger",
+      "activity",
+      "body",
+      "shape",
+      "diet",
+      "sports",
+      "individual",
+      "team",
+      "overweight",
+      "underweight",
+      "gym",
+      "stock market",
+      "decision"
+    ],
+    "pronome": [
+      ""
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "exercise",
+      "exercised",
+      "exercises",
+      "jump",
+      "jumped",
+      "jumps",
+      "fish",
+      "fished",
+      "fishes",
+      "to fall",
+      "fell",
+      "fallen",
+      "falls",
+      "fit",
+      "decide",
+      "turn out"
+    ],
+    "preposicao": [
+      "despite"
+    ],
+    "adverbio": [
+      "immediately",
+      "all of sudden"
+    ],
+    "adjetivo": [
+      "dangerous",
+      "individual",
+      "indoor",
+      "outdoor"
+    ],
+    "interjeicao": [
+      "all of a sudden"
+    ],
+    "numeral": [
+      "both",
+      "each other"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "667200951129a235a0c45379"
+  },
+  "nome": "lesson 91",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 91,
+  "conteudo": {
+    "substantivo": [
+      "appointment",
+      "headache",
+      "toothache",
+      "stomachache",
+      "pill",
+      "address",
+      "quality",
+      "beginning",
+      "end",
+      "marriage",
+      "wedding",
+      "hint",
+      "marital status",
+      "status",
+      "zip code",
+      "nickname",
+      "full name",
+      "middle name",
+      "last name",
+      "maiden name",
+      "joy"
+    ],
+    "pronome": [
+      "there isn't"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "marry",
+      "married",
+      "marrie",
+      "try",
+      "tried",
+      "tries",
+      "believe",
+      "believed",
+      "believes",
+      "begin",
+      "began",
+      "begins",
+      "begun",
+      "underline",
+      "delete",
+      "get married",
+      "going",
+      "fill",
+      "rescue",
+      "will there be",
+      "got"
+    ],
+    "preposicao": [
+      "between",
+      "among",
+      "not"
+    ],
+    "adverbio": [
+      "really",
+      "out here",
+      "there must be"
+    ],
+    "adjetivo": [
+      "begun",
+      "hard",
+      "real"
+    ],
+    "interjeicao": [
+      "it's to bad",
+      "you're gonna"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "667200c81129a235a0c4537e"
+  },
+  "nome": "lesson 81",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 81,
+  "conteudo": {
+    "substantivo": [
+      "spice",
+      "vinegar",
+      "olive",
+      "olive oil",
+      "salad dressing",
+      "sauce",
+      "tray",
+      "hanger",
+      "rug",
+      "carpet",
+      "chair",
+      "armchair",
+      "couch",
+      "doorknob",
+      "dresser",
+      "doormat",
+      "wardrobe",
+      "closet",
+      "cupboard",
+      "fun",
+      "broadband",
+      "guy",
+      "feelings"
+    ],
+    "pronome": [
+      "you guys",
+      "I",
+      "it",
+      "she",
+      "we",
+      "you",
+      "they",
+      "all",
+      "could",
+      "couldn't"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "could",
+      "couldn't",
+      "prove",
+      "show"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "really"
+    ],
+    "adjetivo": [
+      "spicy",
+      "funny",
+      "right"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670dfc85973a2e5afd01565"
+  },
+  "nome": "lektion 7",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 7,
+  "conteudo": {
+    "substantivo": [
+      "der Artikel",
+      "der Brief",
+      "das Buch",
+      "die E-Mail",
+      "die Information",
+      "die Nachricht",
+      "der Text",
+      "die SMS",
+      "der Vertrag",
+      "die Zeitschrift",
+      "die Zeitung",
+      "Internet"
+    ],
+    "pronome": [
+      "im",
+      "die",
+      "der",
+      "das",
+      "wir"
+    ],
+    "artigo": [
+      "eine",
+      "den"
+    ],
+    "verbo": [
+      "lesen",
+      "schreiben",
+      "surfen",
+      "schicken",
+      "checken",
+      "lese",
+      "liest",
+      "schreibe",
+      "schreibst",
+      "schreibt"
+    ],
+    "preposicao": [
+      "auf"
+    ],
+    "adverbio": [
+      ""
+    ],
+    "adjetivo": [
+      "einfach",
+      "kompliziert",
+      "schwierig",
+      "wichtig"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      "eine"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e018d06d2a935f88ec91"
+  },
+  "nome": "lezione 2",
+  "linguagem": "italiano",
+  "licao": true,
+  "titulo": "lezione",
+  "ordem": 2,
+  "conteudo": {
+    "substantivo": [
+      "Argentina",
+      "Brasilie",
+      "Francia",
+      "Inghilterra",
+      "Italia",
+      "Germania",
+      "Portogallo",
+      "Spagna",
+      "Buenos Aires",
+      "Sao Paolo",
+      "Parigi",
+      "Londra",
+      "Milano",
+      "Berlino",
+      "Lisbona",
+      "Madrid",
+      "spagnolo",
+      "portoghese",
+      "francese",
+      "inglese",
+      "italiano",
+      "tedesco",
+      "piacere"
+    ],
+    "pronome": [
+      "sia",
+      "io",
+      "tu",
+      "lui",
+      "lei",
+      "Lei",
+      "noi",
+      "voi",
+      "loro",
+      "che",
+      "dove"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "parlo",
+      "abito",
+      "parli",
+      "parla",
+      "parliamo",
+      "parlate",
+      "parlano",
+      "abiti",
+      "abita",
+      "abitiamo",
+      "abitate",
+      "abitano",
+      "parlare",
+      "abitare",
+      "piacere",
+      "conoscere"
+    ],
+    "preposicao": [
+      "a",
+      "di"
+    ],
+    "adverbio": [
+      "sia",
+      "dove"
+    ],
+    "adjetivo": [
+      "che",
+      "sia"
+    ],
+    "interjeicao": [
+      "scusa",
+      "scusi",
+      "molto lieto"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "in",
+      "e"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e087d06d2a935f88ec9b"
+  },
+  "nome": "lezione 21",
+  "linguagem": "italiano",
+  "licao": true,
+  "titulo": "lezione",
+  "ordem": 21,
+  "conteudo": {
+    "substantivo": [
+      "cameriere",
+      "cantante",
+      "casalinga",
+      "commesso",
+      "gionalista",
+      "insegnante",
+      "medico",
+      "operario",
+      "segretaria",
+      "poliziotto",
+      "impiegato",
+      "giorno",
+      "settimana",
+      "mese",
+      "anno",
+      "via",
+      "centro",
+      "casa",
+      "banca",
+      "domenica"
+    ],
+    "pronome": [
+      "io",
+      "tu",
+      "lui",
+      "lei",
+      "Lei",
+      "noi",
+      "voi",
+      "loro",
+      "con me",
+      "da me",
+      "con lui",
+      "con noi"
+    ],
+    "artigo": [
+      "il",
+      "la",
+      "I'"
+    ],
+    "verbo": [
+      "lavoro",
+      "lavori",
+      "lavora",
+      "lavoriamo",
+      "lavorate",
+      "lavorano",
+      "lavorare",
+      "studio",
+      "studi",
+      "studia",
+      "studiamo",
+      "studiate",
+      "studiano",
+      "studiare",
+      "andare",
+      "è",
+      "sono",
+      "diventare",
+      "vado"
+    ],
+    "preposicao": [
+      "e",
+      "a",
+      "in",
+      "para"
+    ],
+    "adverbio": [
+      "molto",
+      "poco"
+    ],
+    "adjetivo": [
+      ""
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      "otto"
+    ],
+    "conjuncao": [
+      "e"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e1f9d06d2a935f88eca6"
+  },
+  "nome": "lesson 9",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 9,
+  "conteudo": {
+    "substantivo": [
+      "cat",
+      "dog",
+      "bicycle",
+      "table",
+      "German",
+      "Chinese",
+      "weekend",
+      "time",
+      "sweet",
+      "home"
+    ],
+    "pronome": [
+      "where",
+      "some",
+      "every"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "have",
+      "understand",
+      "love"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "where",
+      "also",
+      "too",
+      "every"
+    ],
+    "adjetivo": [
+      "every",
+      "sweet"
+    ],
+    "interjeicao": [
+      "see you",
+      "see you later",
+      "see you tomorrow",
+      "on weekends",
+      "e-mail account"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e30cd06d2a935f88ecb9"
+  },
+  "nome": "lesson 45",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 45,
+  "conteudo": {
+    "substantivo": [
+      "dentist",
+      "doctor",
+      "lawyer",
+      "engineer",
+      "secretary",
+      "police office",
+      "mechanic",
+      "business",
+      "businessman",
+      "businesswoman",
+      "administrator",
+      "law",
+      "Law",
+      "hospital",
+      "restaurant",
+      "factory",
+      "flute",
+      "violin",
+      "field",
+      "court",
+      "tennis",
+      "basketball",
+      "volleyball",
+      "checkers",
+      "sweetie",
+      "honey"
+    ],
+    "pronome": [
+      "who",
+      "me",
+      "you",
+      "him",
+      "her",
+      "it",
+      "us",
+      "them"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "work",
+      "worked",
+      "study",
+      "studied",
+      "play",
+      "played",
+      "sleep",
+      "slept",
+      "travel",
+      "traveled",
+      "dream",
+      "drive"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "soon",
+      "later",
+      "during",
+      "again",
+      "together"
+    ],
+    "adjetivo": [
+      "sweetie",
+      "sweetheart",
+      "together",
+      "honey"
+    ],
+    "interjeicao": [
+      "once again",
+      "all day long",
+      "all night long",
+      "to work out",
+      "dentist's office",
+      "doctor's office",
+      "each other"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "soon"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6672006d1129a235a0c45375"
+  },
+  "nome": "lesson 99",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 99,
+  "conteudo": {
+    "substantivo": [
+      "semester",
+      "salary",
+      "hope",
+      "raise",
+      "difficulty",
+      "trouble",
+      "even",
+      "odd",
+      "New Zealand",
+      "voice mail"
+    ],
+    "pronome": [
+      ""
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "listen",
+      "listened",
+      "listens",
+      "hear",
+      "heard",
+      "hears",
+      "hope",
+      "hoped",
+      "hopes",
+      "turn",
+      "turned",
+      "turns",
+      "come back",
+      "go back",
+      "turn out",
+      "turn on",
+      "turn off"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "anxiously",
+      "easily",
+      "left on"
+    ],
+    "adjetivo": [
+      "anxious",
+      "bilingual",
+      "trilingual",
+      "hopefully",
+      "even",
+      "odd"
+    ],
+    "interjeicao": [
+      "i hope not",
+      "i hope so",
+      "to be sure"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670dbdd5973a2e5afd01557"
+  },
+  "nome": "lektion 35",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 35,
+  "conteudo": {
+    "substantivo": [
+      "der Koffer",
+      "die Reise",
+      "der Reisende",
+      "der Reisefüher",
+      "der Reiseleiter",
+      "die Reiseleiterin",
+      "der Reiseleiterin",
+      "der Rucksack",
+      "Belgien",
+      "Dänemark",
+      "Polen",
+      "die Sache",
+      "das Monument"
+    ],
+    "pronome": [
+      "ich",
+      "du",
+      "wem",
+      "wer",
+      "Sie",
+      "ihr",
+      "wir",
+      "es",
+      "uns",
+      "du",
+      "seine",
+      "eurer"
+    ],
+    "artigo": [
+      "der",
+      "die",
+      "das",
+      "den",
+      "dem"
+    ],
+    "verbo": [
+      "wollen",
+      "reisen",
+      "will",
+      "willst",
+      "sprechen",
+      "machen",
+      "besuchen",
+      "kaufen",
+      "ist",
+      "sind",
+      "spielen",
+      "wollt",
+      "helfen",
+      "reise",
+      "essen",
+      "reist"
+    ],
+    "preposicao": [
+      "so",
+      "nach",
+      "ohne",
+      "mit",
+      "am"
+    ],
+    "adverbio": [
+      "nich"
+    ],
+    "adjetivo": [
+      "nett"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      "eine",
+      "einen"
+    ],
+    "conjuncao": [
+      "ohne"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670df875973a2e5afd01561"
+  },
+  "nome": "lektion 15",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 15,
+  "conteudo": {
+    "substantivo": [
+      "der Azung",
+      "die Bluse",
+      "das Hemd",
+      "die Hose",
+      "der Hut",
+      "das Kleid",
+      "die Kleider",
+      "die Krawatte",
+      "die Mütze",
+      "die Schuhe",
+      "das T-Shirt",
+      "die Turnschuhe",
+      "der Rock",
+      "Jahre",
+      "den Hund",
+      "den Hut"
+    ],
+    "pronome": [
+      "etwas",
+      "ein paar",
+      "wie",
+      "Sie",
+      "Wie viel",
+      "ich",
+      "du",
+      "ihr"
+    ],
+    "artigo": [
+      "die",
+      "der",
+      "das",
+      "einen"
+    ],
+    "verbo": [
+      "kaufen",
+      "verkaufen",
+      "kaufe",
+      "keinen",
+      "willst",
+      "kauft",
+      "wollen",
+      "verkaufe",
+      "lese",
+      "verfaufst",
+      "sind",
+      "verfauft",
+      "kostet",
+      "ist",
+      "sind",
+      "bin",
+      "will"
+    ],
+    "preposicao": [
+      "am"
+    ],
+    "adverbio": [
+      "etwas",
+      "manchmal",
+      "ganz"
+    ],
+    "adjetivo": [
+      "schön",
+      "häßlich",
+      "toll",
+      "alt",
+      "toll",
+      "teuer",
+      "billig",
+      "ganz"
+    ],
+    "interjeicao": [
+      "toll"
+    ],
+    "numeral": [
+      "null",
+      "eins",
+      "zwei",
+      "drei",
+      "vier",
+      "fünf",
+      "zechs",
+      "seiben",
+      "acht",
+      "neun",
+      "zehn",
+      "elf",
+      "zwölf",
+      "dreizehn",
+      "viersehen",
+      "fünfzehn",
+      "sechzehn",
+      "siebzehn",
+      "achtzehn",
+      "neunzehn",
+      "zwanzig",
+      "einundzwanzig",
+      "zweiundzwanzig",
+      "dreiundzwanzig",
+      "veirundzwanzig",
+      "vierundzwanzig",
+      "fünfundzwanzig",
+      "sechsundzwanzig",
+      "siebenundzwanzig",
+      "achtundzwanzig",
+      "neunundzwanzig",
+      "dreißig",
+      "vierzig",
+      "fünfzig",
+      "sechzig",
+      "siebzig",
+      "achtzig",
+      "neunzig",
+      "hundert",
+      "zweihundert",
+      "dreihundert",
+      "einhunderteinundzwanzig",
+      "vierhundertsechsundneunzig"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e211d06d2a935f88eca8"
+  },
+  "nome": "lesson 13",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 13,
+  "conteudo": {
+    "substantivo": [
+      "money",
+      "ice cream",
+      "candy",
+      "chocolate",
+      "bubble gum",
+      "pencil",
+      "pen",
+      "dress",
+      "blouse",
+      "skirt",
+      "coat",
+      "shirt",
+      "T-shirt",
+      "pants",
+      "shoes",
+      "boots",
+      "apartment"
+    ],
+    "pronome": [
+      ""
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "buy",
+      "sell"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      ""
+    ],
+    "adjetivo": [
+      ""
+    ],
+    "interjeicao": [
+      "Nice to meet you",
+      "Nice to meet you, too"
+    ],
+    "numeral": [
+      "one",
+      "two",
+      "three",
+      "four",
+      "five",
+      "six",
+      "seven",
+      "eight",
+      "nine",
+      "ten",
+      "eleven",
+      "twelve",
+      "thrirteen",
+      "fourteen",
+      "fifteen",
+      "sixteen",
+      "seventeen",
+      "eighteen",
+      "nineteen",
+      "twenty"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e2f0d06d2a935f88ecb7"
+  },
+  "nome": "lesson 41",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 41,
+  "conteudo": {
+    "substantivo": [
+      "vacation",
+      "trip",
+      "job",
+      "meeting",
+      "class",
+      "test",
+      "homework",
+      "course",
+      "music",
+      "art",
+      "swinmming pool",
+      "swimming",
+      "year",
+      "semester",
+      "thing",
+      "computer science",
+      "meaning",
+      "streetcar",
+      "plane",
+      "train",
+      "car",
+      "foot",
+      "subway",
+      "bus",
+      "nowhere",
+      "mind"
+    ],
+    "pronome": [
+      "my",
+      "your",
+      "his",
+      "her",
+      "its",
+      "our",
+      "their"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "start",
+      "starts",
+      "finish",
+      "finishes",
+      "say",
+      "says",
+      "stay",
+      "stays",
+      "tell",
+      "call",
+      "say"
+    ],
+    "preposicao": [
+      "still",
+      "yet"
+    ],
+    "adverbio": [
+      "always",
+      "never",
+      "before",
+      "after",
+      "then"
+    ],
+    "adjetivo": [
+      "next",
+      "good",
+      "bad"
+    ],
+    "interjeicao": [
+      "that's okay",
+      "very well",
+      "right away",
+      "on vacation",
+      "there is"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "667200d31129a235a0c4537f"
+  },
+  "nome": "lesson 79",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 79,
+  "conteudo": {
+    "substantivo": [
+      "sink",
+      "salt",
+      "salt shaker",
+      "pepper",
+      "pepper shaker",
+      "light builb",
+      "lamp",
+      "candle",
+      "movie theater",
+      "half",
+      "bell",
+      "doorbell",
+      "sunglasses",
+      "place",
+      "pizza place",
+      "leftovers",
+      "live",
+      "hit",
+      "sick",
+      "ship",
+      "pick",
+      "lip",
+      "leave",
+      "sheep",
+      "seat",
+      "feet",
+      "peek",
+      "leap"
+    ],
+    "pronome": [
+      "this is",
+      "these are",
+      "it"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "run",
+      "ran",
+      "runs",
+      "stop",
+      "stopped",
+      "stops",
+      "save",
+      "saved",
+      "saves",
+      "go jogging",
+      "sound",
+      "return",
+      "let",
+      "shoud",
+      "sit",
+      "eat",
+      "seek",
+      "steal"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "as well"
+    ],
+    "adjetivo": [
+      "online",
+      "offline",
+      "monitor",
+      "slim monitor",
+      "mouse",
+      "sick",
+      "fit"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      "half",
+      "half a dollar"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670de2f5973a2e5afd01558"
+  },
+  "nome": "lektion 33",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 33,
+  "conteudo": {
+    "substantivo": [
+      "der Enkel",
+      "die Enkelin",
+      "die Enkelkinder",
+      "das Geschenk",
+      "der Gürtel",
+      "die Hilfe",
+      "das Hemd",
+      "die Jacke",
+      "der Mantel",
+      "die Mütye",
+      "der Rock",
+      "das T-Shirt",
+      "heute",
+      "vormittag",
+      "nachmittag",
+      "abend"
+    ],
+    "pronome": [
+      "ich",
+      "er",
+      "du",
+      "sie",
+      "wir",
+      "ihr",
+      "ihn",
+      "dir",
+      "mit",
+      "ihren",
+      "ihm",
+      "mir",
+      "uns",
+      "euch",
+      "ihnen",
+      "seine",
+      "es"
+    ],
+    "artigo": [
+      "der",
+      "die",
+      "das"
+    ],
+    "verbo": [
+      "müssen",
+      "helfen",
+      "muss",
+      "sprechen",
+      "musst",
+      "besucht",
+      "will",
+      "spielen",
+      "trifft",
+      "besuchen",
+      "arbeiten",
+      "lesen",
+      "köonnen",
+      "lernen",
+      "ist",
+      "kaufen",
+      "wollen",
+      "helfe",
+      "finden",
+      "kannst",
+      "het",
+      "verstehen",
+      "kann",
+      "braucht",
+      "könnt",
+      "brauche"
+    ],
+    "preposicao": [
+      "in",
+      "und",
+      "im",
+      "am"
+    ],
+    "adverbio": [
+      "spät",
+      "zu",
+      "mit",
+      "immer"
+    ],
+    "adjetivo": [
+      "früh",
+      "kalt"
+    ],
+    "interjeicao": [
+      "heute Nachmittag",
+      "heute früh",
+      "heute Abend",
+      "heute Vormittag"
+    ],
+    "numeral": [
+      "einen"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670dfbc5973a2e5afd01564"
+  },
+  "nome": "lektion 9",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 9,
+  "conteudo": {
+    "substantivo": [
+      "die Fremdsprache",
+      "die Hausaufgabe",
+      "die Grammatik",
+      "der Text",
+      "die Regel",
+      "der Stoff",
+      "der Unterricht",
+      "die Geschichte",
+      "der Film",
+      "das Auto",
+      "die Firma",
+      "das Frühstück",
+      "das Mittagessen",
+      "das Abendessen",
+      "der Tag",
+      "die Woche",
+      "der Monat",
+      "das Jahr",
+      "wochenende",
+      "Russisch"
+    ],
+    "pronome": [
+      "alles",
+      "nichts"
+    ],
+    "artigo": [
+      "der",
+      "die",
+      "ein",
+      "eine",
+      "sie"
+    ],
+    "verbo": [
+      "wollen",
+      "verstehen",
+      "will",
+      "willst",
+      "wollt",
+      "verstehe",
+      "verstehst"
+    ],
+    "preposicao": [
+      "am",
+      "bei"
+    ],
+    "adverbio": [
+      "nichts",
+      "jede Woche",
+      "jeden Montat",
+      "jedes Jahr",
+      "später",
+      "nächste Woche",
+      "kein"
+    ],
+    "adjetivo": [
+      "neu",
+      "alt",
+      "groß",
+      "klein"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e34ed06d2a935f88ecbe"
+  },
+  "nome": "lesson 55",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 55,
+  "conteudo": {
+    "substantivo": [
+      "exercise",
+      "film",
+      "concert",
+      "play",
+      "theater",
+      "pilot",
+      "driver",
+      "accident",
+      "truck",
+      "garage",
+      "room",
+      "bathroom",
+      "living room",
+      "dinning room",
+      "fireplace",
+      "wood",
+      "word",
+      "secret",
+      "congratulations",
+      "place",
+      "show"
+    ],
+    "pronome": [
+      ""
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "live",
+      "lived",
+      "understand",
+      "understood",
+      "open",
+      "opened",
+      "close",
+      "closed",
+      "would",
+      "go out",
+      "there are",
+      "let's"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "wouldn't",
+      "not",
+      "too much",
+      "to little",
+      "too late"
+    ],
+    "adjetivo": [
+      "expensive",
+      "cheap",
+      "difficult",
+      "easy",
+      "simple",
+      "complicated",
+      "smart",
+      "awesome"
+    ],
+    "interjeicao": [
+      "good job"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e35fd06d2a935f88ecbf"
+  },
+  "nome": "lesson 57",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 57,
+  "conteudo": {
+    "substantivo": [
+      "bed",
+      "mistake",
+      "speech",
+      "plan",
+      "sense",
+      "cleaning",
+      "favor",
+      "housework",
+      "translation",
+      "dish",
+      "maid",
+      "housekeeper",
+      "cook",
+      "barbecue",
+      "recipe",
+      "salt",
+      "sugar",
+      "favorite",
+      "special",
+      "calorie",
+      "less",
+      "money",
+      "phone call",
+      "laundry",
+      "dishes",
+      "backup",
+      "cell phone",
+      "ceral",
+      "bar",
+      "noise"
+    ],
+    "pronome": [
+      "less"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "prefer",
+      "preferred",
+      "cook",
+      "cooked",
+      "make",
+      "made",
+      "pay",
+      "paid"
+    ],
+    "preposicao": [
+      "less"
+    ],
+    "adverbio": [
+      "less"
+    ],
+    "adjetivo": [
+      "delicious"
+    ],
+    "interjeicao": [
+      "to make money",
+      "to make a phone call",
+      "to do the laundry",
+      "to do the dishes",
+      "to make a backup"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "667200631129a235a0c45374"
+  },
+  "nome": "lesson 101",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 101,
+  "conteudo": {
+    "substantivo": [
+      "president",
+      "governor",
+      "mayor",
+      "democrat",
+      "republican",
+      "politician",
+      "political",
+      "speech",
+      "campaign",
+      "party",
+      "crowdy",
+      "pride",
+      "drunk",
+      "service",
+      "customs",
+      "visa",
+      "nut",
+      "invitation",
+      "gown",
+      "candle light",
+      "bail"
+    ],
+    "pronome": [
+      ""
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "smile",
+      "smilled",
+      "smilles",
+      "laught",
+      "laughed",
+      "laughs",
+      "worry",
+      "worried",
+      "worries",
+      "declare",
+      "declared",
+      "declares",
+      "land",
+      "take of",
+      "become",
+      "became",
+      "begin",
+      "began",
+      "bring",
+      "brought",
+      "do",
+      "did",
+      "find",
+      "found",
+      "forget",
+      "forgot",
+      "give",
+      "gave",
+      "hear",
+      "heard",
+      "leave",
+      "left",
+      "lose",
+      "lost",
+      "meet",
+      "met",
+      "pay",
+      "paid",
+      "put",
+      "put",
+      "run",
+      "ran",
+      "see",
+      "saw",
+      "see",
+      "saw",
+      "send",
+      "sent",
+      "sing",
+      "sang",
+      "take",
+      "took",
+      "teach",
+      "taught",
+      "think",
+      "thought",
+      "wake up",
+      "woke up"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "in addition to"
+    ],
+    "adjetivo": [
+      "proud",
+      "aggressive",
+      "naughty",
+      "the following"
+    ],
+    "interjeicao": [
+      "let's go",
+      "let's not go",
+      "let's do it",
+      "let's not do it",
+      "shall we go",
+      "shall wi dance",
+      "shaw we do it"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "667201101129a235a0c45384"
+  },
+  "nome": "lesson 69",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 69,
+  "conteudo": {
+    "substantivo": [
+      "ring",
+      "kiss",
+      "hug",
+      "young",
+      "youth",
+      "teenager",
+      "adolescent",
+      "adult",
+      "towel",
+      "soap",
+      "cracker",
+      "napkin",
+      "electricity bill",
+      "program",
+      "eletricity",
+      "actually",
+      "blue",
+      "red",
+      "green",
+      "yellow",
+      "orange",
+      "black",
+      "white",
+      "gray",
+      "brown",
+      "purple",
+      "pink",
+      "silver",
+      "gold",
+      "sky"
+    ],
+    "pronome": [
+      ""
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "look",
+      "looked",
+      "looks",
+      "see",
+      "saw",
+      "sees",
+      "give",
+      "gave",
+      "gives",
+      "leave",
+      "hear",
+      "wanna"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "inside",
+      "outside",
+      "under"
+    ],
+    "adjetivo": [
+      "clean",
+      "dirty",
+      "empty",
+      "full",
+      "right",
+      "wrong",
+      "adult",
+      "afraid",
+      "wrong",
+      "sad"
+    ],
+    "interjeicao": [
+      "to go away",
+      "to let someone know"
+    ],
+    "numeral": [
+      "first",
+      "second",
+      "third",
+      "fourth",
+      "fifth",
+      "sixth",
+      "seventh",
+      "eighth",
+      "ninth",
+      "tenth",
+      "eleventh",
+      "twelfth",
+      "thirteenth",
+      "fourteenth",
+      "fifteenth",
+      "sixteenth",
+      "seventeenth",
+      "eighteenth",
+      "nineteenth",
+      "twentieth",
+      "twenty-first",
+      "twenty-second",
+      "thirtieth",
+      "fortieth",
+      "fiftieth",
+      "sixtieth",
+      "seventieth",
+      "eightieth",
+      "one hundredth"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670def65973a2e5afd0155a"
+  },
+  "nome": "lektion 29",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 29,
+  "conteudo": {
+    "substantivo": [
+      "der Bauer",
+      "die See",
+      "der Baum",
+      "der Bauernhof",
+      "der Berg",
+      "der Garten",
+      "das Hotel",
+      "der Strand",
+      "die Wiese",
+      "die Idee",
+      "modalverben"
+    ],
+    "pronome": [
+      "ich",
+      "eine",
+      "wie",
+      "Sie",
+      "es",
+      "meinen",
+      "er",
+      "ihr",
+      "lhren",
+      "wo",
+      "du",
+      "meine",
+      "ihre"
+    ],
+    "artigo": [
+      "der",
+      "die",
+      "das",
+      "den"
+    ],
+    "verbo": [
+      "finden",
+      "suchen",
+      "finde",
+      "findest",
+      "will",
+      "sein",
+      "findet",
+      "suche",
+      "ist",
+      "sucht",
+      "suchst",
+      "arbeiten",
+      "darf",
+      "spielen",
+      "fernsehen",
+      "dürfen"
+    ],
+    "preposicao": [
+      "man",
+      "und"
+    ],
+    "adverbio": [
+      "sehr gut",
+      "immer",
+      "nein",
+      "schon"
+    ],
+    "adjetivo": [
+      "prima",
+      "schön",
+      "doof",
+      "lecker",
+      "interessant",
+      "hässlich",
+      "machen"
+    ],
+    "interjeicao": [
+      "shcon"
+    ],
+    "numeral": [
+      "eine"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e07dd06d2a935f88ec9a"
+  },
+  "nome": "lezione 19",
+  "linguagem": "italiano",
+  "licao": true,
+  "titulo": "lezione",
+  "ordem": 19,
+  "conteudo": {
+    "substantivo": [
+      "alto",
+      "basso",
+      "biondo",
+      "castano",
+      "capelli",
+      "bocca",
+      "occhi",
+      "azzurri",
+      "naso",
+      "orecchie",
+      "viso",
+      "occhiali",
+      "cappello",
+      "amico",
+      "marrone",
+      "verde",
+      "grigio",
+      "spagnolo",
+      "italiano",
+      "francesi",
+      "spagnoli",
+      "brasiliana",
+      "italiana",
+      "tedeschi",
+      "Parigi"
+    ],
+    "pronome": [
+      "io",
+      "tu",
+      "lui",
+      "lei",
+      "Lei",
+      "noi",
+      "voi",
+      "loro",
+      "mi",
+      "ti",
+      "Gli",
+      "le",
+      "Le",
+      "Ci",
+      "Vi",
+      "loro",
+      "degli",
+      "delle",
+      "nostro",
+      "vostro",
+      "come"
+    ],
+    "artigo": [
+      "un",
+      "uno"
+    ],
+    "verbo": [
+      "descrivo",
+      "descrevi",
+      "descrive",
+      "descriviamo",
+      "descrivete",
+      "descrivono",
+      "descriviere",
+      "sempbro",
+      "sembri",
+      "sembra",
+      "sembriamo",
+      "sembriate",
+      "sembrano",
+      "sembrare",
+      "è",
+      "siete",
+      "parlo"
+    ],
+    "preposicao": [
+      "eppure",
+      "con",
+      "ma",
+      "e"
+    ],
+    "adverbio": [
+      "alto",
+      "basso",
+      "di solito"
+    ],
+    "adjetivo": [
+      "alto",
+      "basso",
+      "grande",
+      "piccolo",
+      "biondo",
+      "castano",
+      "marrone",
+      "verde",
+      "grigio",
+      "solito"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      "un",
+      "uno"
+    ],
+    "conjuncao": [
+      "eppure",
+      "con"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e278d06d2a935f88ecae"
+  },
+  "nome": "lesson 25",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 25,
+  "conteudo": {
+    "substantivo": [
+      "man",
+      "woman",
+      "uncle",
+      "aunt",
+      "test",
+      "job",
+      "secretary",
+      "cook",
+      "drugstore",
+      "post office",
+      "gas station",
+      "state",
+      "country"
+    ],
+    "pronome": [
+      ""
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "cook",
+      "visit",
+      "dance",
+      "talk"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      ""
+    ],
+    "adjetivo": [
+      "everywhere"
+    ],
+    "interjeicao": [
+      "a lot",
+      "a lot of",
+      "everywhere"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e2a8d06d2a935f88ecb2"
+  },
+  "nome": "lesson 32",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 32,
+  "conteudo": {
+    "substantivo": [
+      "son",
+      "daughter",
+      "children",
+      "sibling",
+      "uncle",
+      "aunt",
+      "nephew",
+      "niece",
+      "boy",
+      "girl",
+      "donut",
+      "egg",
+      "bread",
+      "cheese",
+      "ham",
+      "slice",
+      "cup",
+      "mug",
+      "glass",
+      "bowl",
+      "a",
+      "am",
+      "apple",
+      "orange",
+      "tomorrow",
+      "week",
+      "math",
+      "geography",
+      "history",
+      "science",
+      "hockey",
+      "golf",
+      "baseball",
+      "soccer",
+      "game",
+      "instrument",
+      "piano",
+      "guitar",
+      "keyboard"
+    ],
+    "pronome": [
+      "a",
+      "an",
+      "what",
+      "where",
+      "when"
+    ],
+    "artigo": [
+      "a",
+      "an"
+    ],
+    "verbo": [
+      "want",
+      "wants",
+      "work",
+      "works",
+      "study",
+      "studies",
+      "play",
+      "plays"
+    ],
+    "preposicao": [
+      "of",
+      "but"
+    ],
+    "adverbio": [
+      "no",
+      "yes",
+      "when",
+      "where"
+    ],
+    "adjetivo": [
+      "a",
+      "an"
+    ],
+    "interjeicao": [
+      "what",
+      "good morning",
+      "good afternoon",
+      "good evening",
+      "good night",
+      "sorry",
+      "excuse me",
+      "hi",
+      "hello",
+      "bye-bye",
+      "goodbye",
+      "the day after tomorrow"
+    ],
+    "numeral": [
+      "a",
+      "an"
+    ],
+    "conjuncao": [
+      "but",
+      "what",
+      "when"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e2c1d06d2a935f88ecb4"
+  },
+  "nome": "lesson 35",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 35,
+  "conteudo": {
+    "substantivo": [
+      "book",
+      "bank",
+      "work",
+      "time",
+      "car",
+      "money",
+      "cash",
+      "dollar",
+      "change",
+      "credit",
+      "coupon",
+      "husband",
+      "wife",
+      "family",
+      "soup",
+      "brunch",
+      "dinner",
+      "supper",
+      "USA",
+      "computer",
+      "password",
+      "bucks",
+      "money order",
+      "ring",
+      "song",
+      "Greek",
+      "length",
+      "hair",
+      "fortune",
+      "fame",
+      "size"
+    ],
+    "pronome": [
+      "this",
+      "that",
+      "these",
+      "those",
+      "some",
+      "which",
+      "will",
+      "anything",
+      "everybody"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "have",
+      "has",
+      "understand",
+      "understands",
+      "buy",
+      "buys",
+      "sell",
+      "sells",
+      "give",
+      "May I",
+      "cry",
+      "reach out",
+      "wear",
+      "can"
+    ],
+    "preposicao": [
+      "for",
+      "about"
+    ],
+    "adverbio": [
+      "much",
+      "many",
+      "enough"
+    ],
+    "adjetivo": [
+      "big",
+      "small",
+      "large",
+      "little",
+      "new",
+      "old",
+      "common",
+      "size"
+    ],
+    "interjeicao": [
+      "for breakfast",
+      "for lunch",
+      "for brunch",
+      "for dinner",
+      "how much",
+      "how many",
+      "it doesn't matter"
+    ],
+    "numeral": [
+      "zero",
+      "one",
+      "two",
+      "three",
+      "four",
+      "five",
+      "six",
+      "seven",
+      "eight",
+      "nine",
+      "ten",
+      "eleven",
+      "twelve",
+      "thirteen",
+      "fourteen",
+      "fifteen",
+      "sixteen",
+      "seventeen",
+      "eighteen",
+      "nineteen",
+      "twenty",
+      "twenty-one",
+      "twenty-two",
+      "thirty",
+      "forty",
+      "fifty",
+      "sixty",
+      "seventy",
+      "eighty",
+      "ninety",
+      "one hundred",
+      "two hundred",
+      "one thousand",
+      "two thousand",
+      "ten thousand",
+      "eighteen twenty",
+      "nineteen eighty-seven"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671ffc91129a235a0c4536b"
+  },
+  "nome": "lesson 119",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 119,
+  "conteudo": {
+    "substantivo": [
+      "hacker",
+      "attachment",
+      "firewall",
+      "security",
+      "system",
+      "shortcut",
+      "judge",
+      "court",
+      "violence",
+      "detective",
+      "convention",
+      "invitation",
+      "karate",
+      "screen saver",
+      "birth",
+      "everyone",
+      "heaven",
+      "joy",
+      "king",
+      "Lord",
+      "manger",
+      "savior",
+      "sin"
+    ],
+    "pronome": [
+      "everyone"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "care",
+      "cared",
+      "cares",
+      "install",
+      "installed",
+      "installs",
+      "steal",
+      "stole",
+      "stolen",
+      "steals",
+      "rob",
+      "robbed",
+      "robs",
+      "wish",
+      "become",
+      "became",
+      "begin",
+      "began",
+      "bring",
+      "brought",
+      "build",
+      "built",
+      "cost",
+      "cost",
+      "to do",
+      "did",
+      "fall",
+      "fell",
+      "feel",
+      "felt",
+      "find",
+      "found",
+      "fly",
+      "flew",
+      "forget",
+      "forgot",
+      "give",
+      "gave",
+      "hear",
+      "heard",
+      "hide",
+      "hid",
+      "hold",
+      "held",
+      "leave",
+      "left",
+      "lose",
+      "lost",
+      "meet",
+      "met",
+      "pay",
+      "paid",
+      "put",
+      "put",
+      "run",
+      "ran",
+      "say",
+      "said",
+      "see",
+      "saw",
+      "send",
+      "sent",
+      "sing",
+      "sang",
+      "sit",
+      "sat",
+      "stand",
+      "stood",
+      "take",
+      "took",
+      "teach",
+      "taught",
+      "tell",
+      "told",
+      "think",
+      "thought",
+      "wake up",
+      "woke up"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "as",
+      "moreover",
+      "all over",
+      "to care about",
+      "to care for",
+      "above",
+      "everyone",
+      "though"
+    ],
+    "adjetivo": [
+      "forbidden",
+      "everyone",
+      "holy",
+      "laid",
+      "mild",
+      "sent"
+    ],
+    "interjeicao": [
+      "that cold",
+      "that expensive",
+      "that far"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "as",
+      "though"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "667200be1129a235a0c4537d"
+  },
+  "nome": "lesson 83",
+  "linguagem": "engish",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 83,
+  "conteudo": {
+    "substantivo": [
+      "sticker",
+      "calendar",
+      "curriculum",
+      "abstract",
+      "folder",
+      "truth",
+      "lie",
+      "true",
+      "file",
+      "false",
+      "file cabinet",
+      "report",
+      "clerk",
+      "typist",
+      "paper clip",
+      "notepad",
+      "diary",
+      "stapler",
+      "report card",
+      "identification",
+      "driver's license",
+      "driving teste",
+      "written test",
+      "eye examination",
+      "permit",
+      "instructor",
+      "traffic",
+      "law"
+    ],
+    "pronome": [
+      "should",
+      "shouldn't"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "should",
+      "fire",
+      "shouldn't",
+      "pass",
+      "ride",
+      "allow",
+      "vary",
+      "bring",
+      "brought",
+      "do",
+      "did",
+      "forget",
+      "forgot",
+      "give",
+      "gave",
+      "leave",
+      "left",
+      "pay",
+      "paid",
+      "put",
+      "put",
+      "run",
+      "ran",
+      "see",
+      "saw",
+      "send",
+      "sent",
+      "sing",
+      "sang",
+      "stand",
+      "stood",
+      "take",
+      "took",
+      "think",
+      "thought"
+    ],
+    "preposicao": [
+      "not"
+    ],
+    "adverbio": [
+      ""
+    ],
+    "adjetivo": [
+      "false"
+    ],
+    "interjeicao": [
+      "bad words",
+      "swear words"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "besides"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670dfd25973a2e5afd01566"
+  },
+  "nome": "lektion 5",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 5,
+  "conteudo": {
+    "substantivo": [
+      "der Bruder",
+      "die Schwester",
+      "die Geschwister",
+      "die Eltern",
+      "der Sohn",
+      "die Tochter",
+      "die Mutter",
+      "der Vater",
+      "die Großeltern",
+      "Großvater",
+      "Großmutter",
+      "die Krankenschwester",
+      "der Krankenpfleger"
+    ],
+    "pronome": [
+      "als",
+      "wir",
+      "ihr",
+      "sie",
+      "ich",
+      "du",
+      "wie",
+      "er"
+    ],
+    "artigo": [
+      "der",
+      "die"
+    ],
+    "verbo": [
+      "arbeiten",
+      "studieren",
+      "arbeite",
+      "arbeitest",
+      "arbeitet",
+      "studiere",
+      "studierst",
+      "studiert"
+    ],
+    "preposicao": [
+      "bei",
+      "zu",
+      "an der",
+      "in",
+      "an der"
+    ],
+    "adverbio": [
+      "als",
+      "heute",
+      "jetzt",
+      "jeden Tag",
+      "tagsüber",
+      "nicht"
+    ],
+    "adjetivo": [
+      ""
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "als",
+      "aber"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e043d06d2a935f88ec95"
+  },
+  "nome": "lezione 9",
+  "linguagem": "italiano",
+  "licao": true,
+  "titulo": "lezione",
+  "ordem": 9,
+  "conteudo": {
+    "substantivo": [
+      "pasta",
+      "spaghetti",
+      "tortellino",
+      "minestra",
+      "brodo",
+      "pomodoro",
+      "formaggio",
+      "prosciutto",
+      "carne",
+      "pesce",
+      "olio",
+      "pepe",
+      "sale",
+      "dolce",
+      "salato",
+      "amaro",
+      "appetite",
+      "inglese",
+      "spagnolo",
+      "caffè",
+      "latte",
+      "portoghese",
+      "Madrid",
+      "Berlino",
+      "inglese",
+      "tedesco",
+      "testi",
+      "italiano",
+      "Buenos Aires",
+      "frutta",
+      "succo",
+      "francese",
+      "acqua",
+      "San Paolo",
+      "spagnole",
+      "domenica",
+      "lunedì",
+      "cappuccino"
+    ],
+    "pronome": [
+      "io",
+      "tu",
+      "lei",
+      "Lei",
+      "lui",
+      "noi",
+      "voi",
+      "loro"
+    ],
+    "artigo": [
+      "la",
+      "gli",
+      "il",
+      "i'"
+    ],
+    "verbo": [
+      "preferire",
+      "preferisco",
+      "preferisci",
+      "preferisce",
+      "preferiamo",
+      "preferite",
+      "preferiscono",
+      "capire",
+      "capisco",
+      "capisci",
+      "capisce",
+      "capiamo",
+      "capite",
+      "capiscono",
+      "sono",
+      "parla",
+      "abita",
+      "abito",
+      "leggiamo",
+      "scrivete",
+      "parliamo",
+      "parlare",
+      "ho",
+      "abiti",
+      "siamo",
+      "mangiamo",
+      "mangiare",
+      "bere"
+    ],
+    "preposicao": [
+      "a",
+      "e",
+      "è",
+      "in",
+      "di",
+      "al"
+    ],
+    "adverbio": [
+      "ma",
+      "magari",
+      "fuori",
+      "no",
+      "dove"
+    ],
+    "adjetivo": [
+      "dolce",
+      "salato",
+      "amaro",
+      "buon"
+    ],
+    "interjeicao": [
+      "ciao"
+    ],
+    "numeral": [
+      "ventisei",
+      "ventinove"
+    ],
+    "conjuncao": [
+      "ma"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e36dd06d2a935f88ecc0"
+  },
+  "nome": "lesson 59",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 59,
+  "conteudo": {
+    "substantivo": [
+      "veterinarian",
+      "station",
+      "classroom",
+      "lesson",
+      "note",
+      "document",
+      "dictionary",
+      "information",
+      "language",
+      "coat",
+      "uniform",
+      "pijamas",
+      "T-shirt",
+      "cat",
+      "dog",
+      "horse",
+      "fruit",
+      "candy",
+      "pill",
+      "medicine",
+      "gift",
+      "shower",
+      "hand",
+      "face",
+      "hair",
+      "day",
+      "week",
+      "month",
+      "year",
+      "gift certificate",
+      "somebody",
+      "anybody",
+      "joy",
+      "everyone",
+      "heaven",
+      "sent",
+      "manger",
+      "birth",
+      "king",
+      "earth",
+      "savior",
+      "world",
+      "Lord"
+    ],
+    "pronome": [
+      "somebody",
+      "anybody",
+      "everyone"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "buy",
+      "bought",
+      "sell",
+      "sold",
+      "need",
+      "needed",
+      "wash",
+      "washed",
+      "washes",
+      "save",
+      "bring",
+      "brought",
+      "taught"
+    ],
+    "preposicao": [
+      "a"
+    ],
+    "adverbio": [
+      "nobody",
+      "everyone",
+      "above"
+    ],
+    "adjetivo": [
+      "everyone",
+      "laid",
+      "sin",
+      "holy",
+      "mild"
+    ],
+    "interjeicao": [
+      "to take a shower",
+      "above"
+    ],
+    "numeral": [
+      "once",
+      "twice",
+      "three times"
+    ],
+    "conjuncao": [
+      "though"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6672008c1129a235a0c45378"
+  },
+  "nome": "lesson 93",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 93,
+  "conteudo": {
+    "substantivo": [
+      "universe",
+      "planet",
+      "Earth",
+      "moon",
+      "gravity",
+      "space",
+      "explanation",
+      "original",
+      "originally",
+      "profession",
+      "promotion",
+      "position",
+      "corporation",
+      "co-worker",
+      "product",
+      "form",
+      "bride",
+      "wealthe",
+      "sixpence",
+      "tokens"
+    ],
+    "pronome": [
+      ""
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "teacher",
+      "taught",
+      "teaches",
+      "explain",
+      "explained",
+      "explains",
+      "bother",
+      "bothered",
+      "botheres",
+      "fill",
+      "filled",
+      "fills",
+      "fill out",
+      "copy",
+      "past",
+      "borrow",
+      "carry"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "maybe",
+      "perhaps"
+    ],
+    "adjetivo": [
+      "terrible"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      "first fo all",
+      "that's right",
+      "it's a pit",
+      "what a pit",
+      "I don't mind"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670df025973a2e5afd0155b"
+  },
+  "nome": "lektion 27",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 27,
+  "conteudo": {
+    "substantivo": [
+      "fern",
+      "die Wochentage",
+      "der Montag",
+      "der Deinstag",
+      "der Mittwoch",
+      "der Donnerstag",
+      "der Freitag",
+      "der Samtag",
+      "der Sonntag",
+      "der Chef",
+      "der Job",
+      "der Problem",
+      "der Spaziergang",
+      "meistens",
+      "der Woche",
+      "satzstruktur",
+      "zeitangaben"
+    ],
+    "pronome": [
+      "ich",
+      "du",
+      "Sie",
+      "wir",
+      "lher",
+      "ihr"
+    ],
+    "artigo": [
+      "der",
+      "die",
+      "das"
+    ],
+    "verbo": [
+      "düfen",
+      "müssen",
+      "dart",
+      "darfst",
+      "surfen",
+      "sehen",
+      "hören",
+      "sprechen",
+      "treffen",
+      "dürft",
+      "machen",
+      "nehmen",
+      "fernsehen",
+      "muss",
+      "lernen",
+      "habe",
+      "musst",
+      "schreiben",
+      "arbeiten",
+      "hat"
+    ],
+    "preposicao": [
+      "über",
+      "um",
+      "in",
+      "bei"
+    ],
+    "adverbio": [
+      "selten",
+      "normalerweise",
+      "nicht"
+    ],
+    "adjetivo": [
+      "allein",
+      "über",
+      "laut"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      "einen",
+      "eine"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6670df675973a2e5afd0155f"
+  },
+  "nome": "lektion 19",
+  "linguagem": "deutsch",
+  "licao": true,
+  "titulo": "lektion",
+  "ordem": 19,
+  "conteudo": {
+    "substantivo": [
+      "die CD",
+      "die DVD",
+      "der Fernseher",
+      "das Radio",
+      "das Lied",
+      "die Musik",
+      "das Bild",
+      "der Dialog",
+      "das Gespräch",
+      "die Prüfung",
+      "die Sprache",
+      "den Dialog",
+      "die Mutter",
+      "heute"
+    ],
+    "pronome": [
+      "mein",
+      "meine",
+      "dein",
+      "deine",
+      "sein",
+      "seine",
+      "ihr",
+      "ihre",
+      "du",
+      "ich",
+      "er",
+      "Sie"
+    ],
+    "artigo": [
+      "die",
+      "das",
+      "der",
+      "einen"
+    ],
+    "verbo": [
+      "hören",
+      "sehen",
+      "höre",
+      "hörst",
+      "hört",
+      "will",
+      "sehe",
+      "hast",
+      "sieht",
+      "habe",
+      "siehst",
+      "wollen",
+      "trinken",
+      "ist",
+      "seht",
+      "seht",
+      "essen"
+    ],
+    "preposicao": [
+      "mit",
+      "zu",
+      "am",
+      "in"
+    ],
+    "adverbio": [
+      "jetzt"
+    ],
+    "adjetivo": [
+      "intelligent",
+      "interessant",
+      "kurt",
+      "lang",
+      "langweilig",
+      "schön",
+      "zu laut",
+      "zu leise"
+    ],
+    "interjeicao": [
+      "zu laut",
+      "zu leise"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e03ad06d2a935f88ec94"
+  },
+  "nome": "lezione 7",
+  "linguagem": "italiano",
+  "licao": true,
+  "titulo": "lezione",
+  "ordem": 7,
+  "conteudo": {
+    "substantivo": [
+      "lunedì",
+      "martedì",
+      "mercoledì",
+      "gioverdì",
+      "venerdì",
+      "sabato",
+      "domenica",
+      "ore",
+      "sempre",
+      "giorno",
+      "settimane",
+      "depodomani",
+      "quanti",
+      "quante"
+    ],
+    "pronome": [
+      "io",
+      "tu",
+      "lui",
+      "lei",
+      "Lei",
+      "noi",
+      "voi",
+      "loro",
+      "con me",
+      "con te",
+      "con lui",
+      "con lei",
+      "con Lei",
+      "con voi",
+      "con noi",
+      "con loro"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "dormire",
+      "dormo",
+      "dormi",
+      "dorme",
+      "dormiamo",
+      "dormite",
+      "dormono",
+      "partire",
+      "parto",
+      "parti",
+      "parte",
+      "partiamo",
+      "partite",
+      "partono"
+    ],
+    "preposicao": [
+      "al",
+      "il",
+      "a",
+      "con"
+    ],
+    "adverbio": [
+      "sempre",
+      "volte",
+      "quando",
+      "quante"
+    ],
+    "adjetivo": [
+      ""
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      "ventuno",
+      "ventidue",
+      "ventiré",
+      "ventiquattro",
+      "venticinque",
+      "ventisei",
+      "ventisette",
+      "ventiotto",
+      "ventinove",
+      "tentra",
+      "trentuno",
+      "trentadue",
+      "trentatré",
+      "trentaquattro",
+      "trentacinque",
+      "trentasei",
+      "trentasette",
+      "trentaotto",
+      "trentanove",
+      "due volte"
+    ],
+    "conjuncao": [
+      "sempre"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e094d06d2a935f88ec9c"
+  },
+  "nome": "lezione 23",
+  "linguagem": "italiano",
+  "licao": true,
+  "titulo": "lezione",
+  "ordem": 23,
+  "conteudo": {
+    "substantivo": [
+      "appartamento",
+      "centro commerciale",
+      "ufficio",
+      "entrata",
+      "parcheggio",
+      "piscina",
+      "reception",
+      "supermercato",
+      "lavoro",
+      "professione",
+      "studio",
+      "treno",
+      "autobus",
+      "ospedale",
+      "medico",
+      "giornalista",
+      "centro",
+      "hotel",
+      "piazza",
+      "parco",
+      "banca",
+      "casa",
+      "alle",
+      "strada",
+      "martedì",
+      "lunedì"
+    ],
+    "pronome": [
+      "io",
+      "tu",
+      "lui",
+      "lei",
+      "Lei",
+      "noi",
+      "voi",
+      "loro",
+      "nel",
+      "nello",
+      "nella",
+      "nell'",
+      "nei",
+      "negli",
+      "nelle",
+      "sul",
+      "sullo",
+      "sulla",
+      "sull'",
+      "sui",
+      "sugli",
+      "sulle",
+      "con me",
+      "con te",
+      "dove",
+      "che"
+    ],
+    "artigo": [
+      "il",
+      "lo",
+      "la",
+      "l'",
+      "i",
+      "gli",
+      "le"
+    ],
+    "verbo": [
+      "esco",
+      "esci",
+      "esce",
+      "usciamo",
+      "uscite",
+      "escono",
+      "uscire",
+      "entro",
+      "entri",
+      "entra",
+      "entriamo",
+      "entrate",
+      "entrano",
+      "entrare",
+      "sono",
+      "lavoro",
+      "fai",
+      "vado"
+    ],
+    "preposicao": [
+      "mentre",
+      "per",
+      "in",
+      "su",
+      "di",
+      "al"
+    ],
+    "adverbio": [
+      "mentre",
+      "per forza"
+    ],
+    "adjetivo": [
+      ""
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      "otto",
+      "nove"
+    ],
+    "conjuncao": [
+      "mentre"
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e0bcd06d2a935f88ec9d"
+  },
+  "nome": "leçon 1",
+  "linguagem": "français",
+  "licao": true,
+  "titulo": "leçon",
+  "ordem": 1,
+  "conteudo": {
+    "substantivo": [
+      "Frence",
+      "Brésil",
+      "français",
+      "française",
+      "portugais",
+      "portugaise",
+      "brésilier",
+      "brésilierne",
+      "anglais",
+      "anglaise",
+      "espagnol",
+      "espagnole",
+      "école",
+      "secrétaire",
+      "directeur",
+      "directeurtrice",
+      "professeur",
+      "professoure",
+      "étudiant",
+      "étudiante",
+      "cahier"
+    ],
+    "pronome": [
+      "je",
+      "j'",
+      "tu",
+      "vous"
+    ],
+    "artigo": [
+      "un",
+      "une",
+      "des"
+    ],
+    "verbo": [
+      "avoir",
+      "être",
+      "parler",
+      "étudier"
+    ],
+    "preposicao": [
+      "et",
+      "de",
+      "d'",
+      "en"
+    ],
+    "adverbio": [
+      "beaucoup",
+      "peu",
+      "un peu"
+    ],
+    "adjetivo": [
+      "livre",
+      "bien",
+      "mal"
+    ],
+    "interjeicao": [
+      "merci",
+      "de rien",
+      "d'il vous plaît",
+      "s'il te paît"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6671e2e0d06d2a935f88ecb6"
+  },
+  "nome": "lesson 39",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 39,
+  "conteudo": {
+    "substantivo": [
+      "door",
+      "window",
+      "drugstore",
+      "company",
+      "office",
+      "state",
+      "farm",
+      "beach",
+      "museum",
+      "snack bar",
+      "country",
+      "river",
+      "airport",
+      "freeway",
+      "park",
+      "corner",
+      "bridge",
+      "neighbor",
+      "relatives",
+      "noon",
+      "midnight",
+      "e-mail box",
+      "chat room",
+      "o'clok",
+      "past",
+      "half",
+      "quarter",
+      "middle",
+      "best"
+    ],
+    "pronome": [
+      "more",
+      "I",
+      "you",
+      "he",
+      "she",
+      "it",
+      "we",
+      "they"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "open",
+      "opens",
+      "close",
+      "closes",
+      "live",
+      "lives",
+      "visit",
+      "visits",
+      "come"
+    ],
+    "preposicao": [
+      "until",
+      "by",
+      "from"
+    ],
+    "adverbio": [
+      "until",
+      "by",
+      "more",
+      "near",
+      "far",
+      "early",
+      "late",
+      "usually",
+      "then",
+      "best",
+      "still",
+      "quickly"
+    ],
+    "adjetivo": [
+      "near",
+      "far",
+      "fast",
+      "best"
+    ],
+    "interjeicao": [
+      "to get up",
+      "to go to bed",
+      "to have breakfast",
+      "to have lunch",
+      "to have dinner",
+      "all over again"
+    ],
+    "numeral": [
+      "half",
+      "quarter"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "667200451129a235a0c45371"
+  },
+  "nome": "lesson 107",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 107,
+  "conteudo": {
+    "substantivo": [
+      "declaration",
+      "independence",
+      "desperation",
+      "signature",
+      "speed",
+      "limit",
+      "highway",
+      "whose",
+      "item",
+      "all of them",
+      "nome of them",
+      "speeding ticket",
+      "parking ticket",
+      "best"
+    ],
+    "pronome": [
+      "whose",
+      "all of them",
+      "nome of them"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "attend",
+      "attended",
+      "attends",
+      "hide",
+      "hid",
+      "hidden",
+      "hides",
+      "sit",
+      "sat",
+      "sits",
+      "sign",
+      "signed",
+      "signs",
+      "meet",
+      "go out",
+      "become",
+      "became",
+      "begin",
+      "began",
+      "bring",
+      "brought",
+      "cost",
+      "cost",
+      "do",
+      "did",
+      "feel",
+      "felt",
+      "find",
+      "found",
+      "forget",
+      "forgot",
+      "to give",
+      "gave",
+      "hear",
+      "heard",
+      "leave",
+      "left",
+      "lose",
+      "lost",
+      "meet",
+      "met",
+      "pay",
+      "paid",
+      "put",
+      "run",
+      "ran",
+      "say",
+      "said",
+      "see",
+      "saw",
+      "send",
+      "sent",
+      "sing",
+      "sang",
+      "sit",
+      "sat",
+      "stand",
+      "stood",
+      "take",
+      "took",
+      "teach",
+      "taught",
+      "tell",
+      "told",
+      "think",
+      "thought",
+      "wake up",
+      "woke up"
+    ],
+    "preposicao": [
+      ""
+    ],
+    "adverbio": [
+      "within",
+      "currently",
+      "all of them",
+      "nome of them"
+    ],
+    "adjetivo": [
+      "current",
+      "item",
+      "all of them",
+      "nome of them",
+      "interesting",
+      "wonderful",
+      "difficult",
+      "important",
+      "pretty",
+      "prettiest",
+      "young",
+      "youngest",
+      "short",
+      "shortest",
+      "hot",
+      "hottest",
+      "best",
+      "worst",
+      "bad"
+    ],
+    "interjeicao": [
+      ""
+    ],
+    "numeral": [
+      "both of them"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "667200b31129a235a0c4537c"
+  },
+  "nome": "lesson 85",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 85,
+  "conteudo": {
+    "substantivo": [
+      "bookcase",
+      "sheft",
+      "bench",
+      "stool",
+      "teapot",
+      "apron",
+      "saucer",
+      "faucet",
+      "attic",
+      "roof",
+      "ceiling",
+      "cellar",
+      "basement",
+      "star",
+      "sky",
+      "heaven",
+      "rocket",
+      "confort",
+      "floor",
+      "ground floor",
+      "two story house"
+    ],
+    "pronome": [
+      "must",
+      "mustn't",
+      "they",
+      "she",
+      "it",
+      "we"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "must",
+      "will",
+      "won't",
+      "look for"
+    ],
+    "preposicao": [
+      "not"
+    ],
+    "adverbio": [
+      ""
+    ],
+    "adjetivo": [
+      "confortable"
+    ],
+    "interjeicao": [
+      "who cares",
+      "to chat to"
+    ],
+    "numeral": [
+      "first"
+    ],
+    "conjuncao": [
+      ""
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "667201041129a235a0c45383"
+  },
+  "nome": "lesson 71",
+  "linguagem": "english",
+  "licao": true,
+  "titulo": "lesson",
+  "ordem": 71,
+  "conteudo": {
+    "substantivo": [
+      "light",
+      "dark",
+      "way",
+      "road",
+      "purse",
+      "government",
+      "president",
+      "wallet",
+      "passport",
+      "provider",
+      "passworld",
+      "tip",
+      "opinion",
+      "kid",
+      "tip",
+      "lip",
+      "pin",
+      "list",
+      "kiss",
+      "miss",
+      "fish",
+      "trip",
+      "wish"
+    ],
+    "pronome": [
+      "which",
+      "it"
+    ],
+    "artigo": [
+      ""
+    ],
+    "verbo": [
+      "arrive",
+      "arrived",
+      "arrives",
+      "forget",
+      "forgot",
+      "forgets",
+      "remember",
+      "remembered",
+      "remembers",
+      "go out",
+      "watch",
+      "fix",
+      "mix",
+      "did",
+      "bring",
+      "brought",
+      "do",
+      "did",
+      "give",
+      "gave",
+      "leave",
+      "left",
+      "pay",
+      "paid",
+      "put",
+      "see",
+      "saw",
+      "sing",
+      "sang",
+      "take",
+      "took",
+      "think",
+      "thought"
+    ],
+    "preposicao": [
+      "is",
+      "in"
+    ],
+    "adverbio": [
+      "light",
+      "really"
+    ],
+    "adjetivo": [
+      "light",
+      "dark",
+      "interesting",
+      "stubborn",
+      "patient",
+      "impatient",
+      "really",
+      "just",
+      "sick",
+      "fit",
+      "thin"
+    ],
+    "interjeicao": [
+      "light",
+      "which",
+      "of course",
+      "of course not",
+      "no way",
+      "forget it",
+      "how about you"
+    ],
+    "numeral": [
+      ""
+    ],
+    "conjuncao": [
+      "which",
+      "just"
+    ]
+  }
+}]

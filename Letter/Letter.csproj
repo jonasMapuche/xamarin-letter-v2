@@ -71,11 +71,15 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\ContentoModel.cs" />
     <Compile Include="Models\ConteudoModel.cs" />
+    <Compile Include="Models\DitadoModel.cs" />
+    <Compile Include="Models\ElocucaoModel.cs" />
+    <Compile Include="Models\EmbeddedModel.cs" />
     <Compile Include="Models\EstoutroModel.cs" />
     <Compile Include="Models\MessageModel.cs" />
     <Compile Include="Models\FraseModel.cs" />
     <Compile Include="Models\PronounModel.cs" />
     <Compile Include="Models\ResponseModel.cs" />
+    <Compile Include="Models\TeorModel.cs" />
     <Compile Include="Models\WordModel.cs" />
     <Compile Include="Resources\helpers\Navigation.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -86,7 +90,9 @@
     <Compile Include="ViewsModels\MainViewModel.cs" />
     <Compile Include="ViewsModels\LetterViewModel.cs" />
     <Compile Include="ViewsModels\PronounViewModel.cs" />
+    <Compile Include="ViewsModels\SentenceModelView.cs" />
     <Compile Include="ViewsModels\SettingViewModel.cs" />
+    <Compile Include="ViewsModels\VerbViewModel.cs" />
     <Compile Include="Views\BotView.cs" />
     <Compile Include="Views\MainView.cs" />
     <Compile Include="Views\SettingView.cs" />

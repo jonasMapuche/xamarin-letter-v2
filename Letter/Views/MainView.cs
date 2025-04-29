@@ -1,7 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Widget;
-using CRUD.Models;
 using Google.Android.Material.FloatingActionButton;
 using Letter.Models;
 using Letter.ViewsModels;
@@ -74,8 +73,8 @@ namespace Letter.Views
             _espanol_noun = null;
             //---
             _pronoun_english = _mainViewModel.GetPronoun("english");
-//---
-
+            //---
+            Next(context);
             NextEnglish(context);
             NextDeutsch(context);
             NextItaliano(context);
@@ -252,6 +251,41 @@ namespace Letter.Views
            
             }
 }
+
+        void Next(Context context)
+        {
+            if (!pause1)
+            {
+                int value = _lesson_english.IndexOf(_english) + 1;
+                if (value == _lesson_english.Count) value = _lesson_english.IndexOf(_english);
+                if (_lesson_english.Count != 0)
+                {
+                    //---                    
+                    _english = _lesson_english[value];
+                    //---
+                    _english_verb = _english.conteudo.verbo[0];
+                    List<WordModel> word = _mainViewModel.GetPhrase(_english, _english_verb, "english");
+                    word.ForEach(index =>
+                    {
+                        if ((index.Class == "pronome") == (index.Sentense == "sujeito"))
+                        {
+                            TextView text_pronoun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_1);
+                            text_pronoun.Text = index.Term;
+                        }
+                        if (index.Class == "verbo")
+                        {
+                            TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_2);
+                            text_verb.Text = index.Term;
+                        }
+                        if ((index.Class == "substantivo") || (index.Sentense == "predicado"))
+                        {
+                            TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_3);
+                            text_noun.Text = index.Term;
+                        }
+                    });
+                }
+            }
+        }
 
         void NextEnglish(Context context)
         {
