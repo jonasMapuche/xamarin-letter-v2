@@ -75,6 +75,7 @@
     <Compile Include="Models\ElocucaoModel.cs" />
     <Compile Include="Models\EmbeddedModel.cs" />
     <Compile Include="Models\EstoutroModel.cs" />
+    <Compile Include="Models\LicaoModel.cs" />
     <Compile Include="Models\MessageModel.cs" />
     <Compile Include="Models\FraseModel.cs" />
     <Compile Include="Models\PronounModel.cs" />

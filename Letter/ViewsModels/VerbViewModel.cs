@@ -33,6 +33,8 @@ namespace Letter.ViewModel
 
         public List<ElocucaoModel> GetModel(string language, string model) => _verbsCollection.Find(index => index.linguagem == language && index.modelo == model).ToList<ElocucaoModel>();
 
+        public ElocucaoModel GetVerb(string language, string verb) => _verbsCollection.Find(index => index.linguagem == language && index.nome == verb).FirstOrDefault();
+
         public async Task<ElocucaoModel> GetVerbAsync(string name) => await _verbsCollection.Find(index => index.nome == name).FirstOrDefaultAsync();
     }
 }

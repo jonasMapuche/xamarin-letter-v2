@@ -31,6 +31,8 @@ namespace Letter.ViewModel
 
         public List<EstoutroModel> GetLanguage(string language) => _pronounsCollection.Find(index => index.linguagem == language).ToList<EstoutroModel>();
 
+        public List<EstoutroModel> GetLanguage(string language, string type) => _pronounsCollection.Find(index => index.linguagem == language && index.tipo.Contains(type)).ToList<EstoutroModel>();
+
         public async Task<EstoutroModel> GetPronounAsync(string name) => await _pronounsCollection.Find(index => index.nome == name).FirstOrDefaultAsync();
     }
 }

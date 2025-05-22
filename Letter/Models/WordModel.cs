@@ -2,8 +2,9 @@
 {
     public class WordModel
     {
-        public string Term { get; set; }
-        public string Class { get; set; }
-        public string Sentense { get; set; }
+        public string term { get; set; }
+        public string kind { get; set; }
+        public string sentense { get; set; }
+        public string model { get; set; }
     }
 }

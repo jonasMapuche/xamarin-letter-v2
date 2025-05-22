@@ -1,7 +1,9 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Speech.Tts;
 using Android.Widget;
 using Google.Android.Material.FloatingActionButton;
+using Java.Nio.Channels;
 using Letter.Models;
 using Letter.ViewsModels;
 using Nito.AsyncEx;
@@ -13,23 +15,47 @@ namespace Letter.Views
 {
     public class MainView 
     {
+        //---
         Context contextBoton;
-
+        //---
         private List<FraseModel> _lesson_english;
         private List<FraseModel> _lesson_deutsch;
         private List<FraseModel> _lesson_italiano;
         private List<FraseModel> _lesson_francais;
         private List<FraseModel> _lesson_espanol;
-
+        //---
         FraseModel _english;
         FraseModel _deutsch;
         FraseModel _italiano;
         FraseModel _francais;
         FraseModel _espanol;
-
+        //---
+        private bool pause1 = false;
+        private bool pause2 = false;
+        private bool pause3 = false;
+        private bool pause4 = false;
+        private bool pause5 = false;
+        //---
+        private string ENGLISH = "english";
+        private string DEUTSCH = "deutsch";
+        private string ITALIANO = "italiano";
+        private string FRANCAIS = "français";
+        private string ESPANOL = "espanõl";
+        //---
+        private string SUBJECT = "sujeito";
+        private string PREDICATE = "predicado";
+        private string PRONOUN = "pronome";
+        private string NOUN = "substantivo";
+        private string VERB = "verb";
+        //---
+        private List<WordModel> _word_english = new List<WordModel>();
+        private List<WordModel> _word_deutsch = new List<WordModel>();
+        private List<WordModel> _word_italiano = new List<WordModel>();
+        private List<WordModel> _word_francais = new List<WordModel>();
+        private List<WordModel> _word_espanol = new List<WordModel>();
+        //---
         string _english_verb;
         string _english_noun;
-        string _english_pronoun;
         string _deutsch_verb;
         string _deutsch_noun;
         string _italiano_verb;
@@ -38,29 +64,18 @@ namespace Letter.Views
         string _francais_noun;
         string _espanol_verb;
         string _espanol_noun;
-
-        bool pause1 = false;
-        bool pause2 = false;
-        bool pause3 = false;
-        bool pause4 = false;
-        bool pause5 = false;
-
+        //---
         public MainViewModel _mainViewModel = new MainViewModel();
-
-        public int VIEW_TYPE_SEND = 1;
-        public int VIEW_TYPE_RECEIVED = 2;
-
-        private List<EstoutroModel> _pronoun_english;
 
         public MainView(Context context)
         {
-//---
+            //---
             _lesson_english = _mainViewModel.GetLessonSimple("english").Distinct().ToList();
             _lesson_deutsch = _mainViewModel.GetLessonSimple("deutsch").Distinct().ToList();
             _lesson_italiano = _mainViewModel.GetLessonSimple("italiano").Distinct().ToList();
             _lesson_francais = _mainViewModel.GetLessonSimple("français").Distinct().ToList();
             _lesson_espanol = _mainViewModel.GetLessonSimple("espanõl").Distinct().ToList();
-//---
+            //---
             _english_verb = null;
             _english_noun = null;
             _deutsch_verb = null;
@@ -72,14 +87,11 @@ namespace Letter.Views
             _espanol_verb = null;
             _espanol_noun = null;
             //---
-            _pronoun_english = _mainViewModel.GetPronoun("english");
-            //---
-            Next(context);
-            NextEnglish(context);
-            NextDeutsch(context);
-            NextItaliano(context);
-            NextFrancais(context);
-            NextEspanol(context);
+            Next(context, _lesson_english, _english, ENGLISH);
+            Next(context, _lesson_deutsch, _deutsch, DEUTSCH);
+            Next(context, _lesson_italiano, _italiano, ITALIANO);
+            Next(context, _lesson_francais, _francais, FRANCAIS);
+            Next(context, _lesson_espanol, _espanol, ESPANOL);
             //---
             contextBoton = context;
             FloatingActionButton fab_right = (FloatingActionButton)((Activity)context).FindViewById(Resource.Id.fab_right);
@@ -188,20 +200,30 @@ namespace Letter.Views
 
         private void FabRightClick(object sender, EventArgs eventArgs)
         {
-            NextEnglish(contextBoton);
-            NextDeutsch(contextBoton);
-            NextItaliano(contextBoton);
-            NextFrancais(contextBoton);
-            NextEspanol(contextBoton);
+            Next(contextBoton, _lesson_english, _english, ENGLISH);
+            Next(contextBoton, _lesson_deutsch, _deutsch, DEUTSCH);
+            Next(contextBoton, _lesson_italiano, _italiano, ITALIANO);
+            Next(contextBoton, _lesson_francais, _francais, FRANCAIS);
+            Next(contextBoton, _lesson_espanol, _espanol, ESPANOL);
         }
 
         private void FabLeftClick(object sender, EventArgs eventArgs)
         {
-            PreviousEnglish(contextBoton);
-            PreviousDeutsch(contextBoton);
-            PreviousItaliano(contextBoton);
-            PreviousFrancais(contextBoton);
-            PreviousEspanol(contextBoton);
+            Previous(contextBoton, _lesson_english, _english, ENGLISH);
+            Previous(contextBoton, _lesson_deutsch, _deutsch, DEUTSCH);
+            Previous(contextBoton, _lesson_italiano, _italiano, ITALIANO);
+            Previous(contextBoton, _lesson_francais, _francais, FRANCAIS);
+            Previous(contextBoton, _lesson_espanol, _espanol, ESPANOL);
+        }
+
+        private void FabDownClick(object sender, EventArgs eventArgs)
+        {
+            Down(contextBoton, _lesson_english, _english, ENGLISH, _word_english);
+            DownEnglish(contextBoton);
+            DownDeutsch(contextBoton);
+            DownItaliano(contextBoton);
+            DownFrancais(contextBoton);
+            DownEspanol(contextBoton);
         }
 
         private void FabUpClick(object sender, EventArgs eventArgs)
@@ -213,125 +235,179 @@ namespace Letter.Views
             UpEspanol(contextBoton);
         }
 
-        private void FabDownClick(object sender, EventArgs eventArgs)
+        private void SetLesson(FraseModel fraseModel, string language)
         {
-            DownEnglish(contextBoton);
-            DownDeutsch(contextBoton);
-            DownItaliano(contextBoton);
-            DownFrancais(contextBoton);
-            DownEspanol(contextBoton);
+            try
+            {
+                if (language == ENGLISH) _english = fraseModel;
+                if (language == DEUTSCH) _deutsch = fraseModel;
+                if (language == ITALIANO) _italiano = fraseModel;
+                if (language == FRANCAIS) _francais = fraseModel;
+                if (language == ESPANOL) _espanol = fraseModel;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
-        void UpEnglish(Context context)
+        private void SetPhrase(List<WordModel> phrase, string language)
         {
-            if (pause1)
+            try
             {
-//---
-                TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_2);
-                int value_verb = _english.conteudo.verbo.Distinct().ToList().IndexOf(_english_verb) - 1;
-                if (value_verb == -1) value_verb = 0;
-                if (_english.conteudo.verbo.Count != 0)
-                {
-                    if (value_verb == _english.conteudo.verbo.Distinct().ToList().Count) value_verb = _english.conteudo.verbo.Distinct().ToList().IndexOf(_english_verb);
-                    _english_verb = _english.conteudo.verbo[value_verb];
-                    text_verb.Text = _english_verb;
-                }
-//---
-                TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_3);
-                int value_noun = _english.conteudo.substantivo.Distinct().ToList().IndexOf(_english_noun) - 1;
-                if (value_noun == -1) value_noun = 0;
-                if (_english.conteudo.substantivo.Count != 0)
-                {
-                    if (value_noun == _english.conteudo.substantivo.Distinct().ToList().Count) value_noun = _english.conteudo.substantivo.Distinct().ToList().IndexOf(_english_noun);
-                    _english_noun = _english.conteudo.substantivo[value_noun];
-                    text_noun.Text = _english_noun;
-                }
-                //---
-                //TextView text_pronoun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_1);
-           
+                if (language == ENGLISH) _word_english = phrase;
+                if (language == DEUTSCH) _word_deutsch = phrase;
+                if (language == ITALIANO) _word_italiano = phrase;
+                if (language == FRANCAIS) _word_francais = phrase;
+                if (language == ESPANOL) _word_espanol = phrase;
             }
-}
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
-        void Next(Context context)
+        private int SelectButton(string language, int option)
+        {
+            try
+            {
+                if ((language == ENGLISH) && (option == 1)) return Resource.Id.txt_viw_box_1_1;
+                if ((language == ENGLISH) && (option == 2)) return Resource.Id.txt_viw_box_1_2;
+                if ((language == ENGLISH) && (option == 3)) return Resource.Id.txt_viw_box_1_3;
+                if ((language == DEUTSCH) && (option == 1)) return Resource.Id.txt_viw_box_2_1;
+                if ((language == DEUTSCH) && (option == 2)) return Resource.Id.txt_viw_box_2_2;
+                if ((language == DEUTSCH) && (option == 3)) return Resource.Id.txt_viw_box_2_3;
+                if ((language == ITALIANO) && (option == 1)) return Resource.Id.txt_viw_box_3_1;
+                if ((language == ITALIANO) && (option == 2)) return Resource.Id.txt_viw_box_3_2;
+                if ((language == ITALIANO) && (option == 3)) return Resource.Id.txt_viw_box_3_3;
+                if ((language == FRANCAIS) && (option == 1)) return Resource.Id.txt_viw_box_4_1;
+                if ((language == FRANCAIS) && (option == 2)) return Resource.Id.txt_viw_box_4_2;
+                if ((language == FRANCAIS) && (option == 3)) return Resource.Id.txt_viw_box_4_3;
+                if ((language == ESPANOL) && (option == 1)) return Resource.Id.txt_viw_box_5_1;
+                if ((language == ESPANOL) && (option == 2)) return Resource.Id.txt_viw_box_5_2;
+                if ((language == ESPANOL) && (option == 3)) return Resource.Id.txt_viw_box_5_3;
+                return -1;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        void Next(Context context, List<FraseModel> book, FraseModel lesson, string language)
         {
             if (!pause1)
             {
-                int value = _lesson_english.IndexOf(_english) + 1;
-                if (value == _lesson_english.Count) value = _lesson_english.IndexOf(_english);
-                if (_lesson_english.Count != 0)
+                int value = book.IndexOf(lesson) + 1;
+                if (value == book.Count) value = book.IndexOf(lesson);
+                if (book.Count != 0)
                 {
-                    //---                    
-                    _english = _lesson_english[value];
                     //---
-                    _english_verb = _english.conteudo.verbo[0];
-                    List<WordModel> word = _mainViewModel.GetPhrase(_english, _english_verb, "english");
+                    lesson = book[value];
+                    SetLesson(lesson, language);
+                    //---
+                    List<WordModel> word = _mainViewModel.GetNext(lesson, language);
                     word.ForEach(index =>
                     {
-                        if ((index.Class == "pronome") == (index.Sentense == "sujeito"))
+                        if ((index.kind == PRONOUN) && (index.sentense == SUBJECT))
                         {
-                            TextView text_pronoun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_1);
-                            text_pronoun.Text = index.Term;
+                            TextView text_pronoun = (TextView)((Activity)context).FindViewById(SelectButton(language, 1));
+                            text_pronoun.Text = index.term;
                         }
-                        if (index.Class == "verbo")
+                        if (index.kind == VERB)
                         {
-                            TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_2);
-                            text_verb.Text = index.Term;
+                            TextView text_verb = (TextView)((Activity)context).FindViewById(SelectButton(language, 2));
+                            text_verb.Text = index.term;
                         }
-                        if ((index.Class == "substantivo") || (index.Sentense == "predicado"))
+                        if ((index.kind == NOUN) && (index.sentense == PREDICATE))
                         {
-                            TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_3);
-                            text_noun.Text = index.Term;
+                            TextView text_noun = (TextView)((Activity)context).FindViewById(SelectButton(language, 3));
+                            text_noun.Text = index.term;
+                        }
+                        if (word.Count == 2)
+                        {
+                            TextView text_noun = (TextView)((Activity)context).FindViewById(SelectButton(language, 3));
+                            text_noun.Text = "";
                         }
                     });
                 }
             }
         }
 
-        void NextEnglish(Context context)
+        void Previous(Context context, List<FraseModel> book, FraseModel lesson, string language)
         {
             if (!pause1)
             {
-                int value = _lesson_english.IndexOf(_english) + 1;
-                if (value == _lesson_english.Count) value = _lesson_english.IndexOf(_english);
-                if (_lesson_english.Count != 0)
+                int value = book.IndexOf(lesson) - 1;
+                if (value == -1) value = 0;
+                if (book.Count != 0)
                 {
-                    //---                    
-                    _english = _lesson_english[value];
                     //---
-                    TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_2);
-                    _english_verb = _english.conteudo.verbo[0];
-                    text_verb.Text = _english.conteudo.verbo[0];
+                    lesson = book[value];
+                    SetLesson(lesson, language);
                     //---
-                    TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_3);
-                    _english_noun = _english.conteudo.substantivo[0];
-                    text_noun.Text = _english.conteudo.substantivo[0];
-                    //---
-                    TextView text_pronoun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_1);
-                    AsyncContext.Run(() => GetPronomeAsync(_english_verb, "english", text_pronoun));
+                    List<WordModel> word = _mainViewModel.GetNext(lesson, language);
+                    word.ForEach(index =>
+                    {
+                        if ((index.kind == PRONOUN) && (index.sentense == SUBJECT))
+                        {
+                            TextView text_pronoun = (TextView)((Activity)context).FindViewById(SelectButton(language, 1));
+                            text_pronoun.Text = index.term;
+                        }
+                        if (index.kind == VERB)
+                        {
+                            TextView text_verb = (TextView)((Activity)context).FindViewById(SelectButton(language, 2));
+                            text_verb.Text = index.term;
+                        }
+                        if ((index.kind == NOUN) && (index.sentense == PREDICATE))
+                        {
+                            TextView text_noun = (TextView)((Activity)context).FindViewById(SelectButton(language, 3));
+                            text_noun.Text = index.term;
+                        }
+                        if (word.Count == 2)
+                        {
+                            TextView text_noun = (TextView)((Activity)context).FindViewById(SelectButton(language, 3));
+                            text_noun.Text = "";
+                        }
+                    });
                 }
             }
         }
 
-        void PreviousEnglish(Context context)
+        void Down(Context context, List<FraseModel> book, FraseModel lesson, string language, List<WordModel> word_model)
         {
-            if (!pause1)
+            if (pause1)
             {
-                int value = _lesson_english.IndexOf(_english) - 1;
-                if (value == -1) value = 0;
-                if (_lesson_english.Count != 0)
+                //---
+                List<WordModel> word = _mainViewModel.GetDown(language, word_model, true);
+                //---
+                SetPhrase(word, language);
+                //---
+                word.ForEach(index =>
                 {
-//---
-                    _english = _lesson_english[value];
-//---
-                    TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_2);
-                    text_verb.Text = _english.conteudo.verbo[0];
-//---
-                    TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_3);
-                    text_noun.Text = _english.conteudo.substantivo[0];
-                    //---
-                    TextView text_pronoun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_1);
-                    AsyncContext.Run(() => GetPronomeAsync(_english_verb, "english", text_pronoun));
-                }
+                    if ((index.kind == PRONOUN) && (index.sentense == SUBJECT))
+                    {
+                        TextView text_pronoun = (TextView)((Activity)context).FindViewById(SelectButton(language, 1));
+                        text_pronoun.Text = index.term;
+                    }
+                    if (index.kind == VERB)
+                    {
+                        TextView text_verb = (TextView)((Activity)context).FindViewById(SelectButton(language, 2));
+                        text_verb.Text = index.term;
+                    }
+                    if ((index.kind == NOUN) && (index.sentense == PREDICATE))
+                    {
+                        TextView text_noun = (TextView)((Activity)context).FindViewById(SelectButton(language, 3));
+                        text_noun.Text = index.term;
+                    }
+                    if (word.Count == 2)
+                    {
+                        TextView text_noun = (TextView)((Activity)context).FindViewById(SelectButton(language, 3));
+                        text_noun.Text = "";
+                    }
+                });
+                //if (value_verb == -1) value_verb = 0;
+                //if (_english.conteudo.verbo.Count != 0)
             }
         }
 
@@ -362,80 +438,33 @@ namespace Letter.Views
             }
         }
 
-        void UpDeutsch(Context context)
+        void UpEnglish(Context context)
         {
-            if (pause2)
+            if (pause1)
             {
                 //---
-                TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_2_2);
-                int value_verb = _deutsch.conteudo.verbo.Distinct().ToList().IndexOf(_deutsch_verb) - 1;
+                TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_2);
+                int value_verb = _english.conteudo.verbo.Distinct().ToList().IndexOf(_english_verb) - 1;
                 if (value_verb == -1) value_verb = 0;
-                if (_deutsch.conteudo.verbo.Count != 0)
+                if (_english.conteudo.verbo.Count != 0)
                 {
-                    if (value_verb == _deutsch.conteudo.verbo.Distinct().ToList().Count) value_verb = _deutsch.conteudo.verbo.Distinct().ToList().IndexOf(_deutsch_verb);
-                    _deutsch_verb = _deutsch.conteudo.verbo[value_verb];
-                    text_verb.Text = _deutsch_verb;
+                    if (value_verb == _english.conteudo.verbo.Distinct().ToList().Count) value_verb = _english.conteudo.verbo.Distinct().ToList().IndexOf(_english_verb);
+                    _english_verb = _english.conteudo.verbo[value_verb];
+                    text_verb.Text = _english_verb;
                 }
                 //---
-                TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_2_3);
-                int value_noun = _deutsch.conteudo.substantivo.Distinct().ToList().IndexOf(_deutsch_noun) - 1;
+                TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_3);
+                int value_noun = _english.conteudo.substantivo.Distinct().ToList().IndexOf(_english_noun) - 1;
                 if (value_noun == -1) value_noun = 0;
-                if (_deutsch.conteudo.substantivo.Count != 0)
+                if (_english.conteudo.substantivo.Count != 0)
                 {
-                    if (value_noun == _deutsch.conteudo.substantivo.Distinct().ToList().Count) value_noun = _deutsch.conteudo.substantivo.Distinct().ToList().IndexOf(_deutsch_noun);
-                    _deutsch_noun = _deutsch.conteudo.substantivo[value_noun];
-                    text_noun.Text = _deutsch_noun;
+                    if (value_noun == _english.conteudo.substantivo.Distinct().ToList().Count) value_noun = _english.conteudo.substantivo.Distinct().ToList().IndexOf(_english_noun);
+                    _english_noun = _english.conteudo.substantivo[value_noun];
+                    text_noun.Text = _english_noun;
                 }
-            }
-        }
+                //---
+                //TextView text_pronoun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_1_1);
 
-        void NextDeutsch(Context context)
-        {
-            if (!pause2)
-            {
-                int value = _lesson_deutsch.IndexOf(_deutsch) + 1;
-                if (value == _lesson_deutsch.Count) value = _lesson_deutsch.IndexOf(_deutsch);
-                if (_lesson_deutsch.Count != 0)
-                {
-//---
-                    _deutsch = _lesson_deutsch[value];
-//---
-                    TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_2_2);
-                    _deutsch_verb = _deutsch.conteudo.verbo[0];
-                    text_verb.Text = _deutsch.conteudo.verbo[0];
-//---
-                    TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_2_3);
-                    _deutsch_noun = _deutsch.conteudo.substantivo[0];
-                    text_noun.Text = _deutsch.conteudo.substantivo[0];
-                    //---
-                    TextView text_pronoun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_2_1);
-                    AsyncContext.Run(() => GetPronomeAsync(_deutsch_verb, "deutsch", text_pronoun));
-                }
-            }
-        }
-
-        void PreviousDeutsch(Context context)
-        {
-            if (!pause2)
-            {
-                int value = _lesson_deutsch.IndexOf(_deutsch) - 1;
-                if (value == -1) value = 0;
-                if (_lesson_deutsch.Count != 0)
-                {
-//---
-                    _deutsch = _lesson_deutsch[value];
-//---
-                    TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_2_2);
-                    _deutsch_verb = _deutsch.conteudo.verbo[0];
-                    text_verb.Text = _deutsch.conteudo.verbo[0];
-//---
-                    TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_2_3);
-                    _deutsch_noun = _deutsch.conteudo.substantivo[0];
-                    text_noun.Text = _deutsch.conteudo.substantivo[0];
-                    //---
-                    TextView text_pronoun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_2_1);
-                    AsyncContext.Run(() => GetPronomeAsync(_deutsch_verb, "deutsch", text_pronoun));
-                }
             }
         }
 
@@ -465,6 +494,32 @@ namespace Letter.Views
                 }
             }
         }
+        void UpDeutsch(Context context)
+        {
+            if (pause2)
+            {
+                //---
+                TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_2_2);
+                int value_verb = _deutsch.conteudo.verbo.Distinct().ToList().IndexOf(_deutsch_verb) - 1;
+                if (value_verb == -1) value_verb = 0;
+                if (_deutsch.conteudo.verbo.Count != 0)
+                {
+                    if (value_verb == _deutsch.conteudo.verbo.Distinct().ToList().Count) value_verb = _deutsch.conteudo.verbo.Distinct().ToList().IndexOf(_deutsch_verb);
+                    _deutsch_verb = _deutsch.conteudo.verbo[value_verb];
+                    text_verb.Text = _deutsch_verb;
+                }
+                //---
+                TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_2_3);
+                int value_noun = _deutsch.conteudo.substantivo.Distinct().ToList().IndexOf(_deutsch_noun) - 1;
+                if (value_noun == -1) value_noun = 0;
+                if (_deutsch.conteudo.substantivo.Count != 0)
+                {
+                    if (value_noun == _deutsch.conteudo.substantivo.Distinct().ToList().Count) value_noun = _deutsch.conteudo.substantivo.Distinct().ToList().IndexOf(_deutsch_noun);
+                    _deutsch_noun = _deutsch.conteudo.substantivo[value_noun];
+                    text_noun.Text = _deutsch_noun;
+                }
+            }
+        }
 
         void UpItaliano(Context context)
         {
@@ -489,56 +544,6 @@ namespace Letter.Views
                     if (value_noun == _italiano.conteudo.substantivo.Distinct().ToList().Count) value_noun = _italiano.conteudo.substantivo.Distinct().ToList().IndexOf(_italiano_noun);
                     _italiano_noun = _italiano.conteudo.substantivo[value_noun];
                     text_noun.Text = _italiano_noun;
-                }
-            }
-        }
-
-        void NextItaliano(Context context)
-        {
-            if (!pause3)
-            {
-                int value = _lesson_italiano.IndexOf(_italiano) + 1;
-                if (value == _lesson_italiano.Count) value = _lesson_italiano.IndexOf(_italiano);
-                if (_lesson_italiano.Count != 0)
-                {
-//---
-                    _italiano = _lesson_italiano[value];
-//---
-                    TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_3_2);
-                    _italiano_verb = _italiano.conteudo.verbo[0];
-                    text_verb.Text = _italiano.conteudo.verbo[0];
-//---
-                    TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_3_3);
-                    _italiano_noun = _italiano.conteudo.substantivo[0];
-                    text_noun.Text = _italiano.conteudo.substantivo[0];
-                    //---
-                    TextView text_pronoun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_3_1);
-                    AsyncContext.Run(() => GetPronomeAsync(_italiano_verb, "italiano", text_pronoun));
-                }
-            }
-        }
-
-        void PreviousItaliano(Context context)
-        {
-            if (!pause3)
-            {
-                int value = _lesson_italiano.IndexOf(_italiano) - 1;
-                if (value == -1) value = 0;
-                if (_lesson_italiano.Count != 0)
-                {
-//---
-                    _italiano = _lesson_italiano[value];
-//---
-                    TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_3_2);
-                    _italiano_verb = _italiano.conteudo.verbo[0];
-                    text_verb.Text = _italiano.conteudo.verbo[0];
-//---
-                    TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_3_3);
-                    _italiano_noun = _italiano.conteudo.substantivo[0];
-                    text_noun.Text = _italiano.conteudo.substantivo[0];
-                    //---
-                    TextView text_pronoun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_3_1);
-                    AsyncContext.Run(() => GetPronomeAsync(_italiano_verb, "italiano", text_pronoun));
                 }
             }
         }
@@ -597,56 +602,6 @@ namespace Letter.Views
             }
         }
 
-        void NextFrancais(Context context)
-        {
-            if (!pause4)
-            { 
-                int value = _lesson_francais.IndexOf(_francais) + 1;
-                if (value == _lesson_francais.Count) value = _lesson_francais.IndexOf(_francais);
-                if (_lesson_francais.Count != 0)
-                {
-//---
-                    _francais = _lesson_francais[value];
-//---
-                    TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_4_2);
-                    _francais_verb = _francais.conteudo.verbo[0];
-                    text_verb.Text = _francais.conteudo.verbo[0];
-//---
-                    TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_4_3);
-                    _francais_noun = _francais.conteudo.substantivo[0];
-                    text_noun.Text = _francais.conteudo.substantivo[0];
-                    //---
-                    TextView text_pronoun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_4_1);
-                    AsyncContext.Run(() => GetPronomeAsync(_francais_verb, "francais", text_pronoun));
-                }
-            }
-        }
-
-        void PreviousFrancais(Context context)
-        {
-            if (!pause4)
-            {
-                int value = _lesson_francais.IndexOf(_francais) - 1;
-                if (value == -1) value = 0;
-                if (_lesson_francais.Count != 0)
-                {
-//---
-                    _francais = _lesson_francais[value];
-//---
-                    TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_4_2);
-                    _francais_verb = _francais.conteudo.verbo[0];
-                    text_verb.Text = _francais.conteudo.verbo[0];
-//---
-                    TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_4_3);
-                    _francais_noun = _francais.conteudo.substantivo[0];
-                    text_noun.Text = _francais.conteudo.substantivo[0];
-                    //---
-                    TextView text_pronoun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_4_1);
-                    AsyncContext.Run(() => GetPronomeAsync(_francais_verb, "francais", text_pronoun));
-                }
-            }
-        }
-
         void DownFrancais(Context context)
         {
             if (pause4)
@@ -699,56 +654,6 @@ namespace Letter.Views
             }
         }
 
-        void NextEspanol(Context context)
-        {
-            if (!pause5)
-            {
-                int value = _lesson_espanol.IndexOf(_espanol) + 1;
-                if (value == _lesson_espanol.Count) value = _lesson_espanol.IndexOf(_espanol);
-                if (_lesson_espanol.Count != 0)
-                {
-//---
-                    _espanol = _lesson_espanol[value];
-//---
-                    TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_5_2);
-                    _espanol_verb = _espanol.conteudo.verbo[0];
-                    text_verb.Text = _espanol.conteudo.verbo[0];
-//---
-                    TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_5_3);
-                    _espanol_noun = _espanol.conteudo.substantivo[0];
-                    text_noun.Text = _espanol.conteudo.substantivo[0];
-                    //---
-                    TextView text_pronoun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_5_1);
-                    AsyncContext.Run(() => GetPronomeAsync(_espanol_verb, "_espanol", text_pronoun));
-                }
-            }
-        }
-
-        void PreviousEspanol(Context context)
-        {
-            if (!pause5)
-            {
-                int value = _lesson_espanol.IndexOf(_espanol) - 1;
-                if (value == -1) value = 0;
-                if (_lesson_espanol.Count != 0)
-                {
-//---
-                    _espanol = _lesson_espanol[value];
-//---
-                    TextView text_verb = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_5_2);
-                    _espanol_verb = _espanol.conteudo.verbo[0];
-                    text_verb.Text = _espanol.conteudo.verbo[0];
-//---
-                    TextView text_noun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_5_3);
-                    _espanol_noun = _espanol.conteudo.substantivo[0];
-                    text_noun.Text = _espanol.conteudo.substantivo[0];
-                    //---
-                    TextView text_pronoun = (TextView)((Activity)context).FindViewById(Resource.Id.txt_viw_box_5_1);
-                    AsyncContext.Run(() => GetPronomeAsync(_espanol_verb, "_espanol", text_pronoun));
-                }
-            }
-        }
-
         void DownEspanol(Context context)
         {
             if (pause5)
@@ -775,30 +680,5 @@ namespace Letter.Views
                 }
             }
         }
-
-        private async void GetPronomeAsync(string verb, string language, TextView vpronoun)
-        {
-            //---
-            TextView text_pronoun = vpronoun;
-//---
-            List<EstoutroModel> pronoun = _pronoun_english.FindAll(index => index.tipo.Contains("pessoal")).ToList<EstoutroModel>();
-            for (int i = 0; pronoun.Count > i; i++)
-            {
-//---
-                ResponseModel value = await _mainViewModel.AgreePronome(pronoun[i].nome, _english_verb, "english");
-/*
-                if (value)
-                {
-//---
-                    _english_pronoun = pronoun[i].nome;
-                    text_pronoun.Text = pronoun[i].nome;
-                    break;
-                }
-*/
-            }
-
-        }
-
     }
-
 }
