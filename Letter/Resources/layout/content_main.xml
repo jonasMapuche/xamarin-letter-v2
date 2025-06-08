@@ -55,15 +55,15 @@
                         android:id="@+id/table_language_1_1">
                         
                         <TextView
-                            android:layout_width="90dp"
+                            android:layout_width="300dp"
                             android:layout_height="match_parent"
                             android:text="@string/bot_pronoun"
                             android:layout_marginTop="14dp"
-                            android:layout_marginLeft="10dp"
-                            android:textSize="14dp"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="16dp"
                             android:textColor="@color/white"
                             android:id="@+id/txt_viw_box_1_1"/>
-
+                        <!--
                         <TextView
                             android:layout_width="90dp"
                             android:layout_height="match_parent"
@@ -83,7 +83,7 @@
                             android:textSize="14dp"
                             android:textColor="@color/white"
                             android:id="@+id/txt_viw_box_1_3"/>
-
+                        -->
                     </TableRow>
                     
                 </LinearLayout>
@@ -121,15 +121,15 @@
                         android:id="@+id/table_language_2_1">
                         
                         <TextView
-                            android:layout_width="90dp"
+                            android:layout_width="300dp"
                             android:layout_height="match_parent"
                             android:text="@string/bot_pronoun"
                             android:layout_marginTop="14dp"
-                            android:layout_marginLeft="10dp"
-                            android:textSize="14dp"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="16dp"
                             android:textColor="@color/white"
                             android:id="@+id/txt_viw_box_2_1"/>
-
+                        <!--
                         <TextView
                             android:layout_width="90dp"
                             android:layout_height="match_parent"
@@ -140,7 +140,7 @@
                             android:textColor="@color/white"
                             android:id="@+id/txt_viw_box_2_2"/>
 
-                       <TextView
+                        <TextView
                             android:layout_width="90dp"
                             android:layout_height="match_parent"
                             android:text="@string/bot_noun"
@@ -149,7 +149,7 @@
                             android:textSize="14dp"
                             android:textColor="@color/white"
                             android:id="@+id/txt_viw_box_2_3"/>
-
+                        -->
                     </TableRow>
                     
                 </LinearLayout>
@@ -187,15 +187,15 @@
                         android:id="@+id/table_language_3_1">
                         
                         <TextView
-                            android:layout_width="90dp"
+                            android:layout_width="300dp"
                             android:layout_height="match_parent"
                             android:text="@string/bot_pronoun"
                             android:layout_marginTop="14dp"
-                            android:layout_marginLeft="10dp"
-                            android:textSize="14dp"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="16dp"
                             android:textColor="@color/white"
                             android:id="@+id/txt_viw_box_3_1"/>
-
+                        <!--
                         <TextView
                             android:layout_width="90dp"
                             android:layout_height="match_parent"
@@ -215,7 +215,7 @@
                             android:textSize="14dp"
                             android:textColor="@color/white"
                             android:id="@+id/txt_viw_box_3_3"/>
-
+                        -->
                     </TableRow>
                     
                 </LinearLayout>
@@ -253,15 +253,15 @@
                         android:id="@+id/table_language_4_1">
                         
                         <TextView
-                            android:layout_width="90dp"
+                            android:layout_width="300dp"
                             android:layout_height="match_parent"
                             android:text="@string/bot_pronoun"
                             android:layout_marginTop="14dp"
-                            android:layout_marginLeft="10dp"
-                            android:textSize="14dp"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="16dp"
                             android:textColor="@color/white"
                             android:id="@+id/txt_viw_box_4_1"/>
-
+                        <!--
                         <TextView
                             android:layout_width="90dp"
                             android:layout_height="match_parent"
@@ -281,7 +281,7 @@
                             android:textSize="14dp"
                             android:textColor="@color/white"
                             android:id="@+id/txt_viw_box_4_3"/>
-
+                        -->
                     </TableRow>
                     
                 </LinearLayout>
@@ -318,15 +318,15 @@
                         android:id="@+id/table_language_5_1">
                         
                         <TextView
-                            android:layout_width="90dp"
+                            android:layout_width="300dp"
                             android:layout_height="match_parent"
                             android:text="@string/bot_pronoun"
                             android:layout_marginTop="14dp"
-                            android:layout_marginLeft="10dp"
-                            android:textSize="14dp"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="16dp"
                             android:textColor="@color/white"
                             android:id="@+id/txt_viw_box_5_1"/>
-
+                        <!--
                         <TextView
                             android:layout_width="90dp"
                             android:layout_height="match_parent"
@@ -346,7 +346,7 @@
                             android:textSize="14dp"
                             android:textColor="@color/white"
                             android:id="@+id/txt_viw_box_5_3"/>
-
+                        -->
                     </TableRow>
                     
                 </LinearLayout>

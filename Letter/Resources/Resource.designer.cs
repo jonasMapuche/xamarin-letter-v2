@@ -4380,91 +4380,61 @@ namespace Letter
 			public const int txt_viw_box_1_1 = 2131230995;
 			
 			// aapt resource value: 0x7F080114
-			public const int txt_viw_box_1_2 = 2131230996;
+			public const int txt_viw_box_2_1 = 2131230996;
 			
 			// aapt resource value: 0x7F080115
-			public const int txt_viw_box_1_3 = 2131230997;
+			public const int txt_viw_box_3_1 = 2131230997;
 			
 			// aapt resource value: 0x7F080116
-			public const int txt_viw_box_2_1 = 2131230998;
+			public const int txt_viw_box_4_1 = 2131230998;
 			
 			// aapt resource value: 0x7F080117
-			public const int txt_viw_box_2_2 = 2131230999;
+			public const int txt_viw_box_5_1 = 2131230999;
 			
 			// aapt resource value: 0x7F080118
-			public const int txt_viw_box_2_3 = 2131231000;
+			public const int txt_viw_received = 2131231000;
 			
 			// aapt resource value: 0x7F080119
-			public const int txt_viw_box_3_1 = 2131231001;
+			public const int txt_viw_send = 2131231001;
 			
 			// aapt resource value: 0x7F08011A
-			public const int txt_viw_box_3_2 = 2131231002;
+			public const int @unchecked = 2131231002;
 			
 			// aapt resource value: 0x7F08011B
-			public const int txt_viw_box_3_3 = 2131231003;
+			public const int uniform = 2131231003;
 			
 			// aapt resource value: 0x7F08011C
-			public const int txt_viw_box_4_1 = 2131231004;
+			public const int unlabeled = 2131231004;
 			
 			// aapt resource value: 0x7F08011D
-			public const int txt_viw_box_4_2 = 2131231005;
+			public const int up = 2131231005;
 			
 			// aapt resource value: 0x7F08011E
-			public const int txt_viw_box_4_3 = 2131231006;
+			public const int useLogo = 2131231006;
 			
 			// aapt resource value: 0x7F08011F
-			public const int txt_viw_box_5_1 = 2131231007;
+			public const int view_offset_helper = 2131231007;
 			
 			// aapt resource value: 0x7F080120
-			public const int txt_viw_box_5_2 = 2131231008;
+			public const int view_tree_saved_state_registry_owner = 2131231008;
 			
 			// aapt resource value: 0x7F080121
-			public const int txt_viw_box_5_3 = 2131231009;
+			public const int visible = 2131231009;
 			
 			// aapt resource value: 0x7F080122
-			public const int txt_viw_received = 2131231010;
+			public const int visible_removing_fragment_view_tag = 2131231010;
 			
 			// aapt resource value: 0x7F080123
-			public const int txt_viw_send = 2131231011;
+			public const int viw_background = 2131231011;
 			
 			// aapt resource value: 0x7F080124
-			public const int @unchecked = 2131231012;
+			public const int viw_setting = 2131231012;
 			
 			// aapt resource value: 0x7F080125
-			public const int uniform = 2131231013;
+			public const int withText = 2131231013;
 			
 			// aapt resource value: 0x7F080126
-			public const int unlabeled = 2131231014;
-			
-			// aapt resource value: 0x7F080127
-			public const int up = 2131231015;
-			
-			// aapt resource value: 0x7F080128
-			public const int useLogo = 2131231016;
-			
-			// aapt resource value: 0x7F080129
-			public const int view_offset_helper = 2131231017;
-			
-			// aapt resource value: 0x7F08012A
-			public const int view_tree_saved_state_registry_owner = 2131231018;
-			
-			// aapt resource value: 0x7F08012B
-			public const int visible = 2131231019;
-			
-			// aapt resource value: 0x7F08012C
-			public const int visible_removing_fragment_view_tag = 2131231020;
-			
-			// aapt resource value: 0x7F08012D
-			public const int viw_background = 2131231021;
-			
-			// aapt resource value: 0x7F08012E
-			public const int viw_setting = 2131231022;
-			
-			// aapt resource value: 0x7F08012F
-			public const int withText = 2131231023;
-			
-			// aapt resource value: 0x7F080130
-			public const int wrap_content = 2131231024;
+			public const int wrap_content = 2131231014;
 			
 			static Id()
 			{

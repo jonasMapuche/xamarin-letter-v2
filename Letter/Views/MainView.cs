@@ -246,20 +246,20 @@ namespace Letter.Views
             try
             {
                 if ((language == ENGLISH) && (option == 1)) return Resource.Id.txt_viw_box_1_1;
-                if ((language == ENGLISH) && (option == 2)) return Resource.Id.txt_viw_box_1_2;
-                if ((language == ENGLISH) && (option == 3)) return Resource.Id.txt_viw_box_1_3;
+                //if ((language == ENGLISH) && (option == 2)) return Resource.Id.txt_viw_box_1_2;
+                //if ((language == ENGLISH) && (option == 3)) return Resource.Id.txt_viw_box_1_3;
                 if ((language == DEUTSCH) && (option == 1)) return Resource.Id.txt_viw_box_2_1;
-                if ((language == DEUTSCH) && (option == 2)) return Resource.Id.txt_viw_box_2_2;
-                if ((language == DEUTSCH) && (option == 3)) return Resource.Id.txt_viw_box_2_3;
+                //if ((language == DEUTSCH) && (option == 2)) return Resource.Id.txt_viw_box_2_2;
+                //if ((language == DEUTSCH) && (option == 3)) return Resource.Id.txt_viw_box_2_3;
                 if ((language == ITALIANO) && (option == 1)) return Resource.Id.txt_viw_box_3_1;
-                if ((language == ITALIANO) && (option == 2)) return Resource.Id.txt_viw_box_3_2;
-                if ((language == ITALIANO) && (option == 3)) return Resource.Id.txt_viw_box_3_3;
+                //if ((language == ITALIANO) && (option == 2)) return Resource.Id.txt_viw_box_3_2;
+                //if ((language == ITALIANO) && (option == 3)) return Resource.Id.txt_viw_box_3_3;
                 if ((language == FRANCAIS) && (option == 1)) return Resource.Id.txt_viw_box_4_1;
-                if ((language == FRANCAIS) && (option == 2)) return Resource.Id.txt_viw_box_4_2;
-                if ((language == FRANCAIS) && (option == 3)) return Resource.Id.txt_viw_box_4_3;
+                //if ((language == FRANCAIS) && (option == 2)) return Resource.Id.txt_viw_box_4_2;
+                //if ((language == FRANCAIS) && (option == 3)) return Resource.Id.txt_viw_box_4_3;
                 if ((language == ESPANOL) && (option == 1)) return Resource.Id.txt_viw_box_5_1;
-                if ((language == ESPANOL) && (option == 2)) return Resource.Id.txt_viw_box_5_2;
-                if ((language == ESPANOL) && (option == 3)) return Resource.Id.txt_viw_box_5_3;
+                //if ((language == ESPANOL) && (option == 2)) return Resource.Id.txt_viw_box_5_2;
+                //if ((language == ESPANOL) && (option == 3)) return Resource.Id.txt_viw_box_5_3;
                 return -1;
             }
             catch (Exception)
@@ -280,33 +280,12 @@ namespace Letter.Views
                     lesson = book[value];
                     SetLesson(lesson, language);
                     //---
-                    List<WordModel> word = _mainViewModel.GetNext(language, lesson, book);
+                    List<WordModel> word = _mainViewModel.GetPrevious(language, lesson, book);
                     //---
                     SetPhrase(word, language);
                     //---
-                    word.ForEach(index =>
-                    {
-                        if ((index.kind == VAR_PRONOUN) && (index.sentense == VAR_SUBJECT))
-                        {
-                            TextView text_pronoun = (TextView)((Activity)context).FindViewById(SelectButton(language, 1));
-                            text_pronoun.Text = index.term;
-                        }
-                        if (index.kind == VAR_VERB)
-                        {
-                            TextView text_verb = (TextView)((Activity)context).FindViewById(SelectButton(language, 2));
-                            text_verb.Text = index.term;
-                        }
-                        if ((index.kind == VAR_NOUN) && (index.sentense == VAR_PREDICATE))
-                        {
-                            TextView text_noun = (TextView)((Activity)context).FindViewById(SelectButton(language, 3));
-                            text_noun.Text = index.term;
-                        }
-                        if (word.Count == 2)
-                        {
-                            TextView text_noun = (TextView)((Activity)context).FindViewById(SelectButton(language, 3));
-                            text_noun.Text = "";
-                        }
-                    });
+                    TextView text_pronoun = (TextView)((Activity)context).FindViewById(SelectButton(language, 1));
+                    text_pronoun.Text = _mainViewModel.MountPhrase(word);
                 }
             }
         }
@@ -323,30 +302,12 @@ namespace Letter.Views
                     lesson = book[value];
                     SetLesson(lesson, language);
                     //---
-                    List<WordModel> word = _mainViewModel.GetNext(language, lesson, book);
-                    word.ForEach(index =>
-                    {
-                        if ((index.kind == VAR_PRONOUN) && (index.sentense == VAR_SUBJECT))
-                        {
-                            TextView text_pronoun = (TextView)((Activity)context).FindViewById(SelectButton(language, 1));
-                            text_pronoun.Text = index.term;
-                        }
-                        if (index.kind == VAR_VERB)
-                        {
-                            TextView text_verb = (TextView)((Activity)context).FindViewById(SelectButton(language, 2));
-                            text_verb.Text = index.term;
-                        }
-                        if ((index.kind == VAR_NOUN) && (index.sentense == VAR_PREDICATE))
-                        {
-                            TextView text_noun = (TextView)((Activity)context).FindViewById(SelectButton(language, 3));
-                            text_noun.Text = index.term;
-                        }
-                        if (word.Count == 2)
-                        {
-                            TextView text_noun = (TextView)((Activity)context).FindViewById(SelectButton(language, 3));
-                            text_noun.Text = "";
-                        }
-                    });
+                    List<WordModel> word = _mainViewModel.GetPrevious(language, lesson, book);
+                    //---
+                    SetPhrase(word, language);
+                    //---
+                    TextView text_pronoun = (TextView)((Activity)context).FindViewById(SelectButton(language, 1));
+                    text_pronoun.Text = _mainViewModel.MountPhrase(word);
                 }
             }
         }
@@ -389,9 +350,6 @@ namespace Letter.Views
                         text_noun.Text = "";
                     }
                 });
-                //int value_verb = _italiano.conteudo.verbo.Distinct().ToList().IndexOf(_italiano_verb) + 1;
-                //if (value_verb == -1) value_verb = 0;
-                //if (_italiano.conteudo.verbo.Count != 0)
             }
         }
 
@@ -434,9 +392,6 @@ namespace Letter.Views
                             text_noun.Text = "";
                         }
                     });
-                    //int value_verb = _italiano.conteudo.verbo.Distinct().ToList().IndexOf(_italiano_verb) - 1;
-                    //if (value_verb == -1) value_verb = 0;
-                    //if (_italiano.conteudo.verbo.Count != 0)
                 }
             }
         }
