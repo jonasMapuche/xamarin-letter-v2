@@ -246,20 +246,10 @@ namespace Letter.Views
             try
             {
                 if ((language == ENGLISH) && (option == 1)) return Resource.Id.txt_viw_box_1_1;
-                //if ((language == ENGLISH) && (option == 2)) return Resource.Id.txt_viw_box_1_2;
-                //if ((language == ENGLISH) && (option == 3)) return Resource.Id.txt_viw_box_1_3;
                 if ((language == DEUTSCH) && (option == 1)) return Resource.Id.txt_viw_box_2_1;
-                //if ((language == DEUTSCH) && (option == 2)) return Resource.Id.txt_viw_box_2_2;
-                //if ((language == DEUTSCH) && (option == 3)) return Resource.Id.txt_viw_box_2_3;
                 if ((language == ITALIANO) && (option == 1)) return Resource.Id.txt_viw_box_3_1;
-                //if ((language == ITALIANO) && (option == 2)) return Resource.Id.txt_viw_box_3_2;
-                //if ((language == ITALIANO) && (option == 3)) return Resource.Id.txt_viw_box_3_3;
                 if ((language == FRANCAIS) && (option == 1)) return Resource.Id.txt_viw_box_4_1;
-                //if ((language == FRANCAIS) && (option == 2)) return Resource.Id.txt_viw_box_4_2;
-                //if ((language == FRANCAIS) && (option == 3)) return Resource.Id.txt_viw_box_4_3;
                 if ((language == ESPANOL) && (option == 1)) return Resource.Id.txt_viw_box_5_1;
-                //if ((language == ESPANOL) && (option == 2)) return Resource.Id.txt_viw_box_5_2;
-                //if ((language == ESPANOL) && (option == 3)) return Resource.Id.txt_viw_box_5_3;
                 return -1;
             }
             catch (Exception)
@@ -284,8 +274,8 @@ namespace Letter.Views
                     //---
                     SetPhrase(word, language);
                     //---
-                    TextView text_pronoun = (TextView)((Activity)context).FindViewById(SelectButton(language, 1));
-                    text_pronoun.Text = _mainViewModel.MountPhrase(word);
+                    TextView text_mensage = (TextView)((Activity)context).FindViewById(SelectButton(language, 1));
+                    text_mensage.Text = _mainViewModel.MountPhrase(word);
                 }
             }
         }
@@ -306,8 +296,8 @@ namespace Letter.Views
                     //---
                     SetPhrase(word, language);
                     //---
-                    TextView text_pronoun = (TextView)((Activity)context).FindViewById(SelectButton(language, 1));
-                    text_pronoun.Text = _mainViewModel.MountPhrase(word);
+                    TextView text_mensage = (TextView)((Activity)context).FindViewById(SelectButton(language, 1));
+                    text_mensage.Text = _mainViewModel.MountPhrase(word);
                 }
             }
         }
@@ -323,33 +313,13 @@ namespace Letter.Views
                 )
             {
                 //---
-                List<WordModel> word = _mainViewModel.GetDown(language, word_model, true);
+                List<WordModel> word = _mainViewModel.GetUp(language, word_model, false);
                 //---
                 SetPhrase(word, language);
                 //---
-                word.ForEach(index =>
-                {
-                    if ((index.kind == VAR_PRONOUN) && (index.sentense == VAR_SUBJECT))
-                    {
-                        TextView text_pronoun = (TextView)((Activity)context).FindViewById(SelectButton(language, 1));
-                        text_pronoun.Text = index.term;
-                    }
-                    if (index.kind == VAR_VERB)
-                    {
-                        TextView text_verb = (TextView)((Activity)context).FindViewById(SelectButton(language, 2));
-                        text_verb.Text = index.term;
-                    }
-                    if ((index.kind == VAR_NOUN) && (index.sentense == VAR_PREDICATE))
-                    {
-                        TextView text_noun = (TextView)((Activity)context).FindViewById(SelectButton(language, 3));
-                        text_noun.Text = index.term;
-                    }
-                    if (word.Count == 2)
-                    {
-                        TextView text_noun = (TextView)((Activity)context).FindViewById(SelectButton(language, 3));
-                        text_noun.Text = "";
-                    }
-                });
+                TextView text_mensage = (TextView)((Activity)context).FindViewById(SelectButton(language, 1));
+                string new_word = _mainViewModel.MountPhrase(word);
+                text_mensage.Text = new_word;
             }
         }
 
@@ -365,33 +335,13 @@ namespace Letter.Views
             {
                 {
                     //---
-                    List<WordModel> word = _mainViewModel.GetDown(language, word_model, false);
+                    List<WordModel> word = _mainViewModel.GetUp(language, word_model, true);
                     //---
                     SetPhrase(word, language);
                     //---
-                    word.ForEach(index =>
-                    {
-                        if ((index.kind == VAR_PRONOUN) && (index.sentense == VAR_SUBJECT))
-                        {
-                            TextView text_pronoun = (TextView)((Activity)context).FindViewById(SelectButton(language, 1));
-                            text_pronoun.Text = index.term;
-                        }
-                        if (index.kind == VAR_VERB)
-                        {
-                            TextView text_verb = (TextView)((Activity)context).FindViewById(SelectButton(language, 2));
-                            text_verb.Text = index.term;
-                        }
-                        if ((index.kind == VAR_NOUN) && (index.sentense == VAR_PREDICATE))
-                        {
-                            TextView text_noun = (TextView)((Activity)context).FindViewById(SelectButton(language, 3));
-                            text_noun.Text = index.term;
-                        }
-                        if (word.Count == 2)
-                        {
-                            TextView text_noun = (TextView)((Activity)context).FindViewById(SelectButton(language, 3));
-                            text_noun.Text = "";
-                        }
-                    });
+                    TextView text_mensage = (TextView)((Activity)context).FindViewById(SelectButton(language, 1));
+                    string new_word = _mainViewModel.MountPhrase(word);
+                    text_mensage.Text = new_word;
                 }
             }
         }

@@ -1,4 +1,5 @@
-﻿using Android.Text;
+﻿using Android.Test.Suitebuilder.Annotation;
+using Android.Text;
 using Letter.Models;
 using Letter.ViewModel;
 using MongoDB.Driver;
@@ -390,66 +391,6 @@ namespace Letter.ViewsModels
                 word_model.Add(word);
                 //---
                 return word_model;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        private List<WordModel> NominalVerbPredicate(string verb, string model, string noun)
-        {
-            try
-            {
-                //---
-                List<WordModel> new_word = new List<WordModel>();
-                //---
-                List<WordModel> iten_word = new List<WordModel>();
-                iten_word = new List<WordModel>();
-                iten_word = Word(verb, VAR_VERB, VAR_PREDICATE, model);
-                iten_word.ForEach(index =>
-                {
-                    new_word.Add(index);
-                });
-                //---
-                iten_word = new List<WordModel>();
-                iten_word = Word(noun, VAR_NOUN, VAR_PREDICATE, null);
-                iten_word.ForEach(index =>
-                {
-                    new_word.Add(index);
-                });
-                //---
-                return new_word;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        private List<WordModel> NominalVerbOration(string pronoun, string verb, string model)
-        {
-            try
-            {
-                //---
-                List<WordModel> new_word = new List<WordModel>();
-                //---
-                List<WordModel> iten_word = new List<WordModel>();
-                iten_word = new List<WordModel>();
-                iten_word = Word(pronoun, VAR_PRONOUN, VAR_SUBJECT, null);
-                iten_word.ForEach(index =>
-                {
-                    new_word.Add(index);
-                });
-                //---
-                iten_word = new List<WordModel>();
-                iten_word = Word(verb, VAR_VERB, VAR_PREDICATE, model);
-                iten_word.ForEach(index =>
-                {
-                    new_word.Add(index);
-                });
-                //---
-                return new_word;
             }
             catch (Exception)
             {
@@ -1565,13 +1506,27 @@ namespace Letter.ViewsModels
                 List<LicaoModel> word_noun = SetLessonNoun(language, list_subject, list_verb, list_preposition);
                 //---
                 List<LicaoModel> lesson_word = new List<LicaoModel>();
+                int order = 0;
+                //---
                 word_pronoun.ForEach(value =>
                 {
-                    lesson_word.Add(value);
+                    //---
+                    order++;
+                    LicaoModel item = new LicaoModel();
+                    item.order = order;
+                    item.lecture = value.lecture;
+                    //---
+                    lesson_word.Add(item);
                 });
                 //---
                 word_noun.ForEach(value =>
                 {
+                    //---
+                    order++;
+                    LicaoModel item = new LicaoModel();
+                    item.order = order;
+                    item.lecture = value.lecture;
+                    //---
                     lesson_word.Add(value);
                 });
                 //---
@@ -1600,9 +1555,9 @@ namespace Letter.ViewsModels
                 //---
                 List<WordModel> new_word = new List<WordModel>();
                 //---
-                List<LicaoModel> lesson_word = SelectLesson(language);
+                List<LicaoModel> lesson_word = SelectLesson(language).OrderBy(index => index.order).ToList();
                 //---
-                if (!reverse) lesson_word.Reverse();
+                if (reverse) lesson_word.Reverse();
                 //---
                 bool next = false;
                 int count_foreach = 0;
@@ -1611,7 +1566,9 @@ namespace Letter.ViewsModels
                     //---
                     if (!next)
                     {
-                        if (MountPhrase(word_model) == MountPhrase(lesson.lecture))
+                        string word = MountPhrase(word_model);
+                        string word_lesson = MountPhrase(lesson.lecture);
+                        if (word == word_lesson)
                             next = true;
                     }
                     else
@@ -1628,7 +1585,7 @@ namespace Letter.ViewsModels
                     }
                 }
                 //---
-                if (!reverse) lesson_word.Reverse();
+                if (reverse) lesson_word.Reverse();
                 //---
                 return new_word;
             }
@@ -1685,168 +1642,14 @@ namespace Letter.ViewsModels
                 if ((pronoun_predicate != null) && (noun_predicate == null)) term = term + " " + pronoun_predicate;
                 if ((pronoun_predicate != null) && (noun_predicate != null)) term = term + " " + pronoun_predicate + " " + noun_predicate;
                 if ((noun_predicate != null) && (pronoun_predicate == null) && (article_predicate == null) && (digit_predicate == null)) term = term + " " + noun_predicate;
-                if ((noun_predicate != null) && (article_predicate == null)) term = term + " " + article_predicate + " " + noun_predicate;
-                if ((noun_predicate != null) && (digit_predicate == null)) term = term + " " + digit_predicate + " " + noun_predicate;
+                if ((noun_predicate != null) && (article_predicate != null)) term = term + " " + article_predicate + " " + noun_predicate;
+                if ((noun_predicate != null) && (digit_predicate != null)) term = term + " " + digit_predicate + " " + noun_predicate;
                 //---
                 return term;
             }
             catch (Exception)
             {
                 return null;
-                throw;
-            }
-        }
-
-        public List<WordModel> GetDown(string language, List<WordModel> word_model, bool reverse)
-        {
-            try
-            {
-                //---
-                WordModel pronoun = word_model.Find(index => index.kind == VAR_PRONOUN && index.sentense == VAR_SUBJECT);
-                WordModel verb = word_model.Find(index => index.kind == VAR_VERB && index.sentense == VAR_PREDICATE);
-                WordModel noun = word_model.Find(index => index.kind == VAR_NOUN && index.sentense == VAR_PREDICATE);
-                //---
-                List<WordModel> new_word = new List<WordModel>();
-                //---
-                List<LicaoModel> lesson_word = SelectLesson(language);
-                //---
-                if (!reverse) lesson_word.Reverse();
-                //---
-                bool last = false;
-                if (word_model.Count == 3)
-                {
-                    //---
-                    bool next = false;
-                    int count_foreach = 0;
-                    foreach (LicaoModel lesson in lesson_word)
-                    {
-                        //---
-                        WordModel iten_pronoun = lesson.lecture.Find(index => index.kind == VAR_PRONOUN && index.sentense == VAR_SUBJECT);
-                        WordModel iten_verb = lesson.lecture.Find(index => index.kind == VAR_VERB && index.sentense == VAR_PREDICATE);
-                        WordModel iten_noun = lesson.lecture.Find(index => index.kind == VAR_NOUN && index.sentense == VAR_PREDICATE);
-                        //---
-                        if (!next)
-                        {
-                            if ((iten_pronoun.term == pronoun.term) && (iten_verb.term == verb.term) && (iten_noun.term == noun.term))
-                                next = true;
-                        }
-                        else
-                        {
-                            new_word = Authenticate(language, lesson.lecture, VAR_QUANTITY_3);
-                            if (new_word.Count == 3) break;
-                        }
-                        //---
-                        count_foreach++;
-                        if (lesson_word.Count == count_foreach)
-                        {
-                            last = true;
-                            new_word = word_model;
-                            break;
-                        }
-                    }
-                }
-                //---
-                if (last)
-                {
-                    //---
-                    if (!reverse) lesson_word.Reverse();
-                    return new_word;
-                }
-                //---
-                if ((word_model.Count == 2) || (new_word.Count == 0))
-                {
-                    //---
-                    bool next = false;
-                    int count_foreach = 0;
-                    foreach (LicaoModel lesson in lesson_word)
-                    {
-                        //---
-                        WordModel iten_pronoun = lesson.lecture.Find(index => index.kind == VAR_PRONOUN && index.sentense == VAR_SUBJECT);
-                        WordModel iten_verb = lesson.lecture.Find(index => index.kind == VAR_VERB && index.sentense == VAR_PREDICATE);
-                        //---
-                        if (!next)
-                        {
-                            if ((iten_pronoun.term == pronoun.term) && (iten_verb.term == verb.term))
-                                next = true;
-                        }
-                        else
-                        {
-                            new_word = Authenticate(language, lesson.lecture, VAR_QUANTITY_2);
-                            if (new_word.Count == 2) break;
-                        }
-                        //---
-                        count_foreach++;
-                        if (lesson_word.Count == count_foreach)
-                        {
-                            new_word = word_model;
-                            break;
-                        }
-                    }
-                }
-                //---
-                if (!reverse) lesson_word.Reverse();
-                //---
-                return new_word;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        private List<WordModel> Authenticate(string language, List<WordModel> lesson, int quantity)
-        {
-            try
-            {
-                //---
-                List<WordModel> new_word = new List<WordModel>();
-                //---
-                List<DitadoModel> sentences = SelectSentence(language).Distinct().ToList();
-                Dictionary<(string, string), int> word_2_vec = Word2Vec(sentences);
-                HashSet<string> vocabulary = Vocabulary(sentences);
-                //---
-                WordModel pronoun = lesson.Find(index => index.kind == VAR_PRONOUN && index.sentense == VAR_SUBJECT);
-                WordModel verb = lesson.Find(index => index.kind == VAR_VERB && index.sentense == VAR_PREDICATE);
-                WordModel noun = lesson.Find(index => index.kind == VAR_NOUN && index.sentense == VAR_PREDICATE);
-                if (quantity == 3)
-                {
-                    //---
-                    bool similarity_predicative = Similarity(word_2_vec, vocabulary, verb.term.ToLower(), noun.term.ToLower());
-                    //---
-                    bool similarity_subject = Similarity(word_2_vec, vocabulary, pronoun.term.ToLower(), verb.term.ToLower());
-                    //---
-                    List<WordModel> iten_word = new List<WordModel>();
-                    if (similarity_predicative) iten_word = NominalVerbPredicate(verb.term, verb.term, noun.term);
-                    iten_word.ForEach(index =>
-                    {
-                        new_word.Add(index);
-                    });
-                    //---
-                    iten_word = new List<WordModel>();
-                    if (similarity_subject) iten_word = Word(pronoun.term, VAR_PRONOUN, VAR_SUBJECT, null);
-                    iten_word.ForEach(index =>
-                    {
-                        new_word.Add(index);
-                    });
-                }
-                if (quantity == 2)
-                {
-                    //---
-                    bool similarity_subject = Similarity(word_2_vec, vocabulary, pronoun.term.ToLower(), verb.term.ToLower());
-                    //---
-                    List<WordModel> iten_word = new List<WordModel>();
-                    if (similarity_subject)
-                        iten_word = NominalVerbOration(pronoun.term, verb.term, verb.model);
-                    iten_word.ForEach(index =>
-                    {
-                        new_word.Add(index);
-                    });
-                }
-                //---
-                return new_word;
-            }
-            catch (Exception)
-            {
                 throw;
             }
         }
@@ -1934,50 +1737,50 @@ namespace Letter.ViewsModels
                     }
                 }
                 //---
-                if ((pronoun_predicate != null) && (noun_subject == null) && (preposition == null))
+                if ((pronoun_predicate != null) && (noun_predicate == null) && (preposition == null))
                 {
                     similarity = Similarity(word_2_vec, vocabulary, verb, pronoun_predicate);
                 }
                 //---
-                if ((pronoun_predicate != null) && (noun_subject == null) && (preposition != null))
+                if ((pronoun_predicate != null) && (noun_predicate == null) && (preposition != null))
                 {
                     similarity = Similarity(word_2_vec, vocabulary, verb, preposition);
                     if (similarity) similarity = Similarity(word_2_vec, vocabulary, preposition, pronoun_predicate);
                 }
                 //---
-                if ((pronoun_predicate != null) && (noun_subject != null) && (preposition == null))
+                if ((pronoun_predicate != null) && (noun_predicate != null) && (preposition == null))
                 {
                     similarity = Similarity(word_2_vec, vocabulary, verb, pronoun_predicate);
                     if (similarity) similarity = Similarity(word_2_vec, vocabulary, pronoun_predicate, noun_predicate);
                 }
                 //---
-                if ((pronoun_predicate != null) && (noun_subject != null) && (preposition != null))
+                if ((pronoun_predicate != null) && (noun_predicate != null) && (preposition != null))
                 {
                     similarity = Similarity(word_2_vec, vocabulary, verb, preposition);
                     if (similarity) similarity = Similarity(word_2_vec, vocabulary, preposition, pronoun_predicate);
                     if (similarity) similarity = Similarity(word_2_vec, vocabulary, pronoun_predicate, noun_predicate);
                 }
                 //---
-                if ((article_predicate != null) && (noun_subject != null) && (preposition == null))
+                if ((article_predicate != null) && (noun_predicate != null) && (preposition == null))
                 {
                     similarity = Similarity(word_2_vec, vocabulary, verb, article_predicate);
                     if (similarity) similarity = Similarity(word_2_vec, vocabulary, article_predicate, noun_predicate);
                 }
                 //---
-                if ((article_predicate != null) && (noun_subject != null) && (preposition != null))
+                if ((article_predicate != null) && (noun_predicate != null) && (preposition != null))
                 {
                     similarity = Similarity(word_2_vec, vocabulary, verb, preposition);
                     if (similarity) similarity = Similarity(word_2_vec, vocabulary, preposition, article_predicate);
                     if (similarity) similarity = Similarity(word_2_vec, vocabulary, article_predicate, noun_predicate);
                 }
                 //---
-                if ((digit_predicate != null) && (noun_subject != null) && (preposition == null))
+                if ((digit_predicate != null) && (noun_predicate != null) && (preposition == null))
                 {
                     similarity = Similarity(word_2_vec, vocabulary, verb, digit_predicate);
                     if (similarity) similarity = Similarity(word_2_vec, vocabulary, digit_predicate, noun_predicate);
                 }
                 //---
-                if ((digit_predicate != null) && (noun_subject != null) && (preposition != null))
+                if ((digit_predicate != null) && (noun_predicate != null) && (preposition != null))
                 {
                     similarity = Similarity(word_2_vec, vocabulary, verb, preposition);
                     if (similarity) similarity = Similarity(word_2_vec, vocabulary, preposition, digit_predicate);
