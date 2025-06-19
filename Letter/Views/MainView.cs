@@ -39,12 +39,6 @@ namespace Letter.Views
         private string FRANCAIS = "français";
         private string ESPANOL = "espanõl";
         //---
-        private string VAR_SUBJECT = "sujeito";
-        private string VAR_PREDICATE = "predicado";
-        private string VAR_PRONOUN = "pronome";
-        private string VAR_NOUN = "substantivo";
-        private string VAR_VERB = "verbo";
-        //---
         private List<WordModel> _word_english = new List<WordModel>();
         private List<WordModel> _word_deutsch = new List<WordModel>();
         private List<WordModel> _word_italiano = new List<WordModel>();
