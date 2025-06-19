@@ -119,7 +119,6 @@ namespace Letter.ViewsModels
                 List<string> list_noun = MountNoun(language, lesson, book);
                 List<string> list_adjective = MountAdjective(lesson, book);
                 List<string> list_model = MountModel(lesson);
-                //List<ElocucaoModel> list_verb = MountVerb(language, lesson);
                 //---
                 List<JuncaoModel> list_preposition = SelectPreposition(language);
                 List<PreceitoModel> list_article = SelectArticle(language);
@@ -148,13 +147,37 @@ namespace Letter.ViewsModels
                 list_full = UnionMorphology(list_full, mount_pronoun);
                 //---
                 List<LicaoModel> list_word = new List<LicaoModel>();
-                list_word = MountOrder(PeriodPV(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodPVP(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodPVPrP(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodPVN(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodPVPrN(language, sentence, list_full));
+                list_word = MountOrder(PeriodP_V(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_P(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Pr_P(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_N(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Pr_N(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_AdjN(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Pr_AdjN(language, sentence, list_full));
                 //---
-                //List<LicaoModel> word_pronoun_noun = MountLessonPronounVerbNoun(language, union_noun, filter_verb, filter_preposition, sentence, list_pronoun_personal_demostrative);
+                list_word = MountOrder(list_word, PeriodP_V_Adj(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adj_P(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adj_Pr_P(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adj_N(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adj_Pr_N(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adj_AdjN(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adj_Pr_AdjN(language, sentence, list_full));
+                //---
+                list_word = MountOrder(list_word, PeriodP_V_Adv(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adv_P(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adv_Pr_P(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adv_N(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adv_Pr_N(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adv_AdjN(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adv_Pr_AdjN(language, sentence, list_full));
+                //---
+                list_word = MountOrder(list_word, PeriodP_V_Adv_Adj(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adv_Adj_P(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adv_Adj_Pr_P(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adv_Adj_N(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adv_Adj_Pr_N(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adv_Adj_AdjN(language, sentence, list_full));
+                list_word = MountOrder(list_word, PeriodP_V_Adv_Adj_Pr_AdjN(language, sentence, list_full));
                 //---
                 //List<LicaoModel> word_noun = MountLessonNounVerbNoun(language, union_noun, filter_verb, filter_preposition, sentence, filter_pronoun_possessive);
                 //---

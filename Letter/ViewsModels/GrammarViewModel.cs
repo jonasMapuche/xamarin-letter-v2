@@ -2789,7 +2789,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPV(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -2855,7 +2855,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVP(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_P(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -2941,7 +2941,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVPrP(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_Pr_P(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -3047,7 +3047,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_N(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -3133,7 +3133,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVPrN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_Pr_N(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -3239,7 +3239,199 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVAdj(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        {
+            try
+            {
+                //---
+                List<LicaoModel> new_lesson = new List<LicaoModel>();
+                //---
+                Dictionary<(string, string), int> word_2_vec = Word2Vec(sentence);
+                HashSet<string> vocabulary = Vocabulary(sentence);
+                //---
+                List<string> type_verb = new List<string>();
+                type_verb.Add(VAR_VERB);
+                //---
+                List<string> type_pronoun = new List<string>();
+                type_pronoun.Add(VAR_PERSONAL);
+                type_pronoun.Add(VAR_DEMONSTRATIVE);
+                //---
+                List<string> type_adjective_noun = new List<string>();
+                type_adjective_noun.Add(VAR_ADJECTIVE_NOUN);
+                //---
+                List<LicaoModel> list_verb = new List<LicaoModel>();
+                list_verb = FilterTypeMorphology(period, type_verb);
+                //---
+                List<LicaoModel> list_pronoun = new List<LicaoModel>();
+                list_pronoun = FilterTypeMorphology(period, type_pronoun);
+                //---
+                List<LicaoModel> list_adjective_noun = new List<LicaoModel>();
+                list_adjective_noun = FilterTypeMorphology(period, type_adjective_noun);
+                //---
+                foreach (LicaoModel verb_value in list_verb)
+                {
+                    //---
+                    foreach (LicaoModel pronoun_value in list_pronoun)
+                    {
+                        //---
+                        foreach (LicaoModel adjective_noun_value in list_adjective_noun)
+                        {
+                            //---
+                            List<WordModel> syntax = new List<WordModel>();
+                            List<WordModel> item = new List<WordModel>();
+                            //---
+                            verb_value.lecture.ForEach(value =>
+                            {
+                                WordModel word = new WordModel();
+                                word.term = value.term;
+                                word.kind = value.kind;
+                                word.sentense = VAR_PREDICATE;
+                                syntax.Add(word);
+                            });
+                            //---
+                            item = new List<WordModel>();
+                            pronoun_value.lecture.ForEach(value =>
+                            {
+                                WordModel word = new WordModel();
+                                word.term = value.term;
+                                word.kind = value.kind;
+                                word.sentense = VAR_SUBJECT;
+                                syntax.Add(word);
+                            });
+                            //---
+                            item = new List<WordModel>();
+                            adjective_noun_value.lecture.ForEach(value =>
+                            {
+                                WordModel word = new WordModel();
+                                word.term = value.term;
+                                word.kind = value.kind;
+                                word.sentense = VAR_PREDICATE;
+                                syntax.Add(word);
+                            });
+                            //---
+                            LicaoModel lesson = new LicaoModel();
+                            lesson.lecture = syntax;
+                            new_lesson.Add(lesson);
+                        }
+                    }
+                }
+                //---
+                return new_lesson;
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
+            }
+        }
+
+        public List<LicaoModel> PeriodP_V_Pr_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        {
+            try
+            {
+                //---
+                List<LicaoModel> new_lesson = new List<LicaoModel>();
+                //---
+                Dictionary<(string, string), int> word_2_vec = Word2Vec(sentence);
+                HashSet<string> vocabulary = Vocabulary(sentence);
+                //---
+                List<string> type_verb = new List<string>();
+                type_verb.Add(VAR_VERB);
+                //---
+                List<string> type_pronoun = new List<string>();
+                type_pronoun.Add(VAR_PERSONAL);
+                type_pronoun.Add(VAR_DEMONSTRATIVE);
+                //---
+                List<string> type_adjective_noun = new List<string>();
+                type_adjective_noun.Add(VAR_ADJECTIVE_NOUN);
+                //---
+                List<string> type_preposition = new List<string>();
+                type_preposition.Add(VAR_PREPOSITION);
+                //---
+                List<LicaoModel> list_verb = new List<LicaoModel>();
+                list_verb = FilterTypeMorphology(period, type_verb);
+                //---
+                List<LicaoModel> list_pronoun = new List<LicaoModel>();
+                list_pronoun = FilterTypeMorphology(period, type_pronoun);
+                //---
+                List<LicaoModel> list_adjective_noun = new List<LicaoModel>();
+                list_adjective_noun = FilterTypeMorphology(period, type_adjective_noun);
+                //---
+                List<LicaoModel> list_preposition = new List<LicaoModel>();
+                list_preposition = FilterTypeMorphology(period, type_preposition);
+                //---
+                foreach (LicaoModel verb_value in list_verb)
+                {
+                    //---
+                    foreach (LicaoModel pronoun_value in list_pronoun)
+                    {
+                        //---
+                        foreach (LicaoModel adjective_noun_value in list_adjective_noun)
+                        {
+                            //---
+                            foreach (LicaoModel preposition_value in list_preposition)
+                            {
+                                //---
+                                List<WordModel> syntax = new List<WordModel>();
+                                List<WordModel> item = new List<WordModel>();
+                                //---
+                                verb_value.lecture.ForEach(value =>
+                                {
+                                    WordModel word = new WordModel();
+                                    word.term = value.term;
+                                    word.kind = value.kind;
+                                    word.sentense = VAR_PREDICATE;
+                                    syntax.Add(word);
+                                });
+                                //---
+                                item = new List<WordModel>();
+                                pronoun_value.lecture.ForEach(value =>
+                                {
+                                    WordModel word = new WordModel();
+                                    word.term = value.term;
+                                    word.kind = value.kind;
+                                    word.sentense = VAR_SUBJECT;
+                                    syntax.Add(word);
+                                });
+                                //---
+                                item = new List<WordModel>();
+                                adjective_noun_value.lecture.ForEach(value =>
+                                {
+                                    WordModel word = new WordModel();
+                                    word.term = value.term;
+                                    word.kind = value.kind;
+                                    word.sentense = VAR_PREDICATE;
+                                    syntax.Add(word);
+                                });
+                                //---
+                                item = new List<WordModel>();
+                                preposition_value.lecture.ForEach(value =>
+                                {
+                                    WordModel word = new WordModel();
+                                    word.term = value.term;
+                                    word.kind = value.kind;
+                                    word.sentense = VAR_PREDICATE;
+                                    syntax.Add(word);
+                                });
+                                //---
+                                LicaoModel lesson = new LicaoModel();
+                                lesson.lecture = syntax;
+                                new_lesson.Add(lesson);
+                            }
+                        }
+                    }
+                }
+                //---
+                return new_lesson;
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
+            }
+        }
+
+        public List<LicaoModel> PeriodP_V_Adj(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -3325,7 +3517,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVAdjP(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_Adj_P(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -3431,7 +3623,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVAdjPrP(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_Adj_Pr_P(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -3557,7 +3749,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVAdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_Adj_N(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -3574,8 +3766,11 @@ namespace Letter.ViewsModels
                 type_pronoun.Add(VAR_PERSONAL);
                 type_pronoun.Add(VAR_DEMONSTRATIVE);
                 //---
-                List<string> type_adjective_noun = new List<string>();
-                type_adjective_noun.Add(VAR_ADJECTIVE_NOUN);
+                List<string> type_adjective = new List<string>();
+                type_adjective.Add(VAR_ADJECTIVE);
+                //---
+                List<string> type_noun = new List<string>();
+                type_noun.Add(VAR_NOUN);
                 //---
                 List<LicaoModel> list_verb = new List<LicaoModel>();
                 list_verb = FilterTypeMorphology(period, type_verb);
@@ -3583,8 +3778,11 @@ namespace Letter.ViewsModels
                 List<LicaoModel> list_pronoun = new List<LicaoModel>();
                 list_pronoun = FilterTypeMorphology(period, type_pronoun);
                 //---
-                List<LicaoModel> list_adjective_noun = new List<LicaoModel>();
-                list_adjective_noun = FilterTypeMorphology(period, type_adjective_noun);
+                List<LicaoModel> list_adjective = new List<LicaoModel>();
+                list_adjective = FilterTypeMorphology(period, type_adjective);
+                //---
+                List<LicaoModel> list_noun = new List<LicaoModel>();
+                list_noun = FilterTypeMorphology(period, type_noun);
                 //---
                 foreach (LicaoModel verb_value in list_verb)
                 {
@@ -3592,102 +3790,10 @@ namespace Letter.ViewsModels
                     foreach (LicaoModel pronoun_value in list_pronoun)
                     {
                         //---
-                        foreach (LicaoModel adjective_noun_value in list_adjective_noun)
+                        foreach (LicaoModel adjective_value in list_adjective)
                         {
                             //---
-                            List<WordModel> syntax = new List<WordModel>();
-                            List<WordModel> item = new List<WordModel>();
-                            //---
-                            verb_value.lecture.ForEach(value =>
-                            {
-                                WordModel word = new WordModel();
-                                word.term = value.term;
-                                word.kind = value.kind;
-                                word.sentense = VAR_PREDICATE;
-                                syntax.Add(word);
-                            });
-                            //---
-                            item = new List<WordModel>();
-                            pronoun_value.lecture.ForEach(value =>
-                            {
-                                WordModel word = new WordModel();
-                                word.term = value.term;
-                                word.kind = value.kind;
-                                word.sentense = VAR_SUBJECT;
-                                syntax.Add(word);
-                            });
-                            //---
-                            item = new List<WordModel>();
-                            adjective_noun_value.lecture.ForEach(value =>
-                            {
-                                WordModel word = new WordModel();
-                                word.term = value.term;
-                                word.kind = value.kind;
-                                word.sentense = VAR_PREDICATE;
-                                syntax.Add(word);
-                            });
-                            //---
-                            LicaoModel lesson = new LicaoModel();
-                            lesson.lecture = syntax;
-                            new_lesson.Add(lesson);
-                        }
-                    }
-                }
-                //---
-                return new_lesson;
-            }
-            catch (Exception)
-            {
-                return null;
-                throw;
-            }
-        }
-
-        public List<LicaoModel> PeriodPVPrAdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
-        {
-            try
-            {
-                //---
-                List<LicaoModel> new_lesson = new List<LicaoModel>();
-                //---
-                Dictionary<(string, string), int> word_2_vec = Word2Vec(sentence);
-                HashSet<string> vocabulary = Vocabulary(sentence);
-                //---
-                List<string> type_verb = new List<string>();
-                type_verb.Add(VAR_VERB);
-                //---
-                List<string> type_pronoun = new List<string>();
-                type_pronoun.Add(VAR_PERSONAL);
-                type_pronoun.Add(VAR_DEMONSTRATIVE);
-                //---
-                List<string> type_adjective_noun = new List<string>();
-                type_adjective_noun.Add(VAR_ADJECTIVE_NOUN);
-                //---
-                List<string> type_preposition = new List<string>();
-                type_preposition.Add(VAR_PREPOSITION);
-                //---
-                List<LicaoModel> list_verb = new List<LicaoModel>();
-                list_verb = FilterTypeMorphology(period, type_verb);
-                //---
-                List<LicaoModel> list_pronoun = new List<LicaoModel>();
-                list_pronoun = FilterTypeMorphology(period, type_pronoun);
-                //---
-                List<LicaoModel> list_adjective_noun = new List<LicaoModel>();
-                list_adjective_noun = FilterTypeMorphology(period, type_adjective_noun);
-                //---
-                List<LicaoModel> list_preposition = new List<LicaoModel>();
-                list_preposition = FilterTypeMorphology(period, type_preposition);
-                //---
-                foreach (LicaoModel verb_value in list_verb)
-                {
-                    //---
-                    foreach (LicaoModel pronoun_value in list_pronoun)
-                    {
-                        //---
-                        foreach (LicaoModel adjective_noun_value in list_adjective_noun)
-                        {
-                            //---
-                            foreach (LicaoModel preposition_value in list_preposition)
+                            foreach (LicaoModel noun_value in list_noun)
                             {
                                 //---
                                 List<WordModel> syntax = new List<WordModel>();
@@ -3713,7 +3819,7 @@ namespace Letter.ViewsModels
                                 });
                                 //---
                                 item = new List<WordModel>();
-                                adjective_noun_value.lecture.ForEach(value =>
+                                adjective_value.lecture.ForEach(value =>
                                 {
                                     WordModel word = new WordModel();
                                     word.term = value.term;
@@ -3723,7 +3829,7 @@ namespace Letter.ViewsModels
                                 });
                                 //---
                                 item = new List<WordModel>();
-                                preposition_value.lecture.ForEach(value =>
+                                noun_value.lecture.ForEach(value =>
                                 {
                                     WordModel word = new WordModel();
                                     word.term = value.term;
@@ -3749,7 +3855,365 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVAdv(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_Adj_Pr_N(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        {
+            try
+            {
+                //---
+                List<LicaoModel> new_lesson = new List<LicaoModel>();
+                //---
+                Dictionary<(string, string), int> word_2_vec = Word2Vec(sentence);
+                HashSet<string> vocabulary = Vocabulary(sentence);
+                //---
+                List<string> type_verb = new List<string>();
+                type_verb.Add(VAR_VERB);
+                //---
+                List<string> type_pronoun = new List<string>();
+                type_pronoun.Add(VAR_PERSONAL);
+                type_pronoun.Add(VAR_DEMONSTRATIVE);
+                //---
+                List<string> type_adjective = new List<string>();
+                type_adjective.Add(VAR_ADJECTIVE);
+                //---
+                List<string> type_noun = new List<string>();
+                type_noun.Add(VAR_NOUN);
+                //---
+                List<string> type_preposition = new List<string>();
+                type_preposition.Add(VAR_PREPOSITION);
+                //---
+                List<LicaoModel> list_verb = new List<LicaoModel>();
+                list_verb = FilterTypeMorphology(period, type_verb);
+                //---
+                List<LicaoModel> list_pronoun = new List<LicaoModel>();
+                list_pronoun = FilterTypeMorphology(period, type_pronoun);
+                //---
+                List<LicaoModel> list_adjective = new List<LicaoModel>();
+                list_adjective = FilterTypeMorphology(period, type_adjective);
+                //---
+                List<LicaoModel> list_noun = new List<LicaoModel>();
+                list_noun = FilterTypeMorphology(period, type_noun);
+                //---
+                List<LicaoModel> list_preposition = new List<LicaoModel>();
+                list_preposition = FilterTypeMorphology(period, type_preposition);
+                //---
+                foreach (LicaoModel verb_value in list_verb)
+                {
+                    //---
+                    foreach (LicaoModel pronoun_value in list_pronoun)
+                    {
+                        //---
+                        foreach (LicaoModel adjective_value in list_adjective)
+                        {
+                            //---
+                            foreach (LicaoModel noun_value in list_noun)
+                            {
+                                //---
+                                foreach (LicaoModel prepostion_value in list_preposition)
+                                {
+                                    //---
+                                    List<WordModel> syntax = new List<WordModel>();
+                                    List<WordModel> item = new List<WordModel>();
+                                    //---
+                                    verb_value.lecture.ForEach(value =>
+                                    {
+                                        WordModel word = new WordModel();
+                                        word.term = value.term;
+                                        word.kind = value.kind;
+                                        word.sentense = VAR_PREDICATE;
+                                        syntax.Add(word);
+                                    });
+                                    //---
+                                    item = new List<WordModel>();
+                                    pronoun_value.lecture.ForEach(value =>
+                                    {
+                                        WordModel word = new WordModel();
+                                        word.term = value.term;
+                                        word.kind = value.kind;
+                                        word.sentense = VAR_SUBJECT;
+                                        syntax.Add(word);
+                                    });
+                                    //---
+                                    item = new List<WordModel>();
+                                    adjective_value.lecture.ForEach(value =>
+                                    {
+                                        WordModel word = new WordModel();
+                                        word.term = value.term;
+                                        word.kind = value.kind;
+                                        word.sentense = VAR_PREDICATE;
+                                        syntax.Add(word);
+                                    });
+                                    //---
+                                    item = new List<WordModel>();
+                                    noun_value.lecture.ForEach(value =>
+                                    {
+                                        WordModel word = new WordModel();
+                                        word.term = value.term;
+                                        word.kind = value.kind;
+                                        word.sentense = VAR_PREDICATE;
+                                        syntax.Add(word);
+                                    });
+                                    //---
+                                    item = new List<WordModel>();
+                                    prepostion_value.lecture.ForEach(value =>
+                                    {
+                                        WordModel word = new WordModel();
+                                        word.term = value.term;
+                                        word.kind = value.kind;
+                                        word.sentense = VAR_PREDICATE;
+                                        syntax.Add(word);
+                                    });
+                                    //---
+                                    LicaoModel lesson = new LicaoModel();
+                                    lesson.lecture = syntax;
+                                    new_lesson.Add(lesson);
+                                }
+                            }
+                        }
+                    }
+                }
+                //---
+                return new_lesson;
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
+            }
+        }
+
+        public List<LicaoModel> PeriodP_V_Adj_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        {
+            try
+            {
+                //---
+                List<LicaoModel> new_lesson = new List<LicaoModel>();
+                //---
+                Dictionary<(string, string), int> word_2_vec = Word2Vec(sentence);
+                HashSet<string> vocabulary = Vocabulary(sentence);
+                //---
+                List<string> type_verb = new List<string>();
+                type_verb.Add(VAR_VERB);
+                //---
+                List<string> type_pronoun = new List<string>();
+                type_pronoun.Add(VAR_PERSONAL);
+                type_pronoun.Add(VAR_DEMONSTRATIVE);
+                //---
+                List<string> type_adjective = new List<string>();
+                type_adjective.Add(VAR_ADJECTIVE);
+                //---
+                List<string> type_adjective_noun = new List<string>();
+                type_adjective_noun.Add(VAR_ADJECTIVE_NOUN);
+                //---
+                List<LicaoModel> list_verb = new List<LicaoModel>();
+                list_verb = FilterTypeMorphology(period, type_verb);
+                //---
+                List<LicaoModel> list_pronoun = new List<LicaoModel>();
+                list_pronoun = FilterTypeMorphology(period, type_pronoun);
+                //---
+                List<LicaoModel> list_adjective = new List<LicaoModel>();
+                list_adjective = FilterTypeMorphology(period, type_adjective);
+                //---
+                List<LicaoModel> list_adjective_noun = new List<LicaoModel>();
+                list_adjective_noun = FilterTypeMorphology(period, type_adjective_noun);
+                //---
+                foreach (LicaoModel verb_value in list_verb)
+                {
+                    //---
+                    foreach (LicaoModel pronoun_value in list_pronoun)
+                    {
+                        //---
+                        foreach (LicaoModel adjective_value in list_adjective)
+                        {
+                            //---
+                            foreach (LicaoModel adjective_noun_value in list_adjective_noun)
+                            {
+                                //---
+                                List<WordModel> syntax = new List<WordModel>();
+                                List<WordModel> item = new List<WordModel>();
+                                //---
+                                verb_value.lecture.ForEach(value =>
+                                {
+                                    WordModel word = new WordModel();
+                                    word.term = value.term;
+                                    word.kind = value.kind;
+                                    word.sentense = VAR_PREDICATE;
+                                    syntax.Add(word);
+                                });
+                                //---
+                                item = new List<WordModel>();
+                                pronoun_value.lecture.ForEach(value =>
+                                {
+                                    WordModel word = new WordModel();
+                                    word.term = value.term;
+                                    word.kind = value.kind;
+                                    word.sentense = VAR_SUBJECT;
+                                    syntax.Add(word);
+                                });
+                                //---
+                                item = new List<WordModel>();
+                                adjective_value.lecture.ForEach(value =>
+                                {
+                                    WordModel word = new WordModel();
+                                    word.term = value.term;
+                                    word.kind = value.kind;
+                                    word.sentense = VAR_PREDICATE;
+                                    syntax.Add(word);
+                                });
+                                //---
+                                item = new List<WordModel>();
+                                adjective_noun_value.lecture.ForEach(value =>
+                                {
+                                    WordModel word = new WordModel();
+                                    word.term = value.term;
+                                    word.kind = value.kind;
+                                    word.sentense = VAR_PREDICATE;
+                                    syntax.Add(word);
+                                });
+                                //---
+                                LicaoModel lesson = new LicaoModel();
+                                lesson.lecture = syntax;
+                                new_lesson.Add(lesson);
+                            }
+                        }
+                    }
+                }
+                //---
+                return new_lesson;
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
+            }
+        }
+
+        public List<LicaoModel> PeriodP_V_Adj_Pr_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        {
+            try
+            {
+                //---
+                List<LicaoModel> new_lesson = new List<LicaoModel>();
+                //---
+                Dictionary<(string, string), int> word_2_vec = Word2Vec(sentence);
+                HashSet<string> vocabulary = Vocabulary(sentence);
+                //---
+                List<string> type_verb = new List<string>();
+                type_verb.Add(VAR_VERB);
+                //---
+                List<string> type_pronoun = new List<string>();
+                type_pronoun.Add(VAR_PERSONAL);
+                type_pronoun.Add(VAR_DEMONSTRATIVE);
+                //---
+                List<string> type_adjective = new List<string>();
+                type_adjective.Add(VAR_ADJECTIVE);
+                //---
+                List<string> type_adjective_noun = new List<string>();
+                type_adjective_noun.Add(VAR_ADJECTIVE_NOUN);
+                //---
+                List<string> type_preposition = new List<string>();
+                type_preposition.Add(VAR_PREPOSITION);
+                //---
+                List<LicaoModel> list_verb = new List<LicaoModel>();
+                list_verb = FilterTypeMorphology(period, type_verb);
+                //---
+                List<LicaoModel> list_pronoun = new List<LicaoModel>();
+                list_pronoun = FilterTypeMorphology(period, type_pronoun);
+                //---
+                List<LicaoModel> list_adjective = new List<LicaoModel>();
+                list_adjective = FilterTypeMorphology(period, type_adjective);
+                //---
+                List<LicaoModel> list_adjective_noun = new List<LicaoModel>();
+                list_adjective_noun = FilterTypeMorphology(period, type_adjective_noun);
+                //---
+                List<LicaoModel> list_preposition = new List<LicaoModel>();
+                list_preposition = FilterTypeMorphology(period, type_preposition);
+                //---
+                foreach (LicaoModel verb_value in list_verb)
+                {
+                    //---
+                    foreach (LicaoModel pronoun_value in list_pronoun)
+                    {
+                        //---
+                        foreach (LicaoModel adjective_value in list_adjective)
+                        {
+                            //---
+                            foreach (LicaoModel adjective_noun_value in list_adjective_noun)
+                            {
+                                //---
+                                foreach (LicaoModel prepostion_value in list_preposition)
+                                {
+                                    //---
+                                    List<WordModel> syntax = new List<WordModel>();
+                                    List<WordModel> item = new List<WordModel>();
+                                    //---
+                                    verb_value.lecture.ForEach(value =>
+                                    {
+                                        WordModel word = new WordModel();
+                                        word.term = value.term;
+                                        word.kind = value.kind;
+                                        word.sentense = VAR_PREDICATE;
+                                        syntax.Add(word);
+                                    });
+                                    //---
+                                    item = new List<WordModel>();
+                                    pronoun_value.lecture.ForEach(value =>
+                                    {
+                                        WordModel word = new WordModel();
+                                        word.term = value.term;
+                                        word.kind = value.kind;
+                                        word.sentense = VAR_SUBJECT;
+                                        syntax.Add(word);
+                                    });
+                                    //---
+                                    item = new List<WordModel>();
+                                    adjective_value.lecture.ForEach(value =>
+                                    {
+                                        WordModel word = new WordModel();
+                                        word.term = value.term;
+                                        word.kind = value.kind;
+                                        word.sentense = VAR_PREDICATE;
+                                        syntax.Add(word);
+                                    });
+                                    //---
+                                    item = new List<WordModel>();
+                                    adjective_noun_value.lecture.ForEach(value =>
+                                    {
+                                        WordModel word = new WordModel();
+                                        word.term = value.term;
+                                        word.kind = value.kind;
+                                        word.sentense = VAR_PREDICATE;
+                                        syntax.Add(word);
+                                    });
+                                    //---
+                                    item = new List<WordModel>();
+                                    prepostion_value.lecture.ForEach(value =>
+                                    {
+                                        WordModel word = new WordModel();
+                                        word.term = value.term;
+                                        word.kind = value.kind;
+                                        word.sentense = VAR_PREDICATE;
+                                        syntax.Add(word);
+                                    });
+                                    //---
+                                    LicaoModel lesson = new LicaoModel();
+                                    lesson.lecture = syntax;
+                                    new_lesson.Add(lesson);
+                                }
+                            }
+                        }
+                    }
+                }
+                //---
+                return new_lesson;
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
+            }
+        }
+
+        public List<LicaoModel> PeriodP_V_Adv(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -3835,7 +4299,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVAdvP(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_Adv_P(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -3941,7 +4405,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVAdvPrP(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_Adv_Pr_P(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -4067,7 +4531,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVAdvN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_Adv_N(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -4173,7 +4637,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVAdvPrN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_Adv_Pr_N(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -4299,7 +4763,345 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVAdvAdjP(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_Adv_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        {
+            try
+            {
+                //---
+                List<LicaoModel> new_lesson = new List<LicaoModel>();
+                //---
+                Dictionary<(string, string), int> word_2_vec = Word2Vec(sentence);
+                HashSet<string> vocabulary = Vocabulary(sentence);
+                //---
+                List<string> type_verb = new List<string>();
+                type_verb.Add(VAR_VERB);
+                //---
+                List<string> type_pronoun = new List<string>();
+                type_pronoun.Add(VAR_PERSONAL);
+                type_pronoun.Add(VAR_DEMONSTRATIVE);
+                //---
+                List<string> type_adverb = new List<string>();
+                type_adverb.Add(VAR_ADVERB);
+                //---
+                List<string> type_adjective_noun = new List<string>();
+                type_adjective_noun.Add(VAR_ADJECTIVE_NOUN);
+                //---
+                List<LicaoModel> list_verb = new List<LicaoModel>();
+                list_verb = FilterTypeMorphology(period, type_verb);
+                //---
+                List<LicaoModel> list_pronoun = new List<LicaoModel>();
+                list_pronoun = FilterTypeMorphology(period, type_pronoun);
+                //---
+                List<LicaoModel> list_adverb = new List<LicaoModel>();
+                list_adverb = FilterTypeMorphology(period, type_adverb);
+                //---
+                List<LicaoModel> list_adjective_noun = new List<LicaoModel>();
+                list_adjective_noun = FilterTypeMorphology(period, type_adjective_noun);
+                //---
+                foreach (LicaoModel verb_value in list_verb)
+                {
+                    //---
+                    foreach (LicaoModel pronoun_value in list_pronoun)
+                    {
+                        //---
+                        foreach (LicaoModel adverb_value in list_adverb)
+                        {
+                            //---
+                            foreach (LicaoModel noun_adjective_value in list_adjective_noun)
+                            {
+                                //---
+                                List<WordModel> syntax = new List<WordModel>();
+                                List<WordModel> item = new List<WordModel>();
+                                //---
+                                verb_value.lecture.ForEach(value =>
+                                {
+                                    WordModel word = new WordModel();
+                                    word.term = value.term;
+                                    word.kind = value.kind;
+                                    word.sentense = VAR_PREDICATE;
+                                    syntax.Add(word);
+                                });
+                                //---
+                                item = new List<WordModel>();
+                                pronoun_value.lecture.ForEach(value =>
+                                {
+                                    WordModel word = new WordModel();
+                                    word.term = value.term;
+                                    word.kind = value.kind;
+                                    word.sentense = VAR_SUBJECT;
+                                    syntax.Add(word);
+                                });
+                                //---
+                                item = new List<WordModel>();
+                                adverb_value.lecture.ForEach(value =>
+                                {
+                                    WordModel word = new WordModel();
+                                    word.term = value.term;
+                                    word.kind = value.kind;
+                                    word.sentense = VAR_PREDICATE;
+                                    syntax.Add(word);
+                                });
+                                //---
+                                item = new List<WordModel>();
+                                noun_adjective_value.lecture.ForEach(value =>
+                                {
+                                    WordModel word = new WordModel();
+                                    word.term = value.term;
+                                    word.kind = value.kind;
+                                    word.sentense = VAR_PREDICATE;
+                                    syntax.Add(word);
+                                });
+                                //---
+                                LicaoModel lesson = new LicaoModel();
+                                lesson.lecture = syntax;
+                                new_lesson.Add(lesson);
+                            }
+                        }
+                    }
+                }
+                //---
+                return new_lesson;
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
+            }
+        }
+
+        public List<LicaoModel> PeriodP_V_Adv_Pr_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        {
+            try
+            {
+                //---
+                List<LicaoModel> new_lesson = new List<LicaoModel>();
+                //---
+                Dictionary<(string, string), int> word_2_vec = Word2Vec(sentence);
+                HashSet<string> vocabulary = Vocabulary(sentence);
+                //---
+                List<string> type_verb = new List<string>();
+                type_verb.Add(VAR_VERB);
+                //---
+                List<string> type_pronoun = new List<string>();
+                type_pronoun.Add(VAR_PERSONAL);
+                type_pronoun.Add(VAR_DEMONSTRATIVE);
+                //---
+                List<string> type_adverb = new List<string>();
+                type_adverb.Add(VAR_ADVERB);
+                //---
+                List<string> type_adjective_noun = new List<string>();
+                type_adjective_noun.Add(VAR_ADJECTIVE_NOUN);
+                //---
+                List<string> type_preposition = new List<string>();
+                type_preposition.Add(VAR_PREPOSITION);
+                //---
+                List<LicaoModel> list_verb = new List<LicaoModel>();
+                list_verb = FilterTypeMorphology(period, type_verb);
+                //---
+                List<LicaoModel> list_pronoun = new List<LicaoModel>();
+                list_pronoun = FilterTypeMorphology(period, type_pronoun);
+                //---
+                List<LicaoModel> list_adverb = new List<LicaoModel>();
+                list_adverb = FilterTypeMorphology(period, type_adverb);
+                //---
+                List<LicaoModel> list_adjective_noun = new List<LicaoModel>();
+                list_adjective_noun = FilterTypeMorphology(period, type_adjective_noun);
+                //---
+                List<LicaoModel> list_preposition = new List<LicaoModel>();
+                list_preposition = FilterTypeMorphology(period, type_preposition);
+                //---
+                foreach (LicaoModel verb_value in list_verb)
+                {
+                    //---
+                    foreach (LicaoModel pronoun_value in list_pronoun)
+                    {
+                        //---
+                        foreach (LicaoModel adverb_value in list_adverb)
+                        {
+                            //---
+                            foreach (LicaoModel adjective_noun_value in list_adjective_noun)
+                            {
+                                //---
+                                foreach (LicaoModel preposition_value in list_preposition)
+                                {
+                                    //---
+                                    List<WordModel> syntax = new List<WordModel>();
+                                    List<WordModel> item = new List<WordModel>();
+                                    //---
+                                    verb_value.lecture.ForEach(value =>
+                                    {
+                                        WordModel word = new WordModel();
+                                        word.term = value.term;
+                                        word.kind = value.kind;
+                                        word.sentense = VAR_PREDICATE;
+                                        syntax.Add(word);
+                                    });
+                                    //---
+                                    item = new List<WordModel>();
+                                    pronoun_value.lecture.ForEach(value =>
+                                    {
+                                        WordModel word = new WordModel();
+                                        word.term = value.term;
+                                        word.kind = value.kind;
+                                        word.sentense = VAR_SUBJECT;
+                                        syntax.Add(word);
+                                    });
+                                    //---
+                                    item = new List<WordModel>();
+                                    adverb_value.lecture.ForEach(value =>
+                                    {
+                                        WordModel word = new WordModel();
+                                        word.term = value.term;
+                                        word.kind = value.kind;
+                                        word.sentense = VAR_PREDICATE;
+                                        syntax.Add(word);
+                                    });
+                                    //---
+                                    item = new List<WordModel>();
+                                    adjective_noun_value.lecture.ForEach(value =>
+                                    {
+                                        WordModel word = new WordModel();
+                                        word.term = value.term;
+                                        word.kind = value.kind;
+                                        word.sentense = VAR_PREDICATE;
+                                        syntax.Add(word);
+                                    });
+                                    //---
+                                    item = new List<WordModel>();
+                                    preposition_value.lecture.ForEach(value =>
+                                    {
+                                        WordModel word = new WordModel();
+                                        word.term = value.term;
+                                        word.kind = value.kind;
+                                        word.sentense = VAR_PREDICATE;
+                                        syntax.Add(word);
+                                    });
+                                    //---
+                                    LicaoModel lesson = new LicaoModel();
+                                    lesson.lecture = syntax;
+                                    new_lesson.Add(lesson);
+                                }
+                            }
+                        }
+                    }
+                }
+                //---
+                return new_lesson;
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
+            }
+        }
+
+        public List<LicaoModel> PeriodP_V_Adv_Adj(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        {
+            try
+            {
+                //---
+                List<LicaoModel> new_lesson = new List<LicaoModel>();
+                //---
+                Dictionary<(string, string), int> word_2_vec = Word2Vec(sentence);
+                HashSet<string> vocabulary = Vocabulary(sentence);
+                //---
+                List<string> type_verb = new List<string>();
+                type_verb.Add(VAR_VERB);
+                //---
+                List<string> type_pronoun = new List<string>();
+                type_pronoun.Add(VAR_PERSONAL);
+                type_pronoun.Add(VAR_DEMONSTRATIVE);
+                //---
+                List<string> type_adverb = new List<string>();
+                type_adverb.Add(VAR_ADVERB);
+                //---
+                List<string> type_adjective = new List<string>();
+                type_adjective.Add(VAR_ADJECTIVE);
+                //---
+                List<LicaoModel> list_verb = new List<LicaoModel>();
+                list_verb = FilterTypeMorphology(period, type_verb);
+                //---
+                List<LicaoModel> list_pronoun = new List<LicaoModel>();
+                list_pronoun = FilterTypeMorphology(period, type_pronoun);
+                //---
+                List<LicaoModel> list_adverb = new List<LicaoModel>();
+                list_adverb = FilterTypeMorphology(period, type_adverb);
+                //---
+                List<LicaoModel> list_adjective = new List<LicaoModel>();
+                list_adjective = FilterTypeMorphology(period, type_adjective);
+                //---
+                foreach (LicaoModel verb_value in list_verb)
+                {
+                    //---
+                    foreach (LicaoModel pronoun_value in list_pronoun)
+                    {
+                        //---
+                        foreach (LicaoModel adverb_value in list_adverb)
+                        {
+                            //---
+                            foreach (LicaoModel adjective_value in list_adjective)
+                            {
+                                //---
+                                List<WordModel> syntax = new List<WordModel>();
+                                List<WordModel> item = new List<WordModel>();
+                                //---
+                                verb_value.lecture.ForEach(value =>
+                                {
+                                    WordModel word = new WordModel();
+                                    word.term = value.term;
+                                    word.kind = value.kind;
+                                    word.sentense = VAR_PREDICATE;
+                                    syntax.Add(word);
+                                });
+                                //---
+                                item = new List<WordModel>();
+                                pronoun_value.lecture.ForEach(value =>
+                                {
+                                    WordModel word = new WordModel();
+                                    word.term = value.term;
+                                    word.kind = value.kind;
+                                    word.sentense = VAR_SUBJECT;
+                                    syntax.Add(word);
+                                });
+                                //---
+                                item = new List<WordModel>();
+                                adverb_value.lecture.ForEach(value =>
+                                {
+                                    WordModel word = new WordModel();
+                                    word.term = value.term;
+                                    word.kind = value.kind;
+                                    word.sentense = VAR_PREDICATE;
+                                    syntax.Add(word);
+                                });
+                                //---
+                                item = new List<WordModel>();
+                                adjective_value.lecture.ForEach(value =>
+                                {
+                                    WordModel word = new WordModel();
+                                    word.term = value.term;
+                                    word.kind = value.kind;
+                                    word.sentense = VAR_PREDICATE;
+                                    syntax.Add(word);
+                                });
+                                //---
+                                LicaoModel lesson = new LicaoModel();
+                                lesson.lecture = syntax;
+                                new_lesson.Add(lesson);
+                            }
+                        }
+                    }
+                }
+                //---
+                return new_lesson;
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
+            }
+        }
+
+        public List<LicaoModel> PeriodP_V_Adv_Adj_P(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -4425,7 +5227,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVAdvAdjPrP(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_Adv_Adj_Pr_P(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -4571,7 +5373,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVAdvAdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_Adv_Adj_N(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -4591,8 +5393,11 @@ namespace Letter.ViewsModels
                 List<string> type_adverb = new List<string>();
                 type_adverb.Add(VAR_ADVERB);
                 //---
-                List<string> type_adjective_noun = new List<string>();
-                type_adjective_noun.Add(VAR_ADJECTIVE_NOUN);
+                List<string> type_adjective = new List<string>();
+                type_adjective.Add(VAR_ADJECTIVE);
+                //---
+                List<string> type_noun = new List<string>();
+                type_noun.Add(VAR_NOUN);
                 //---
                 List<LicaoModel> list_verb = new List<LicaoModel>();
                 list_verb = FilterTypeMorphology(period, type_verb);
@@ -4603,8 +5408,11 @@ namespace Letter.ViewsModels
                 List<LicaoModel> list_adverb = new List<LicaoModel>();
                 list_adverb = FilterTypeMorphology(period, type_adverb);
                 //---
-                List<LicaoModel> list_adjective_noun = new List<LicaoModel>();
-                list_adjective_noun = FilterTypeMorphology(period, type_adjective_noun);
+                List<LicaoModel> list_adjective = new List<LicaoModel>();
+                list_adjective = FilterTypeMorphology(period, type_adjective);
+                //---
+                List<LicaoModel> list_noun = new List<LicaoModel>();
+                list_noun = FilterTypeMorphology(period, type_noun);
                 //---
                 foreach (LicaoModel verb_value in list_verb)
                 {
@@ -4615,122 +5423,10 @@ namespace Letter.ViewsModels
                         foreach (LicaoModel adverb_value in list_adverb)
                         {
                             //---
-                            foreach (LicaoModel adjective_noun_value in list_adjective_noun)
+                            foreach (LicaoModel adjective_value in list_adjective)
                             {
                                 //---
-                                List<WordModel> syntax = new List<WordModel>();
-                                List<WordModel> item = new List<WordModel>();
-                                //---
-                                verb_value.lecture.ForEach(value =>
-                                {
-                                    WordModel word = new WordModel();
-                                    word.term = value.term;
-                                    word.kind = value.kind;
-                                    word.sentense = VAR_PREDICATE;
-                                    syntax.Add(word);
-                                });
-                                //---
-                                item = new List<WordModel>();
-                                pronoun_value.lecture.ForEach(value =>
-                                {
-                                    WordModel word = new WordModel();
-                                    word.term = value.term;
-                                    word.kind = value.kind;
-                                    word.sentense = VAR_SUBJECT;
-                                    syntax.Add(word);
-                                });
-                                //---
-                                item = new List<WordModel>();
-                                adverb_value.lecture.ForEach(value =>
-                                {
-                                    WordModel word = new WordModel();
-                                    word.term = value.term;
-                                    word.kind = value.kind;
-                                    word.sentense = VAR_PREDICATE;
-                                    syntax.Add(word);
-                                });
-                                //---
-                                item = new List<WordModel>();
-                                adjective_noun_value.lecture.ForEach(value =>
-                                {
-                                    WordModel word = new WordModel();
-                                    word.term = value.term;
-                                    word.kind = value.kind;
-                                    word.sentense = VAR_PREDICATE;
-                                    syntax.Add(word);
-                                });
-                                //---
-                                LicaoModel lesson = new LicaoModel();
-                                lesson.lecture = syntax;
-                                new_lesson.Add(lesson);
-                            }
-                        }
-                    }
-                }
-                //---
-                return new_lesson;
-            }
-            catch (Exception)
-            {
-                return null;
-                throw;
-            }
-        }
-
-        public List<LicaoModel> PeriodPVAdvPrAdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
-        {
-            try
-            {
-                //---
-                List<LicaoModel> new_lesson = new List<LicaoModel>();
-                //---
-                Dictionary<(string, string), int> word_2_vec = Word2Vec(sentence);
-                HashSet<string> vocabulary = Vocabulary(sentence);
-                //---
-                List<string> type_verb = new List<string>();
-                type_verb.Add(VAR_VERB);
-                //---
-                List<string> type_pronoun = new List<string>();
-                type_pronoun.Add(VAR_PERSONAL);
-                type_pronoun.Add(VAR_DEMONSTRATIVE);
-                //---
-                List<string> type_adverb = new List<string>();
-                type_adverb.Add(VAR_ADVERB);
-                //---
-                List<string> type_adjective_noun = new List<string>();
-                type_adjective_noun.Add(VAR_ADJECTIVE_NOUN);
-                //---
-                List<string> type_preposition = new List<string>();
-                type_preposition.Add(VAR_PREPOSITION);
-                //---
-                List<LicaoModel> list_verb = new List<LicaoModel>();
-                list_verb = FilterTypeMorphology(period, type_verb);
-                //---
-                List<LicaoModel> list_pronoun = new List<LicaoModel>();
-                list_pronoun = FilterTypeMorphology(period, type_pronoun);
-                //---
-                List<LicaoModel> list_adverb = new List<LicaoModel>();
-                list_adverb = FilterTypeMorphology(period, type_adverb);
-                //---
-                List<LicaoModel> list_adjective_noun = new List<LicaoModel>();
-                list_adjective_noun = FilterTypeMorphology(period, type_adjective_noun);
-                //---
-                List<LicaoModel> list_preposition = new List<LicaoModel>();
-                list_preposition = FilterTypeMorphology(period, type_preposition);
-                //---
-                foreach (LicaoModel verb_value in list_verb)
-                {
-                    //---
-                    foreach (LicaoModel pronoun_value in list_pronoun)
-                    {
-                        //---
-                        foreach (LicaoModel adverb_value in list_adverb)
-                        {
-                            //---
-                            foreach (LicaoModel adjective_noun_value in list_adjective_noun)
-                            {
-                                //---
-                                foreach (LicaoModel preposition_value in list_preposition)
+                                foreach (LicaoModel noun_value in list_noun)
                                 {
                                     //---
                                     List<WordModel> syntax = new List<WordModel>();
@@ -4766,7 +5462,7 @@ namespace Letter.ViewsModels
                                     });
                                     //---
                                     item = new List<WordModel>();
-                                    adjective_noun_value.lecture.ForEach(value =>
+                                    adjective_value.lecture.ForEach(value =>
                                     {
                                         WordModel word = new WordModel();
                                         word.term = value.term;
@@ -4776,7 +5472,7 @@ namespace Letter.ViewsModels
                                     });
                                     //---
                                     item = new List<WordModel>();
-                                    preposition_value.lecture.ForEach(value =>
+                                    noun_value.lecture.ForEach(value =>
                                     {
                                         WordModel word = new WordModel();
                                         word.term = value.term;
@@ -4803,7 +5499,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVAdvAdj(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_Adv_Adj_Pr_N(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -4826,6 +5522,12 @@ namespace Letter.ViewsModels
                 List<string> type_adjective = new List<string>();
                 type_adjective.Add(VAR_ADJECTIVE);
                 //---
+                List<string> type_noun = new List<string>();
+                type_noun.Add(VAR_NOUN);
+                //---
+                List<string> type_preposition = new List<string>();
+                type_preposition.Add(VAR_PREPOSITION);
+                //---
                 List<LicaoModel> list_verb = new List<LicaoModel>();
                 list_verb = FilterTypeMorphology(period, type_verb);
                 //---
@@ -4837,6 +5539,12 @@ namespace Letter.ViewsModels
                 //---
                 List<LicaoModel> list_adjective = new List<LicaoModel>();
                 list_adjective = FilterTypeMorphology(period, type_adjective);
+                //---
+                List<LicaoModel> list_noun = new List<LicaoModel>();
+                list_noun = FilterTypeMorphology(period, type_noun);
+                //---
+                List<LicaoModel> list_preposition = new List<LicaoModel>();
+                list_preposition = FilterTypeMorphology(period, type_preposition);
                 //---
                 foreach (LicaoModel verb_value in list_verb)
                 {
@@ -4850,51 +5558,79 @@ namespace Letter.ViewsModels
                             foreach (LicaoModel adjective_value in list_adjective)
                             {
                                 //---
-                                List<WordModel> syntax = new List<WordModel>();
-                                List<WordModel> item = new List<WordModel>();
-                                //---
-                                verb_value.lecture.ForEach(value =>
+                                foreach (LicaoModel noun_value in list_noun)
                                 {
-                                    WordModel word = new WordModel();
-                                    word.term = value.term;
-                                    word.kind = value.kind;
-                                    word.sentense = VAR_PREDICATE;
-                                    syntax.Add(word);
-                                });
-                                //---
-                                item = new List<WordModel>();
-                                pronoun_value.lecture.ForEach(value =>
-                                {
-                                    WordModel word = new WordModel();
-                                    word.term = value.term;
-                                    word.kind = value.kind;
-                                    word.sentense = VAR_SUBJECT;
-                                    syntax.Add(word);
-                                });
-                                //---
-                                item = new List<WordModel>();
-                                adverb_value.lecture.ForEach(value =>
-                                {
-                                    WordModel word = new WordModel();
-                                    word.term = value.term;
-                                    word.kind = value.kind;
-                                    word.sentense = VAR_PREDICATE;
-                                    syntax.Add(word);
-                                });
-                                //---
-                                item = new List<WordModel>();
-                                adjective_value.lecture.ForEach(value =>
-                                {
-                                    WordModel word = new WordModel();
-                                    word.term = value.term;
-                                    word.kind = value.kind;
-                                    word.sentense = VAR_PREDICATE;
-                                    syntax.Add(word);
-                                });
-                                //---
-                                LicaoModel lesson = new LicaoModel();
-                                lesson.lecture = syntax;
-                                new_lesson.Add(lesson);
+                                    //---
+                                    foreach (LicaoModel preposition_value in list_preposition)
+                                    {
+                                        //---
+                                        List<WordModel> syntax = new List<WordModel>();
+                                        List<WordModel> item = new List<WordModel>();
+                                        //---
+                                        verb_value.lecture.ForEach(value =>
+                                        {
+                                            WordModel word = new WordModel();
+                                            word.term = value.term;
+                                            word.kind = value.kind;
+                                            word.sentense = VAR_PREDICATE;
+                                            syntax.Add(word);
+                                        });
+                                        //---
+                                        item = new List<WordModel>();
+                                        pronoun_value.lecture.ForEach(value =>
+                                        {
+                                            WordModel word = new WordModel();
+                                            word.term = value.term;
+                                            word.kind = value.kind;
+                                            word.sentense = VAR_SUBJECT;
+                                            syntax.Add(word);
+                                        });
+                                        //---
+                                        item = new List<WordModel>();
+                                        adverb_value.lecture.ForEach(value =>
+                                        {
+                                            WordModel word = new WordModel();
+                                            word.term = value.term;
+                                            word.kind = value.kind;
+                                            word.sentense = VAR_PREDICATE;
+                                            syntax.Add(word);
+                                        });
+                                        //---
+                                        item = new List<WordModel>();
+                                        adjective_value.lecture.ForEach(value =>
+                                        {
+                                            WordModel word = new WordModel();
+                                            word.term = value.term;
+                                            word.kind = value.kind;
+                                            word.sentense = VAR_PREDICATE;
+                                            syntax.Add(word);
+                                        });
+                                        //---
+                                        item = new List<WordModel>();
+                                        noun_value.lecture.ForEach(value =>
+                                        {
+                                            WordModel word = new WordModel();
+                                            word.term = value.term;
+                                            word.kind = value.kind;
+                                            word.sentense = VAR_PREDICATE;
+                                            syntax.Add(word);
+                                        });
+                                        //---
+                                        item = new List<WordModel>();
+                                        preposition_value.lecture.ForEach(value =>
+                                        {
+                                            WordModel word = new WordModel();
+                                            word.term = value.term;
+                                            word.kind = value.kind;
+                                            word.sentense = VAR_PREDICATE;
+                                            syntax.Add(word);
+                                        });
+                                        //---
+                                        LicaoModel lesson = new LicaoModel();
+                                        lesson.lecture = syntax;
+                                        new_lesson.Add(lesson);
+                                    }
+                                }
                             }
                         }
                     }
@@ -4909,7 +5645,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVAdvAdjAdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_Adv_Adj_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
@@ -5035,7 +5771,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<LicaoModel> PeriodPVAdvAdjPrAdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
+        public List<LicaoModel> PeriodP_V_Adv_Adj_Pr_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period)
         {
             try
             {
