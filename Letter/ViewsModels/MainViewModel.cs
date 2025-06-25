@@ -3,7 +3,6 @@ using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using static Android.Graphics.ColorSpace;
 
 namespace Letter.ViewsModels
 {
@@ -107,6 +106,39 @@ namespace Letter.ViewsModels
             }
         }
 
+        public List<LicaoModel> MountPeriod(string language, List<DitadoModel> sentence, List<LicaoModel> list_previous, List<LicaoModel> list_term, bool noun)
+        {
+            try
+            {
+                //---
+                List<LicaoModel> list_word = new List<LicaoModel>();
+                //---
+                if (list_previous == null) list_word = MountOrder(PeriodSS_V(language, sentence, list_term, noun));
+                else list_word = MountOrder(list_previous, PeriodSS_V(language, sentence, list_term, noun));
+                //---
+                list_word = MountOrder(list_word, PeriodSS_V_P(language, sentence, list_term, noun));
+                list_word = MountOrder(list_word, PeriodSS_V_Pr_P(language, sentence, list_term, noun));
+                list_word = MountOrder(list_word, PeriodSS_V_N(language, sentence, list_term, noun));
+                list_word = MountOrder(list_word, PeriodSS_V_Pr_N(language, sentence, list_term, noun));
+                list_word = MountOrder(list_word, PeriodSS_V_AdjN(language, sentence, list_term, noun));
+                list_word = MountOrder(list_word, PeriodSS_V_Pr_AdjN(language, sentence, list_term, noun));
+                //---
+                list_word = MountOrder(list_word, PeriodSS_V_Adj(language, sentence, list_term, noun));
+                list_word = MountOrder(list_word, PeriodSS_V_Adj_P(language, sentence, list_term, noun));
+                list_word = MountOrder(list_word, PeriodSS_V_Adj_Pr_P(language, sentence, list_term, noun));
+                list_word = MountOrder(list_word, PeriodSS_V_Adj_N(language, sentence, list_term, noun));
+                list_word = MountOrder(list_word, PeriodSS_V_Adj_Pr_N(language, sentence, list_term, noun));
+                list_word = MountOrder(list_word, PeriodSS_V_Adj_AdjN(language, sentence, list_term, noun));
+                list_word = MountOrder(list_word, PeriodSS_V_Adj_Pr_AdjN(language, sentence, list_term, noun));
+                //---
+                return list_word;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public List<WordModel> GetPrevious(string language, FraseModel lesson, List<FraseModel> book)
         {
             try
@@ -131,7 +163,6 @@ namespace Letter.ViewsModels
                 List<LicaoModel> mount_verb = MountMorphologyVerb(sentence, list_model, list_verb, list_adverb);
                 List<LicaoModel> mount_adjective = MountMorphologyAdjective(sentence, list_adjective, list_adverb);
                 List<LicaoModel> mount_adjective_noun = MountMorphologyAdjectiveNoun(sentence, list_adjective, list_adverb, list_noun, list_article);
-                List<LicaoModel> mount_adverb = MountMorphologyAdverb(sentence, list_adverb);
                 List<LicaoModel> mount_digit = MountMorphologyDigit(sentence, list_digit);
                 List<LicaoModel> mount_article = MountMorphologyArticle(sentence, list_article);
                 List<LicaoModel> mount_preposition = MountMorphologyPreposition(sentence, list_preposition);
@@ -140,46 +171,14 @@ namespace Letter.ViewsModels
                 List<LicaoModel> list_full = UnionMorphology(mount_noun, mount_verb);
                 list_full = UnionMorphology(list_full, mount_adjective);
                 list_full = UnionMorphology(list_full, mount_adjective_noun);
-                list_full = UnionMorphology(list_full, mount_adverb);
                 list_full = UnionMorphology(list_full, mount_digit);
                 list_full = UnionMorphology(list_full, mount_article);
                 list_full = UnionMorphology(list_full, mount_preposition);
                 list_full = UnionMorphology(list_full, mount_pronoun);
                 //---
                 List<LicaoModel> list_word = new List<LicaoModel>();
-                list_word = MountOrder(PeriodP_V(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_P(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Pr_P(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_N(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Pr_N(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_AdjN(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Pr_AdjN(language, sentence, list_full));
-                //---
-                list_word = MountOrder(list_word, PeriodP_V_Adj(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adj_P(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adj_Pr_P(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adj_N(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adj_Pr_N(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adj_AdjN(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adj_Pr_AdjN(language, sentence, list_full));
-                //---
-                list_word = MountOrder(list_word, PeriodP_V_Adv(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adv_P(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adv_Pr_P(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adv_N(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adv_Pr_N(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adv_AdjN(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adv_Pr_AdjN(language, sentence, list_full));
-                //---
-                list_word = MountOrder(list_word, PeriodP_V_Adv_Adj(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adv_Adj_P(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adv_Adj_Pr_P(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adv_Adj_N(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adv_Adj_Pr_N(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adv_Adj_AdjN(language, sentence, list_full));
-                list_word = MountOrder(list_word, PeriodP_V_Adv_Adj_Pr_AdjN(language, sentence, list_full));
-                //---
-                //List<LicaoModel> word_noun = MountLessonNounVerbNoun(language, union_noun, filter_verb, filter_preposition, sentence, filter_pronoun_possessive);
+                list_word = MountPeriod(language, sentence, null, list_full, false);
+                list_word = MountPeriod(language, sentence, list_word, list_full, true);
                 //---
                 SetLesson(language, list_word);
                 //---

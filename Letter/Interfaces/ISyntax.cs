@@ -14,6 +14,15 @@ interface ISyntax
     //---
     public List<LicaoModel> MountOrder(List<LicaoModel> list_first, List<LicaoModel> list_second);
     //---
+    public bool VerifyVerbSS(List<WordModel> list_word, List<DitadoModel> sentence, bool noun);
+    //---
+    public bool VerifyVerbOD(List<WordModel> list_word, List<DitadoModel> sentence, bool noun);
+    public bool VerifyVerbOI(List<WordModel> list_word, List<DitadoModel> sentence, bool noun);
+    //---
+    public bool VerifyVerbODAA(List<WordModel> list_word, List<DitadoModel> sentence, bool noun);
+    //---
+    public bool VerifyVerbPS(List<WordModel> list_word, List<DitadoModel> sentence);
+    //---
     /* 
      * - P = pronoun
      * - V = verb
@@ -25,47 +34,25 @@ interface ISyntax
      * - D = digit
      * - C = conjunction 
      */
-    public List<LicaoModel> PeriodP_V(string language, List<DitadoModel> sentence, List<LicaoModel> period);
+    public List<LicaoModel> PeriodSS_V(string language, List<DitadoModel> sentence, List<LicaoModel> period, bool noun);
     //---
-    public List<LicaoModel> PeriodP_V_P(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    public List<LicaoModel> PeriodP_V_Pr_P(string language, List<DitadoModel> sentence, List<LicaoModel> period);
+    public List<LicaoModel> PeriodSS_V_P(string language, List<DitadoModel> sentence, List<LicaoModel> period, bool noun);
+    public List<LicaoModel> PeriodSS_V_Pr_P(string language, List<DitadoModel> sentence, List<LicaoModel> period, bool noun);
     //---
-    public List<LicaoModel> PeriodP_V_N(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    public List<LicaoModel> PeriodP_V_Pr_N(string language, List<DitadoModel> sentence, List<LicaoModel> period);
+    public List<LicaoModel> PeriodSS_V_N(string language, List<DitadoModel> sentence, List<LicaoModel> period, bool noun);
+    public List<LicaoModel> PeriodSS_V_Pr_N(string language, List<DitadoModel> sentence, List<LicaoModel> period, bool noun);
     //---
-    public List<LicaoModel> PeriodP_V_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    public List<LicaoModel> PeriodP_V_Pr_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period);
+    public List<LicaoModel> PeriodSS_V_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period, bool noun);
+    public List<LicaoModel> PeriodSS_V_Pr_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period, bool noun);
     //---
-    public List<LicaoModel> PeriodP_V_Adj(string language, List<DitadoModel> sentence, List<LicaoModel> period);
+    public List<LicaoModel> PeriodSS_V_Adj(string language, List<DitadoModel> sentence, List<LicaoModel> period, bool noun);
     //---
-    public List<LicaoModel> PeriodP_V_Adj_P(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    public List<LicaoModel> PeriodP_V_Adj_Pr_P(string language, List<DitadoModel> sentence, List<LicaoModel> period);
+    public List<LicaoModel> PeriodSS_V_Adj_P(string language, List<DitadoModel> sentence, List<LicaoModel> period, bool noun);
+    public List<LicaoModel> PeriodSS_V_Adj_Pr_P(string language, List<DitadoModel> sentence, List<LicaoModel> period, bool noun);
     //---
-    public List<LicaoModel> PeriodP_V_Adj_N(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    public List<LicaoModel> PeriodP_V_Adj_Pr_N(string language, List<DitadoModel> sentence, List<LicaoModel> period);
+    public List<LicaoModel> PeriodSS_V_Adj_N(string language, List<DitadoModel> sentence, List<LicaoModel> period, bool noun);
+    public List<LicaoModel> PeriodSS_V_Adj_Pr_N(string language, List<DitadoModel> sentence, List<LicaoModel> period, bool noun);
     //---
-    public List<LicaoModel> PeriodP_V_Adj_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    public List<LicaoModel> PeriodP_V_Adj_Pr_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    //---
-    public List<LicaoModel> PeriodP_V_Adv(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    //---
-    public List<LicaoModel> PeriodP_V_Adv_P(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    public List<LicaoModel> PeriodP_V_Adv_Pr_P(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    //---
-    public List<LicaoModel> PeriodP_V_Adv_N(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    public List<LicaoModel> PeriodP_V_Adv_Pr_N(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    //---
-    public List<LicaoModel> PeriodP_V_Adv_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    public List<LicaoModel> PeriodP_V_Adv_Pr_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    //---
-    public List<LicaoModel> PeriodP_V_Adv_Adj(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    //---
-    public List<LicaoModel> PeriodP_V_Adv_Adj_P(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    public List<LicaoModel> PeriodP_V_Adv_Adj_Pr_P(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    //---
-    public List<LicaoModel> PeriodP_V_Adv_Adj_N(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    public List<LicaoModel> PeriodP_V_Adv_Adj_Pr_N(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    //---
-    public List<LicaoModel> PeriodP_V_Adv_Adj_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period);
-    public List<LicaoModel> PeriodP_V_Adv_Adj_Pr_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period);
+    public List<LicaoModel> PeriodSS_V_Adj_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period, bool noun);
+    public List<LicaoModel> PeriodSS_V_Adj_Pr_AdjN(string language, List<DitadoModel> sentence, List<LicaoModel> period, bool noun);
 }

@@ -10,9 +10,7 @@ interface IAdverb
     //---
     public List<CircunstanciaModel> FilterAdverb(List<CircunstanciaModel> adverb, List<DitadoModel> sentence);
     //---
+    public List<LicaoModel> VerifyAdverb(List<LicaoModel> adverb_adverb, List<DitadoModel> sentence);
+    //---
     public List<LicaoModel> MountAdverbAdverb(List<CircunstanciaModel> adverb);
-    //---
-    public List<LicaoModel> UnionAdverb(List<CircunstanciaModel> adverb, List<LicaoModel> adverb_adverb);
-    //---
-    public List<LicaoModel> MountMorphologyAdverb(List<DitadoModel> sentence, List<CircunstanciaModel> adverb);
 }

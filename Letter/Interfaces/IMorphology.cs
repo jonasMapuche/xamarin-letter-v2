@@ -7,6 +7,7 @@ interface IMorphology : IPronoun, IAdjective, IVerb, IArticle, IPreposition, IDi
     //---
     public List<WordModel> Word(string term, string type, string sentence, string model);
     public List<WordModel> WordVerbAdverb(string verb, string adverb);
+    public List<WordModel> WordVerbAdverb(string verb, string adverb_first, string adverb_last);
     public List<WordModel> WordDigitNoun(string noun, string digit);
     public List<WordModel> WordPronounNoun(string noun, string pronoun);
     public List<WordModel> WordArticleNoun(string noun, string article);
@@ -15,6 +16,7 @@ interface IMorphology : IPronoun, IAdjective, IVerb, IArticle, IPreposition, IDi
     public List<WordModel> WordAdjectiveNounArticle(string noun, string adjective, string adverb, string article);
     public List<WordModel> WordAdjectiveNounArticle(string noun, string adjective, string article);
     public List<WordModel> WordAdjectiveAdverb(string adjective, string adverb);
+    public List<WordModel> WordAdjectiveAdverb(string adjective, string adverb_fisrt, string adverb_last);
     public List<WordModel> WordAdverbAdverb(string adverb_main, string adverb);
     //---
     public List<DitadoModel> SelectSentence(string language);

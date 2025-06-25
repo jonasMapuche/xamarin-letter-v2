@@ -6,5 +6,6 @@
         public string kind { get; set; }
         public string sentense { get; set; }
         public string model { get; set; }
+        public string team { get; set; }
     }
 }
