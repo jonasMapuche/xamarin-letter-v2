@@ -79,19 +79,72 @@ namespace Letter.Helpers
             }
         }
 
+        public string[] RemoveScore(string[] words)
+        {
+            try
+            {
+                //---
+                string[] new_words = new string[words.Length];
+                //---
+                int quantity = 0;
+                //---
+                for (int i = 0; i < words.Length - 1; i++)
+                {
+                    //---
+                    switch (words[i])
+                    {
+                        case ".":
+                            new_words[i] = "<br>";
+                            break;
+                        case "!":
+                            new_words[i] = "<br>";
+                            break;
+                        case "?":
+                            new_words[i] = "<br>";
+                            break;
+                        case "¿":
+                            new_words[i] = "<br>";
+                            break;
+                        case "'":
+                            quantity++;
+                            continue;
+                        default:
+                            new_words[i] = words[i];
+                            break;
+                    }
+                }
+                //---
+                int vector = new_words.Length - quantity;
+                string[] end_words = new string[vector];
+                //---
+                int count = 0;
+                //---
+                for (int i = 0; i < new_words.Length - 1; i++)
+                {
+                    //---
+                    if (new_words[i] == null) continue;
+                    end_words[count] = new_words[i];
+                    count++;
+                }
+                //---
+                return end_words;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public Dictionary<(string, string), int> Word2Vec(List<DitadoModel> sentences)
         {
             //---
             Dictionary<(string, string), int> word_pairs = new Dictionary<(string, string), int>();
             string[] words = Saw(sentences).Split(' ');
-            for (int i = 0; i < words.Length - 1; i++)
+            string[] new_words = RemoveScore(words);
+            for (int i = 0; i < new_words.Length - 1; i++)
             {
-                var pair = (words[i], words[i + 1]);
-                if ((pair.Item1 == ".") || (pair.Item2 == ".")) continue;
-                if ((pair.Item1 == "!") || (pair.Item2 == "!")) continue;
-                if ((pair.Item1 == "?") || (pair.Item2 == "?")) continue;
-                if ((pair.Item1 == "¿") || (pair.Item2 == "¿")) continue;
-                if ((pair.Item1 == "'") || (pair.Item2 == "'")) continue;
+                var pair = (new_words[i], new_words[i + 1]);
+                if ((pair.Item1 == "<br>") || (pair.Item2 == "<br>")) continue;
                 if (word_pairs.TryGetValue(pair, out int value))
                 {
                     word_pairs[pair] = ++value;

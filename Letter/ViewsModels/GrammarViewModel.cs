@@ -24,6 +24,7 @@ namespace Letter.ViewsModels
         protected string VAR_POSSESSIVE = "possessivo";
         protected string VAR_DEMONSTRATIVE = "demonstrativo";
         protected string VAR_ADVERB = "adverbio";
+        protected string VAR_ADVERB_ADVERB = "adverbio adverbio";
         protected string VAR_ADJECTIVE_NOUN = "adjetivo substantivo";
         //---
         public static readonly SentenceViewModel _sentencesViewModel = new SentenceViewModel();
@@ -570,7 +571,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<WordModel> WordVerbAdverb(string verb, string adverb_first, string adverb_last)
+        public List<WordModel> WordVerbAdverb(string verb, string adverb, string adverb_adverb)
         {
             try
             {
@@ -578,14 +579,14 @@ namespace Letter.ViewsModels
                 List<WordModel> new_word = new List<WordModel>();
                 //---
                 List<WordModel> iten_word = new List<WordModel>();
-                iten_word = Word(adverb_last, VAR_VERB, null, null);
+                iten_word = Word(adverb_adverb, VAR_ADVERB_ADVERB, null, null);
                 iten_word.ForEach(index =>
                 {
                     new_word.Add(index);
                 });
                 //---
                 iten_word = new List<WordModel>();
-                iten_word = WordVerbAdverb(verb, adverb_first);
+                iten_word = WordVerbAdverb(verb, adverb);
                 iten_word.ForEach(index =>
                 {
                     new_word.Add(index);
@@ -628,7 +629,7 @@ namespace Letter.ViewsModels
             }
         }
 
-        public List<WordModel> WordAdjectiveAdverb(string adjective, string adverb_fisrt, string adverb_last)
+        public List<WordModel> WordAdjectiveAdverb(string adjective, string adverb, string adverb_adverb)
         {
             try
             {
@@ -636,14 +637,14 @@ namespace Letter.ViewsModels
                 List<WordModel> new_word = new List<WordModel>();
                 //---
                 List<WordModel> iten_word = new List<WordModel>();
-                iten_word = Word(adverb_last, VAR_ADVERB, null, null);
+                iten_word = Word(adverb_adverb, VAR_ADVERB_ADVERB, null, null);
                 iten_word.ForEach(index =>
                 {
                     new_word.Add(index);
                 });
                 //---
                 iten_word = new List<WordModel>();
-                iten_word = WordAdjectiveAdverb(adjective, adverb_fisrt);
+                iten_word = WordAdjectiveAdverb(adjective, adverb);
                 iten_word.ForEach(index =>
                 {
                     new_word.Add(index);
@@ -665,7 +666,7 @@ namespace Letter.ViewsModels
                 List<WordModel> new_word = new List<WordModel>();
                 //---
                 List<WordModel> iten_word = new List<WordModel>();
-                iten_word = Word(adverb, VAR_ADVERB, null, null);
+                iten_word = Word(adverb, VAR_ADVERB_ADVERB, null, null);
                 iten_word.ForEach(index =>
                 {
                     new_word.Add(index);
@@ -1243,7 +1244,9 @@ namespace Letter.ViewsModels
                 {
                     model.ForEach(index =>
                     {
-                        if (verb[quantity].modelo.Contains(index))
+                        string value = verb[quantity].modelo.ToString().ToLower();
+                        value = RemoveAccent(value);
+                        if (value.Contains(index))
                             list_verb.Add(verb[quantity]);
                     });
                 }
@@ -1417,21 +1420,18 @@ namespace Letter.ViewsModels
                         //---
                         List<WordModel> word_model = new List<WordModel>();
                         //---
-                        int quantity = 0;
-                        string adverb_first = null;
-                        string adverb_last = null;
+                        string adverb = null;
+                        string adverb_adverb = null;
                         //---
                         circumstance.lecture.ForEach(value =>
                         {
                             //---
-                            if (quantity == 0) adverb_first = value.term;
-                            if (quantity == 1) adverb_last = value.term;
-                            //---
-                            quantity++;
+                            if (value.kind == VAR_ADVERB) adverb = value.term;
+                            if (value.kind == VAR_ADVERB_ADVERB) adverb_adverb = value.term;
                         });
                         //---
                         List<WordModel> item = new List<WordModel>();
-                        item = WordAdjectiveAdverb(verb.nome, adverb_first, adverb_last);
+                        item = WordVerbAdverb(verb.nome, adverb, adverb_adverb);
                         item.ForEach(item =>
                         {
                             word_model.Add(item);
@@ -1547,21 +1547,18 @@ namespace Letter.ViewsModels
                         //---
                         List<WordModel> word_model = new List<WordModel>();
                         //---
-                        int quantity = 0;
-                        string adverb_first = null;
-                        string adverb_last = null;
+                        string adverb = null;
+                        string adverb_adverb = null;
                         //---
                         circumstance.lecture.ForEach(value =>
                         {
                             //---
-                            if (quantity == 0) adverb_first = value.term;
-                            if (quantity == 1) adverb_last = value.term;
-                            //---
-                            quantity++;
+                            if (value.kind == VAR_ADVERB) adverb = value.term;
+                            if (value.kind == VAR_ADVERB_ADVERB) adverb_adverb = value.term;
                         });
                         //---
                         List<WordModel> item = new List<WordModel>();
-                        item = WordAdjectiveAdverb(quality, adverb_first, adverb_last);
+                        item = WordAdjectiveAdverb(quality, adverb, adverb_adverb);
                         item.ForEach(item =>
                         {
                             word_model.Add(item);
@@ -2296,7 +2293,7 @@ namespace Letter.ViewsModels
                 //---
                 List<LicaoModel> new_lesson = new List<LicaoModel>();
                 //---
-                for (int quantity = 0; quantity < lesson.Count() - 1; quantity++)
+                for (int quantity = 0; quantity < lesson.Count(); quantity++)
                 {
                     type.ForEach(index =>
                     {
@@ -2590,22 +2587,19 @@ namespace Letter.ViewsModels
                     //---
                     List<WordModel> iten_word = new List<WordModel>();
                     //---
-                    string word_first = null;
-                    string word_last = null;
-                    int quantity = 0;
+                    string word_adverb = null;
+                    string word_adverb_adverb = null;
                     //---
-                    instruction.lecture.ForEach(word =>
+                    instruction.lecture.ForEach(value =>
                     {
                         //---
-                        if (quantity == 0) word_first = word.term;
-                        if (quantity == 1) word_last = word.term;
+                        if (value.kind == VAR_ADVERB) word_adverb = value.term;
+                        if (value.kind == VAR_ADVERB_ADVERB) word_adverb_adverb = value.term;
                         //---
-                        quantity++;
-                        //---
-                        iten_word.Add(word);
+                        iten_word.Add(value);
                     });
                     //---
-                    bool similarity = Similarity(word_2_vec, vocabulary, word_first, word_last);
+                    bool similarity = Similarity(word_2_vec, vocabulary, word_adverb, word_adverb_adverb);
                     //---
                     if (similarity)
                     {
@@ -3096,7 +3090,7 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_PREDICATE;
-                            word.team = value.team;
+                            word.team = verb_value.team;
                             syntax.Add(word);
                         });
                         //---
@@ -3107,11 +3101,11 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_SUBJECT;
-                            word.team = value.team;
+                            word.team = subject_value.team;
                             syntax.Add(word);
                         });
                         //---
-                        if (VerifyVerbSS(syntax, sentence, noun)) continue;
+                        if (!VerifyVerbSS(syntax, sentence, noun)) continue;
                         //---
                         LicaoModel lesson = new LicaoModel();
                         lesson.lecture = syntax;
@@ -3176,7 +3170,7 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_PREDICATE;
-                            word.team = value.team;
+                            word.team = verb_value.team;
                             syntax.Add(word);
                         });
                         //---
@@ -3187,11 +3181,11 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_SUBJECT;
-                            word.term = value.team;
+                            word.team = subject_value.team;
                             syntax.Add(word);
                         });
                         //---
-                        if (VerifyVerbSS(syntax, sentence, noun)) continue;
+                        if (!VerifyVerbSS(syntax, sentence, noun)) continue;
                         //---
                         foreach (LicaoModel possessive_value in list_possessive)
                         {
@@ -3210,10 +3204,11 @@ namespace Letter.ViewsModels
                                 word.term = value.term;
                                 word.kind = value.kind;
                                 word.sentense = VAR_PREDICATE;
+                                word.team = possessive_value.team;
                                 level_1.Add(word);
                             });
                             //---
-                            if (VerifyVerbOD(level_1, sentence, noun)) continue;
+                            if (!VerifyVerbOD(level_1, sentence, false)) continue;
                             //---
                             LicaoModel lesson = new LicaoModel();
                             lesson.lecture = level_1;
@@ -3285,7 +3280,7 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_PREDICATE;
-                            word.team = value.team;
+                            word.team = verb_value.team;
                             syntax.Add(word);
                         });
                         //---
@@ -3296,11 +3291,11 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_SUBJECT;
-                            word.team = value.team;
+                            word.team = subject_value.team;
                             syntax.Add(word);
                         });
                         //---
-                        if (VerifyVerbSS(syntax, sentence, noun)) continue;
+                        if (!VerifyVerbSS(syntax, sentence, noun)) continue;
                         //---
                         foreach (LicaoModel preposition_value in list_preposition)
                         {
@@ -3322,7 +3317,7 @@ namespace Letter.ViewsModels
                                     word.term = value.term;
                                     word.kind = value.kind;
                                     word.sentense = VAR_PREDICATE;
-                                    word.team = value.team;
+                                    word.team = possessive_value.team;
                                     level_1.Add(word);
                                 });
                                 //---
@@ -3333,11 +3328,11 @@ namespace Letter.ViewsModels
                                     word.term = value.term;
                                     word.kind = value.kind;
                                     word.sentense = VAR_PREDICATE;
-                                    word.team = value.team;
+                                    word.team = preposition_value.team;
                                     level_1.Add(word);
                                 });
                                 //---
-                                if (VerifyVerbOI(level_1, sentence, noun)) continue;
+                                if (!VerifyVerbOI(level_1, sentence)) continue;
                                 //---
                                 LicaoModel lesson = new LicaoModel();
                                 lesson.lecture = level_1;
@@ -3401,7 +3396,7 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_PREDICATE;
-                            word.team = value.team;
+                            word.team = verb_value.team;
                             syntax.Add(word);
                         });
                         //---
@@ -3412,11 +3407,11 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_SUBJECT;
-                            word.team = value.team;
+                            word.team = subject_value.team;
                             syntax.Add(word);
                         });
                         //---
-                        if (VerifyVerbSS(syntax, sentence, noun)) continue;
+                        if (!VerifyVerbSS(syntax, sentence, noun)) continue;
                         //---
                         foreach (LicaoModel noun_value in list_noun)
                         {
@@ -3435,11 +3430,11 @@ namespace Letter.ViewsModels
                                 word.term = value.term;
                                 word.kind = value.kind;
                                 word.sentense = VAR_PREDICATE;
-                                word.team = value.team;
+                                word.team = noun_value.team;
                                 level_1.Add(word);
                             });
                             //---
-                            if (VerifyVerbOD(level_1, sentence, noun)) continue;
+                            if (!VerifyVerbOD(level_1, sentence, true)) continue;
                             //---
                             LicaoModel lesson = new LicaoModel();
                             lesson.lecture = level_1;
@@ -3508,7 +3503,7 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_PREDICATE;
-                            word.team = value.team;
+                            word.team = verb_value.team;
                             syntax.Add(word);
                         });
                         //---
@@ -3519,11 +3514,11 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_SUBJECT;
-                            word.team = value.team;
+                            word.team = subject_value.team;
                             syntax.Add(word);
                         });
                         //---
-                        if (VerifyVerbSS(syntax, sentence, noun)) continue;
+                        if (!VerifyVerbSS(syntax, sentence, noun)) continue;
                         //---
                         foreach (LicaoModel preposition_value in list_preposition)
                         {
@@ -3545,7 +3540,7 @@ namespace Letter.ViewsModels
                                     word.term = value.term;
                                     word.kind = value.kind;
                                     word.sentense = VAR_PREDICATE;
-                                    word.team= value.team;
+                                    word.team = noun_value.team;
                                     level_1.Add(word);
                                 });
                                 //---
@@ -3556,11 +3551,11 @@ namespace Letter.ViewsModels
                                     word.term = value.term;
                                     word.kind = value.kind;
                                     word.sentense = VAR_PREDICATE;
-                                    word.team = value.team;
+                                    word.team = preposition_value.team;
                                     level_1.Add(word);
                                 });
                                 //---
-                                if (VerifyVerbOI(level_1, sentence, noun)) continue;
+                                if (!VerifyVerbOI(level_1, sentence)) continue;
                                 //---
                                 LicaoModel lesson = new LicaoModel();
                                 lesson.lecture = level_1;
@@ -3627,7 +3622,7 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_PREDICATE;
-                            word.team = value.team;
+                            word.team = verb_value.team;
                             syntax.Add(word);
                         });
                         //---
@@ -3638,11 +3633,11 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_SUBJECT;
-                            word.team = value.team; 
+                            word.team = subject_value.team; 
                             syntax.Add(word);
                         });
                         //---
-                        if (VerifyVerbSS(syntax, sentence, noun)) continue;
+                        if (!VerifyVerbSS(syntax, sentence, noun)) continue;
                         //---
                         foreach (LicaoModel adjective_noun_value in list_adjective_noun)
                         {
@@ -3661,11 +3656,11 @@ namespace Letter.ViewsModels
                                 word.term = value.term;
                                 word.kind = value.kind;
                                 word.sentense = VAR_PREDICATE;
-                                word.team = value.team;
+                                word.team = adjective_noun_value.team;
                                 level_1.Add(word);
                             });
                             //---
-                            if (VerifyVerbODAA(level_1, sentence, noun)) continue;
+                            if (!VerifyVerbODAA(level_1, sentence)) continue;
                             //---
                             LicaoModel lesson = new LicaoModel();
                             lesson.lecture = level_1;
@@ -3737,7 +3732,7 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_PREDICATE;
-                            word.team = value.team;
+                            word.team = verb_value.team;
                             syntax.Add(word);
                         });
                         //---
@@ -3748,11 +3743,11 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_SUBJECT;
-                            word.team = value.team; 
+                            word.team = subject_value.team; 
                             syntax.Add(word);
                         });
                         //---
-                        if (VerifyVerbSS(syntax, sentence, noun)) continue;
+                        if (!VerifyVerbSS(syntax, sentence, noun)) continue;
                         //---
                         foreach (LicaoModel preposition_value in list_preposition)
                         {
@@ -3774,7 +3769,7 @@ namespace Letter.ViewsModels
                                     word.term = value.term;
                                     word.kind = value.kind;
                                     word.sentense = VAR_PREDICATE;
-                                    word.team = value.team; 
+                                    word.team = adjective_noun_value.team; 
                                     level_1.Add(word);
                                 });
                                 //---
@@ -3785,11 +3780,11 @@ namespace Letter.ViewsModels
                                     word.term = value.term;
                                     word.kind = value.kind;
                                     word.sentense = VAR_PREDICATE;
-                                    word.team = value.team;
+                                    word.team = preposition_value.team;
                                     level_1.Add(word);
                                 });
                                 //---
-                                if (VerifyVerbOI(level_1, sentence, noun)) continue;
+                                if (!VerifyVerbOI(level_1, sentence)) continue;
                                 //---
                                 LicaoModel lesson = new LicaoModel();
                                 lesson.lecture = level_1;
@@ -3856,7 +3851,7 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_PREDICATE;
-                            word.team = value.team;
+                            word.team = verb_value.team;
                             syntax.Add(word);
                         });
                         //---
@@ -3867,11 +3862,11 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_SUBJECT;
-                            word.term = value.term;
+                            word.team = subject_value.team;
                             syntax.Add(word);
                         });
                         //---
-                        if (VerifyVerbSS(syntax, sentence, noun)) continue;
+                        if (!VerifyVerbSS(syntax, sentence, noun)) continue;
                         //---
                         foreach (LicaoModel adjective_value in list_adjective)
                         {
@@ -3890,11 +3885,11 @@ namespace Letter.ViewsModels
                                 word.term = value.term;
                                 word.kind = value.kind;
                                 word.sentense = VAR_PREDICATE;
-                                word.team = value.team;
+                                word.team = adjective_value.team;
                                 level_1.Add(word);
                             });
                             //---
-                            if (VerifyVerbPS(level_1, sentence)) continue;
+                            if (!VerifyVerbPS(level_1, sentence)) continue;
                             //---
                             LicaoModel lesson = new LicaoModel();
                             lesson.lecture = level_1;
@@ -3966,7 +3961,7 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_PREDICATE;
-                            word.team = value.team;
+                            word.team = verb_value.team;
                             syntax.Add(word);
                         });
                         //---
@@ -3977,11 +3972,11 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_SUBJECT;
-                            word.team = value.team;
+                            word.team = subject_value.team;
                             syntax.Add(word);
                         });
                         //---
-                        if (VerifyVerbSS(syntax, sentence, noun)) continue;
+                        if (!VerifyVerbSS(syntax, sentence, noun)) continue;
                         //---
                         foreach (LicaoModel adjective_value in list_adjective)
                         {
@@ -4000,11 +3995,11 @@ namespace Letter.ViewsModels
                                 word.term = value.term;
                                 word.kind = value.kind;
                                 word.sentense = VAR_PREDICATE;
-                                word.team = value.team;
+                                word.team = adjective_value.team;
                                 level_1.Add(word);
                             });
                             //---
-                            if (VerifyVerbPS(level_1, sentence)) continue;
+                            if (!VerifyVerbPS(level_1, sentence)) continue;
                             //---
                             foreach (LicaoModel possessive_value in list_possessive)
                             {
@@ -4023,11 +4018,11 @@ namespace Letter.ViewsModels
                                     word.term = value.term;
                                     word.kind = value.kind;
                                     word.sentense = VAR_PREDICATE;
-                                    word.team = value.team;
+                                    word.team = possessive_value.team;
                                     level_2.Add(word);
                                 });
                                 //---
-                                if (VerifyVerbOD(level_2, sentence, noun)) continue;
+                                if (!((VerifyVerbOD(level_2, sentence, false)) || (VerifyAdjectiveOD(level_2, sentence, false)))) continue;
                                 //---
                                 LicaoModel lesson = new LicaoModel();
                                 lesson.lecture = level_2;
@@ -4106,7 +4101,7 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_PREDICATE;
-                            word.team = value.team;
+                            word.team = verb_value.team;
                             syntax.Add(word);
                         });
                         //---
@@ -4117,11 +4112,11 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_SUBJECT;
-                            word.team = value.team; 
+                            word.team = subject_value.team; 
                             syntax.Add(word);
                         });
                         //---
-                        if (VerifyVerbSS(syntax, sentence, noun)) continue;
+                        if (!VerifyVerbSS(syntax, sentence, noun)) continue;
                         //---
                         foreach (LicaoModel adjective_value in list_adjective)
                         {
@@ -4140,11 +4135,11 @@ namespace Letter.ViewsModels
                                 word.term = value.term;
                                 word.kind = value.kind;
                                 word.sentense = VAR_PREDICATE;
-                                word.team = value.team;
+                                word.team = adjective_value.team;
                                 level_1.Add(word);
                             });
                             //---
-                            if (VerifyVerbPS(level_1, sentence)) continue;
+                            if (!VerifyVerbPS(level_1, sentence)) continue;
                             //---
                             foreach (LicaoModel preposition_value in list_preposition)
                             {
@@ -4166,7 +4161,7 @@ namespace Letter.ViewsModels
                                         word.term = value.term;
                                         word.kind = value.kind;
                                         word.sentense = VAR_PREDICATE;
-                                        word.team = value.team;
+                                        word.team = possessive_value.team;
                                         level_2.Add(word);
                                     });
                                     //---
@@ -4177,11 +4172,11 @@ namespace Letter.ViewsModels
                                         word.term = value.term;
                                         word.kind = value.kind;
                                         word.sentense = VAR_PREDICATE;
-                                        word.team = value.team;
+                                        word.team = preposition_value.team;
                                         level_2.Add(word);
                                     });
                                     //---
-                                    if (VerifyVerbOI(level_2, sentence, noun)) continue;
+                                    if (!((VerifyVerbOI(level_2, sentence)) || (VerifyAdjectiveOI(level_2, sentence)))) continue;
                                     //---
                                     LicaoModel lesson = new LicaoModel();
                                     lesson.lecture = level_2;
@@ -4252,7 +4247,7 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_PREDICATE;
-                            word.team = value.team;
+                            word.team = verb_value.team;
                             syntax.Add(word);
                         });
                         //---
@@ -4263,11 +4258,11 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_SUBJECT;
-                            word.team = value.team;
+                            word.team = subject_value.team;
                             syntax.Add(word);
                         });
                         //---
-                        if (VerifyVerbSS(syntax, sentence, noun)) continue;
+                        if (!VerifyVerbSS(syntax, sentence, noun)) continue;
                         //---
                         foreach (LicaoModel adjective_value in list_adjective)
                         {
@@ -4286,11 +4281,11 @@ namespace Letter.ViewsModels
                                 word.term = value.term;
                                 word.kind = value.kind;
                                 word.sentense = VAR_PREDICATE;
-                                word.team = value.team;
+                                word.team = adjective_value.team;
                                 level_1.Add(word);
                             });
                             //---
-                            if (VerifyVerbPS(level_1, sentence)) continue;
+                            if (!VerifyVerbPS(level_1, sentence)) continue;
                             //---
                             foreach (LicaoModel noun_value in list_noun)
                             {
@@ -4309,11 +4304,11 @@ namespace Letter.ViewsModels
                                     word.term = value.term;
                                     word.kind = value.kind;
                                     word.sentense = VAR_PREDICATE;
-                                    word.team = value.team;
+                                    word.team = noun_value.team;
                                     level_2.Add(word);
                                 });
                                 //---
-                                if (VerifyVerbOD(level_2, sentence, noun)) continue;
+                                if (!((VerifyVerbOD(level_2, sentence, true)) || (VerifyAdjectiveOD(level_2, sentence, true)))) continue;
                                 //---
                                 LicaoModel lesson = new LicaoModel();
                                 lesson.lecture = level_2;
@@ -4389,7 +4384,7 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_PREDICATE;
-                            word.team = value.team;
+                            word.team = verb_value.team;
                             syntax.Add(word);
                         });
                         //---
@@ -4400,11 +4395,11 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_SUBJECT;
-                            word.term = value.term;
+                            word.team = subject_value.team;
                             syntax.Add(word);
                         });
                         //---
-                        if (VerifyVerbSS(syntax, sentence, noun)) continue;
+                        if (!VerifyVerbSS(syntax, sentence, noun)) continue;
                         //---
                         foreach (LicaoModel adjective_value in list_adjective)
                         {
@@ -4423,11 +4418,11 @@ namespace Letter.ViewsModels
                                 word.term = value.term;
                                 word.kind = value.kind;
                                 word.sentense = VAR_PREDICATE;
-                                word.term = value.term;
+                                word.team = adjective_value.team;
                                 level_1.Add(word);
                             });
                             //---
-                            if (VerifyVerbPS(level_1, sentence)) continue;
+                            if (!VerifyVerbPS(level_1, sentence)) continue;
                             //---
                             foreach (LicaoModel prepostion_value in list_preposition)
                             {
@@ -4449,7 +4444,7 @@ namespace Letter.ViewsModels
                                         word.term = value.term;
                                         word.kind = value.kind;
                                         word.sentense = VAR_PREDICATE;
-                                        word.term = value.term;
+                                        word.team = noun_value.team;
                                         level_2.Add(word);
                                     });
                                     //---
@@ -4460,11 +4455,11 @@ namespace Letter.ViewsModels
                                         word.term = value.term;
                                         word.kind = value.kind;
                                         word.sentense = VAR_PREDICATE;
-                                        word.team = value.team;
+                                        word.team = prepostion_value.team;
                                         level_2.Add(word);
                                     });
                                     //---
-                                    if (VerifyVerbOI(level_2, sentence, noun)) continue;
+                                    if (!((VerifyVerbOI(level_2, sentence)) || (VerifyAdjectiveOI(level_2, sentence)))) continue;
                                     //---
                                     LicaoModel lesson = new LicaoModel();
                                     lesson.lecture = level_2;
@@ -4538,7 +4533,7 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_PREDICATE;
-                            word.team = value.team;
+                            word.team = verb_value.team;
                             syntax.Add(word);
                         });
                         //---
@@ -4549,11 +4544,11 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_SUBJECT;
-                            word.team = value.team;
+                            word.team = subject_value.team;
                             syntax.Add(word);
                         });
                         //---
-                        if (VerifyVerbSS(syntax, sentence, noun)) continue;
+                        if (!VerifyVerbSS(syntax, sentence, noun)) continue;
                         //---
                         foreach (LicaoModel adjective_value in list_adjective)
                         {
@@ -4572,11 +4567,11 @@ namespace Letter.ViewsModels
                                 word.term = value.term;
                                 word.kind = value.kind;
                                 word.sentense = VAR_PREDICATE;
-                                word.team = value.team;
+                                word.team = adjective_value.team;
                                 level_1.Add(word);
                             });
                             //---
-                            if (VerifyVerbPS(level_1, sentence)) continue;
+                            if (!VerifyVerbPS(level_1, sentence)) continue;
                             //---
                             foreach (LicaoModel adjective_noun_value in list_adjective_noun)
                             {
@@ -4595,11 +4590,11 @@ namespace Letter.ViewsModels
                                     word.term = value.term;
                                     word.kind = value.kind;
                                     word.sentense = VAR_PREDICATE;
-                                    word.team = value.team;
+                                    word.team = adjective_noun_value.team;
                                     level_2.Add(word);
                                 });
                                 //---
-                                if (VerifyVerbODAA(level_2, sentence, noun)) continue;
+                                if (!((VerifyVerbODAA(level_2, sentence)) || (VerifyAdjectiveODAA(level_2, sentence)))) continue;
                                 //---
                                 LicaoModel lesson = new LicaoModel();
                                 lesson.lecture = level_2;
@@ -4678,7 +4673,7 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_PREDICATE;
-                            word.team = value.team;
+                            word.team = verb_value.team;
                             syntax.Add(word);
                         });
                         //---
@@ -4689,11 +4684,11 @@ namespace Letter.ViewsModels
                             word.term = value.term;
                             word.kind = value.kind;
                             word.sentense = VAR_SUBJECT;
-                            word.team = value.team;
+                            word.team = subject_value.team;
                             syntax.Add(word);
                         });
                         //---
-                        if (VerifyVerbSS(syntax, sentence, noun)) continue;
+                        if (!VerifyVerbSS(syntax, sentence, noun)) continue;
                         //---
                         foreach (LicaoModel adjective_value in list_adjective)
                         {
@@ -4712,11 +4707,11 @@ namespace Letter.ViewsModels
                                 word.term = value.term;
                                 word.kind = value.kind;
                                 word.sentense = VAR_PREDICATE;
-                                word.team = value.team;
+                                word.team = adjective_value.team;
                                 level_1.Add(word);
                             });
                             //---
-                            if (VerifyVerbPS(level_1, sentence)) continue;
+                            if (!VerifyVerbPS(level_1, sentence)) continue;
                             //---
                             foreach (LicaoModel prepostion_value in list_preposition)
                             {
@@ -4737,7 +4732,7 @@ namespace Letter.ViewsModels
                                         word.term = value.term;
                                         word.kind = value.kind;
                                         word.sentense = VAR_PREDICATE;
-                                        word.team = value.team;
+                                        word.team = adjective_noun_value.team;
                                         level_2.Add(word);
                                     });
                                     //---
@@ -4748,11 +4743,11 @@ namespace Letter.ViewsModels
                                         word.term = value.term;
                                         word.kind = value.kind;
                                         word.sentense = VAR_PREDICATE;
-                                        word.team = value.team;
+                                        word.team = prepostion_value.team;
                                         level_2.Add(word);
                                     });
                                     //---
-                                    if (VerifyVerbOI(level_2, sentence, noun)) continue;
+                                    if (!((VerifyVerbOI(level_2, sentence)) || (VerifyAdjectiveOI(level_2, sentence)))) continue;
                                     //---
                                     LicaoModel lesson = new LicaoModel();
                                     lesson.lecture = level_2;
@@ -4788,23 +4783,23 @@ namespace Letter.ViewsModels
                     //---
                     if (noun)
                     {
-                        if ((value.kind == VAR_NOUN) && (value.sentense == VAR_NOUN)) word = value.term;
+                        if ((value.kind == VAR_NOUN) && (value.sentense == VAR_SUBJECT) && (value.team == VAR_NOUN)) word = value.term;
                     } else
                     {
-                        if ((value.kind == VAR_PRONOUN) && (value.sentense == VAR_NOUN)) word = value.term;
+                        if ((value.kind == VAR_PRONOUN) && (value.sentense == VAR_SUBJECT)) word = value.term;
                     }
                     if (value.kind == VAR_VERB) verb = value.term;
                 });
                 //---
                 bool similarity = false;
                 similarity = Similarity(word_2_vec, vocabulary, word, verb);
-                if (similarity) return false;
+                if (similarity) return true;
                 //---
-                return true;
+                return false;
             }
             catch (Exception)
             {
-                return true;
+                return false;
                 throw;
             }
         }
@@ -4817,60 +4812,72 @@ namespace Letter.ViewsModels
                 HashSet<string> vocabulary = Vocabulary(sentence);
                 Dictionary<(string, string), int> word_2_vec = Word2Vec(sentence);
                 //---
-                string word = null;
+                string word_noun = null;
+                string word_verb = null;
                 string substantive = null;
                 string digit = null;
                 string article = null;
                 string pronoun = null;
                 string verb = null;
                 string adverb = null;
+                string adverb_adverb = null;
                 //---
                 list_word.ForEach(value =>
                 {
                     //---
                     if (noun)
                     {
-                        if ((value.kind == VAR_NOUN) && (value.sentense == VAR_PREDICATE)) substantive = value.term;
-                        if ((value.kind == VAR_DIGIT) && (value.sentense == VAR_PREDICATE)) digit = value.term;
-                        if ((value.kind == VAR_ARTICLE) && (value.sentense == VAR_PREDICATE)) article = value.term;
-                        if ((value.kind == VAR_PRONOUN) && (value.sentense == VAR_PREDICATE)) pronoun = value.term;
+                        if ((value.kind == VAR_NOUN) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_NOUN)) substantive = value.term;
+                        if ((value.kind == VAR_DIGIT) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_NOUN)) digit = value.term;
+                        if ((value.kind == VAR_ARTICLE) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_NOUN)) article = value.term;
+                        if ((value.kind == VAR_PRONOUN) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_NOUN)) pronoun = value.term;
                     } else
                     {
-                        if ((value.kind == VAR_PRONOUN) && (value.sentense == VAR_PREDICATE)) word = value.term;
+                        if ((value.kind == VAR_PRONOUN) && (value.sentense == VAR_PREDICATE)) word_noun = value.term;
                     }
                     if (value.kind == VAR_VERB) verb = value.term;
-                    if ((value.kind == VAR_ADVERB) && (value.sentense == VAR_PREDICATE)) adverb = value.term;
+                    if ((value.kind == VAR_ADVERB) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_VERB)) adverb = value.term;
+                    if ((value.kind == VAR_ADVERB_ADVERB) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_VERB)) adverb_adverb = value.term;
                 });
                 //---
-                if (digit != null) word = digit;
+                if (digit != null) word_noun = digit;
                 else
                 {
-                    if (article != null) word = article;
+                    if (article != null) word_noun = article;
                     else
                     {
-                        if (pronoun != null) word = pronoun;
+                        if (pronoun != null) word_noun = pronoun;
                         else 
                         {
-                            if (noun == true) word = substantive;
+                            if (noun == true) word_noun = substantive;
                         } 
                     }
                 }
                 //---
-                bool similarity = false;
-                if (adverb != null) similarity = Similarity(word_2_vec, vocabulary, adverb, word);
-                else similarity = Similarity(word_2_vec, vocabulary, verb, word);
-                if (similarity) return false;
+                if (adverb_adverb != null) word_verb = adverb_adverb;
+                else
+                {
+                    if (adverb != null) word_verb = adverb;
+                    else
+                    {
+                        if (verb != null) word_verb = verb;
+                    }
+                }
                 //---
-                return true;
+                bool similarity = false;
+                similarity = Similarity(word_2_vec, vocabulary, word_verb, word_noun);
+                if (similarity) return true;
+                //---
+                return false;
             }
             catch (Exception)
             {
-                return true;
+                return false;
                 throw;
             }
         }
 
-        public bool VerifyVerbOI(List<WordModel> list_word, List<DitadoModel> sentence, bool noun)
+        public bool VerifyVerbOI(List<WordModel> list_word, List<DitadoModel> sentence)
         {
             try
             {
@@ -4878,33 +4885,46 @@ namespace Letter.ViewsModels
                 HashSet<string> vocabulary = Vocabulary(sentence);
                 Dictionary<(string, string), int> word_2_vec = Word2Vec(sentence);
                 //---
-                string word = null;
+                string word_preposition = null;
+                string word_verb = null;
                 string verb = null;
                 string adverb = null;
+                string adverb_adverb = null;
                 //---
                 list_word.ForEach(value =>
                 {
                     //---
-                    if ((value.kind == VAR_PREPOSITION) && (value.sentense == VAR_PREDICATE)) word = value.term;
+                    if ((value.kind == VAR_PREPOSITION) && (value.sentense == VAR_PREDICATE)) word_preposition = value.term;
+                    //---
                     if (value.kind == VAR_VERB) verb = value.term;
-                    if ((value.kind == VAR_ADVERB) && (value.sentense == VAR_PREDICATE)) adverb = value.term;
+                    if ((value.kind == VAR_ADVERB) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_VERB)) adverb = value.term;
+                    if ((value.kind == VAR_ADVERB_ADVERB) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_VERB)) adverb_adverb = value.term;
                 });
                 //---
-                bool similarity = false;
-                if (adverb != null) similarity = Similarity(word_2_vec, vocabulary, adverb, word);
-                else similarity = Similarity(word_2_vec, vocabulary, verb, word);
-                if (similarity) return false;
+                if (adverb_adverb != null) word_verb = adverb_adverb;
+                else
+                {
+                    if (adverb != null) word_verb = adverb;
+                    else
+                    {
+                        if (verb != null) word_verb = verb;
+                    }
+                }
                 //---
-                return true;
+                bool similarity = false;
+                similarity = Similarity(word_2_vec, vocabulary, word_verb, word_preposition);
+                if (similarity) return true;
+                //---
+                return false;
             }
             catch (Exception)
             {
-                return true;
+                return false;
                 throw;
             }
         }
 
-        public bool VerifyVerbODAA(List<WordModel> list_word, List<DitadoModel> sentence, bool noun)
+        public bool VerifyVerbODAA(List<WordModel> list_word, List<DitadoModel> sentence)
         {
             try
             {
@@ -4912,50 +4932,50 @@ namespace Letter.ViewsModels
                 HashSet<string> vocabulary = Vocabulary(sentence);
                 Dictionary<(string, string), int> word_2_vec = Word2Vec(sentence);
                 //---
-                string word = null;
+                string word_noun = null;
+                string word_verb = null;
                 string substantive = null;
                 string article = null;
                 string adjective = null;
                 string verb = null;
                 string adverb = null;
+                string adverb_adverb = null;
                 //---
                 list_word.ForEach(value =>
                 {
                     //---
-                    if (noun)
-                    {
-                        if ((value.kind == VAR_NOUN) && (value.sentense == VAR_PREDICATE)) substantive = value.term;
-                        if ((value.kind == VAR_ARTICLE) && (value.sentense == VAR_PREDICATE)) article = value.term;
-                        if ((value.kind == VAR_ADJECTIVE) && (value.sentense == VAR_PREDICATE)) adjective = value.term;
-                    }
-                    else
-                    {
-                        if ((value.kind == VAR_PRONOUN) && (value.sentense == VAR_PREDICATE)) word = value.term;
-                    }
+                    if ((value.kind == VAR_NOUN) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE_NOUN)) substantive = value.term;
+                    if ((value.kind == VAR_ARTICLE) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE_NOUN)) article = value.term;
+                    if ((value.kind == VAR_ADJECTIVE) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE_NOUN)) adjective = value.term;
+                    //---
                     if (value.kind == VAR_VERB) verb = value.term;
-                    if ((value.kind == VAR_ADVERB) && (value.sentense == VAR_PREDICATE)) adverb = value.term;
+                    if ((value.kind == VAR_ADVERB) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_VERB)) adverb = value.term;
+                    if ((value.kind == VAR_ADVERB_ADVERB) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_VERB)) adverb_adverb = value.term;
                 });
                 //---
-                if (article != null) word = article;
+                if (article != null) word_noun = article;
                 else
                 {
-                    if (adjective != null) word = adjective;
-                    else 
-                    {
-                        if (noun == true) word = substantive;
-                    }
+                    if (adjective != null) word_noun = adjective;
+                    else word_noun = substantive;
+                }
+                //---
+                if (adverb_adverb != null) word_verb = adverb_adverb;
+                else
+                {
+                    if (adverb != null) word_verb = adverb;
+                    else word_verb = verb;
                 }
                 //---
                 bool similarity = false;
-                if (adverb != null) similarity = Similarity(word_2_vec, vocabulary, adverb, word);
-                else similarity = Similarity(word_2_vec, vocabulary, verb, word);
-                if (similarity) return false;
+                similarity = Similarity(word_2_vec, vocabulary, word_verb, word_noun);
+                if (similarity) return true;
                 //---
-                return true;
+                return false;
             }
             catch (Exception)
             {
-                return true;
+                return false;
                 throw;
             }
         }
@@ -4968,28 +4988,233 @@ namespace Letter.ViewsModels
                 HashSet<string> vocabulary = Vocabulary(sentence);
                 Dictionary<(string, string), int> word_2_vec = Word2Vec(sentence);
                 //---
-                string word = null;
+                string word_adjective = null;
+                string word_verb = null;
                 string verb = null;
-                string adverb = null;
+                string verb_adverb = null;
+                string verb_adverb_adverb = null;
+                string adjective = null;
+                string adjective_adverb = null;
+                string adjective_adverb_adverb = null;
                 //---
                 list_word.ForEach(value =>
                 {
                     //---
-                    if ((value.kind == VAR_ADJECTIVE) && (value.sentense == VAR_PREDICATE)) word = value.term;
+                    if ((value.kind == VAR_ADJECTIVE) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE)) adjective = value.term;
+                    if ((value.kind == VAR_ADVERB) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE)) adjective_adverb = value.term;
+                    if ((value.kind == VAR_ADVERB_ADVERB) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE)) adjective_adverb_adverb = value.term;
+                    //---
                     if (value.kind == VAR_VERB) verb = value.term;
-                    if ((value.kind == VAR_ADVERB) && (value.sentense == VAR_PREDICATE)) adverb = value.term;
+                    if ((value.kind == VAR_ADVERB) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_VERB)) verb_adverb = value.term;
+                    if ((value.kind == VAR_ADVERB_ADVERB) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_VERB)) verb_adverb_adverb = value.term;
                 });
                 //---
-                bool similarity = false;
-                if (adverb != null) similarity = Similarity(word_2_vec, vocabulary, adverb, word);
-                else similarity = Similarity(word_2_vec, vocabulary, verb, word);
-                if (similarity) return false;
+                if (verb_adverb_adverb != null) word_verb = verb_adverb_adverb;
+                else
+                {
+                    if (verb_adverb != null) word_verb = verb_adverb;
+                    else
+                    {
+                        if (verb != null) word_verb = verb;
+                    }
+                }
                 //---
-                return true;
+                if (adjective_adverb_adverb != null) word_adjective = adjective_adverb_adverb;
+                else
+                {
+                    if (adjective_adverb != null) word_adjective = adjective_adverb;
+                    else
+                    {
+                        if (adjective != null) word_adjective = adjective;
+                    }
+                }
+                //---
+                bool similarity = false;
+                similarity = Similarity(word_2_vec, vocabulary, word_verb, word_adjective);
+                if (similarity) return true;
+                //---
+                return false;
             }
             catch (Exception)
             {
-                return true;
+                return false;
+                throw;
+            }
+        }
+
+        public bool VerifyAdjectiveOD(List<WordModel> list_word, List<DitadoModel> sentence, bool noun)
+        {
+            try
+            {
+                //---
+                HashSet<string> vocabulary = Vocabulary(sentence);
+                Dictionary<(string, string), int> word_2_vec = Word2Vec(sentence);
+                //---
+                string word_noun = null;
+                string word_adjective = null;
+                string substantive = null;
+                string digit = null;
+                string article = null;
+                string pronoun = null;
+                string adjective = null;
+                string adverb = null;
+                string adverb_adverb = null;
+                //---
+                list_word.ForEach(value =>
+                {
+                    //---
+                    if (noun)
+                    {
+                        if ((value.kind == VAR_NOUN) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_NOUN)) substantive = value.term;
+                        if ((value.kind == VAR_DIGIT) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_NOUN)) digit = value.term;
+                        if ((value.kind == VAR_ARTICLE) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_NOUN)) article = value.term;
+                        if ((value.kind == VAR_PRONOUN) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_NOUN)) pronoun = value.term;
+                    }
+                    else
+                    {
+                        if ((value.kind == VAR_PRONOUN) && (value.sentense == VAR_PREDICATE)) word_noun = value.term;
+                    }
+                    if ((value.kind == VAR_ADJECTIVE) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE)) adjective = value.term;
+                    if ((value.kind == VAR_ADVERB) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE)) adverb = value.term;
+                    if ((value.kind == VAR_ADVERB_ADVERB) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE)) adverb_adverb = value.term;
+                });
+                //---
+                if (digit != null) word_noun = digit;
+                else
+                {
+                    if (article != null) word_noun = article;
+                    else
+                    {
+                        if (pronoun != null) word_noun = pronoun;
+                        else
+                        {
+                            if (noun == true) word_noun = substantive;
+                        }
+                    }
+                }
+                //---
+                if (adverb_adverb != null) word_adjective = adverb_adverb;
+                else
+                {
+                    if (adverb != null) word_adjective = adverb;
+                    else
+                    {
+                        if (adjective != null) word_adjective = adjective;
+                    }
+                }
+                //---
+                bool similarity = false;
+                similarity = Similarity(word_2_vec, vocabulary, word_adjective, word_noun);
+                if (similarity) return true;
+                //---
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+        }
+
+        public bool VerifyAdjectiveOI(List<WordModel> list_word, List<DitadoModel> sentence)
+        {
+            try
+            {
+                //---
+                HashSet<string> vocabulary = Vocabulary(sentence);
+                Dictionary<(string, string), int> word_2_vec = Word2Vec(sentence);
+                //---
+                string word_preposition = null;
+                string word_adjective = null;
+                string adjective = null;
+                string adverb = null;
+                string adverb_adverb = null;
+                //---
+                list_word.ForEach(value =>
+                {
+                    //---
+                    if ((value.kind == VAR_PREPOSITION) && (value.sentense == VAR_PREDICATE)) word_preposition = value.term;
+                    //---
+                    if ((value.kind == VAR_ADJECTIVE) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE)) adverb = value.term;
+                    if ((value.kind == VAR_ADVERB) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE)) adverb = value.term;
+                    if ((value.kind == VAR_ADVERB_ADVERB) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE)) adverb_adverb = value.term;
+                });
+                //---
+                if (adverb_adverb != null) word_adjective = adverb_adverb;
+                else
+                {
+                    if (adverb != null) word_adjective = adverb;
+                    else
+                    {
+                        if (adjective != null) word_adjective = adjective;
+                    }
+                }
+                //---
+                bool similarity = false;
+                similarity = Similarity(word_2_vec, vocabulary, word_adjective, word_preposition);
+                if (similarity) return true;
+                //---
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+        }
+
+        public bool VerifyAdjectiveODAA(List<WordModel> list_word, List<DitadoModel> sentence)
+        {
+            try
+            {
+                //---
+                HashSet<string> vocabulary = Vocabulary(sentence);
+                Dictionary<(string, string), int> word_2_vec = Word2Vec(sentence);
+                //---
+                string word_noun = null;
+                string word_adjective = null;
+                string substantive = null;
+                string article = null;
+                string adjective_noun = null;
+                string adjective = null;
+                string adverb = null;
+                string adverb_adverb = null;
+                //---
+                list_word.ForEach(value =>
+                {
+                    //---
+                    if ((value.kind == VAR_NOUN) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE_NOUN)) substantive = value.term;
+                    if ((value.kind == VAR_ARTICLE) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE_NOUN)) article = value.term;
+                    if ((value.kind == VAR_ADJECTIVE) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE_NOUN)) adjective = value.term;
+                    //---
+                    if ((value.kind == VAR_ADJECTIVE) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE)) adjective = value.term;
+                    if ((value.kind == VAR_ADVERB) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE)) adverb = value.term;
+                    if ((value.kind == VAR_ADVERB_ADVERB) && (value.sentense == VAR_PREDICATE) && (value.team == VAR_ADJECTIVE)) adverb_adverb = value.term;
+                });
+                //---
+                if (article != null) word_noun = article;
+                else
+                {
+                    if (adjective_noun != null) word_noun = adjective_noun;
+                    else word_noun = substantive;
+                }
+                //---
+                if (adverb_adverb != null) word_adjective = adverb_adverb;
+                else
+                {
+                    if (adverb != null) word_adjective = adverb;
+                    else word_adjective = adjective;
+                }
+                //---
+                bool similarity = false;
+                similarity = Similarity(word_2_vec, vocabulary, word_adjective, word_noun);
+                if (similarity) return true;
+                //---
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
                 throw;
             }
         }
