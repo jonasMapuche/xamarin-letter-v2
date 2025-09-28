@@ -36,5 +36,14 @@ namespace CRUD.Controllers
             return await _numeralsService.GetAsync();
         }
 
+        [HttpPut("")]
+        public async Task<IActionResult> UpdateLanguage(AtribuirAlgarismo algarismo)
+        {
+            long result = await _numeralsService.UpdateLanguageAsync(algarismo.chave.linguagem, algarismo.atualizar.linguagem);
+            result += await _numeralsService2.UpdateLanguageAsync(algarismo.chave.linguagem, algarismo.atualizar.linguagem);
+            result += await _numeralsService3.UpdateLanguageAsync(algarismo.chave.linguagem, algarismo.atualizar.linguagem);
+            string expression = "Expression update " + result + " successfull with.";
+            return Ok(expression);
+        }
     }
 }

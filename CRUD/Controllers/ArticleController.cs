@@ -36,5 +36,14 @@ namespace CRUD.Controllers
             return await _articlesService.GetAsync();
         }
 
+        [HttpPut("")]
+        public async Task<IActionResult> UpdateLanguage(AtribuirJuncao juncao)
+        {
+            long result = await _articlesService.UpdateLanguageAsync(juncao.chave.linguagem, juncao.atualizar.linguagem);
+            result += await _articlesService2.UpdateLanguageAsync(juncao.chave.linguagem, juncao.atualizar.linguagem);
+            result += await _articlesService3.UpdateLanguageAsync(juncao.chave.linguagem, juncao.atualizar.linguagem);
+            string expression = "Expression update " + result + " successfull with.";
+            return Ok(expression);
+        }
     }
 }

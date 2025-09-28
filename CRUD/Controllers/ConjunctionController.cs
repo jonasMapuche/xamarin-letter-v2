@@ -36,5 +36,14 @@ namespace CRUD.Controllers
             return await _conjunctionsService.GetAsync();
         }
 
+        [HttpPut("")]
+        public async Task<IActionResult> UpdateLanguage(AtribuirLigacao ligacao)
+        {
+            long result = await _conjunctionsService.UpdateLanguageAsync(ligacao.chave.linguagem, ligacao.atualizar.linguagem);
+            result += await _conjunctionsService2.UpdateLanguageAsync(ligacao.chave.linguagem, ligacao.atualizar.linguagem);
+            result += await _conjunctionsService3.UpdateLanguageAsync(ligacao.chave.linguagem, ligacao.atualizar.linguagem);
+            string expression = "Expression update " + result + " successfull with.";
+            return Ok(expression);
+        }
     }
 }

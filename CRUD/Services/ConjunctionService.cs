@@ -51,8 +51,15 @@ namespace CRUD.Services
         public async Task UpdateAsync(Ligacao ligacao) =>
             await _conjunctionsCollection.ReplaceOneAsync(index => index.Id == ligacao.Id, ligacao);
 
+        public async Task<long> UpdateLanguageAsync(string language, string new_language)
+        {
+            FilterDefinition<Ligacao> filter = Builders<Ligacao>.Filter.Eq(index => index.linguagem, language);
+            UpdateDefinition<Ligacao> update = Builders<Ligacao>.Update.Set(doc => doc.linguagem, new_language);
+            UpdateResult result = await _conjunctionsCollection.UpdateManyAsync(filter, update);
+            return result.ModifiedCount;
+        }
+
         public async Task RemoveAsync(string id) =>
             await _conjunctionsCollection.DeleteOneAsync(index => index.Id == id);
-
     }
 }

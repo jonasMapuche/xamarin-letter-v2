@@ -54,6 +54,14 @@ namespace CRUD.Services
         public async Task UpdateAsync(Elocucao elocucao) =>
             await _verbsCollection.ReplaceOneAsync(index => index.Id == elocucao.Id, elocucao);
 
+        public async Task<long> UpdateLanguageAsync(string language, string new_language)
+        {
+            FilterDefinition<Elocucao> filter = Builders<Elocucao>.Filter.Eq(index => index.linguagem, language);
+            UpdateDefinition<Elocucao> update = Builders<Elocucao>.Update.Set(doc => doc.linguagem, new_language);
+            UpdateResult result = await _verbsCollection.UpdateManyAsync(filter, update);
+            return result.ModifiedCount;
+        }
+
         public async Task RemoveAsync(string id) =>
             await _verbsCollection.DeleteOneAsync(index => index.Id == id);
 

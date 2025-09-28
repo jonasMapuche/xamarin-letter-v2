@@ -36,6 +36,14 @@ namespace CRUD.Controllers
             return await _verbsService.GetAsync();
         }
 
-
+        [HttpPut("")]
+        public async Task<IActionResult> UpdateLanguage(AtribuirElocucao elocucao)
+        {
+            long result = await _verbsService.UpdateLanguageAsync(elocucao.chave.linguagem, elocucao.atualizar.linguagem);
+            result += await _verbsService2.UpdateLanguageAsync(elocucao.chave.linguagem, elocucao.atualizar.linguagem);
+            result += await _verbsService3.UpdateLanguageAsync(elocucao.chave.linguagem, elocucao.atualizar.linguagem);
+            string expression = "Expression update " + result + " successfull with.";
+            return Ok(expression);
+        }
     }
 }

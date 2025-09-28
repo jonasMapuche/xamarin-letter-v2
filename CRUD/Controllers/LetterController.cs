@@ -36,5 +36,14 @@ namespace CRUD.Controllers
             return CreatedAtAction(nameof(Get), new { id = aula.Id }, aula);
         }
 
+        [HttpPut("")]
+        public async Task<IActionResult> UpdateLanguage(AtribuirAula aula)
+        {
+            long result = await _lettersService.UpdateLanguageAsync(aula.chave.linguagem, aula.atualizar.linguagem);
+            result += await _lettersService2.UpdateLanguageAsync(aula.chave.linguagem, aula.atualizar.linguagem);
+            result += await _lettersService3.UpdateLanguageAsync(aula.chave.linguagem, aula.atualizar.linguagem);
+            string expression = "Expression update " + result + " successfull with.";
+            return Ok(expression);
+        }
     }
 }

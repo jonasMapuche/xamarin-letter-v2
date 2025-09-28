@@ -36,5 +36,14 @@ namespace CRUD.Controllers
             return await _pronounsService.GetAsync();
         }
 
+        [HttpPut("")]
+        public async Task<IActionResult> UpdateLanguage(AtribuirEstoutro estoutro)
+        {
+            long result = await _pronounsService.UpdateLanguageAsync(estoutro.chave.linguagem, estoutro.atualizar.linguagem);
+            result += await _pronounsService2.UpdateLanguageAsync(estoutro.chave.linguagem, estoutro.atualizar.linguagem);
+            result += await _pronounsService3.UpdateLanguageAsync(estoutro.chave.linguagem, estoutro.atualizar.linguagem);
+            string expression = "Expression update " + result + " successfull with.";
+            return Ok(expression);
+        }
     }
 }

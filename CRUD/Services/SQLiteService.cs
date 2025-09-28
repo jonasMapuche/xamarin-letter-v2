@@ -39,7 +39,7 @@ namespace CRUD.Services
             PathSQLite = DataBasePach;
         }
 
-        public async Task CreateAsync(List<Aula> aula, List<Estoutro> estoutro, List<Preceito> preceito, List<Juncao> juncao, List<Ligacao> ligacao, List<Modificador> modificador, List<Algarismo> algarismo, List<Elocucao> elocucao, List<Assistant> assistant, List<Ditado> ditado)
+        public async Task CreateAsync(List<Aula> aula, List<Estoutro> estoutro, List<Preceito> preceito, List<Juncao> juncao, List<Ligacao> ligacao, List<Circustancia> modificador, List<Algarismo> algarismo, List<Elocucao> elocucao, List<Assistant> assistant, List<Ditado> ditado)
         {
             await Substantivo(aula);
             await Verbo(aula);
@@ -362,7 +362,7 @@ namespace CRUD.Services
             await Database.InsertAllAsync(conjuncoes);
         }
 
-        private async Task Adverbios(List<Modificador> modificador)
+        private async Task Adverbios(List<Circustancia> modificador)
         {
             List<Adverbios> adverbios = new List<Adverbios>();
             modificador.ForEach(in_modificador =>

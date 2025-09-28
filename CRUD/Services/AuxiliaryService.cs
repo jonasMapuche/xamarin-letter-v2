@@ -51,9 +51,14 @@ namespace CRUD.Services
         public async Task UpdateAsync(Assistant assistent) =>
             await _auxiliarysCollection.ReplaceOneAsync(index => index.Id == assistent.Id, assistent);
 
+        public async Task<long> UpdateLanguageAsync(string language, string new_language)
+        {
+            FilterDefinition<Assistant> filter = Builders<Assistant>.Filter.Eq(index => index.linguagem, language);
+            UpdateDefinition<Assistant> update = Builders<Assistant>.Update.Set(doc => doc.linguagem, new_language);
+            UpdateResult result = await _auxiliarysCollection.UpdateManyAsync(filter, update);
+            return result.ModifiedCount;
+        }
         public async Task RemoveAsync(string id) =>
             await _auxiliarysCollection.DeleteOneAsync(index => index.Id == id);
-
-
     }
 }

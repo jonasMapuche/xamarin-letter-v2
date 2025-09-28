@@ -36,5 +36,14 @@ namespace CRUD.Controllers
             return await _sentencesService.GetAsync();
         }
 
+        [HttpPut("")]
+        public async Task<IActionResult> UpdateLanguage(AtribuirDitado ditado)
+        {
+            long result = await _sentencesService.UpdateLanguageAsync(ditado.chave.linguagem, ditado.atualizar.linguagem);
+            result += await _sentencesService2.UpdateLanguageAsync(ditado.chave.linguagem, ditado.atualizar.linguagem);
+            result += await _sentencesService3.UpdateLanguageAsync(ditado.chave.linguagem, ditado.atualizar.linguagem);
+            string expression = "Expression update " + result + " successfull with.";
+            return Ok(expression);
+        }
     }
 }

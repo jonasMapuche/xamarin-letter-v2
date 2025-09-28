@@ -51,8 +51,15 @@ namespace CRUD.Services
         public async Task UpdateAsync(Juncao juncao) =>
             await _prepositionsCollection.ReplaceOneAsync(index => index.Id == juncao.Id, juncao);
 
+        public async Task<long> UpdateLanguageAsync(string language, string new_language)
+        {
+            FilterDefinition<Juncao> filter = Builders<Juncao>.Filter.Eq(index => index.linguagem, language);
+            UpdateDefinition<Juncao> update = Builders<Juncao>.Update.Set(doc => doc.linguagem, new_language);
+            UpdateResult result = await _prepositionsCollection.UpdateManyAsync(filter, update);
+            return result.ModifiedCount;
+        }
+
         public async Task RemoveAsync(string id) =>
             await _prepositionsCollection.DeleteOneAsync(index => index.Id == id);
-
     }
 }

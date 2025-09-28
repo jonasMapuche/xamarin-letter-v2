@@ -36,5 +36,15 @@ namespace CRUD.Controllers
         {
             return await _auxiliarysService.GetAsync();
         }
+
+        [HttpPut("")]
+        public async Task<IActionResult> UpdateLanguage(AtribuirAssistente assistente)
+        {
+            long result = await _auxiliarysService.UpdateLanguageAsync(assistente.chave.linguagem, assistente.atualizar.linguagem);
+            result += await _auxiliarysService2.UpdateLanguageAsync(assistente.chave.linguagem, assistente.atualizar.linguagem);
+            result += await _auxiliarysService3.UpdateLanguageAsync(assistente.chave.linguagem, assistente.atualizar.linguagem);
+            string expression = "Expression update " + result + " successfull with.";
+            return Ok(expression);
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace CRUD.Services
         public static string DatabaseName { get; set; }
         public static string CollectionNumeral { get; set; }
 
-        private readonly IMongoCollection<Algarismo> _adverbsCollection;
+        private readonly IMongoCollection<Algarismo> _numeralsCollection;
 
         public NumeralService(string connection)
         {
@@ -35,26 +35,34 @@ namespace CRUD.Services
             var mongoDatabase = mongoClient.GetDatabase(DatabaseName);
             IMongoCollection<Algarismo> ConfigurationValue = mongoDatabase.GetCollection<Algarismo>(CollectionNumeral);
 
-            _adverbsCollection = ConfigurationValue;
+            _numeralsCollection = ConfigurationValue;
         }
 
         public async Task<List<Algarismo>> GetAsync() =>
-            await _adverbsCollection.Find(_ => true).ToListAsync();
+            await _numeralsCollection.Find(_ => true).ToListAsync();
 
         public async Task<Algarismo> GetAsync(string id) =>
-            await _adverbsCollection.Find(index => index.Id == id).FirstOrDefaultAsync();
+            await _numeralsCollection.Find(index => index.Id == id).FirstOrDefaultAsync();
 
         public async Task<Algarismo> GetSentenceSimpleAsync(string name) =>
-            await _adverbsCollection.Find(index => index.nome == name).FirstOrDefaultAsync();
+            await _numeralsCollection.Find(index => index.nome == name).FirstOrDefaultAsync();
 
         public async Task CreateAsync(Algarismo algarismo) =>
-            await _adverbsCollection.InsertOneAsync(algarismo);
+            await _numeralsCollection.InsertOneAsync(algarismo);
 
         public async Task UpdateAsync(Algarismo algarismo) =>
-            await _adverbsCollection.ReplaceOneAsync(index => index.Id == algarismo.Id, algarismo);
+            await _numeralsCollection.ReplaceOneAsync(index => index.Id == algarismo.Id, algarismo);
+
+        public async Task<long> UpdateLanguageAsync(string language, string new_language)
+        {
+            FilterDefinition<Algarismo> filter = Builders<Algarismo>.Filter.Eq(index => index.linguagem, language);
+            UpdateDefinition<Algarismo> update = Builders<Algarismo>.Update.Set(doc => doc.linguagem, new_language);
+            UpdateResult result = await _numeralsCollection.UpdateManyAsync(filter, update);
+            return result.ModifiedCount;
+        }
 
         public async Task RemoveAsync(string id) =>
-            await _adverbsCollection.DeleteOneAsync(index => index.Id == id);
+            await _numeralsCollection.DeleteOneAsync(index => index.Id == id);
 
     }
 }

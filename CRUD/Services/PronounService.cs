@@ -53,6 +53,14 @@ namespace CRUD.Services
         public async Task UpdateAsync(Estoutro estrouto) =>
             await _pronounsCollection.ReplaceOneAsync(index => index.Id == estrouto.Id, estrouto);
 
+        public async Task<long> UpdateLanguageAsync(string language, string new_language)
+        {
+            FilterDefinition<Estoutro> filter = Builders<Estoutro>.Filter.Eq(index => index.linguagem, language);
+            UpdateDefinition<Estoutro> update = Builders<Estoutro>.Update.Set(doc => doc.linguagem, new_language);
+            UpdateResult result = await _pronounsCollection.UpdateManyAsync(filter, update);
+            return result.ModifiedCount;
+        }
+
         public async Task RemoveAsync(string id) =>
             await _pronounsCollection.DeleteOneAsync(index => index.Id == id);
 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace CRUD.Models
 {
-    public class Modificador
+    public class Circustancia
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

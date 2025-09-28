@@ -60,7 +60,7 @@ namespace CRUD.Controllers
             List<Preceito> artigo = await _articlesService.GetAsync();
             List<Juncao> preposicao = await _prepositionsService.GetAsync();
             List<Ligacao> conjunction = await _conjunctionsService.GetAsync();
-            List<Modificador> adverb = await _adverbsService.GetAsync();
+            List<Circustancia> adverb = await _adverbsService.GetAsync();
             List<Algarismo> numeral = await _numeralsService.GetAsync();
             List<Elocucao> verbo = await _verbsService.GetAsync();
             List<Assistant> auxiliar = await _auxiliarysService.GetAsync();

@@ -22,20 +22,28 @@ namespace CRUD.Controllers
         }
 
         [HttpPost("")]
-        public async Task<IActionResult> Adverb(Modificador modificador)
+        public async Task<IActionResult> Adverb(Circustancia circustancia)
         {
-            await _adverbsService.CreateAsync(modificador);
-            await _adverbsService2.CreateAsync(modificador);
-            await _adverbsService3.CreateAsync(modificador);
-            return CreatedAtAction(nameof(Get), new { id = modificador.Id }, modificador);
+            await _adverbsService.CreateAsync(circustancia);
+            await _adverbsService2.CreateAsync(circustancia);
+            await _adverbsService3.CreateAsync(circustancia);
+            return CreatedAtAction(nameof(Get), new { id = circustancia.Id }, circustancia);
         }
 
         [HttpGet("all")]
-        public async Task<List<Modificador>> GetAll()
+        public async Task<List<Circustancia>> GetAll()
         {
             return await _adverbsService.GetAsync();
         }
 
-
+        [HttpPut("")]
+        public async Task<IActionResult> UpdateLanguage(AtribuirCircustancia circustancia)
+        {
+            long result = await _adverbsService.UpdateLanguageAsync(circustancia.chave.linguagem, circustancia.atualizar.linguagem);
+            result += await _adverbsService2.UpdateLanguageAsync(circustancia.chave.linguagem, circustancia.atualizar.linguagem);
+            result += await _adverbsService3.UpdateLanguageAsync(circustancia.chave.linguagem, circustancia.atualizar.linguagem);
+            string expression = "Expression update " + result + " successfull with.";
+            return Ok(expression);
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace CRUD.Services
         public static string DatabaseName { get; set; }
         public static string CollectionAdverb { get; set; }
 
-        private readonly IMongoCollection<Modificador> _adverbsCollection;
+        private readonly IMongoCollection<Circustancia> _adverbsCollection;
 
         public AdverbService(string connection)
         {
@@ -31,25 +31,33 @@ namespace CRUD.Services
                     break;
             }
             var mongoDatabase = mongoClient.GetDatabase(DatabaseName);
-            IMongoCollection<Modificador> ConfigurationValue = mongoDatabase.GetCollection<Modificador>(CollectionAdverb);
+            IMongoCollection<Circustancia> ConfigurationValue = mongoDatabase.GetCollection<Circustancia>(CollectionAdverb);
 
             _adverbsCollection = ConfigurationValue;
         }
 
-        public async Task<List<Modificador>> GetAsync() =>
+        public async Task<List<Circustancia>> GetAsync() =>
             await _adverbsCollection.Find(_ => true).ToListAsync();
 
-        public async Task<Modificador> GetAsync(string id) =>
+        public async Task<Circustancia> GetAsync(string id) =>
             await _adverbsCollection.Find(index => index.Id == id).FirstOrDefaultAsync();
 
-        public async Task<Modificador> GetSentenceSimpleAsync(string name) =>
+        public async Task<Circustancia> GetSentenceSimpleAsync(string name) =>
             await _adverbsCollection.Find(index => index.nome == name).FirstOrDefaultAsync();
 
-        public async Task CreateAsync(Modificador modificador) =>
-            await _adverbsCollection.InsertOneAsync(modificador);
+        public async Task CreateAsync(Circustancia circunstancia) =>
+            await _adverbsCollection.InsertOneAsync(circunstancia);
 
-        public async Task UpdateAsync(Modificador modificador) =>
-            await _adverbsCollection.ReplaceOneAsync(index => index.Id == modificador.Id, modificador);
+        public async Task UpdateAsync(Circustancia circunstancia) =>
+            await _adverbsCollection.ReplaceOneAsync(index => index.Id == circunstancia.Id, circunstancia);
+
+        public async Task<long> UpdateLanguageAsync(string language, string new_language)
+        {
+            FilterDefinition<Circustancia> filter = Builders<Circustancia>.Filter.Eq(index => index.linguagem, language);
+            UpdateDefinition<Circustancia> update = Builders<Circustancia>.Update.Set(doc => doc.linguagem, new_language);
+            UpdateResult result = await _adverbsCollection.UpdateManyAsync(filter, update);
+            return result.ModifiedCount;
+        }
 
         public async Task RemoveAsync(string id) =>
             await _adverbsCollection.DeleteOneAsync(index => index.Id == id);
