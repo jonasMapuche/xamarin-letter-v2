@@ -20,18 +20,29 @@ namespace CRUD.Controllers
         }
 
         [HttpGet("all")]
-        public async Task<string> GetAll()
+        public async Task<List<PostmanCollection>> GetAll()
         {
-            return await _postmansService.GetAsync();
+            List<string> collections = new List<string>();
+            collections.Add("verb");
+            List<string> folders = new List<string>();
+            folders.Add("español");
+            return await _postmansService.GetAsync(collections, folders);
         }
 
         [HttpPut("")]
-        public async Task<IActionResult> UpdateLanguage(AtribuirLigacao ligacao)
+        public async Task<List<PostmanRequest>> UpdateLanguage()
         {
-            long result = 0; 
-            //result = await _postmansService.UpdateLanguageAsync(ligacao.chave.linguagem, ligacao.atualizar.linguagem);
-            string expression = "Expression update " + result + " successfull with.";
-            return Ok(expression);
+            //long result = 0;
+            List<string> collections = new List<string>();
+            collections.Add("verb_copy_2");
+            List<string> folders = new List<string>();
+            folders.Add("español");
+            string value = "espanõl";
+            string replace = "español";
+            //result = await _postmansService.UpdateLanguageAsync(collections, folders, value, replace);
+            //string expression = "Expression update " + result + " successfull with.";
+            //return Ok(expression);
+            return await _postmansService.UpdateLanguageAsync(collections, folders, value, replace);
         }
     }
 }
