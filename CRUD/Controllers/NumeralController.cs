@@ -22,7 +22,7 @@ namespace CRUD.Controllers
         }
 
         [HttpPost("")]
-        public async Task<IActionResult> Adverb(Algarismo algarismo)
+        public async Task<IActionResult> Numeral(Algarismo algarismo)
         {
             await _numeralsService.CreateAsync(algarismo);
             await _numeralsService2.CreateAsync(algarismo);

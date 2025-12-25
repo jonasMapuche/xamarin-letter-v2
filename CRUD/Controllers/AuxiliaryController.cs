@@ -23,7 +23,7 @@ namespace CRUD.Controllers
         }
 
         [HttpPost("")]
-        public async Task<IActionResult> Conjunction(Assistant assistant)
+        public async Task<IActionResult> Auxiliary(Assistant assistant)
         {
             await _auxiliarysService.CreateAsync(assistant);
             await _auxiliarysService2.CreateAsync(assistant);

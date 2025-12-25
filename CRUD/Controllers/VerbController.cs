@@ -22,7 +22,7 @@ namespace CRUD.Controllers
         }
 
         [HttpPost("")]
-        public async Task<IActionResult> Conjunction(Elocucao elocucao)
+        public async Task<IActionResult> Verb(Elocucao elocucao)
         {
             await _verbsService.CreateAsync(elocucao);
             await _verbsService2.CreateAsync(elocucao);

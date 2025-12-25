@@ -28,7 +28,7 @@ namespace CRUD.Controllers
         }
 
         [HttpPost("")]
-        public async Task<IActionResult> Post(Aula aula)
+        public async Task<IActionResult> Letter(Aula aula)
         {
             await _lettersService.CreateAsync(aula);
             await _lettersService2.CreateAsync(aula);
