@@ -7,9 +7,9 @@ namespace CRUD.Services
 {
     public class LetterService
     {
-        public static string ConnectionLetter { get; set; }
-        public static string ConnectionChord { get; set; }
-        public static string ConnectionValence { get; set; }
+        public static string ConnectionDevelopment { get; set; }
+        public static string ConnectionTest { get; set; }
+        public static string ConnectionProduction { get; set; }
         public static string DatabaseName { get; set; }
         public static string CollectionLetter { get; set; }
         public static string JsonFile { get; set; }
@@ -21,14 +21,14 @@ namespace CRUD.Services
             MongoClient mongoClient;
             switch (connection)
             {
-                case "valence":
-                    mongoClient = new MongoClient(ConnectionValence);
+                case "test":
+                    mongoClient = new MongoClient(ConnectionTest);
                     break;
-                case "chord":
-                    mongoClient = new MongoClient(ConnectionChord);
+                case "production":
+                    mongoClient = new MongoClient(ConnectionProduction);
                     break;
                 default:
-                    mongoClient = new MongoClient(ConnectionLetter);
+                    mongoClient = new MongoClient(ConnectionDevelopment);
                     break;
             }
             var mongoDatabase = mongoClient.GetDatabase(DatabaseName);

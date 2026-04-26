@@ -10,9 +10,9 @@ namespace CRUD.Controllers
     [Route("[controller]")]
     public class ConjunctionController : ControllerBase
     {
-        public static readonly ConjunctionService _conjunctionsService = new ConjunctionService("conjunction");
-        public static readonly ConjunctionService _conjunctionsService2 = new ConjunctionService("preposition");
-        public static readonly ConjunctionService _conjunctionsService3 = new ConjunctionService("valence");
+        public static readonly ConjunctionService _conjunctionsService = new ConjunctionService("development");
+        public static readonly ConjunctionService _conjunctionsServiceTest = new ConjunctionService("test");
+        public static readonly ConjunctionService _conjunctionsServiceProduction = new ConjunctionService("production");
 
         [HttpGet("")]
         public async Task<ActionResult> Get()
@@ -25,8 +25,8 @@ namespace CRUD.Controllers
         public async Task<IActionResult> Conjunction(Ligacao ligacao)
         {
             await _conjunctionsService.CreateAsync(ligacao);
-            await _conjunctionsService2.CreateAsync(ligacao);
-            await _conjunctionsService3.CreateAsync(ligacao);
+            await _conjunctionsServiceTest.CreateAsync(ligacao);
+            await _conjunctionsServiceProduction.CreateAsync(ligacao);
             return CreatedAtAction(nameof(Get), new { id = ligacao.Id }, ligacao);
         }
 
@@ -40,8 +40,8 @@ namespace CRUD.Controllers
         public async Task<IActionResult> UpdateLanguage(AtribuirLigacao ligacao)
         {
             long result = await _conjunctionsService.UpdateLanguageAsync(ligacao.chave.linguagem, ligacao.atualizar.linguagem);
-            result += await _conjunctionsService2.UpdateLanguageAsync(ligacao.chave.linguagem, ligacao.atualizar.linguagem);
-            result += await _conjunctionsService3.UpdateLanguageAsync(ligacao.chave.linguagem, ligacao.atualizar.linguagem);
+            result += await _conjunctionsServiceTest.UpdateLanguageAsync(ligacao.chave.linguagem, ligacao.atualizar.linguagem);
+            result += await _conjunctionsServiceProduction.UpdateLanguageAsync(ligacao.chave.linguagem, ligacao.atualizar.linguagem);
             string expression = "Expression update " + result + " successfull with.";
             return Ok(expression);
         }

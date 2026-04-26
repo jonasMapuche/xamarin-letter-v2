@@ -10,9 +10,9 @@ namespace CRUD.Controllers
     [Route("[controller]")]
     public class VerbController : ControllerBase
     {
-        public static readonly VerbService _verbsService = new VerbService("verb");
-        public static readonly VerbService _verbsService2 = new VerbService("conjunction");
-        public static readonly VerbService _verbsService3 = new VerbService("valence");
+        public static readonly VerbService _verbsService = new VerbService("development");
+        public static readonly VerbService _verbsServiceTest = new VerbService("test");
+        public static readonly VerbService _verbsServiceProduction = new VerbService("production");
 
         [HttpGet("")]
         public async Task<ActionResult> Get()
@@ -25,8 +25,8 @@ namespace CRUD.Controllers
         public async Task<IActionResult> Verb(Elocucao elocucao)
         {
             await _verbsService.CreateAsync(elocucao);
-            await _verbsService2.CreateAsync(elocucao);
-            await _verbsService3.CreateAsync(elocucao);
+            await _verbsServiceTest.CreateAsync(elocucao);
+            await _verbsServiceProduction.CreateAsync(elocucao);
             return CreatedAtAction(nameof(Get), new { id = elocucao.Id }, elocucao);
         }
 
@@ -40,8 +40,8 @@ namespace CRUD.Controllers
         public async Task<IActionResult> UpdateLanguage(AtribuirElocucao elocucao)
         {
             long result = await _verbsService.UpdateLanguageAsync(elocucao.chave.linguagem, elocucao.atualizar.linguagem);
-            result += await _verbsService2.UpdateLanguageAsync(elocucao.chave.linguagem, elocucao.atualizar.linguagem);
-            result += await _verbsService3.UpdateLanguageAsync(elocucao.chave.linguagem, elocucao.atualizar.linguagem);
+            result += await _verbsServiceTest.UpdateLanguageAsync(elocucao.chave.linguagem, elocucao.atualizar.linguagem);
+            result += await _verbsServiceProduction.UpdateLanguageAsync(elocucao.chave.linguagem, elocucao.atualizar.linguagem);
             string expression = "Expression update " + result + " successfull with.";
             return Ok(expression);
         }

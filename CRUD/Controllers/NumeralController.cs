@@ -10,9 +10,9 @@ namespace CRUD.Controllers
     [Route("[controller]")]
     public class NumeralController : ControllerBase
     {
-        public static readonly NumeralService _numeralsService = new NumeralService("numeral");
-        public static readonly NumeralService _numeralsService2 = new NumeralService("activity");
-        public static readonly NumeralService _numeralsService3 = new NumeralService("periodic");
+        public static readonly NumeralService _numeralsService = new NumeralService("development");
+        public static readonly NumeralService _numeralsServiceTest = new NumeralService("test");
+        public static readonly NumeralService _numeralsServiceProduction = new NumeralService("production");
 
         [HttpGet("")]
         public async Task<ActionResult> Get()
@@ -25,8 +25,8 @@ namespace CRUD.Controllers
         public async Task<IActionResult> Numeral(Algarismo algarismo)
         {
             await _numeralsService.CreateAsync(algarismo);
-            await _numeralsService2.CreateAsync(algarismo);
-            await _numeralsService3.CreateAsync(algarismo);
+            await _numeralsServiceTest.CreateAsync(algarismo);
+            await _numeralsServiceProduction.CreateAsync(algarismo);
             return CreatedAtAction(nameof(Get), new { id = algarismo.Id }, algarismo);
         }
 
@@ -40,8 +40,8 @@ namespace CRUD.Controllers
         public async Task<IActionResult> UpdateLanguage(AtribuirAlgarismo algarismo)
         {
             long result = await _numeralsService.UpdateLanguageAsync(algarismo.chave.linguagem, algarismo.atualizar.linguagem);
-            result += await _numeralsService2.UpdateLanguageAsync(algarismo.chave.linguagem, algarismo.atualizar.linguagem);
-            result += await _numeralsService3.UpdateLanguageAsync(algarismo.chave.linguagem, algarismo.atualizar.linguagem);
+            result += await _numeralsServiceTest.UpdateLanguageAsync(algarismo.chave.linguagem, algarismo.atualizar.linguagem);
+            result += await _numeralsServiceProduction.UpdateLanguageAsync(algarismo.chave.linguagem, algarismo.atualizar.linguagem);
             string expression = "Expression update " + result + " successfull with.";
             return Ok(expression);
         }

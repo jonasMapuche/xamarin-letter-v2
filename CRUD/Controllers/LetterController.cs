@@ -10,9 +10,9 @@ namespace CRUD.Controllers
     [Route("[controller]")]
     public class LetterController : ControllerBase
     {
-        public static readonly LetterService _lettersService = new LetterService("letter");
-        public static readonly LetterService _lettersService2 = new LetterService("valence");
-        public static readonly LetterService _lettersService3 = new LetterService("chord");
+        public static readonly LetterService _lettersService = new LetterService("development");
+        public static readonly LetterService _lettersServiceTest = new LetterService("test");
+        public static readonly LetterService _lettersServiceProduction = new LetterService("production");
 
         [HttpGet("")]
         public async Task<ActionResult> Get()
@@ -31,8 +31,8 @@ namespace CRUD.Controllers
         public async Task<IActionResult> Letter(Aula aula)
         {
             await _lettersService.CreateAsync(aula);
-            await _lettersService2.CreateAsync(aula);
-            await _lettersService3.CreateAsync(aula);
+            await _lettersServiceTest.CreateAsync(aula);
+            await _lettersServiceProduction.CreateAsync(aula);
             return CreatedAtAction(nameof(Get), new { id = aula.Id }, aula);
         }
 
@@ -40,10 +40,11 @@ namespace CRUD.Controllers
         public async Task<IActionResult> UpdateLanguage(AtribuirAula aula)
         {
             long result = await _lettersService.UpdateLanguageAsync(aula.chave.linguagem, aula.atualizar.linguagem);
-            result += await _lettersService2.UpdateLanguageAsync(aula.chave.linguagem, aula.atualizar.linguagem);
-            result += await _lettersService3.UpdateLanguageAsync(aula.chave.linguagem, aula.atualizar.linguagem);
+            result += await _lettersServiceTest.UpdateLanguageAsync(aula.chave.linguagem, aula.atualizar.linguagem);
+            result += await _lettersServiceProduction.UpdateLanguageAsync(aula.chave.linguagem, aula.atualizar.linguagem);
             string expression = "Expression update " + result + " successfull with.";
             return Ok(expression);
         }
     }
+
 }

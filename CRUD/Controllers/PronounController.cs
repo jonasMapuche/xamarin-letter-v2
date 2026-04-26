@@ -10,9 +10,9 @@ namespace CRUD.Controllers
     [Route("[controller]")]
     public class PronounController : ControllerBase
     {
-        public static readonly PronounService _pronounsService = new PronounService("pronoun");
-        public static readonly PronounService _pronounsService2 = new PronounService("periodic");
-        public static readonly PronounService _pronounsService3 = new PronounService("artless");
+        public static readonly PronounService _pronounsService = new PronounService("development");
+        public static readonly PronounService _pronounsServiceTest = new PronounService("test");
+        public static readonly PronounService _pronounsServiceProduction = new PronounService("production");
 
         [HttpGet("")]
         public async Task<ActionResult> Get()
@@ -25,8 +25,8 @@ namespace CRUD.Controllers
         public async Task<IActionResult> Pronoun(Estoutro estoutro)
         {
             await _pronounsService.CreateAsync(estoutro);
-            await _pronounsService2.CreateAsync(estoutro);
-            await _pronounsService3.CreateAsync(estoutro);
+            await _pronounsServiceTest.CreateAsync(estoutro);
+            await _pronounsServiceProduction.CreateAsync(estoutro);
             return CreatedAtAction(nameof(Get), new { id = estoutro.Id }, estoutro);
         }
 
@@ -40,8 +40,8 @@ namespace CRUD.Controllers
         public async Task<IActionResult> UpdateLanguage(AtribuirEstoutro estoutro)
         {
             long result = await _pronounsService.UpdateLanguageAsync(estoutro.chave.linguagem, estoutro.atualizar.linguagem);
-            result += await _pronounsService2.UpdateLanguageAsync(estoutro.chave.linguagem, estoutro.atualizar.linguagem);
-            result += await _pronounsService3.UpdateLanguageAsync(estoutro.chave.linguagem, estoutro.atualizar.linguagem);
+            result += await _pronounsServiceTest.UpdateLanguageAsync(estoutro.chave.linguagem, estoutro.atualizar.linguagem);
+            result += await _pronounsServiceProduction.UpdateLanguageAsync(estoutro.chave.linguagem, estoutro.atualizar.linguagem);
             string expression = "Expression update " + result + " successfull with.";
             return Ok(expression);
         }

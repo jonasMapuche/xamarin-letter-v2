@@ -1,17 +1,15 @@
 ﻿using CRUD.Models;
 using MongoDB.Driver;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CRUD.Services
 {
     public class NumeralService
     {
-        public static string ConnectionNumeral { get; set; }
-        public static string ConnectionPeriodic { get; set; }
-        public static string ConnectionActivity { get; set; }
+        public static string ConnectionDevelopment { get; set; }
+        public static string ConnectionTest { get; set; }
+        public static string ConnectionProduction { get; set; }
         public static string DatabaseName { get; set; }
         public static string CollectionNumeral { get; set; }
 
@@ -22,14 +20,14 @@ namespace CRUD.Services
             MongoClient mongoClient;
             switch (connection)
             {
-                case "activity":
-                    mongoClient = new MongoClient(ConnectionActivity);
+                case "test":
+                    mongoClient = new MongoClient(ConnectionTest);
                     break;
-                case "periodic":
-                    mongoClient = new MongoClient(ConnectionPeriodic);
+                case "production":
+                    mongoClient = new MongoClient(ConnectionProduction);
                     break;
                 default:
-                    mongoClient = new MongoClient(ConnectionNumeral);
+                    mongoClient = new MongoClient(ConnectionDevelopment);
                     break;
             }
             var mongoDatabase = mongoClient.GetDatabase(DatabaseName);

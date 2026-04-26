@@ -7,9 +7,9 @@ namespace CRUD.Services
 {
     public class SentenceService
     {
-        public static string ConnectionSentence { get; set; }
-        public static string ConnectionVerb { get; set; }
-        public static string ConnectionChord { get; set; }
+        public static string ConnectionDevelopment { get; set; }
+        public static string ConnectionTest { get; set; }
+        public static string ConnectionProduction { get; set; }
         public static string DatabaseName { get; set; }
         public static string CollectionSentence { get; set; }
 
@@ -20,14 +20,14 @@ namespace CRUD.Services
             MongoClient mongoClient;
             switch (connection)
             {
-                case "verb":
-                    mongoClient = new MongoClient(ConnectionVerb);
+                case "test":
+                    mongoClient = new MongoClient(ConnectionTest);
                     break;
-                case "chord":
-                    mongoClient = new MongoClient(ConnectionChord);
+                case "production":
+                    mongoClient = new MongoClient(ConnectionProduction);
                     break;
                 default:
-                    mongoClient = new MongoClient(ConnectionSentence);
+                    mongoClient = new MongoClient(ConnectionDevelopment);
                     break;
             }
             var mongoDatabase = mongoClient.GetDatabase(DatabaseName);

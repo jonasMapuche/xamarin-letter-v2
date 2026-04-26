@@ -10,9 +10,9 @@ namespace CRUD.Controllers
     [Route("[controller]")]
     public class PrepositionController : ControllerBase
     {
-        public static readonly PrepositionService _prepositionsService = new PrepositionService("preposition");
-        public static readonly PrepositionService _prepositionsService2 = new PrepositionService("article");
-        public static readonly PrepositionService _prepositionsService3 = new PrepositionService("pronoun");
+        public static readonly PrepositionService _prepositionsService = new PrepositionService("development");
+        public static readonly PrepositionService _prepositionsServiceTest = new PrepositionService("test");
+        public static readonly PrepositionService _prepositionsServiceProduction = new PrepositionService("production");
 
         [HttpGet("")]
         public async Task<ActionResult> Get()
@@ -25,8 +25,8 @@ namespace CRUD.Controllers
         public async Task<IActionResult> Preposition(Juncao juncao)
         {
             await _prepositionsService.CreateAsync(juncao);
-            await _prepositionsService2.CreateAsync(juncao);
-            await _prepositionsService3.CreateAsync(juncao);
+            await _prepositionsServiceTest.CreateAsync(juncao);
+            await _prepositionsServiceProduction.CreateAsync(juncao);
             return CreatedAtAction(nameof(Get), new { id = juncao.Id }, juncao);
         }
 
@@ -40,8 +40,8 @@ namespace CRUD.Controllers
         public async Task<IActionResult> UpdateLanguage(AtribuirJuncao juncao)
         {
             long result = await _prepositionsService.UpdateLanguageAsync(juncao.chave.linguagem, juncao.atualizar.linguagem);
-            result += await _prepositionsService2.UpdateLanguageAsync(juncao.chave.linguagem, juncao.atualizar.linguagem);
-            result += await _prepositionsService3.UpdateLanguageAsync(juncao.chave.linguagem, juncao.atualizar.linguagem);
+            result += await _prepositionsServiceTest.UpdateLanguageAsync(juncao.chave.linguagem, juncao.atualizar.linguagem);
+            result += await _prepositionsServiceProduction.UpdateLanguageAsync(juncao.chave.linguagem, juncao.atualizar.linguagem);
             string expression = "Expression update " + result + " successfull with.";
             return Ok(expression);
         }

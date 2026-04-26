@@ -10,9 +10,9 @@ namespace CRUD.Controllers
     [Route("[controller]")]
     public class ArticleController : ControllerBase
     {
-        public static readonly ArticleService _articlesService = new ArticleService("article");
-        public static readonly ArticleService _articlesService2 = new ArticleService("noten");
-        public static readonly ArticleService _articlesService3 = new ArticleService("malware");
+        public static readonly ArticleService _articlesService = new ArticleService("development");
+        public static readonly ArticleService _articlesServiceTest = new ArticleService("test");
+        public static readonly ArticleService _articlesServiceProduction = new ArticleService("production");
 
         [HttpGet("")]
         public async Task<ActionResult> Get()
@@ -25,8 +25,8 @@ namespace CRUD.Controllers
         public async Task<IActionResult> Article(Preceito preceito)
         {
             await _articlesService.CreateAsync(preceito);
-            await _articlesService2.CreateAsync(preceito);
-            await _articlesService3.CreateAsync(preceito);
+            await _articlesServiceTest.CreateAsync(preceito);
+            await _articlesServiceProduction.CreateAsync(preceito);
             return CreatedAtAction(nameof(Get), new { id = preceito.Id }, preceito);
         }
 
@@ -40,8 +40,8 @@ namespace CRUD.Controllers
         public async Task<IActionResult> UpdateLanguage(AtribuirJuncao juncao)
         {
             long result = await _articlesService.UpdateLanguageAsync(juncao.chave.linguagem, juncao.atualizar.linguagem);
-            result += await _articlesService2.UpdateLanguageAsync(juncao.chave.linguagem, juncao.atualizar.linguagem);
-            result += await _articlesService3.UpdateLanguageAsync(juncao.chave.linguagem, juncao.atualizar.linguagem);
+            result += await _articlesServiceTest.UpdateLanguageAsync(juncao.chave.linguagem, juncao.atualizar.linguagem);
+            result += await _articlesServiceProduction.UpdateLanguageAsync(juncao.chave.linguagem, juncao.atualizar.linguagem);
             string expression = "Expression update " + result + " successfull with.";
             return Ok(expression);
         }

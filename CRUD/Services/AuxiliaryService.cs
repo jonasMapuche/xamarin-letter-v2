@@ -7,9 +7,9 @@ namespace CRUD.Services
 {
     public class AuxiliaryService
     {
-        public static string ConnectionAuxiliary { get; set; }
-        public static string ConnectionPronoun { get; set; }
-        public static string ConnectionNumeral { get; set; }
+        public static string ConnectionDevelopment { get; set; }
+        public static string ConnectionTest { get; set; }
+        public static string ConnectionProduction { get; set; }
         public static string DatabaseName { get; set; }
         public static string CollectionAuxiliary { get; set; }
 
@@ -20,14 +20,14 @@ namespace CRUD.Services
             MongoClient mongoClient;
             switch (connection)
             {
-                case "numeral":
-                    mongoClient = new MongoClient(ConnectionNumeral);
+                case "test":
+                    mongoClient = new MongoClient(ConnectionTest);
                     break;
-                case "pronoun":
-                    mongoClient = new MongoClient(ConnectionPronoun);
+                case "production":
+                    mongoClient = new MongoClient(ConnectionProduction);
                     break;
                 default:
-                    mongoClient = new MongoClient(ConnectionAuxiliary);
+                    mongoClient = new MongoClient(ConnectionDevelopment);
                     break;
             }
             var mongoDatabase = mongoClient.GetDatabase(DatabaseName);

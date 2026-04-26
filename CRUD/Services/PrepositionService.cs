@@ -7,9 +7,9 @@ namespace CRUD.Services
 {
     public class PrepositionService
     {
-        public static string ConnectionPreposition { get; set; }
-        public static string ConnectionArticle { get; set; }
-        public static string ConnectionPronoun { get; set; }
+        public static string ConnectionDevelopment { get; set; }
+        public static string ConnectionTest { get; set; }
+        public static string ConnectionProduction { get; set; }
         public static string DatabaseName { get; set; }
         public static string CollectionPreposition { get; set; }
 
@@ -20,14 +20,14 @@ namespace CRUD.Services
             MongoClient mongoClient;
             switch (connection)
             {
-                case "article":
-                    mongoClient = new MongoClient(ConnectionArticle);
+                case "test":
+                    mongoClient = new MongoClient(ConnectionTest);
                     break;
-                case "pronoun":
-                    mongoClient = new MongoClient(ConnectionPronoun);
+                case "production":
+                    mongoClient = new MongoClient(ConnectionProduction);
                     break;
                 default:
-                    mongoClient = new MongoClient(ConnectionPreposition);
+                    mongoClient = new MongoClient(ConnectionDevelopment);
                     break;
             }
             var mongoDatabase = mongoClient.GetDatabase(DatabaseName);

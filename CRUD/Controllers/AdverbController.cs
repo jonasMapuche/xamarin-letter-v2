@@ -10,9 +10,9 @@ namespace CRUD.Controllers
     [Route("[controller]")]
     public class AdverbController : ControllerBase
     {
-        public static readonly AdverbService _adverbsService = new AdverbService("adverb");
-        public static readonly AdverbService _adverbsService2 = new AdverbService("activity");
-        public static readonly AdverbService _adverbsService3 = new AdverbService("periodic");
+        public static readonly AdverbService _adverbsService = new AdverbService("development");
+        public static readonly AdverbService _adverbsServiceTest = new AdverbService("test");
+        public static readonly AdverbService _adverbsServiceProduction = new AdverbService("production");
 
         [HttpGet("")]
         public async Task<ActionResult> Get()
@@ -25,8 +25,8 @@ namespace CRUD.Controllers
         public async Task<IActionResult> Adverb(Circustancia circustancia)
         {
             await _adverbsService.CreateAsync(circustancia);
-            await _adverbsService2.CreateAsync(circustancia);
-            await _adverbsService3.CreateAsync(circustancia);
+            await _adverbsServiceTest.CreateAsync(circustancia);
+            await _adverbsServiceProduction.CreateAsync(circustancia);
             return CreatedAtAction(nameof(Get), new { id = circustancia.Id }, circustancia);
         }
 
@@ -40,8 +40,8 @@ namespace CRUD.Controllers
         public async Task<IActionResult> UpdateLanguage(AtribuirCircustancia circustancia)
         {
             long result = await _adverbsService.UpdateLanguageAsync(circustancia.chave.linguagem, circustancia.atualizar.linguagem);
-            result += await _adverbsService2.UpdateLanguageAsync(circustancia.chave.linguagem, circustancia.atualizar.linguagem);
-            result += await _adverbsService3.UpdateLanguageAsync(circustancia.chave.linguagem, circustancia.atualizar.linguagem);
+            result += await _adverbsServiceTest.UpdateLanguageAsync(circustancia.chave.linguagem, circustancia.atualizar.linguagem);
+            result += await _adverbsServiceProduction.UpdateLanguageAsync(circustancia.chave.linguagem, circustancia.atualizar.linguagem);
             string expression = "Expression update " + result + " successfull with.";
             return Ok(expression);
         }

@@ -10,17 +10,19 @@ namespace CRUD.Controllers
     [Route("[controller]")]
     public class ArchiveController : ControllerBase
     {
+        private static readonly string _environment = "develpment";
+
         public static readonly SQLiteService _SQLiteService = new SQLiteService();
-        public static readonly LetterService _lettersService = new LetterService("letter");
-        public static readonly PronounService _pronounsService = new PronounService("pronoun");
-        public static readonly ArticleService _articlesService = new ArticleService("article");
-        public static readonly PrepositionService _prepositionsService = new PrepositionService("preposition");
-        public static readonly ConjunctionService _conjunctionsService = new ConjunctionService("conjunction");
-        public static readonly AdverbService _adverbsService = new AdverbService("adverb");
-        public static readonly NumeralService _numeralsService = new NumeralService("numeral");
-        public static readonly VerbService _verbsService = new VerbService("verb");
-        public static readonly AuxiliaryService _auxiliarysService = new AuxiliaryService("auxiliary");
-        public static readonly SentenceService _sentencesService = new SentenceService("sentence");
+        public static readonly AdverbService _adverbsService = new AdverbService(_environment);
+        public static readonly ArticleService _articlesService = new ArticleService(_environment);
+        public static readonly AuxiliaryService _auxiliarysService = new AuxiliaryService(_environment);
+        public static readonly ConjunctionService _conjunctionsService = new ConjunctionService(_environment);
+        public static readonly LetterService _lettersService = new LetterService(_environment);
+        public static readonly NumeralService _numeralsService = new NumeralService(_environment);
+        public static readonly PrepositionService _prepositionsService = new PrepositionService(_environment);
+        public static readonly PronounService _pronounsService = new PronounService(_environment);
+        public static readonly SentenceService _sentencesService = new SentenceService(_environment);
+        public static readonly VerbService _verbsService = new VerbService(_environment);
 
         [HttpGet("")]
         public async Task<ActionResult> Get()
